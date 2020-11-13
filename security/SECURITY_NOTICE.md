@@ -1,3 +1,5 @@
+[Back to Table of Contents](../README.md#Table-of-Contents)
+
 # ChainSafe Security Policy
 
 Please include this in the readme of your project.

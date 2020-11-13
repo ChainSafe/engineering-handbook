@@ -1,3 +1,5 @@
+[Back to Table of Contents](../README.md#Table-of-Contents)
+
 If a repo is owned by ChainSafe there is no reason to fork the repo for pull requests.
 
 # 1. Create a branch off of `main`

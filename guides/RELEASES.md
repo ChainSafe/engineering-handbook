@@ -1,3 +1,6 @@
+
+[Back to Table of Contents](../README.md#Table-of-Contents)
+
 This is a step-by-step release guide for ChainSafe projects
 
 # 1. Preconditions

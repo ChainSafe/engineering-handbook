@@ -1,3 +1,5 @@
+[Back to Table of Contents](../README.md#Table-of-Contents)
+
 # [WIP] React Project Setup
 
 1. `npx create-react-app APP_NAME —template=typescript`

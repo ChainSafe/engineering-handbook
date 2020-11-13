@@ -1,3 +1,5 @@
+[Back to Table of Contents](../README.md#Table-of-Contents)
+
 # Tl;Dr:
 
 Document everything, communicate with your team transparently, review together.
