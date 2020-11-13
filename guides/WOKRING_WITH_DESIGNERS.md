@@ -10,4 +10,4 @@
 
 ## Prototypes
 
-![%5Bwip%5D%5BFront-end%5D%20Working%20with%20Designers%2037e18a6696724de78e440db3499334a1/Screen_Shot_2020-08-18_at_11.14.37_AM.png](./assets/Screen_Shot_2020-08-18_at_11.14.37_AM.png)
+![%5Bwip%5D%5BFront-end%5D%20Working%20with%20Designers%2037e18a6696724de78e440db3499334a1/Screen_Shot_2020-08-18_at_11.14.37_AM.png](../assets/Screen_Shot_2020-08-18_at_11.14.37_AM.png)

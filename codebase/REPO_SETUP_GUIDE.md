@@ -13,7 +13,7 @@ These are steps to setup a new repo under the ChainSafe Github organization:
 2.  Add the team and give them **Write** permissions. Avoid inviting individuals, there should be a team on the organization that has everyone working on the project. 
     1. If the team or the admin team doesn't exist, please reach out to @David Ansermino, @Greg Markou or @Priom Chowdhury  
 
-![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-07_11-28-00.png](./assets/Screenshot_2020-05-07_11-28-00.png)
+![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-07_11-28-00.png](../assets/Screenshot_2020-05-07_11-28-00.png)
 
 3. Add the admin team (should be "<team-name>-admin") and give them **Admin** permissions
 
@@ -22,11 +22,11 @@ These are steps to setup a new repo under the ChainSafe Github organization:
 1. Goto `Settings` → `Branches`
 2. If this is a new repo, choose `Add Rule`. In this example you can see a rule already exists for `master` branch, in which case you can select `Edit` to modify it. 
 
-![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-29-27.png](./assets//Screenshot_2020-05-12_09-29-27.png)
+![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-29-27.png](../assets//Screenshot_2020-05-12_09-29-27.png)
 
 3. These are the base requirements to ensure at least 1 review is required to merge PRs.
 
-![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-30-11.png](./assets//Screenshot_2020-05-12_09-30-11.png)
+![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-30-11.png](../assets//Screenshot_2020-05-12_09-30-11.png)
 
 Some additional options:
 
@@ -38,7 +38,7 @@ Some additional options:
 
 1. Goto `Settings`  and scroll down to `Merge button`
 
-    ![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-40-08.png](./assets//Screenshot_2020-05-12_09-40-08.png)
+    ![Repo%20Setup%20Guide%2000446b1444084b0485f728ac9fc83f45/Screenshot_2020-05-12_09-40-08.png](../assets//Screenshot_2020-05-12_09-40-08.png)
 
 2. Disable `Allow merge commits` and `Allow rebase merging`. Since most repos use *squash merging* this prevents anyone from accidentally using one of the other options. If the TL has reason to override this they may certainly do so.
 
