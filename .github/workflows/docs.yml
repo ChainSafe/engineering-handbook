@@ -7,11 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      # Additional steps to generate documentation in "Documentation" directory
-      - name: Upload Documentation to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
-        with:
-          path: "docs"
-        env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+    - name: Upload Release Notes to Wiki
+      uses: docker://decathlon/wiki-page-creator-action:latest
+      env:
+        ACTION_MAIL: info@chainsafe.io
+        ACTION_NAME: gregthegreek
+        GH_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        MD_FOLDER: docs
+        OWNER: ChainSafe
+        REPO_NAME: engineering-wiki
+        SKIP_MD: README.md
