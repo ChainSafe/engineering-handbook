@@ -8,10 +8,10 @@ jobs:
 
     steps:
     - name: Build docs
-      run: sh ./build-docs.sh
-    
-    - name: Publish docs
-      run: sh ./publish-docs.sh
+      run: |
+        ls -la
+        chmod +x ./build-docs.sh
+        sh ./build-docs.sh
 
 #     - name: Upload Release Notes to Wiki
 #       uses: docker://decathlon/wiki-page-creator-action:latest
