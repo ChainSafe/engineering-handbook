@@ -1,0 +1,14 @@
+language: bash
+
+script:
+- |
+  git config user.name "$GIT_NAME"
+  git config user.email "$GIT_NAME"
+  git remote remove origin
+  git remote add origin https://$GITHUB_API_KEY@github.com/ChainSafe/engineering-wiki.git > /dev/null 2>&1
+  git remote add wiki https://$GITHUB_API_KEY@github.com/ChainSafe/engineering-wiki.wiki.git > /dev/null 2>&1
+  git fetch origin
+  git fetch wiki
+  git checkout wiki/master
+  git merge origin/master --no-edit
+  git push wiki HEAD:master > /dev/null 2>&1
