@@ -10,7 +10,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build docs
-      run: sh ./build-docs.sh
+      run: sh ./scripts/build-docs.sh
 
     - name: Publish docs
-      run: sh ./publish-docs.sh
+      env:
+        GITHUB_API_KEY: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+      run: sh ./scripts/publish-docs.sh
