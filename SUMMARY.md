@@ -1,6 +1,6 @@
 # Table of contents
 
-* [ChainSafe Engineering Wiki](README.md)
+* [ChainSafe Engineering Wiki](HOME.md)
 
 ## Start Here
 
