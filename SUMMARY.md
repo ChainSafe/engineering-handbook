@@ -37,4 +37,4 @@
 
 
 
-[:yellow_heart: Join ChainSafe](https://chainsafe.io/careers)
+* [:yellow_heart: Join ChainSafe](https://chainsafe.io/careers)
