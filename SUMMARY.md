@@ -34,3 +34,5 @@
 
 * [Career Development](the-formal-stuff/career-development.md)
 * [Switching Positions](the-formal-stuff/switching-positions.md)
+
+## [:yellow_heart: Join ChainSafe](https://chainsafe.io/careers)
