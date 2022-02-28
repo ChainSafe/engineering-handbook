@@ -13,13 +13,13 @@ This involve identifying vulnerabilities and enhance code quality of solidity sm
 
 It is intended for companies deploying smart contracts on EVM based chains.
 
-## Custom software development
+### Custom software development
 
 This service involves development of products and/or features by a team of experts at ChainSafe. This includes integration with various services and blockchains. At the end of project we would deliver clean and readable code along with test and CI/CD pipelines. More about skills and expertise we offer in Engineering Competencies down below.
 
 Ideal for clients that either have idea and needs a expert team to realize it or clients that wanna help with areas for which they don’t have enough of their own resources.
 
-## Maintenance
+### Maintenance
 
 This service involves maintaining of software we delivered so it remains functional and up-to-date.
 
