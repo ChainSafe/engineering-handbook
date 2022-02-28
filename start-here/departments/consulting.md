@@ -1,6 +1,6 @@
 # Consulting
 
-Consulting department is focused on helping other team in space with our multi-chain expertise.
+Consulting department is focused on helping internal teams and other clients in space with our multi-chain expertise.
 
 ## Services
 
