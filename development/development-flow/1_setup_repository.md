@@ -93,11 +93,112 @@ Depending on the project, it might make sense to add a code owners file. Please 
 
 Once everything has been done, and setup, reach out to your Head of Engineering person to double check that everything is setup accordingly.
 
+# Labels
+
+<details>
+    <summary>Click to see labels and their meaning</summary>
+
+
+### Status
+
+Status: Breaking Change
+
+- Added to a PR or issue that would cause a breaking change
+
+Status: Abandoned
+
+- Added to a PR or issue is no longer being actively pursued.
+
+Status: Approved
+
+- Added to a PR when the required number of approvals have been met.
+
+Status: Blocked
+
+- Added to issues and PRs when work can not be continued until another task is completed.
+
+Status: In Progress
+
+- Added to issues to signal that its actively being worked on.
+
+Status: Do not merge
+
+- Added to PRs that are not allowed to be merged.
+
+Status: On Ice
+
+- Added to issues and PRs that are considered important but no longer pursued for the near future.
+
+Status: Review Needed
+
+- Added to PRs that need the maintainer(s) to review.
+
+Status: Changes Requested
+
+- Added to PRs that require further changes from the contributor.
+
+Status: Stale
+
+- Added to issues and PRs if they have not received enough activity.
+
+Status: Needs Clarification
+
+- Added to issues that are not clearly understood, and require additional input.
+
+### Types
+
+Type: Feature
+
+- Added to issues and PRs to identify that the change is a new feature.
+
+Type: Epic
+
+- Added to issues to encompass many different types of issues together
+
+Type: Bug
+
+- Added to issues and PRs if they are addressing a bug
+
+Type: Enhancement
+
+- Added to issues and PRs when a change includes improvements or optimizations.
+
+Type: Maintenance
+
+- wAdded to issues and PRs when a change is for repository maintenance, such as CI or linter changes.
+
+Type: Question
+
+- Added to issues that are general discussion questions, and don't offer bug reports etc..
+
+Type: Documentation
+
+- Added to issues or PRs that relate to the project wiki, or documentation.
+
+### Priority Levels
+
+Priority: P0
+
+- Added to issues and PRs relating to a critical severity bugs.
+
+Priority: P1
+
+- Added to issues and PRs relating to a high severity bugs.
+
+Priority: P2
+
+- Added to issues and PRs relating to a medium severity bugs.
+
+Priority: P3
+
+- Added to issues and PRs relating to a low severity bugs.
+
+</details>
 
 # Slack notifications
 <details>
   <summary>Optional! Click to see.</summary>
-  
+
 ## Overview
 
 There are two methods for receiving various notifications from GitHub via Slack.
