@@ -21,7 +21,7 @@ These are steps to setup a new repo under the ChainSafe Github organization:
 
 3. Add the admin team (should be "<team-name>-admin") and give them **Admin** permissions
 
-4. Add the **ChainSafe** and **ChainSafe-Management** team with `Read` permissions
+4. Add the **ChainSafe** team with `Read` permissions
 
 - Note: Adding the **ChainSafe** team will give access to the entire org. If the project is sensitive consider not including this team.
 
@@ -40,7 +40,7 @@ Some additional options:
 
 - **Branch name pattern**: some projects use different branch names. `main` is usually the default branch, but rules may also need to applied to a `develop` or `release` branch
 - **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repos.
-- **Require status checks to pass before merging**: this should be enabled if CI (eg. Travis, CircleCI) is used in the repo.
+- **Require status checks to pass before merging**: this should be enabled if CI (eg. Github Actions) is used in the repo.
 
 # Disable Merge Commits & Rebase
 
@@ -65,15 +65,17 @@ Lodestar: [https://github.com/ChainSafe/lodestar/](https://github.com/ChainSafe/
 
 # License
 
-A license file must be added to the root of the repo in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repo has matching license headers. Please reach out to @David Ansermino for more details. 
+A license file must be added to the root of the repo in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repo has matching license headers. Please reach out to `David Ansermino` for more details. 
 
 # Continuous Integration
 
-A continuous integration (CI) service must be setup before code is committed. We strongly advise using Github Actions or CircleCi. Even though you may not know what the repository setup structure may resemble, you will know the basic language that will be used, therefore the most simple CI can be setup:
+A continuous integration (CI) service must be setup before code is committed. We strongly advise using Github Actions. Even though you may not know what the repository setup structure may resemble, you will know the basic language that will be used, therefore the most simple CI can be setup:
 
 1. Include the linter
 2. Include your test runner
 3. If possible, add a build step
+
+You should use recommended CI for your programming language which can be found [here](development/tech-stack/readme.md)
 
 # CLA
 
@@ -89,6 +91,12 @@ Depending on the project, it might make sense to add a code owners file. Please 
 
 # Review
 
-Once everything has been done, and setup, reach out to @David Ansermino or @Greg Markou to double check that everything is setup accordingly.
+Once everything has been done, and setup, reach out to your Head of Engineering person to double check that everything is setup accordingly.
+
+
+# Slack notifications
+
+You can find instructions [here](1_1_slack_notifications.md)
+
 
 Good morning y'all!
