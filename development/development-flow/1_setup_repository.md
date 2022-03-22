@@ -75,7 +75,10 @@ A continuous integration (CI) service must be setup before code is committed. We
 2. Include your test runner
 3. If possible, add a build step
 
-You should use recommended CI for your programming language which can be found [here](development/tech-stack/readme.md)
+You should use recommended CI for your programming language which can be found at:
+{% content-ref url="../tech-stack/readme.md" %}
+[readme.md](../tech-stack/readme.md)
+{% endcontent-ref %}
 
 # CLA
 
