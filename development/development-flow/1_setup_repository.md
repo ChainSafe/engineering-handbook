@@ -1,6 +1,6 @@
 # Setup Github Repository
 
-These are steps to setup a new repo under the ChainSafe Github organization:
+These are steps to setup a new repository under the ChainSafe Github organization:
 
 <aside>
 💡 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
@@ -28,7 +28,7 @@ These are steps to setup a new repo under the ChainSafe Github organization:
 # Branch Protection
 
 1. Goto `Settings` → `Branches`
-2. If this is a new repo, choose `Add Rule`. In this example you can see a rule already exists for `master` branch, in which case you can select `Edit` to modify it. 
+2. If this is a new repository, choose `Add Rule`. In this example you can see a rule already exists for `master` branch, in which case you can select `Edit` to modify it. 
 
 ![create_repository_assets/Screenshot_2020-05-12_09-29-27.png](create_repository_assets/Screenshot_2020-05-12_09-29-27.png)
 
@@ -39,8 +39,8 @@ These are steps to setup a new repo under the ChainSafe Github organization:
 Some additional options:
 
 - **Branch name pattern**: some projects use different branch names. `main` is usually the default branch, but rules may also need to applied to a `develop` or `release` branch
-- **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repos.
-- **Require status checks to pass before merging**: this should be enabled if CI (eg. Github Actions) is used in the repo.
+- **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repositories.
+- **Require status checks to pass before merging**: this should be enabled if CI (eg. Github Actions) is used in the repository.
 
 # Disable Merge Commits & Rebase
 
@@ -49,13 +49,13 @@ Some additional options:
     ![create_repository_assets/Screenshot_2020-05-12_09-40-08.png](create_repository_assets/Screenshot_2020-05-12_09-40-08.png)
     
 
-2. Disable `Allow merge commits` and `Allow rebase merging`. Since most repos use *squash merging* this prevents anyone from accidentally using one of the other options. If the TL has reason to override this they may certainly do so.
+2. Disable `Allow merge commits` and `Allow rebase merging`. Since most repositories use *squash merging* this prevents anyone from accidentally using one of the other options. If the TL has reason to override this they may certainly do so.
 
-3. Enable `Automatically delete head branches`. This automatically deletes branches once they are merged to help keep the repo organized.
+3. Enable `Automatically delete head branches`. This automatically deletes branches once they are merged to help keep the repository organized.
 
 # Basic Readme
 
-Please see other ChainSafe repos for examples of what to include. 
+Please see other ChainSafe repositories for examples of what to include. 
 
 Gossamer: [https://github.com/chainsafe/gossamer](https://github.com/chainsafe/gossamer)
 
@@ -65,7 +65,7 @@ Lodestar: [https://github.com/ChainSafe/lodestar/](https://github.com/ChainSafe/
 
 # License
 
-A license file must be added to the root of the repo in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repo has matching license headers. Please reach out to `David Ansermino` for more details. 
+A license file must be added to the root of the repository in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repository has matching license headers. Please reach out to `David Ansermino` for more details. 
 
 # Continuous Integration
 
@@ -79,7 +79,7 @@ You should use recommended CI for your programming language which can be found [
 
 # CLA
 
-Please use [https://cla-assistant.io/](https://cla-assistant.io/). This will be automatically enabled for all public repos in the org (status check needs to be required).
+Please use [https://cla-assistant.io/](https://cla-assistant.io/). This will be automatically enabled for all public repositories in the org (status check needs to be required).
 
 # Code Owners
 
@@ -165,7 +165,7 @@ Type: Enhancement
 
 Type: Maintenance
 
-- wAdded to issues and PRs when a change is for repository maintenance, such as CI or linter changes.
+- Added to issues and PRs when a change is for repository maintenance, such as CI or linter changes.
 
 Type: Question
 
@@ -203,7 +203,7 @@ Priority: P3
 
 There are two methods for receiving various notifications from GitHub via Slack.
 
-- **Scheduled Reminders**: These allow you receive reminders at some interval about pending PRs on specific repos in a Slack channel.
+- **Scheduled Reminders**: These allow you receive reminders at some interval about pending PRs on specific repositories in a Slack channel.
 - **Slackbot Notifications**: Enabling these will cause actions on GitHub to trigger notifications on Slack.
 
 ## Slackbot Notifications
@@ -213,8 +213,8 @@ The instructions for configuring the GitHub Slackbot can be found here: [https:/
 A common configuration follows these steps:
 
 ```yaml
-/github subscribe owner/repo
-/github subscribe owner/repo reviews comments
+/github subscribe owner/repository
+/github subscribe owner/repository reviews comments
 ```
 
 You can check which features are enabled in a channel with:

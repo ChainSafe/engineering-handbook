@@ -10,7 +10,7 @@ Document everything, communicate with your team transparently, review together.
 - Ensure adequate testing exists where needed
 - PRs include a summary of work which outlines the objectives, decisions & considerations for the PR. Examples:
     - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside of the logging scope at the moment.
-    - This PR includes minor styling tweaks on the desktop & mobile navigation menus, refactored nav list logic.
+    - This PR includes minor styling tweaks on the desktop & mobile navigation menus, refactored navigation list logic.
 
 ## Communication
 

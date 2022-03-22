@@ -1,7 +1,7 @@
 # Development
 
 <aside>
-    🚨 If a repo is owned by ChainSafe there is no reason to fork the repo for pull requests.
+    🚨 If a repository is owned by ChainSafe there is no reason to fork the repository for pull requests.
 </aside>
 
 <aside>
@@ -30,7 +30,7 @@ Please make the title clean and concise, preferably explaining what the objectiv
 
 - A good example message: `Add support for USD to ETH conversion`
 
-Our repos typically have a template for pull requests, therefore writing the body of a pull request should be straightforward. If the repo doesn't, a clear concise explanation of the changes made should be included in bullet points, and any relevant issues should be closed following the format `Closes #45`.
+Our repositories typically have a template for pull requests, therefore writing the body of a pull request should be straightforward. If the repositories doesn't, a clear concise explanation of the changes made should be included in bullet points, and any relevant issues should be closed following the format `Closes #45`.
 
 # 4. Submit for review
 
