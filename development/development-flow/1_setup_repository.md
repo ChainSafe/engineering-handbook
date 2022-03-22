@@ -1,10 +1,9 @@
-# Creating Github Repository
+# Setup Github Repository
 
 These are steps to setup a new repo under the ChainSafe Github organization:
 
 <aside>
 💡 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
-
 </aside>
 
 # Project Creation
