@@ -35,7 +35,7 @@ These are steps to setup a new repository under the ChainSafe Github organizatio
 
 ![create_repository_assets/Screenshot_2020-05-12_09-29-27.png](create_repository_assets/Screenshot_2020-05-12_09-29-27.png)
 
-3. These are the base requirements to ensure at least 1 review is required to merge PRs.
+3. These are the base requirements to ensure at least 1 review is required to merge Pull Requests.
 
 ![create_repository_assets/Screenshot_2020-05-12_09-30-11.png](create_repository_assets/Screenshot_2020-05-12_09-30-11.png)
 
@@ -117,7 +117,7 @@ Status: Approved
 
 Status: Blocked
 
-- Added to issues and PRs when work can not be continued until another task is completed.
+- Added to issues and Pull Requests when work can not be continued until another task is completed.
 
 Status: In Progress
 
@@ -125,23 +125,23 @@ Status: In Progress
 
 Status: Do not merge
 
-- Added to PRs that are not allowed to be merged.
+- Added to Pull Requests that are not allowed to be merged.
 
 Status: On Ice
 
-- Added to issues and PRs that are considered important but no longer pursued for the near future.
+- Added to issues and Pull Requests that are considered important but no longer pursued for the near future.
 
 Status: Review Needed
 
-- Added to PRs that need the maintainer(s) to review.
+- Added to Pull Requests that need the maintainer(s) to review.
 
 Status: Changes Requested
 
-- Added to PRs that require further changes from the contributor.
+- Added to Pull Requests that require further changes from the contributor.
 
 Status: Stale
 
-- Added to issues and PRs if they have not received enough activity.
+- Added to issues and Pull Requests if they have not received enough activity.
 
 Status: Needs Clarification
 
@@ -151,7 +151,7 @@ Status: Needs Clarification
 
 Type: Feature
 
-- Added to issues and PRs to identify that the change is a new feature.
+- Added to issues and Pull Requests to identify that the change is a new feature.
 
 Type: Epic
 
@@ -159,15 +159,15 @@ Type: Epic
 
 Type: Bug
 
-- Added to issues and PRs if they are addressing a bug
+- Added to issues and Pull Requests if they are addressing a bug
 
 Type: Enhancement
 
-- Added to issues and PRs when a change includes improvements or optimizations.
+- Added to issues and Pull Requests when a change includes improvements or optimizations.
 
 Type: Maintenance
 
-- Added to issues and PRs when a change is for repository maintenance, such as CI or linter changes.
+- Added to issues and Pull Requests when a change is for repository maintenance, such as CI or linter changes.
 
 Type: Question
 
@@ -175,25 +175,25 @@ Type: Question
 
 Type: Documentation
 
-- Added to issues or PRs that relate to the project wiki, or documentation.
+- Added to issues or Pull Requests that relate to the project wiki, or documentation.
 
 ### Priority Levels
 
 Priority: P0
 
-- Added to issues and PRs relating to a critical severity bugs.
+- Added to issues and Pull Requests relating to a critical severity bugs.
 
 Priority: P1
 
-- Added to issues and PRs relating to a high severity bugs.
+- Added to issues and Pull Requests relating to a high severity bugs.
 
 Priority: P2
 
-- Added to issues and PRs relating to a medium severity bugs.
+- Added to issues and Pull Requests relating to a medium severity bugs.
 
 Priority: P3
 
-- Added to issues and PRs relating to a low severity bugs.
+- Added to issues and Pull Requests relating to a low severity bugs.
 
 </details>
 
