@@ -5,6 +5,9 @@
     --ifm-color-primary-dark: #FFEC3D;
     --ifm-color-primary: #FFEC3D;
     --ifm-menu-color-active: #FFEC3D;
+    --aa-primary-color-rgb: #FFEC3D !important;
+    --aa-text-color-rgb: #FFEC3D !important;
+    --aa-text-color-rgb: #FFEC3D !important;
 }
 
 
@@ -18,4 +21,11 @@ a:hover {
 
 .breadcrumbs__item--active .breadcrumbs__link {
     color: #FFEC3D;
+}
+
+.aa-DetachedSearchButton {
+    color: #FFEC3D !important;
+}
+.aa-DetachedSearchButtonIcon {
+    color: #FFEC3D !important;
 }

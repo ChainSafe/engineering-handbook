@@ -67,21 +67,18 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: 'TETCOU3F65',
-  
-        // Public API key: it is safe to commit it
-        apiKey: '5e298c0818e073ea7877ad8e9cddf117',
-  
-        indexName: 'engineering-handbook',
-  
-        // Optional: see doc section below
-        contextualSearch: true,
-        searchPagePath: false
-      },
+      }
     }),
+    plugins: [
+      [
+        require.resolve("@cmfcmf/docusaurus-search-local"),
+        {
+          indexBlog: false,
+          indexPages: false,
+          indexDocs: true,
+        },
+      ],
+    ],
 };
 
 module.exports = config;
