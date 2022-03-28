@@ -1,12 +1,15 @@
+---
+sidebar_position: 1
+---
 # Development
 
-<aside>
+:::caution
     🚨 If a repository is owned by ChainSafe there is no reason to fork the repository for pull requests.
-</aside>
+:::
 
-<aside>
+:::caution
     🚨  The default branch should be `main`. For the majority of the time, pull requests will be merged into the `main` branch.
-</aside>
+:::
 
 
 # 1. Create a branch off of `main`

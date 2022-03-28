@@ -1,8 +1,11 @@
+---
+sidebar_position: 3
+---
 # Peer Review
 
+:::note
 Document everything, communicate with your team transparently, review together.
-
-# Guidelines
+:::
 
 ## Documentation
 

@@ -1,10 +1,13 @@
+---
+sidebar_position: 1
+---
 # Setup Github Repository
 
 These are steps to setup a new repository under the ChainSafe Github organization:
 
-<aside>
+:::info
 💡 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
-</aside>
+:::
 
 # Project Creation
 
@@ -15,11 +18,11 @@ These are steps to setup a new repository under the ChainSafe Github organizatio
 
 1. Go to `Settings` → `Manage Access`. 
 2.  Add the team and give them **Write** permissions. Avoid inviting individuals, there should be a team on the organization that has everyone working on the project. 
-    1. If the team or the admin team doesn't exist, please reach out to an org owner (see note above).
+    1. If the team or the admin team doesn't exist, please reach out to an org owner (see note above)
 
 ![create_repository_assets/Screenshot_2020-05-07_11-28-00.png](create_repository_assets/Screenshot_2020-05-07_11-28-00.png)
 
-3. Add the admin team (should be "<team-name>-admin") and give them **Admin** permissions
+3. Add the admin team (should be `<team-name>-admin`) and give them **Admin** permissions
 
 4. Add the **ChainSafe** team with `Read` permissions
 
@@ -75,10 +78,7 @@ A continuous integration (CI) service must be setup before code is committed. We
 2. Include your test runner
 3. If possible, add a build step
 
-You should use recommended CI for your programming language which can be found at:
-{% content-ref url="../tech-stack/readme.md" %}
-[readme.md](../tech-stack/readme.md)
-{% endcontent-ref %}
+You should use recommended CI for your programming language which can be found at [Tech Stack](../2_tech-stack/_category_.yml)
 
 # CLA
 
@@ -100,7 +100,6 @@ Once everything has been done, and setup, reach out to your Head of Engineering 
 
 <details>
     <summary>Click to see labels and their meaning</summary>
-
 
 ### Status
 

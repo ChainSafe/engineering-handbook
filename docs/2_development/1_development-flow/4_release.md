@@ -1,3 +1,6 @@
+---
+sidebar_position: 4
+---
 # Release
 
 This is a step-by-step release guide for ChainSafe projects
@@ -38,10 +41,13 @@ Tags should resemble the following formats: `v0.1.1-alpha`, `v0.1.1-beta`, `v0.1
 
 Create a QA branch, and perform the necessary QA checks (outlined per project), if the requirements are met, make an announcement in the necessary channel, and perform any required code freezes.
 
-**Note:** If it is an alpha, or beta release there may be known bugs, in which case you may not need to be as thorough with the QA process.
+:::note
+If it is an alpha, or beta release there may be known bugs, in which case you may not need to be as thorough with the QA process.
+:::
 
-
-## TODO: refactor following sections into language specific (npm, rust crates, go smart contracts etc) including CD pipelines.
+:::danger
+TODO: Refactor following sections into language specific (npm, rust crates, go smart contracts etc) including CD pipelines.
+:::
 # 4. Cut The Release
 
 Once you are release ready, cut the appropriate release branch (per the branching guidelines), and tag the related commit using `git tag <release>` (eg: `git tag v0.1.1-RC2`). Push the tag to the remote rep `git push <repo-name> <tag-name>`. On Github create a release and assign it the appropriate tag that was generate previously. The title of the release should begin with the version number, and if you choose so, a snappy title afterwards.
