@@ -1,0 +1,21 @@
+.menu__link--active {
+    color: #FFEC3D;
+}
+:root {
+    --ifm-color-primary-dark: #FFEC3D;
+    --ifm-color-primary: #FFEC3D;
+    --ifm-menu-color-active: #FFEC3D;
+}
+
+
+a {
+    color: #FFEC3D;
+}
+
+a:hover {
+    color: #FFEC3D;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+    color: #FFEC3D;
+}
