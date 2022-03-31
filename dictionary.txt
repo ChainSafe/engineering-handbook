@@ -28,5 +28,7 @@ codebase
 Slackbot
 linter
 Readme
+README
+bugfix
 Goto
 Rebase
