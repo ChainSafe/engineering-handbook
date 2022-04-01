@@ -32,3 +32,4 @@ README
 bugfix
 Goto
 Rebase
+Dependabot
