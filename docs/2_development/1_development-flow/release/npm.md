@@ -14,9 +14,10 @@ Make sure repository is using squash merging and branching rules as described in
 For automatic releasing and version bumps you should use semantic Pull Request titles.
 
 Semantic keywords and their meaning:
-- **fix** - your PR contains bugfix - Example PR: `fix: resolved bug with automatic releasing`
-- **feat** - your PR contains new feature - Example PR: `feat: added new api endpoint`
+- **fix** - your PR contains bugfix which will bump patch version - Example PR: `fix: resolved bug with automatic releasing`
+- **feat** - your PR contains new feature which will bump minor version - Example PR: `feat: added new api endpoint`
 - **chore** - your PR contains trivial changes like editing README, bumping packages versions etc. - Example PR: `chore: bumped typescript dependency`
+- **feat!** or **fix!** (notice exclamation)- your PR contains breaking change which will trigger major version update
 
 
 You can use following github action to ensure your Pull Requests follow this convention.
@@ -102,3 +103,19 @@ jobs:
 :::note
 Feel free to extend this flow with nightly/alpha/beta releases.
 :::
+
+### Dependabot
+
+Dependabot updates may or may not conform to our semantic rules.
+Following configuration should ensure this happens:
+
+```yaml title=".github/.dependabot.yaml"
+version: 2
+updates:
+  - package-ecosystem: "yarn"
+    allow:
+      # Allow both direct and indirect updates for all packages
+      - dependency-type: "production"
+    commit-message:
+      prefix: "chore: "
+```
