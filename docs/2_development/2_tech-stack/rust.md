@@ -28,7 +28,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - Vim is shipped in most linux distribution and it is a bare minimal configuration.
     - Unlike Clion or VSCode which has a built-in way to install a plugin, but in vim,
       be able to install a plugin in vim, first you need to install a plugin manager first.
-      We recommend you to use [vim-plug](https://github.com/junegunn/vim-plug)
+      We recommend you to use [vim-plug](https://github.com/junegunn/vim-plug).
       Then the install this plugins using the `vim-plug` plugin manager
         - nerdtree
         - vim-fugitive
