@@ -17,7 +17,7 @@ Semantic keywords and their meaning:
 - **fix** - your PR contains bugfix which will bump patch version - Example PR: `fix: resolved bug with automatic releasing`
 - **feat** - your PR contains new feature which will bump minor version - Example PR: `feat: added new api endpoint`
 - **chore** - your PR contains trivial changes like editing README, bumping packages versions etc. - Example PR: `chore: bumped typescript dependency`
-- **feat!** or **fix!** (notice exclamation)- your PR contains breaking change which will trigger major version update
+- **feat!** or **fix!** (notice exclamation)- your PR contains breaking change which will trigger major version update - Example PR: `feat!: new api endpoint, old one deprecated`
 
 
 You can use following github action to ensure your Pull Requests follow this convention.
