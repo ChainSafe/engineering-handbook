@@ -29,11 +29,12 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - Unlike Clion or VSCode which has a built-in way to install a plugin, but in vim,
       be able to install a plugin in vim, first you need to install a plugin manager first.
       We recommend you to use [vim-plug](https://github.com/junegunn/vim-plug)
-                - nerdtree
-                - vim-fugitive
-                - rust.vim
-                - youcompleteme
-                - coc-rust-analyzer
+      Then the install this plugins using the `vim-plug` plugin manager
+        - nerdtree
+        - vim-fugitive
+        - rust.vim
+        - youcompleteme
+        - coc-rust-analyzer
     - Similar to vim
         - Neovim, which adds a lot of improvement on the language server backend.
         - kakoune editor, an alternative editor to vim with different order of the modal editing actions
