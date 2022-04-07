@@ -6,6 +6,7 @@ ChainSafe
 ChainSafe's
 Changelog
 changelog
+checksums
 CLA
 Clippy
 codebase
@@ -32,8 +33,11 @@ PRs
 Readme
 README
 Rebase
+runnable
 RustFMT
+semver
 Slackbot
+subpackages
 TBD
 TODO
 unpatched
