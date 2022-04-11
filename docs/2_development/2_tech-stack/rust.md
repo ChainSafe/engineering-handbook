@@ -44,7 +44,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
         - youcompleteme
         - coc-rust-analyzer
     - Similar to vim
-        - Neovim, which adds a lot of improvement on the language server backend.
+        - Neovim, which adds a lot of improvement on the language server backend .
         - kakoune editor, an alternative editor to vim with different order of the modal editing actions
 
 #### Insanity
