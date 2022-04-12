@@ -3,10 +3,13 @@
 ## Table of contents
 
 - [Project structure](#Project-structure)
+  - [Modules layout perspective](#Modules-layout-perspective)
+  - [Business logic perspective](#Business-logic-perspective)
+  - [Other tips](#Other-tips)
 
 ## Project structure
 
-### The file structure
+### Modules layout perspective
 
 In the following, we assume your application name is `myapp` and the project name is `github.com/ChainSafe/repo`.
 
@@ -38,7 +41,7 @@ The file structure should look as follow:
 The `go.mod` file holds the project name, Go suggested version and dependencies of your Go project.
 The `go.sum` should not be modified by hand, and only contains checksums for the dependencies.
 
-### The `cmd` directory
+#### The `cmd` directory
 
 The `cmd` directory contains one directory per application.
 
@@ -60,7 +63,7 @@ Its code should be minimal, the bulk of the code should reside in the `internal`
 
 📖 The reading of the `main.go` file should be quick and provide a solid understanding of what the top moving pieces are.
 
-### The `internal` directory
+#### The `internal` directory
 
 Since Go 1.4, the [internal directory](https://golang.org/doc/go1.4#internalpackages) is treated specially.
 
@@ -93,7 +96,7 @@ But **cannot be imported by another Go project**, that is outside of `github.com
 
 By default, you should place all your packages in the `internal` directory by creating a directory with the name of the package inside.
 
-### The `pkg` directory
+#### The `pkg` directory
 
 Unlike `internal`, the `pkg` directory is more of a convention name.
 
@@ -127,7 +130,7 @@ It's always good practice to have all your packages in the `internal` directory,
 1. Be stable, ideally with full (and *deep*) unit testing coverage
 2. Have their exported Go API stable
 
-### The `examples` directory
+#### The `examples` directory
 
 The `examples` directory should contain runnable examples to showcase your publicly exported Go API from `pkg`.
 
@@ -141,18 +144,7 @@ For example:
         └── main.go
 ```
 
-### Other tips
-
-- Package naming
-  - Your package name should be the same as the directory containing it, **except for the `main` package**
-  - Use single words for package names
-  - Do not use generic names for package names such as `utils` or `helpers`
-- Package nesting
-  - Try to avoid nesting packages by default
-  - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
-  - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
-
-### Go libraries
+#### Go libraries
 
 If you are writing a Go library with a single purpose, you might want to have your exported public Go API at the top level.
 For example with this file structure:
@@ -182,3 +174,19 @@ The differences are as follows:
 Note that most of your code should still reside in the `internal` directory, and you should keep your public Go API to a minimum.
 
 If it really makes sense, you may have directories at the top level to split the import statements.
+
+### Business logic perspective
+
+See [medium.com/@benbjohnson/standard-package-layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+
+### Other tips
+
+- Package naming
+  - Your package name should be the same as the directory containing it, **except for the `main` package**
+  - Use single words for package names
+  - Do not use generic names for package names such as `utils` or `helpers`
+- Package nesting
+  - Try to avoid nesting packages by default
+  - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
+  - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
+
