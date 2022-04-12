@@ -1,5 +1,6 @@
 .github
 Afri
+bugfix
 ChainBridge
 ChainSafe
 ChainSafe's
@@ -9,6 +10,7 @@ CLA
 Clippy
 codebase
 codeowners
+Dependabot
 Devops
 eg
 eg.
@@ -28,6 +30,7 @@ Polkadot
 PR
 PRs
 Readme
+README
 Rebase
 RustFMT
 Slackbot

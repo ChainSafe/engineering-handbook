@@ -45,10 +45,11 @@ Create a QA branch, and perform the necessary QA checks (outlined per project), 
 If it is an alpha, or beta release there may be known bugs, in which case you may not need to be as thorough with the QA process.
 :::
 
-:::danger
-TODO: Refactor following sections into language specific (npm, rust crates, go smart contracts etc) including CD pipelines.
-:::
-# 4. Cut The Release
+<hr/>
+
+**Check following sections for details on releasing for different platforms**
+
+<!-- # 4. Cut The Release
 
 Once you are release ready, cut the appropriate release branch (per the branching guidelines), and tag the related commit using `git tag <release>` (eg: `git tag v0.1.1-RC2`). Push the tag to the remote rep `git push <repo-name> <tag-name>`. On Github create a release and assign it the appropriate tag that was generate previously. The title of the release should begin with the version number, and if you choose so, a snappy title afterwards.
 
@@ -58,4 +59,4 @@ Generate a changelog explaining the changes made in this release, optionally you
 
 # 6. Generate The Binaries
 
-If the repository requires any binaries, generate them along with their checksum, and attach them to the release from `step 4`. If there is any publishing needed, such as npm, this it the time to do so.
+If the repository requires any binaries, generate them along with their checksum, and attach them to the release from `step 4`. If there is any publishing needed, such as npm, this it the time to do so. -->
