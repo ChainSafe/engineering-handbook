@@ -1,6 +1,7 @@
 .github
 Afri
 bugfix
+Buterin
 ChainBridge
 ChainSafe
 ChainSafe's
@@ -12,6 +13,10 @@ codebase
 codeowners
 Dependabot
 Devops
+E4
+E6
+E3
+E2
 eg
 eg.
 Filecoin
@@ -37,6 +42,7 @@ Slackbot
 TBD
 TODO
 unpatched
+Vitalik
 walkthrough
 Walkthroughs
 Zenhub
