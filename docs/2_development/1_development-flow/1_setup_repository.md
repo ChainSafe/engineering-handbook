@@ -9,12 +9,12 @@ These are steps to setup a new repository under the ChainSafe Github organizatio
 💡 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
 :::
 
-# Project Creation
+## Project Creation
 
 1. Create the project in the ChainSafe organization on Github
     1. If you do not have permission reach out to an org owner (see note above).
 
-# Setup Team Permissions
+## Setup Team Permissions
 
 1. Go to `Settings` → `Manage Access`. 
 2.  Add the team and give them **Write** permissions. Avoid inviting individuals, there should be a team on the organization that has everyone working on the project. 
@@ -28,7 +28,7 @@ These are steps to setup a new repository under the ChainSafe Github organizatio
 
 - Note: Adding the **ChainSafe** team will give access to the entire org. If the project is sensitive consider not including this team.
 
-# Branch Protection
+## Branch Protection
 
 1. Goto `Settings` → `Branches`
 2. If this is a new repository, choose `Add Rule`. In this example you can see a rule already exists for `master` branch, in which case you can select `Edit` to modify it. 
@@ -45,7 +45,7 @@ Some additional options:
 - **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repositories.
 - **Require status checks to pass before merging**: this should be enabled if CI (eg. Github Actions) is used in the repository.
 
-# Disable Merge Commits & Rebase
+## Disable Merge Commits & Rebase
 
 1. Goto `Settings`  and scroll down to `Merge button`
     
@@ -56,7 +56,7 @@ Some additional options:
 
 3. Enable `Automatically delete head branches`. This automatically deletes branches once they are merged to help keep the repository organized.
 
-# Basic Readme
+## Basic Readme
 
 Please see other ChainSafe repositories for examples of what to include. 
 
@@ -66,11 +66,11 @@ Forest: [https://github.com/chainsafe/forest](https://github.com/chainsafe/fores
 
 Lodestar: [https://github.com/ChainSafe/lodestar/](https://github.com/ChainSafe/lodestar/)
 
-# License
+## License
 
 A license file must be added to the root of the repository in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repository has matching license headers. Please reach out to `David Ansermino` for more details. 
 
-# Continuous Integration
+## Continuous Integration
 
 A continuous integration (CI) service must be setup before code is committed. We strongly advise using Github Actions. Even though you may not know what the repository setup structure may resemble, you will know the basic language that will be used, therefore the most simple CI can be setup:
 
@@ -80,23 +80,23 @@ A continuous integration (CI) service must be setup before code is committed. We
 
 You should use recommended CI for your programming language which can be found at [Tech Stack](../2_tech-stack/_category_.yml)
 
-# CLA
+## CLA
 
 Please use [https://cla-assistant.io/](https://cla-assistant.io/). This will be automatically enabled for all public repositories in the org (status check needs to be required).
 
-# Code Owners
+## Code Owners
 
 Depending on the project, it might make sense to add a code owners file. Please reference the [github guide](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) for more information.
 
-# License Checker
+## License Checker
 
 [WIP]
 
-# Review
+## Review
 
 Once everything has been done, and setup, reach out to your Head of Engineering person to double check that everything is setup accordingly.
 
-# Labels
+## Labels
 
 <details>
     <summary>Click to see labels and their meaning</summary>
@@ -197,18 +197,18 @@ Priority: P3
 
 </details>
 
-# Slack notifications
+## Slack notifications
 <details>
   <summary>Optional! Click to see.</summary>
 
-## Overview
+### Overview
 
 There are two methods for receiving various notifications from GitHub via Slack.
 
 - **Scheduled Reminders**: These allow you receive reminders at some interval about pending PRs on specific repositories in a Slack channel.
 - **Slackbot Notifications**: Enabling these will cause actions on GitHub to trigger notifications on Slack.
 
-## Slackbot Notifications
+### Slackbot Notifications
 
 The instructions for configuring the GitHub Slackbot can be found here: [https://github.com/integrations/slack#configuration](https://github.com/integrations/slack#configuration)
 
@@ -227,7 +227,7 @@ You can check which features are enabled in a channel with:
 </details>
 
 
-# Scheduled Reminders
+## Scheduled Reminders
 
 Scheduled Reminders can be configured at the org level or the team level. It is recommend that you use the team level, as this allows team maintainers to setup and maintain them.
 
