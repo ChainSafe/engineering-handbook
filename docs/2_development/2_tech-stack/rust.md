@@ -35,7 +35,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 - **Sublime text**
     - [Sublime text](https://www.sublimetext.com/) a snappy text editor with syntax highlighting for a wide range of language syntax, including rust
 - **Lapce**
-    - [Lapce](https://github.com/lapce/lapce) is an opensource text editor written in rust for rust programmers who are are also fun of Vim
+    - [Lapce](https://github.com/lapce/lapce) is an opensource text editor written in rust for rust programmers who are also fun of Vim
     - Works out of the box for rust development without having to install any plugins
     - Experimental and in alpha stage
 - **Helix**
@@ -78,12 +78,12 @@ Using Clion and VSCode to open multiple projects at the same time would really b
 If you using less powerful device such as a laptop, then terminal base code editor such as Vim, Kakoune, or Helix would be ideal.
 These terminal base text editor is also viable for editing code and configurations remotely to a server, where graphical editor wouldn't be possible.
 
-Our overall recommendation would be CLion to easily get started and Vim for advance users.
+Our overall recommendation would be Clion to easily get started and Vim for advance users.
 Vim is frustrating and unintuitive to start at first, but it is really delightful once you get the hang of it, then you can just keep discovering new editing tricks.
 Opening multiple projects with Vim is instantaneous and only uses very little system resources.
 Vim also offers a great deal of flexibility and reproducibility. Let's say, you travel a lot and you need to use a new device as your new workstation.
 You can easily recreate the same editor configuration with your new device.
-This can be done by checking in your editor configurations `.vimrc` into your private repo, alongside with a shell script.
+This can be done by checking in your editor configurations `.vimrc` into your personal repository, alongside with a shell script.
 The shell script could contain the list of terminal commands to install `vim` and a plugin manger, then a command to copy the configuration files into you home directory.
 
 
