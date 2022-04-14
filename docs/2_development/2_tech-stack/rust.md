@@ -26,9 +26,9 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 - **Visual Studio code**
     - [VSCode](https://github.com/microsoft/vscode) for short, is an opensource code editor from Microsoft
     - Built on top of electron
-    - You can install the rust and rust-analyzer plugin in the Preferences
-    - With rust and rust-analyzer plugin the code editor intellisense and macro expansion is added into your code editor
-    - With the over growing marketplace you can install a lot of plugins into visual studio code alongside with rust and rust-analyzer
+    - You can install the rust and rust-analyzer plugin in the Preferences settings
+    - With rust and rust-analyzer plugin, intellisense and macro expansion will be usable in the code editor
+    - With the ever growing marketplace you can install a lot of plugins into visual studio code
 
 #### Intermediate
 - **Sublime text**
@@ -66,7 +66,11 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - you can install rust-analyzer as a plugin in Emacs
 
 #### Summary
-In summary, the choice of editor is really up to the users and it is affected by the skill level, the types of projects they are usually working with and the situation that they are in.
+In summary, the choice of editor is really up to the users and it is affected by :
+    - the skill level,
+    - the types of projects they are usually working with
+    - the current situation that they are in
+
 There are trade-offs to all of the editors. Making the developer experience more streamline requires great deal of processing of the code such as code indexing/re-indexing upon code changes.
 Clion IDE and VSCode requires a decent workstation since it needs to use a huge chunk of memory, and it could get real slow for big projects.
 Using Clion and VSCode to open multiple projects at the same time would really bring your workstation to its knees no matter how beefy your machine is.
@@ -79,7 +83,7 @@ Opening multiple projects with Vim is instantaneous and only uses very little sy
 Vim also offers a great deal of flexibility and reproducibility. Let's say, you travel a lot and you need to use a new device as your new workstation.
 You can easily recreate the same editor configuration with your new device.
 This can be done by checking in your editor configurations `.vimrc` into your private repo, alongside with a shell script.
-The shell script could contain the list of terminal commands to install `vim` and a plugin manger, and moving the `.vimrc` file into your home directory.
+The shell script could contain the list of terminal commands to install `vim` and a plugin manger, then a command to copy the configuration files into you home directory.
 
 
 ### Linter Configuration
