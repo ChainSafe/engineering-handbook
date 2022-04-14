@@ -11,6 +11,7 @@ CLA
 Clippy
 codebase
 codeowners
+de facto
 Dependabot
 Devops
 eg
@@ -20,6 +21,7 @@ Github
 github
 Github's
 Goto
+Ketelsen
 Kettensicherheitsschranksysteme
 linter
 Linter

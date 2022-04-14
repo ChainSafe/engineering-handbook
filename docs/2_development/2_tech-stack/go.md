@@ -177,7 +177,7 @@ If it really makes sense, you may have directories at the top level to split the
 
 ### Business logic perspective
 
-Beside official package layout recommendations describing packages structure and naming from the Go modules perspective, there is de facto standard named *Standard Package Layout* on how to organise your business logic, storage and abstractions.
+Beside official package layout recommendations describing packages structure and naming from the Go modules perspective, there is de facto standard named *Standard Package Layout* on how to organize your business logic, storage and abstractions.
 
 First time concept was described by [Ben Jonson in an article with the same name](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1). Another source of inspiration and a way to grasp the concept can be found in the beautiful [talk of Brain Ketelsen about Go best practices](https://www.youtube.com/watch?v=MzTcsI6tn-0).
 
