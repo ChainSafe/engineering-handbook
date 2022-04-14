@@ -6,10 +6,13 @@ ChainSafe
 ChainSafe's
 Changelog
 changelog
+checksums
 CLA
 Clippy
 codebase
 codeowners
+de
+facto
 Dependabot
 Devops
 eg
@@ -19,6 +22,7 @@ Github
 github
 Github's
 Goto
+Ketelsen
 Kettensicherheitsschranksysteme
 linter
 Linter
@@ -32,8 +36,11 @@ PRs
 Readme
 README
 Rebase
+runnable
 RustFMT
+semver
 Slackbot
+subpackages
 TBD
 TODO
 unpatched
