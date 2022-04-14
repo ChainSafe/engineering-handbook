@@ -22,7 +22,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Very polished IDE and streamlined workflow for code editing.
     - It comes with a cost at 200 USD / year, however there is [free license program](https://www.jetbrains.com/community/opensource/#support) you can apply for non-commercial opensource projects
-    - Chainsafe will get a license for you, ask your manager about it.
+    - ChainSafe will get a license for you, ask your manager about it.
 
 - **Visual Studio code**
     - [VSCode](https://github.com/microsoft/vscode) for short, is an opensource code editor from Microsoft
@@ -78,7 +78,7 @@ Using Clion and VSCode to open multiple projects at the same time would really b
 If you using less powerful device such as a laptop, then terminal base code editor such as Vim, Kakoune, or Helix would be ideal.
 These terminal base text editor is also viable for editing code and configurations remotely to a server, where graphical editor wouldn't be possible.
 
-Our overall recommendation is Vim.
+Our overall recommendation would be CLion to easily get started and Vim for advance users.
 Vim is frustrating and unintuitive to start at first, but it is really delightful once you get the hang of it, then you can just keep discovering new editing tricks.
 Opening multiple projects with Vim is instantaneous and only uses very little system resources.
 Vim also offers a great deal of flexibility and reproducibility. Let's say, you travel a lot and you need to use a new device as your new workstation.
