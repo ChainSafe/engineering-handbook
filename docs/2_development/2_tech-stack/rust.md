@@ -69,11 +69,18 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 In summary, the choice of editor is really up to the users and it is affected by the skill level, the types of projects they are usually working with and the situation that they are in.
 There are trade-offs to all of the editors. Making the developer experience more streamline requires great deal of processing of the code such as code indexing/re-indexing upon code changes.
 Clion IDE and VSCode requires a decent workstation since it needs to use a huge chunk of memory, and it could get real slow for big projects.
-Using Clion and VSCode to open multiple projects to at the same time would really bring your workstation to its knees no matter how beefy your machine is.
+Using Clion and VSCode to open multiple projects at the same time would really bring your workstation to its knees no matter how beefy your machine is.
 If you using less powerful device such as a laptop, then terminal base code editor such as Vim, Kakoune, or Helix would be ideal.
 These terminal base text editor is also viable for editing code and configurations remotely to a server, where graphical editor wouldn't be possible.
+
+Our overall recommendation is Vim.
 Vim is frustrating and unintuitive to start at first, but it is really delightful once you get the hang of it, then you can just keep discovering new editing tricks.
-Opening multiple projects with Vim is quick and only uses little resource.
+Opening multiple projects with Vim is instantaneous and only uses very little system resources.
+Vim also offers a great deal of flexibility and reproducibility. Let's say, you travel a lot and you need to use a new device as your new workstation.
+You can easily recreate the same editor configuration with your new device.
+This can be done by checking in your editor configurations `.vimrc` into your private repo, alongside with a shell script.
+The shell script could contain the list of terminal commands to install `vim` and a plugin manger, and moving the `.vimrc` file into your home directory.
+
 
 ### Linter Configuration
 Clippy and RustFMT are doing a pretty good job nowadays.
