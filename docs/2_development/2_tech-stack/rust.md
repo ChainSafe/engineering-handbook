@@ -20,7 +20,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 - **Clion**
     - Clion is a fully featured and powerful IDE from Jetbrains, the creator of IntelliJ IDE
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
-    - Very polished IDE and streamlined workflow for code editing.
+    - Well polished IDE and streamlined workflow for code editing.
     - It comes with a cost at 200 USD / year, however there is [free license program](https://www.jetbrains.com/community/opensource/#support) you can apply for non-commercial opensource projects
     - ChainSafe will get a license for you, ask your manager about it.
 
