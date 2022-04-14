@@ -43,7 +43,7 @@ Zenhub
 zenhub
 Clion
 clion
-jetbrains
+Jetbrains
 IntelliJ
 USD
 VSCode
@@ -55,6 +55,6 @@ youcompleteme
 coc-rust-analyzer
 Neovim
 backend
-kakoune
-emacs
+Kakoune
+Emacs
 
