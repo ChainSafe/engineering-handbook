@@ -13,43 +13,56 @@ There are multiple options to work with rust projects, ranging from simple text 
 Nowadays, there is a blurred line on what's considered an IDE or a code editor, as installing multiple plugins in a code editor would have the feature in par with that of a fully featured IDE.
 As a rule of thumb always use the right tools for the right job.
 Choice of IDE is very dependent on the skill level, and how much time you are willing to put into customizing your own code editing workflow.
-You'd be considered insane if you use vim to write java code.
+You'd be considered insane if you use Vim to write java code.
 Luckily rust code is shorter to write that it is practical to just use very simple editing tools.
 
 #### Easy
 - **Clion**
-    - Clion is a fully featured and powerful IDE from jetbrains, the creator of IntelliJ IDE
-    - You can then install the rust plugin for clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
-    - It comes with a cost at 200 USD / year.
+    - Clion is a fully featured and powerful IDE from Jetbrains, the creator of IntelliJ IDE
+    - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Very polished IDE and streamlined workflow for code editing.
+    - It comes with a cost at 200 USD / year, however there is [free license program](https://www.jetbrains.com/community/opensource/#support) you can apply for non-commercial opensource projects
 
-- **Visual studio code**
-    - VSCode is an opensource code editor from Microsoft
-    - You can install the rust and rust-analyzer plugin in the Preferences.
-    - With rust and rust-analyzer plugin the code editor intellisense and macro expansion is added into your code editor.
+- **Visual Studio code**
+    - [VSCode](https://github.com/microsoft/vscode) for short, is an opensource code editor from Microsoft
+    - Built on top of electron
+    - You can install the rust and rust-analyzer plugin in the Preferences
+    - With rust and rust-analyzer plugin the code editor intellisense and macro expansion is added into your code editor
     - With the over growing marketplace you can install a lot of plugins into visual studio code alongside with rust and rust-analyzer
+
+#### Intermediate
+- **Sublime text**
+    - [Sublime text](https://www.sublimetext.com/) a snappy text editor with syntax highlighting for a wide range of language syntax, including rust
+- **Lapce**
+    - [Lapce](https://github.com/lapce/lapce) is an opensource text editor written in rust for rust programmers who are are also fun of Vim
+    - Works out of the box for rust development without having to install any plugins
+    - Experimental and in alpha stage
+- **Helix**
+    - It the same vein as lapce but for use inside the terminal
 
 
 #### Advance
 - **VIM**
-    - Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient.
-    - Vim is shipped in most linux distribution and it is a bare minimal configuration.
-    - Unlike Clion or VSCode which has a built-in way to install a plugin, but in vim,
-      be able to install a plugin in vim, first you need to install a plugin manager first.
-      We recommend you to use [vim-plug](https://github.com/junegunn/vim-plug).
-      Then the install this plugins using the `vim-plug` plugin manager
-        - nerdtree
-        - vim-fugitive
-        - rust.vim
-        - youcompleteme
-        - coc-rust-analyzer
-    - Similar to vim
-        - Neovim, which adds a lot of improvement on the language server backend .
-        - kakoune editor, an alternative editor to vim with different order of the modal editing actions
+    - Vim is a highly configurable and powerful text editor which gives its user the most efficient way to edit text regardless of the size, language and format
+    - Vim is shipped in most linux distribution and it is a bare minimal configuration
+    - Unlike Clion or VSCode which has a built-in way to install a plugin, in Vim, to be able to install a plugin you need to install a plugin manager first.
+      [Vimawesome](https://vimawesome.com/) is an excellent resource for finding Vim plugins and instructions on how to install plugins for each different plugin manager.
+      We recommend you to use [vim-plug](https://github.com/junegunn/vim-plug) for the plugin manager.
+      Then the install these plugins using the `vim-plug` plugin manager:
+        - [nerdtree](https://vimawesome.com/plugin/nerdtree-red)
+        - [vim-fugitive](https://vimawesome.com/plugin/fugitive-vim)
+        - [rust.vim](https://vimawesome.com/plugin/rust-vim-superman)
+        - [youcompleteme](https://vimawesome.com/plugin/youcompleteme)
+        - [coc-rust-analyzer](https://github.com/fannheyward/coc-rust-analyzer)
+        - [fzf](https://vimawesome.com/plugin/fzf)
+        - [gruvbox](https://vimawesome.com/plugin/gruvbox)
+    - Similar to Vim
+        - [Neovim](https://neovim.io/), which adds a lot of improvement on the language server backend
+        - [Kakoune](https://kakoune.org/) editor, an alternative editor to Vim with different order of the modal editing actions
 
 #### Insanity
 - **Emacs**
-    - emacs is a text editor, which happens to ship an entire Operating system with it.
+    - Emacs is a text editor, which happens to ship an entire Operating system with it
     - you can install rust-analyzer as a plugin in emacs
 
 ### Linter Configuration
