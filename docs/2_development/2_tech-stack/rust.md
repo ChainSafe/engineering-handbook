@@ -68,10 +68,9 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 
 #### Summary
 In summary, the choice of editor is really up to the users and it is affected by the following:
-
-    - skill level,
-    - types of projects they are usually working with
-    - current situation that they are in
+ - skill level,
+ - types of projects they are usually working with
+ - current situation that they are in
 
 There are trade-offs to all of the editors. Making the developer experience more streamline requires great deal of processing of the code such as code indexing/re-indexing upon code changes.
 Clion IDE and VSCode requires a decent workstation since it needs to use a huge chunk of memory, and it could get real slow for big projects.
