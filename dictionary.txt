@@ -11,7 +11,8 @@ CLA
 Clippy
 codebase
 codeowners
-de facto
+de
+facto
 Dependabot
 Devops
 eg
