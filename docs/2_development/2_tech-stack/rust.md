@@ -22,13 +22,14 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Very polished IDE and streamlined workflow for code editing.
     - It comes with a cost at 200 USD / year, however there is [free license program](https://www.jetbrains.com/community/opensource/#support) you can apply for non-commercial opensource projects
+    - Chainsafe will get a license for you, ask your manager about it.
 
 - **Visual Studio code**
     - [VSCode](https://github.com/microsoft/vscode) for short, is an opensource code editor from Microsoft
     - Built on top of electron
     - You can install the rust and rust-analyzer plugin in the Preferences settings
-    - With rust and rust-analyzer plugin, intellisense and macro expansion will be usable in the code editor
-    - With the ever growing marketplace you can install a lot of plugins into visual studio code
+    - With rust and [rust-analyzer plugin](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer), intellisense and macro expansion will be usable in the code editor
+    - With the ever growing [marketplace](https://marketplace.visualstudio.com/vscode) you can install a wide variety of plugins into the editor
 
 #### Intermediate
 - **Sublime text**
