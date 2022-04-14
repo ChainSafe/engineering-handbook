@@ -38,7 +38,7 @@ Luckily rust code is shorter to write that it is practical to just use very simp
     - Works out of the box for rust development without having to install any plugins
     - Experimental and in alpha stage
 - **Helix**
-    - It the same vein as lapce but for use inside the terminal
+    - It the same vein as Lapce but for use inside the terminal
 
 
 #### Advance
@@ -63,7 +63,17 @@ Luckily rust code is shorter to write that it is practical to just use very simp
 #### Insanity
 - **Emacs**
     - Emacs is a text editor, which happens to ship an entire Operating system with it
-    - you can install rust-analyzer as a plugin in emacs
+    - you can install rust-analyzer as a plugin in Emacs
+
+#### Summary
+In summary, the choice of editor is really up to the users and it is affected by the skill level, the types of projects they are usually working with and the situation that they are in.
+There are trade-offs to all of the editors. Making the developer experience more streamline requires great deal of processing of the code such as code indexing/re-indexing upon code changes.
+Clion IDE and VSCode requires a decent workstation since it needs to use a huge chunk of memory, and it could get real slow for big projects.
+Using Clion and VSCode to open multiple projects to at the same time would really bring your workstation to its knees no matter how beefy your machine is.
+If you using less powerful device such as a laptop, then terminal base code editor such as Vim, Kakoune, or Helix would be ideal.
+These terminal base text editor is also viable for editing code and configurations remotely to a server, where graphical editor wouldn't be possible.
+Vim is frustrating and unintuitive to start at first, but it is really delightful once you get the hang of it, then you can just keep discovering new editing tricks.
+Opening multiple projects with Vim is quick and only uses little resource.
 
 ### Linter Configuration
 Clippy and RustFMT are doing a pretty good job nowadays.
