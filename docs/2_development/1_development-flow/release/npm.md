@@ -57,6 +57,13 @@ jobs:
 
 Following github action will ensure that above flow is working.
 
+:::caution
+
+Automatic Pull Request cannot trigger workflow so required status checks cannot pass.
+You can either remove requirement for status checks to pass or set GITHUB_TOKEN to your Github PAT token.
+
+:::
+
 ```yaml title="/.github/workflows/cd.yaml"
 name: Release
 on:

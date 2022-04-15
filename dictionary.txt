@@ -21,6 +21,7 @@ Filecoin
 Github
 github
 Github's
+GITHUB_TOKEN
 Goto
 Ketelsen
 Kettensicherheitsschranksysteme
