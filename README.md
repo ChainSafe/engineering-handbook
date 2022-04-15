@@ -1,6 +1,6 @@
-# ChainSafe Engineering Handbook
+# ChainSafe Documentation Starter
 
-This handbook is built using [Docusaurus 2](https://docusaurus.io/), a modern static docs generator.
+This starter is built using [Docusaurus 2](https://docusaurus.io/), a modern static docs generator.
 
 ### Installation
 
