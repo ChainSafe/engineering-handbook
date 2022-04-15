@@ -4,6 +4,14 @@ sidebar_position: 1
 sidebar_label: Intro
 ---
 
-# ChainSafe Engineering Handbook
+# ChainSafe Documentation Starter
 
-Welcome to ChainSafe's Engineering Handbook!
+Welcome to ChainSafe's Documentation Starter!
+
+
+```mermaid
+graph TD;
+    A{Simple graph using Mermaid} --> B
+    B --> C
+    B --> D
+```

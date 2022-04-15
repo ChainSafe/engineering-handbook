@@ -1,8 +1,5 @@
 ChainSafe
 ChainSafe's
-TBD
-Devops
-ChainSafe
-ChainSafe's
 Devops
 Organisation
+TBD
