@@ -48,7 +48,7 @@ IntelliJ
 USD
 VSCode
 opensource
-intellisense
+IntelliSense
 linux
 nerdtree
 youcompleteme
