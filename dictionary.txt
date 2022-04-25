@@ -11,8 +11,9 @@ CLA
 Clippy
 codebase
 codeowners
-de
+CTO
 facto
+de
 Dependabot
 Devops
 eg
@@ -21,6 +22,7 @@ Filecoin
 Github
 github
 Github's
+GITHUB_TOKEN
 Goto
 golangci-lint
 Ketelsen

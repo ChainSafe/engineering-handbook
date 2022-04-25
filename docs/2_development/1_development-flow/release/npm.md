@@ -46,6 +46,7 @@ jobs:
             feat
             chore
           validateSingleCommit: true #single commit can ovveride squash merge commit message
+          validateSingleCommitMatchesPrTitle: false
 ```
 
 ### Cutting release
@@ -55,6 +56,13 @@ jobs:
 3. After merging Release Pull Request, package will be published on npm and release with changelog created on github
 
 Following github action will ensure that above flow is working.
+
+:::caution
+
+Automatic Pull Request cannot trigger workflow so required status checks cannot pass.
+You can either remove requirement for status checks to pass or set GITHUB_TOKEN to your Github PAT token.
+
+:::
 
 ```yaml title="/.github/workflows/cd.yaml"
 name: Release
