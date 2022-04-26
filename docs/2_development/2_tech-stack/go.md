@@ -203,7 +203,7 @@ go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45
 
 Together with a `.golangci.yml` at the root of your project:
 
-```yml
+```yml title=".golangci.yml"
 run:
   skip-dirs:
     - .github
