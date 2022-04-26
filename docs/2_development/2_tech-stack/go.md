@@ -296,7 +296,7 @@ linters:
 For your CI, you should have lint Github job. For example:
 
 
-```yml
+```yml title=".github/workflows/lint.yaml"
 on:
   pull_request:
 name: Linting
