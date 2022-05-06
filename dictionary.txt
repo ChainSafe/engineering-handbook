@@ -24,10 +24,12 @@ github
 Github's
 GITHUB_TOKEN
 Goto
+golangci-lint
 Ketelsen
 Kettensicherheitsschranksysteme
 linter
 Linter
+linters
 middleware
 Mina
 npm
