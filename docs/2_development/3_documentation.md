@@ -10,7 +10,7 @@ to have best documentation possible.
 
 ## Libraries and Tools
 
-[Docosaurus 2](https://docusaurus.io/) is used for writing documentation for libraries and tools
+[Docusaurus 2](https://docusaurus.io/) is used for writing documentation for libraries and tools
 because it's open-sourced, highly customizable allows writing documentation in markdown
 and we can deploy it everywhere (including IPFS).
 
@@ -19,7 +19,7 @@ and we can deploy it everywhere (including IPFS).
 There is [documentation starter repository](https://github.com/ChainSafe/documentation-starter) with a ChainSafe color scheme which you can use to jump-start your project.
 Even though the repository is "Template Repository" I would suggest not to use it as a template as it's going to 
 be very hard to pull new changes from the starter repository (because of unrelated git history).
-Beter way to do it is to choose "Import repository" option and put URL of the starter repository (https://github.com/ChainSafe/documentation-starter).
+Better way to do it is to choose "Import repository" option and put URL of the starter repository (https://github.com/ChainSafe/documentation-starter).
 
 :::caution
 
@@ -43,7 +43,7 @@ a one-time setup for which, if you don't have access to ChainSafe's Render accou
 WIP
 
 ### Additional resources
-- <a href="/pages/gitbook-migration" target="_blank">Migrating from Gitbook</a>
+- <a href="/pages/gitbook-migration" target="_blank">Migrating from GitBook</a>
 
 
 ## Rest API
