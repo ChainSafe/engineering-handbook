@@ -4,10 +4,17 @@ Our most notable Rust stack:
 * https://github.com/ChainSafe/mina-rs (Mina Rust)
 * https://github.com/ChainSafe/chainbridge-substrate (ChainBridge Substrate)
 * https://github.com/ChainSafe/PINT (Polkadot Index Network Token)
+* [and others](https://github.com/chainsafe?q=&type=all&language=rust&sort=)
 
-### Repository Structure
+## Repository Structure
 
-### IDE Configurations
+:::note
+
+TBD
+
+:::
+
+## IDE Configurations
 
 There are multiple options to work with rust projects, ranging from simple text editors to language-aware IDE.
 Nowadays, there is a blurred line between what's considered an IDE or a code editor, as installing multiple plugins in a code editor would have the feature on par with that of a fully-featured IDE.
@@ -16,13 +23,12 @@ Choice of IDE is very dependent on the skill level, and how much time you are wi
 You'd be considered insane if you use Vim to write java code.
 Luckily rust code is shorter to write so it is practical to just use very simple editing tools.
 
-#### Easy
+### Easy
 - **Clion**
     - Clion is a fully-featured and powerful IDE from Jetbrains, the creator of IntelliJ IDE
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Well-polished IDE and streamlined workflow for code editing.
-    - It comes with a cost of 200 USD / year, however, there is [a free license program](https://www.jetbrains.com/community/opensource/#support) you can apply for non-commercial opensource projects
-    - ChainSafe will get a license for you, ask your manager about it.
+    - ChainSafe will get a license for you - [Read more](../../5_the-formal-stuff/process_and_policy.md#requesting-license)
 
 - **Visual Studio code**
     - [VSCode](https://github.com/microsoft/vscode) for short, is an open source code editor from Microsoft
@@ -31,7 +37,7 @@ Luckily rust code is shorter to write so it is practical to just use very simple
     - With rust and [rust-analyzer plugin](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer), IntelliSense and macro expansion will be usable in the code editor
     - With the ever-growing [marketplace](https://marketplace.visualstudio.com/vscode) you can install a wide variety of plugins into the editor
 
-#### Intermediate
+### Intermediate
 - **Sublime text**
     - [Sublime text](https://www.sublimetext.com/) a snappy text editor with syntax highlighting for a wide range of language syntax, including rust
 - **Lapce**
@@ -42,7 +48,7 @@ Luckily rust code is shorter to write so it is practical to just use very simple
     - It is the same vein as Lapce but for use inside the terminal
 
 
-#### Advance
+### Advance
 - **VIM**
     - Vim is a highly configurable and powerful text editor which gives its user the most efficient way to edit text regardless of the size, language and format
     - Vim is shipped in most Linux distributions and it is a bare minimal configuration
@@ -61,12 +67,12 @@ Luckily rust code is shorter to write so it is practical to just use very simple
         - [Neovim](https://neovim.io/), which adds a lot of improvement on the language server backend
         - [Kakoune](https://kakoune.org/) editor, an alternative editor to Vim with different order of the modal editing actions
 
-#### Insanity
+### Insanity
 - **Emacs**
     - Emacs is a text editor, which happens to ship an entire Operating system with it
     - you can install rust-analyzer as a plugin in Emacs
 
-#### Summary
+### Summary
 In summary, the choice of editor is really up to the users and it is affected by the following:
  - skill level,
  - types of projects they are usually working with
@@ -87,20 +93,31 @@ This can be done by checking in your editor configurations `.vimrc` into your re
 The shell script could contain the list of terminal commands to install `vim` and a plugin manager, then a command to copy the configuration files into your home directory.
 
 
-### Linter Configuration
+## Linter Configuration
 Clippy and RustFMT are doing a pretty good job nowadays.
 * `cargo fmt --all --check` should always pass without warnings/errors
 * `cargo clippy --all-targets -- -D warnings` should always pass without errors
 
-### Security
+## Security
 Cargo's audit feature should not disclose any unpatched vulnerabilities.
 * `cargo audit` should always pass without errors
 
-### Vetted Libraries
+## Vetted Libraries
 
+:::note
+
+TBD
+
+:::
 ### Testing, Mocking
 
-### Continuous Integration
+:::note
+
+TBD
+
+:::
+
+## Continuous Integration
 Check out Forest's collection of Rust workflows: [ChainSafe/forest/.github/workflows/rust.yml](https://github.com/ChainSafe/forest/blob/main/.github/workflows/rust.yml)
 
 * Rust is slow on CI and therefore, we should always use _Github Actions_ with third-party hosted runners

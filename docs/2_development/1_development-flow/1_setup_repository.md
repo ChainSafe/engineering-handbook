@@ -56,7 +56,7 @@ Some additional options:
 
 3. Enable `Automatically delete head branches`. This automatically deletes branches once they are merged to help keep the repository organized.
 
-## Basic Readme
+## Basic README
 
 Please see other ChainSafe repositories for examples of what to include. 
 
@@ -86,7 +86,7 @@ Please use [https://cla-assistant.io/](https://cla-assistant.io/). This will be 
 
 ## Code Owners
 
-Depending on the project, it might make sense to add a code owners file. Please reference the [github guide](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) for more information.
+Depending on the project, it might make sense to add a code owners file. Please reference the [Github guide](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) for more information.
 
 ## License Checker
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-## Development
+# Development
 
 :::caution
     🚨 If a repository is owned by ChainSafe there is no reason to fork the repository for pull requests.
