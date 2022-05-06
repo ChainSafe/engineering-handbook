@@ -22,7 +22,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: false,
-        pages: false,
+        debug: true,
+        pages: {
+          routeBasePath: '/pages'
+        },
         docs: {
           routeBasePath: '/',
           // routeBasePath: '/',
