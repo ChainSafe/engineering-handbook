@@ -312,4 +312,6 @@ jobs:
           version: v1.45
 ```
 
-Also make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
+:::caution
+Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
+:::
