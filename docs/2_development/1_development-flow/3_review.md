@@ -25,7 +25,7 @@ Walkthroughs is peer programming for reviews, if possible/required, ask for a wa
 
 ## Requesting Reviews
 
-If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different github teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
+If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different Github teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
 
 ## Changelog
 

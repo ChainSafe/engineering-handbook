@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Organisation
+# Organization
 
 ## Engineering Reporting Structure
 Every Engineer reports to a Team Lead. All Team Leads report to a Head of Engineering. There are several Head of Engineering positions which have discrete domains (eg. Head of Protocol Implementations, Head of Engineering, General Consulting). All Heads of Engineering report to the VP of Engineering who reports to the CTO. All Team Leads, Heads of Engineering and the VP of Engineering are on the Engineering Management career track.

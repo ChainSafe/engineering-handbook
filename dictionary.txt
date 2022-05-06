@@ -1,5 +1,6 @@
 .github
 Afri
+BLS
 bugfix
 ChainBridge
 ChainSafe
@@ -16,11 +17,12 @@ facto
 de
 Dependabot
 Devops
+Ethereum
 eg
 eg.
 Filecoin
+Frontend
 Github
-github
 Github's
 GITHUB_TOKEN
 Goto
@@ -30,14 +32,15 @@ Kettensicherheitsschranksysteme
 linter
 Linter
 linters
+Metamask
 middleware
 Mina
+Monorepo
 npm
-Organisation
+Organization
 Polkadot
 PR
 PRs
-Readme
 README
 Rebase
 runnable
@@ -51,7 +54,6 @@ unpatched
 walkthrough
 Walkthroughs
 Zenhub
-zenhub
 Clion
 clion
 Jetbrains

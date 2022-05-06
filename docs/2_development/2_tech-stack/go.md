@@ -1,12 +1,17 @@
 # Go
 
-## Table of contents
+Our most notable Go stack:
+* https://github.com/ChainSafe/gossamer (Polkadot Gossamer)
+* https://github.com/ChainSafe/chainbridge-core (ChainBridge)
+* [and others](https://github.com/chainsafe?q=&type=all&language=go&sort=)
 
-- [Project structure](#Project-structure)
-  - [Modules layout perspective](#Modules-layout-perspective)
-  - [Business logic perspective](#Business-logic-perspective)
-  - [Other tips](#Other-tips)
-- [Linting]
+## IDE configuration
+
+:::note
+
+TBD
+
+:::
 
 ## Project structure
 
@@ -293,6 +298,20 @@ linters:
     - whitespace
 ```
 
+## Recommended Libraries
+
+:::note
+
+TBD
+
+:::
+
+## Continuous integration
+
+:::note
+TBD: testing 
+:::
+
 For your CI, you should have lint Github job. For example:
 
 
@@ -315,3 +334,4 @@ jobs:
 :::caution
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
+
