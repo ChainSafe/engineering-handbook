@@ -1,11 +1,17 @@
 # Go
 
-## Table of contents
+Our most notable Go stack:
+* https://github.com/ChainSafe/gossamer (Polkadot Gossamer)
+* https://github.com/ChainSafe/chainbridge-core (ChainBridge)
+* [and others](https://github.com/chainsafe?q=&type=all&language=go&sort=)
 
-- [Project structure](#Project-structure)
-  - [Modules layout perspective](#Modules-layout-perspective)
-  - [Business logic perspective](#Business-logic-perspective)
-  - [Other tips](#Other-tips)
+## IDE configuration
+
+:::note
+
+TBD
+
+:::
 
 ## Project structure
 
@@ -191,4 +197,141 @@ First time concept was described by [Ben Jonson in an article with the same name
   - Try to avoid nesting packages by default
   - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
   - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
+
+## Linting
+
+Use [golangci-lint](https://golangci-lint.run/):
+
+```sh
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45
+```
+
+Together with a `.golangci.yml` at the root of your project:
+
+```yml title=".golangci.yml"
+run:
+  skip-dirs:
+    - .github
+  build-tags:
+    - integration
+
+linters-settings:
+  misspell:
+    locale: UK
+
+issues:
+  exclude-rules:
+    # Do not run these linters for test files
+    - path: _test\.go
+      linters:
+        - dupl
+        - goerr113
+        - containedctx
+    # Do not require comments for sentinel errors
+    - text: "exported: exported var Err*"
+      linters:
+        - revive
+    # Allow long lines for //go:generate comments
+    - linters:
+        - lll
+      source: "^//go:generate "
+
+linters:
+  # Default linters are enabled and not listed below:
+  # https://golangci-lint.run/usage/linters/#enabled-by-default
+  enable:
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - containedctx
+    - cyclop
+    - decorder
+    - dogsled
+    - dupl
+    - durationcheck
+    - errchkjson
+    - errname
+    - exhaustive
+    - exportloopref
+    - forcetypeassert
+    - gci
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godot
+    - goerr113
+    - goheader
+    - goimports
+    - gomnd
+    - gomoddirectives
+    - goprintffuncname
+    - gosec
+    - grouper
+    - ifshort
+    - importas
+    - ireturn
+    - lll
+    - maintidx
+    - makezero
+    - misspell
+    - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - prealloc
+    - predeclared
+    - promlinter
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - tenv
+    - thelper
+    - tparallel
+    - unconvert
+    - unparam
+    - wastedassign
+    - whitespace
+```
+
+## Recommended Libraries
+
+:::note
+
+TBD
+
+:::
+
+## Continuous integration
+
+:::note
+TBD: testing 
+:::
+
+For your CI, you should have lint Github job. For example:
+
+
+```yml title=".github/workflows/lint.yaml"
+on:
+  pull_request:
+name: Linting
+
+jobs:
+  golangci-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v3
+      - uses: actions/checkout@v3
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.45
+```
+
+:::caution
+Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
+:::
 

@@ -32,6 +32,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/chainsafe/engineering-wiki/tree/main/',
+          remarkPlugins: [require('mdx-mermaid')],
         },
         theme: {
           customCss: require.resolve('./src/css/index.css'),

@@ -1,26 +1,26 @@
 # Releasing npm packages
 
 :::note
-This is mostly automated process to enable consistency and make it hassle free
+This is a mostly automated process to enable consistency and make it hassle-free
 to release new versions more often
 :::
 
 :::caution
-Make sure repository is using squash merging and branching rules as described in [Setup repository section](../1_setup_repository.md)!
+Make sure the repository is using squash merging and branching rules as described in [Setup repository section](../1_setup_repository.md)!
 :::
 
 ### Semantic Pull Requests
 
-For automatic releasing and version bumps you should use semantic Pull Request titles.
+For automatic releasing and version bumps, you should use semantic Pull Request titles.
 
 Semantic keywords and their meaning:
-- **fix** - your PR contains bugfix which will bump patch version - Example PR: `fix: resolved bug with automatic releasing`
-- **feat** - your PR contains new feature which will bump minor version - Example PR: `feat: added new api endpoint`
-- **chore** - your PR contains trivial changes like editing README, bumping packages versions etc. - Example PR: `chore: bumped typescript dependency`
-- **feat!** or **fix!** (notice exclamation)- your PR contains breaking change which will trigger major version update - Example PR: `feat!: new api endpoint, old one deprecated`
+- **fix** - your PR contains a bugfix which will bump a patch version - Example PR: `fix: resolved bug with automatic releasing`
+- **feat** - your PR contains a new feature that will bump a minor version - Example PR: `feat: added a new API endpoint`
+- **chore** - your PR contains trivial changes like editing README, bumping packages versions etc - Example PR: `chore: bumped typescript dependency`
+- **feat!** or **fix!** (notice exclamation)- your PR contains a breaking change which will trigger a major version update - Example PR: `feat!: new API endpoint, old one is deprecated`
 
 
-You can use following github action to ensure your Pull Requests follow this convention.
+You can use the following Github action to ensure your Pull Requests follow this convention.
 
 ```yaml title="/.github/workflows/pr.yaml"
 name: "Semantic PR"
@@ -52,15 +52,15 @@ jobs:
 ### Cutting release
 
 1. Merge Pull Request with semantic title
-2. Github Actions will open PR with version bump in package.json and updated CHANGELOG.md
-3. After merging Release Pull Request, package will be published on npm and release with changelog created on github
+2. Github Actions will open PR with a version bump in package.json and updated CHANGELOG.md
+3. After merging Release Pull Request, the package will be published on npm and a release with the changelog created on Github
 
-Following github action will ensure that above flow is working.
+Following Github action will ensure that the above flow is working.
 
 :::caution
 
 Automatic Pull Request cannot trigger workflow so required status checks cannot pass.
-You can either remove requirement for status checks to pass or set GITHUB_TOKEN to your Github PAT token.
+You can either remove the requirement for status checks to pass or set GITHUB_TOKEN to your Github PAT token.
 
 :::
 
