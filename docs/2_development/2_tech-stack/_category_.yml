@@ -1,5 +1,5 @@
 position: 1
 label: 'Tech Stack'
 collapsible: true
-collapsed: false
+collapsed: true
 link: null

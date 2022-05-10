@@ -9,15 +9,15 @@ This is a step-by-step release guide for ChainSafe projects
 
 ### 1.1 Define clear milestone for the release
 
-Every release should be accompanied by a related milestone or epic. A release should never be made without an actual goal, this includes a bug fix, since a bug fix should have a corresponding issue or set of issues.
+Every release should be accompanied by a related milestone or epic. A release should never be made without an actual goal. This includes a bugfix, since a bugfix should have a corresponding issue or set of issues.
 
-### 1.2 Collect issues, and pull requests related to the release
+### 1.2 Collect issues and pull requests related to the release
 
-Ensure that all the issues, and pull requests are properly organized and cataloged during the  development process. This means that issues should be properly connected to closed pull requests (via zenhub), and pull requests are being closed through Github's automatic issue closing mechanism (eg: git committed contains `Closes #45`).
+Ensure that all the issues and pull requests are properly organized and cataloged during the development process. This means that issues should be properly connected to closed pull requests (via Zenhub), and pull requests are being closed through Github's automatic issue closing mechanism (eg: git committed contains `Closes #45`).
 
 ### 1.3 Identify clear code freeze for given release
 
-Leading up to the release, QA & release branches should be frozen ([https://www.mergefreeze.com/](https://www.mergefreeze.com/) may be a useful tool) until the release has been completed. This is to ensure that there are no bugs accidentally merged into the code base.
+Leading up to the release, QA & release branches should be frozen ([https://www.mergefreeze.com/](https://www.mergefreeze.com/) may be a useful tool) until the release has been completed. This is to ensure that there are no bugs accidentally merged into the codebase.
 
 # 2. Identify The Release Type
 
