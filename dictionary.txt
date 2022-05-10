@@ -33,15 +33,19 @@ golangci-lint
 IPFS
 Ketelsen
 Kettensicherheitsschranksysteme
+Lerna
 linter
 Linter
 linters
+lockfile
 Metamask
 middleware
 Mina
 Monorepo
+monorepos
 Netifly
 npm
+nx
 OpenApi
 Organization
 Polkadot
@@ -49,6 +53,7 @@ PR
 PRs
 README
 Rebase
+Recursiveness
 runnable
 RustFMT
 semver
@@ -60,6 +65,7 @@ unpatched
 walkthrough
 Walkthroughs
 WIP
+workspaces
 Zenhub
 Clion
 clion
@@ -83,3 +89,6 @@ fzf
 gruvbox
 unintuitive
 reproducibility
+yarn3
+v1
+
