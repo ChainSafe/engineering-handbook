@@ -153,7 +153,7 @@ yarn plugin import https://raw.githubusercontent.com/devoto13/yarn-plugin-engine
 11. In `package.json` scripts:
     1.  replace `lerna run <command>` with `yarn workspaces foreach -vpt run <command>`
     2.  replace `lerna run --scope <pkg> <command>` with `yarn workspace <pkg> <command>`
-12. Set packages that depend on each other to `"@chainsafe/pkgB": "workspace^"` - this will force using local packages and will be replaced with version before publishing
+12. Set packages that depend on each other to `"@chainsafe/pkgB": "workspace:^""` - this will force using local packages and will be replaced with a version before publishing
 13. Don't forget to do changes in CI if necessary
 14. Run `yarn` again to update lockfile
 15. Commit everything
