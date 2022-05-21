@@ -29,3 +29,11 @@ a:hover {
 .aa-DetachedSearchButtonIcon {
     color: #FFEC3D !important;
 }
+
+.join-us{
+    margin-top: 1rem !important;
+}
+
+.join-us > .menu__link {
+    color: #FFEC3D !important;
+}
