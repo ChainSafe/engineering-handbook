@@ -11,7 +11,7 @@ We want to invest in your potential and not only increase your effectiveness at 
 ### Additional Resources
 
 - [Read more about education policy](https://www.notion.so/chainsafe/Educational-Budget-c0cc6c8da3c74c6ead5f866d2fced452)
-- To request access to company Udemy account fill this form: https://forms.gle/HvmLbzxygsxS69c3A
+- To request access to the company Udemy account, please fill [this form](https://forms.gle/HvmLbzxygsxS69c3A)
 
 ## Requesting License
 
