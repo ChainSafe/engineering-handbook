@@ -5,6 +5,7 @@ bugfix
 ChainBridge
 ChainSafe
 ChainSafe's
+ChainSafer
 Changelog
 changelog
 checksums
@@ -56,6 +57,7 @@ Slackbot
 subpackages
 TBD
 TODO
+Udemy
 unpatched
 walkthrough
 Walkthroughs
