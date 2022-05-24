@@ -335,3 +335,186 @@ jobs:
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
 
+## Mocking
+
+Mocking is useful in Go to mock behavior of Go interfaces for testing.
+
+### Example production code
+
+In the following sections, we will use the following example code:
+
+```go title="something/something.go"
+package something
+
+import (
+ "context"
+ "fmt"
+)
+
+type Fetcher interface {
+ Fetch(ctx context.Context) (data []byte, err error)
+}
+
+type Parser interface {
+ Parse(data []byte) (id string, err error)
+}
+
+func something(ctx context.Context, fetcher Fetcher, parser Parser) (id string, err error) {
+ data, err := fetcher.Fetch(ctx)
+ if err != nil {
+  return "", fmt.Errorf("cannot fetch: %w", err)
+ }
+
+ id, err = parser.Parse(data)
+ if err != nil {
+  return "", fmt.Errorf("cannot parse: %w", err)
+ }
+
+ return id, nil
+}
+```
+
+where we want to test the `something` function using mocks for the `Fetcher` and `Parser` interfaces.
+
+### Which mocking library
+
+There are two main Go mocking libraries:
+
+* [`vektra/mockery`](https://github.com/vektra/mockery)
+* [`golang/mock`](https://github.com/golang/mock)
+
+You should use [`golang/mock`](https://github.com/golang/mock) because:
+
+* it is more type-safe and auto-completion is better
+* its Go API is more stable
+* it is more mature and has more star-gazers
+
+### Mock generation
+
+Install the `mockgen` CLI from the [`golang/mock`](https://github.com/golang/mock) repository:
+
+```sh
+go install github.com/golang/mock/mockgen@v1.6.0
+```
+
+This is to be done only once on your development environment.
+
+To generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#Example-production-code)):
+
+1. Create a file `mocks_generate_test.go` in the package **where the test needs the mock**.
+This file should hold only `//go:generate mockgen` comment-commands for all the tests in the package it's located in.
+In our case, it would be:
+
+    ```go title="something/mocks_generate_test.go"
+    package something
+
+    //go:generate mockgen -destination=mocks_test.go -package $GOPACKAGE . Fetcher,Parser
+    ```
+
+2. Use `go generate -run mockgen ./...` to generate both mocks to `mocks_test.go`. A few notes about this:
+    * We use `$GOPACKAGE` which is a special variable available to `//go:generate` comments. It specifies the package name of the file it's located in.
+    In our example case, this is the `something` package name.
+    * The mocks are generated to the Go test file `mocks_test.go` such that it does not pollute the package Go API.
+    Indeed `*_test.go` files are not exported and only accessible by other test files in the same package.
+
+### Mock usage
+
+You first need to add the GoMock dependency to your Go module:
+
+```sh
+go get github.com/golang/mock/gomock
+```
+
+This is to be done only once on your project.
+
+Now that your mocks are generated, you can use them in your Go tests in the `something` package.
+
+Let's write a test for our `something` function defined in our example production code:
+
+```go title="something/something_test.go"
+package something
+
+import (
+ "context"
+ "testing"
+
+ "github.com/golang/mock/gomock"
+ "github.com/stretchr/testify/assert"
+)
+
+func Test_something(t *testing.T) {
+ ctrl := gomock.NewController(t)
+
+ ctx := context.Background()
+ fetcher := NewMockFetcher(ctrl)
+ fetchCall := fetcher.EXPECT().
+  Fetch(ctx). // define the expected argument(s)
+  Return([]byte{1, 2, 3}, nil)  // define the returned values
+
+ parser := NewMockParser(ctrl)
+ parser.EXPECT().
+  Parse([]byte{1, 2, 3}).
+  Return("123", nil).
+  After(fetchCall) // you can define the mock calls order with After()
+
+ id, err := something(ctx, fetcher, parser)
+
+ assert.NoError(t, err)
+ assert.Equal(t, "123", id)
+}
+
+```
+
+A few important points:
+
+* **Never** use `gomock.Any()` as argument. Always use concrete, precise arguments. You might need to define a custom GoMock matcher for your argument in some very niche and corner cases.
+* **Never** use `.AnyTimes()` on mocks. Always define the number of times a certain mock call should be called, with `.Times(3)` for example.
+* **Always** set the `.Return(...)` on the mock if the function returns something.
+
+### Mocks with subtests
+
+TODO
+
+### Mock continuous integration
+
+⚠️ You should **commit** all your generated mocks to source control.
+
+The CI should enforce:
+
+1. mocks with a `//go:generate` comment are generated
+2. mocks with a `//go:generate` comment are updated when their corresponding interface is changed
+3. mocks with a removed `//go:genereate` comment are removed
+
+The following Github workflow should achieve the 3 points above:
+
+```yml title=".github/workflows/mocks.yaml"
+name: Mocks check
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  mocks-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.18
+      - run: go mod download
+      - run: go install github.com/golang/mock/mockgen@v1.6
+      - name: Remove committed mocks
+        run: grep -lr -E '^// Code generated by MockGen.+$' . | xargs -d '\n' rm
+      - name: Generate mocks
+        run: go generate -run mockgen -tags integration ./...
+      - name: Check for diffs
+        run: git diff --exit-code
+```
+
+### Advanced GoMock
+
+#### Mock calls order
+
+#### Custom GoMock matchers
+
+#### Unpredictable mock arguments
