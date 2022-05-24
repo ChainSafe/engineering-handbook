@@ -9,6 +9,7 @@ Changelog
 changelog
 checksums
 CLA
+CLI
 Clippy
 codebase
 codeowners
@@ -28,6 +29,7 @@ GitBook
 Github
 Github's
 GITHUB_TOKEN
+GoMock
 Goto
 golangci-lint
 IPFS
@@ -36,6 +38,8 @@ Kettensicherheitsschranksysteme
 linter
 Linter
 linters
+matcher
+matchers
 Metamask
 middleware
 Mina
@@ -54,6 +58,7 @@ RustFMT
 semver
 Slackbot
 subpackages
+subtests
 TBD
 TODO
 unpatched
