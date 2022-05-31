@@ -389,7 +389,15 @@ You should use [`golang/mock`](https://github.com/golang/mock) because:
 * its Go API is more stable
 * it is more mature and has more star-gazers
 
+Install it in your repository with:
+
+```sh
+go get github.com/golang/mock
+```
+
 ### Mock generation
+
+#### Tooling
 
 Install the `mockgen` CLI from the [`golang/mock`](https://github.com/golang/mock) repository:
 
@@ -399,11 +407,22 @@ go install github.com/golang/mock/mockgen@v1.6.0
 
 This is to be done only once on your development environment.
 
-To generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#Example-production-code)):
+#### File setup
 
-1. Create a file `mocks_generate_test.go` in the package **where the test needs the mock**.
-This file should hold only `//go:generate mockgen` comment-commands for all the tests in the package it's located in.
-In our case, it would be:
+You should have two files **where the mocks are needed**:
+
+- `mocks_generate_test.go`
+- `mocks_test.go`
+
+:::caution
+Never export mocks, it creates horrible package dependencies
+:::
+
+The `mocks_generate_test.go` is a single line file defining what mocks to generate, using a single `//go:generate mockgen` comment-command.
+
+The `mocks_test.go` is the generate mock code for all the mocks needed by the package.
+
+For example, to generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#Example-production-code)):
 
     ```go title="something/mocks_generate_test.go"
     package something
@@ -411,21 +430,39 @@ In our case, it would be:
     //go:generate mockgen -destination=mocks_test.go -package $GOPACKAGE . Fetcher,Parser
     ```
 
-2. Use `go generate -run mockgen ./...` to generate both mocks to `mocks_test.go`. A few notes about this:
-    * We use `$GOPACKAGE` which is a special variable available to `//go:generate` comments. It specifies the package name of the file it's located in.
+You have to put each interface you want to generate a mock for at the end of the mockgen command, separated by commas.
+
     In our example case, this is the `something` package name.
-    * The mocks are generated to the Go test file `mocks_test.go` such that it does not pollute the package Go API.
-    Indeed `*_test.go` files are not exported and only accessible by other test files in the same package.
 
-### Mock usage
+This file setup is designed such that:
 
-You first need to add the GoMock dependency to your Go module:
+* Mocks are only accessible to test files in the current Go package. Indeed `*_test.go` files are not exported and only accessible by other test files in the same package.This avoids pollution of the package Go API, and possible horrendous package dependencies.
+* Minimal amount of files per package, and minimal Git diffs at code evolves
 
-```sh
-go get github.com/golang/mock/gomock
+:::caution
+NEVER ever export mocks to other packages
+:::
+
+#### Generation command
+
+Use `go generate -run mockgen ./...` to generate the mocks to `mocks_test.go`.
+
+#### Generate mocks from other packages
+
+You should really define interfaces locally in your package and use those to generate mocks.
+
+Sometimes it however makes sense to use an interface such as `io.Reader` from the standard library. In that case, you can add another line to `mocks_generate_test.go`:
+
+```go title="something/mocks_generate_test.go"
+package something
+
+//go:generate mockgen -destination=mocks_test.go -package $GOPACKAGE . Fetcher,Parser
+//go:generate mockgen -destination=mocks_io_test.go -package $GOPACKAGE io Reader
 ```
 
-This is to be done only once on your project.
+Note the destination is now `mocks_io_test.go` to avoid conflicts with `mocks_test.go`. You can specify any import package path instead of `io` if needed.
+
+### Mock usage
 
 Now that your mocks are generated, you can use them in your Go tests in the `something` package.
 

@@ -43,6 +43,7 @@ matchers
 Metamask
 middleware
 Mina
+mockgen
 Monorepo
 Netifly
 npm
