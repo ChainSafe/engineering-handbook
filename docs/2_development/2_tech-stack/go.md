@@ -335,3 +335,49 @@ jobs:
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
 
+
+## Testing
+
+### Testing philosophy
+
+Here are a few key points to remember when writing tests:
+
+- your **production code must be testable**. Adjust it as needed.
+- all your **tests must be event driven** and not time driven
+- your **unit tests must be blazing fast**
+- **never export testing code** across package boundaries
+- run your unit and integration tests in **parallel**
+- have a **good testing depth**: you need to assert enough affected elements
+- **keep your tests dumb** and feel free to repeat code
+
+### Libraries to use
+
+- [github.com/stretchr/testify](https://github.com/stretchr/testify) for assertions
+- [github.com/golang/gomock](https://github.com/golang/gomock) for mocking (see the [Mocking](#Mocking) section)
+
+### `assert.*` vs `require.*`
+
+
+### Asserting errors
+
+- `assert.ErrorIs` + `assert.EqualError`
+
+
+### 'Table' tests
+
+### Subtests
+
+### Parallel tests
+
+- Network servers, listen on port `:0`.
+- Race detector
+
+### Unit tests
+
+### Integration tests
+
+### End to end tests
+
+### Fuzz tests
+
+### Continuous integration
