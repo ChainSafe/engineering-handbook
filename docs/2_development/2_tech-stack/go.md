@@ -204,7 +204,7 @@ First time concept was described by [Ben Jonson in an article with the same name
 Use [golangci-lint](https://golangci-lint.run/):
 
 ```sh
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.46
 ```
 
 Together with a `.golangci.yml` at the root of your project:
