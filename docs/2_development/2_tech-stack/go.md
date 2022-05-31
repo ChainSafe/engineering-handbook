@@ -1,8 +1,9 @@
 # Go
 
-Our most notable Go stack:
-* https://github.com/ChainSafe/gossamer (Polkadot Gossamer)
-* https://github.com/ChainSafe/chainbridge-core (ChainBridge)
+Our most notable Go projects:
+
+* [Polkadot Gossamer](https://github.com/ChainSafe/gossamer)
+* [ChainBridge Core](https://github.com/ChainSafe/chainbridge-core)
 * [and others](https://github.com/chainsafe?q=&type=all&language=go&sort=)
 
 ## IDE configuration
