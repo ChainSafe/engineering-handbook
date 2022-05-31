@@ -173,9 +173,9 @@ For example with this file structure:
 
 The differences are as follows:
 
-- no `cmd` directory since this is not a runnable application
-- no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
-- `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
+* no `cmd` directory since this is not a runnable application
+* no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
+* `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
 
 Note that most of your code should still reside in the `internal` directory, and you should keep your public Go API to a minimum.
 
@@ -189,14 +189,14 @@ First time concept was described by [Ben Jonson in an article with the same name
 
 ### Other tips
 
-- Package naming
-  - Your package name should be the same as the directory containing it, **except for the `main` package**
-  - Use single words for package names
-  - Do not use generic names for package names such as `utils` or `helpers`
-- Package nesting
-  - Try to avoid nesting packages by default
-  - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
-  - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
+* Package naming
+  * Your package name should be the same as the directory containing it, **except for the `main` package**
+  * Use single words for package names
+  * Do not use generic names for package names such as `utils` or `helpers`
+* Package nesting
+  * Try to avoid nesting packages by default
+  * You can nest packages if you have different implementations for the same interface (e.g. a store interface)
+  * You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
 
 ## Linting
 
