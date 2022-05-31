@@ -507,10 +507,93 @@ A few important points:
 * **Never** use `gomock.Any()` as argument. Always use concrete, precise arguments. You might need to define a custom GoMock matcher for your argument in some very niche and corner cases.
 * **Never** use `.AnyTimes()` on mocks. Always define the number of times a certain mock call should be called, with `.Times(3)` for example.
 * **Always** set the `.Return(...)` on the mock if the function returns something.
+* Avoid using **mock helpers** functions, prefer a bit of repetition than tight coupling and dependency
 
 ### Mocks with subtests
 
-TODO
+It is common in Go to use *subtests*, where a subtest has its own test's `t *testing.T` which is different from its parent test's `t *testing.T`.
+
+As you have seen GoMock mocks usage requires a controller constructed using a `*testing.T`:
+
+```go
+ctrl := gomock.NewController(t)
+```
+
+You need to be careful to **pass** the subtest `*testing.T` and not the parent test one.
+Otherwise, one subtest mock expectations failing will fail the parent test and all other subtests.
+
+There are various ways to do this correctly, although one method that works in all cases elegantly is the 'functional field mock builder' as shown below.
+
+We use again our example code, modifying the test we had for the `something` function:
+
+```go title="something/something_test.go"
+package something
+
+import (
+	"context"
+	"errors"
+	"testing"
+
+	"github.com/golang/mock/gomock"
+	"github.com/stretchr/testify/assert"
+)
+
+func Test_something(t *testing.T) {
+	errTest := errors.New("test error")
+
+	testCases := map[string]struct {
+		ctx            context.Context
+		fetcherBuilder func(ctrl *gomock.Controller) Fetcher
+		parserBuilder  func(ctrl *gomock.Controller) Parser
+		id             string
+		errWrapped     error
+		errMessage     string
+	}{
+		"parser error": {
+			ctx: context.Background(),
+			fetcherBuilder: func(ctrl *gomock.Controller) Fetcher {
+				fetcher := NewMockFetcher(ctrl)
+				fetcher.EXPECT().Fetch(context.Background()).
+					Return([]byte{1, 2, 3}, nil)
+				return fetcher
+			},
+			parserBuilder: func(ctrl *gomock.Controller) Parser {
+				parser := NewMockParser(ctrl)
+				parser.EXPECT().Parse([]byte{1, 2, 3}).
+					Return("", errTest)
+				return parser
+			},
+			errWrapped: errTest,
+			errMessage: "cannot parse: test error",
+		},
+	}
+
+	for name, testCase := range testCases {
+		t.Run(name, func(t *testing.T) {
+			ctrl := gomock.NewController(t) // we inject the testing t to construct the controller inside the subtest
+
+			fetcher := testCase.fetcherBuilder(ctrl) // we inject the controller here inside the subtest
+			parser := testCase.parserBuilder(ctrl)
+
+			id, err := something(testCase.ctx, fetcher, parser)
+
+			assert.Equal(t, testCase.id, id)
+			assert.ErrorIs(t, err, testCase.errWrapped)
+			if testCase.errWrapped != nil {
+				assert.EqualError(t, err, testCase.errMessage)
+			}
+		})
+	}
+}
+```
+
+This test has only one test case for illustration purposes, but it's easy to add test cases and adapt the mock builder functional fields to configure the mocks as wanted.
+
+This also works when a mock depends on another mock, where the functional mock builder signature can be adjusted to take more arguments, for example:
+
+```go
+parserBuilder  func(ctrl *gomock.Controller, other OtherInterface) Parser
+```
 
 ### Mock continuous integration
 
