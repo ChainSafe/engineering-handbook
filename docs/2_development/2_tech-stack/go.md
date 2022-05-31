@@ -414,21 +414,17 @@ You should have two files **where the mocks are needed**:
 - `mocks_generate_test.go`
 - `mocks_test.go`
 
-:::caution
-Never export mocks, it creates horrible package dependencies
-:::
-
 The `mocks_generate_test.go` is a single line file defining what mocks to generate, using a single `//go:generate mockgen` comment-command.
 
 The `mocks_test.go` is the generate mock code for all the mocks needed by the package.
 
 For example, to generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#Example-production-code)):
 
-    ```go title="something/mocks_generate_test.go"
-    package something
+```go title="something/mocks_generate_test.go"
+package something
 
-    //go:generate mockgen -destination=mocks_test.go -package $GOPACKAGE . Fetcher,Parser
-    ```
+//go:generate mockgen -destination=mocks_test.go -package $GOPACKAGE . Fetcher,Parser
+```
 
 You have to put each interface you want to generate a mock for at the end of the mockgen command, separated by commas.
 
@@ -499,7 +495,6 @@ func Test_something(t *testing.T) {
  assert.NoError(t, err)
  assert.Equal(t, "123", id)
 }
-
 ```
 
 A few important points:
