@@ -14,6 +14,14 @@ TBD
 
 :::
 
+## Recommended Libraries
+
+:::note
+
+TBD
+
+:::
+
 ## Project structure
 
 ### Modules layout perspective
@@ -94,8 +102,8 @@ Each can be imported for example by `cmd/myapp/main.go` with:
 
 ```go
 import (
-	"github.com/ChainSafe/repo/internal/config"
-	"github.com/ChainSafe/repo/internal/store"
+ "github.com/ChainSafe/repo/internal/config"
+ "github.com/ChainSafe/repo/internal/store"
 )
 ```
 
@@ -124,7 +132,7 @@ Each can be imported by any Go project (including this one) with for example
 
 ```go
 import (
-	"github.com/user/repo/pkg/public1"
+ "github.com/user/repo/pkg/public1"
 )
 ```
 
@@ -299,22 +307,9 @@ linters:
     - whitespace
 ```
 
-## Recommended Libraries
-
-:::note
-
-TBD
-
-:::
-
-## Continuous integration
-
-:::note
-TBD: testing 
-:::
+### Linting continuous integration
 
 For your CI, you should have lint Github job. For example:
-
 
 ```yml title=".github/workflows/lint.yaml"
 on:
@@ -336,3 +331,10 @@ jobs:
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
 
+## Continuous integration
+
+:::note
+TBD: testing
+:::
+
+- [Linting](#linting-continous-integration)
