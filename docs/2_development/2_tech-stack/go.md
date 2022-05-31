@@ -635,6 +635,202 @@ jobs:
 
 #### Mock calls order
 
+A call on the `EXPECT()` method of a mock returns a `*Mock<InterfaceName>MockRecorder` object.
+
+This one contains the methods of the interface, and calling one of them will return a `*gomock.Call` object.
+
+For example:
+
+```go
+mock := NewMockFetcher(ctrl) // returns *MockFetcher
+recorder := mock.EXPECT() // returns *MockFetcherMockRecorder
+call := recorder.Fetch(context.Background()) // returns *gomock.Call
+```
+
+Most chained method calls on this `*gomock.Call`, such as `.Return(...)`, also return a `*gomock.Call`.
+
+This call can be used to assert the calling order of mocks, using:
+
+```go
+callB.After(callA)
+```
+
+Although ideal, it's not necessary to assert the calls order for every test.
+
+It is however quite important in a few cases such as:
+
+- Calls to a buffer's `Write` method, since you want to make sure things are written in the right order
+- Asynchronous code where you want to sure calls happen in a certain predictable order
+
 #### Custom GoMock matchers
 
+In some corner cases where arguments are not predictable, you can define your own GoMock argument matchers, to have some level of assertion and not use `gomock.Any()`.
+
+In the following we implement the `gomock.Matcher` interface for a string regular expression matcher.
+
+```go title="server/mock_regex_matcher_test.go"
+package server
+
+import (
+	"regexp"
+
+	"github.com/golang/mock/gomock"
+)
+
+var _ gomock.Matcher = (*regexMatcher)(nil)
+
+type regexMatcher struct {
+	regexp *regexp.Regexp
+}
+
+func (r *regexMatcher) Matches(x interface{}) bool {
+	s, ok := x.(string)
+	if !ok {
+		return false
+	}
+	return r.regexp.MatchString(s)
+}
+
+func (r *regexMatcher) String() string {
+	return "regular expression " + r.regexp.String()
+}
+
+func newRegexMatcher(regex string) *regexMatcher {
+	return &regexMatcher{
+		regexp: regexp.MustCompile(regex),
+	}
+}
+```
+
+In this example, we use it to assert a server logger behavior for a test server binding to a random available port.
+
+Indeed, in this particular case, we cannot predict which port will be available on the machine so we use our regex matcher.
+
+Our production code to test looks like:
+
+
+```go title="server/server.go"
+package server
+
+import (
+	"fmt"
+	"net"
+)
+
+type Logger interface {
+	Info(s string)
+}
+
+func listenAndLog(logger Logger) (err error) {
+	listener, err := net.Listen("tcp", "127.0.0.1:0")
+	if err != nil {
+		return fmt.Errorf("cannot listen: %w", err)
+	}
+
+	logger.Info("listening on " + listener.Addr().String())
+
+	return listener.Close()
+}
+```
+
+And our test using our custom matcher would be:
+
+```go title="server/server_test.go"
+package server
+
+
+import (
+	"testing"
+
+	"github.com/golang/mock/gomock"
+)
+
+func Test_listenAndLog(t *testing.T) {
+	ctrl := gomock.NewController(t)
+
+	logger := NewMockLogger(ctrl)
+	regexMatcher := newRegexMatcher(`^listening on 127.0.0.1:[0-9]{1,5}$`)
+	logger.EXPECT().Info(regexMatcher)
+
+	listenAndLog(logger)
+}
+```
+
 #### Unpredictable mock arguments
+
+This is very rare. Most of the time:
+
+1. Arguments are predictable
+2. Production code can be changed to have predictable arguments in test code
+3. You can use a [custom GoMock matcher](#Custom-GoMock-matchers) to have some level of assertion
+
+BUT there are corner cases. For example, modifying slightly our `something` example function:
+
+```go title="something/something.go"
+package something
+
+import (
+	"context"
+	"fmt"
+	"time"
+)
+
+type Fetcher interface {
+	Fetch(ctx context.Context) (data []byte, err error)
+}
+
+type Parser interface {
+	Parse(data []byte) (id string, err error)
+}
+
+func something(ctx context.Context, fetcher Fetcher, parser Parser) (id string, err error) {
+	ctx, cancel := context.WithTimeout(ctx, time.Second) // time based and unpredictable
+	defer cancel()
+
+	data, err := fetcher.Fetch(ctx)
+	if err != nil {
+		return "", fmt.Errorf("cannot fetch: %w", err)
+	}
+
+	id, err = parser.Parse(data)
+	if err != nil {
+		return "", fmt.Errorf("cannot parse: %w", err)
+	}
+
+	return id, nil
+}
+```
+
+In this situation, we do not want to change our code to have `context.WithTimeout` mocked since it would make our production code quite confusing.
+
+We can't really use a custom matcher for the context either, since depending on the machine and timeout, results would differ and not be deterministic.
+
+In that case, you can use `gomock.AssignableToTypeOf()` such that the implementation is at least asserted for the `context.Context` interface:
+
+
+```go title="something/something_test.go"
+package something
+
+import (
+	"context"
+	"testing"
+	"time"
+
+	"github.com/golang/mock/gomock"
+)
+
+func Test_something(t *testing.T) {
+	ctrl := gomock.NewController(t)
+
+	fetcher := NewMockFetcher(ctrl)
+	timedCtx, cancel := context.WithTimeout(context.Background(), time.Hour)
+	cancel()
+	timedCtxMatcher := gomock.AssignableToTypeOf(timedCtx)
+	fetcher.EXPECT().Fetch(timedCtxMatcher).Return([]byte{1}, nil)
+
+	parser := NewMockParser(ctrl)
+	parser.EXPECT().Parse([]byte{1}).Return("1", nil)
+
+	_, _ = something(context.Background(), fetcher, parser)
+}
+```
