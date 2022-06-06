@@ -2,6 +2,7 @@
 Afri
 BLS
 bugfix
+Buterin
 ChainBridge
 ChainSafe
 ChainSafe's
@@ -19,6 +20,10 @@ facto
 de
 Dependabot
 DevOps
+E4
+E6
+E3
+E2
 Docusaurus
 Ethereum
 eg
@@ -64,6 +69,7 @@ subtests
 TBD
 TODO
 unpatched
+Vitalik
 walkthrough
 Walkthroughs
 WIP
