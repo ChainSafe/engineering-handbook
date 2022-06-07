@@ -63,6 +63,23 @@ TBD
 
 :::
 
+### Publishing
+After you [update your versions in](#updating-monorepo-versions) `package.json` files,
+you can publish all packages by running `yarn workspaces foreach -v --exclude root npm publish --access public`
+
+or in Github Actions:
+```yaml
+     - env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          echo npmAuthToken: "$NODE_AUTH_TOKEN" >> ./.yarnrc.yml
+          
+    - run: yarn workspaces foreach -v --exclude root npm publish --access public
+      if: ${{ steps.release.outputs.releases_created }}
+```
+
+
 ### Caveats
 
 #### Recursiveness
@@ -83,7 +100,7 @@ changing build to `yarn workspaces foreach -vpt run build` instead of invoking a
 #### Updating yarn version
 
 Since your yarn version is checked in into your Github repository it will be consistent across all contributors.
-But that also means you need to update it manually every now and then to stay 
+But that also means you need to update it manually every now and then to stay up-to-date.
 
 #### Checksum mismatch
 
@@ -157,3 +174,19 @@ yarn plugin import https://raw.githubusercontent.com/devoto13/yarn-plugin-engine
 13. Don't forget to do changes in CI if necessary
 14. Run `yarn` again to update lockfile
 15. Commit everything
+
+#### Updating monorepo versions
+
+To enable version commands, you need to install version plugin:
+`yarn plugin import version`
+
+Make sure to read more about new workspace resolution option: https://yarnpkg.com/features/workspaces#workspace-ranges-workspace
+
+##### Independent versioning
+If you track versions of your package independently, 
+you can use `yarn workspace workspace-1 version -i <major|minor|patch|semver range>`
+but it's probably better to automate this using [release please](../../1_development-flow/release/npm.md)
+
+##### Uniform versioning
+
+If, on the other hand you view all your monorepo packages as one cohesive unit with exact version accross the board, you can use following command to update versions: `yarn workspaces foreach -v version -i 5.0.0`.
