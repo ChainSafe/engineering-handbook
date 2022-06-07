@@ -189,4 +189,4 @@ but it's probably better to automate this using [release please](../../1_develop
 
 ##### Uniform versioning
 
-If, on the other hand you view all your monorepo packages as one cohesive unit with exact version accross the board, you can use following command to update versions: `yarn workspaces foreach -v version -i 5.0.0`.
+If, on the other hand you view all your monorepo packages as one cohesive unit with exact version across the board, you can use following command to update versions: `yarn workspaces foreach -v version -i 5.0.0`.

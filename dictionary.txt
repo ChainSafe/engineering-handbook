@@ -52,6 +52,7 @@ middleware
 Mina
 mockgen
 Monorepo
+monorepo
 monorepos
 Netifly
 npm
