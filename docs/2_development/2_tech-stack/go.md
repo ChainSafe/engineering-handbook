@@ -1,8 +1,9 @@
 # Go
 
-Our most notable Go stack:
-* https://github.com/ChainSafe/gossamer (Polkadot Gossamer)
-* https://github.com/ChainSafe/chainbridge-core (ChainBridge)
+Our most notable Go projects:
+
+* [Polkadot Gossamer](https://github.com/ChainSafe/gossamer)
+* [ChainBridge Core](https://github.com/ChainSafe/chainbridge-core)
 * [and others](https://github.com/chainsafe?q=&type=all&language=go&sort=)
 
 ## IDE configuration
@@ -14,6 +15,15 @@ TBD
 :::
 
 If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
+
+## Recommended Libraries
+
+:::note
+
+TBD
+
+:::
+
 
 ## Project structure
 
@@ -95,8 +105,8 @@ Each can be imported for example by `cmd/myapp/main.go` with:
 
 ```go
 import (
-	"github.com/ChainSafe/repo/internal/config"
-	"github.com/ChainSafe/repo/internal/store"
+ "github.com/ChainSafe/repo/internal/config"
+ "github.com/ChainSafe/repo/internal/store"
 )
 ```
 
@@ -125,7 +135,7 @@ Each can be imported by any Go project (including this one) with for example
 
 ```go
 import (
-	"github.com/user/repo/pkg/public1"
+ "github.com/user/repo/pkg/public1"
 )
 ```
 
@@ -175,9 +185,9 @@ For example with this file structure:
 
 The differences are as follows:
 
-- no `cmd` directory since this is not a runnable application
-- no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
-- `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
+* no `cmd` directory since this is not a runnable application
+* no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
+* `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
 
 Note that most of your code should still reside in the `internal` directory, and you should keep your public Go API to a minimum.
 
@@ -191,21 +201,21 @@ First time concept was described by [Ben Jonson in an article with the same name
 
 ### Other tips
 
-- Package naming
-  - Your package name should be the same as the directory containing it, **except for the `main` package**
-  - Use single words for package names
-  - Do not use generic names for package names such as `utils` or `helpers`
-- Package nesting
-  - Try to avoid nesting packages by default
-  - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
-  - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
+* Package naming
+  * Your package name should be the same as the directory containing it, **except for the `main` package**
+  * Use single words for package names
+  * Do not use generic names for package names such as `utils` or `helpers`
+* Package nesting
+  * Try to avoid nesting packages by default
+  * You can nest packages if you have different implementations for the same interface (e.g. a store interface)
+  * You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
 
 ## Linting
 
 Use [golangci-lint](https://golangci-lint.run/):
 
 ```sh
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.46
 ```
 
 Together with a `.golangci.yml` at the root of your project:
@@ -300,22 +310,9 @@ linters:
     - whitespace
 ```
 
-## Recommended Libraries
-
-:::note
-
-TBD
-
-:::
-
-## Continuous integration
-
-:::note
-TBD: testing 
-:::
+### Linting continuous integration
 
 For your CI, you should have lint Github job. For example:
-
 
 ```yml title=".github/workflows/lint.yaml"
 on:
@@ -336,6 +333,14 @@ jobs:
 :::caution
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
+
+## Continuous integration
+
+:::note
+TBD: testing
+:::
+
+- [Linting](#linting-continous-integration)
 
 ## Mocking
 
