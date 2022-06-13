@@ -2,6 +2,7 @@
 Afri
 BLS
 bugfix
+Buterin
 ChainBridge
 ChainSafe
 ChainSafe's
@@ -9,6 +10,7 @@ Changelog
 changelog
 checksums
 CLA
+CLI
 Clippy
 codebase
 codeowners
@@ -18,6 +20,10 @@ facto
 de
 Dependabot
 DevOps
+E4
+E6
+E3
+E2
 Docusaurus
 Ethereum
 eg
@@ -28,6 +34,7 @@ GitBook
 Github
 Github's
 GITHUB_TOKEN
+GoMock
 Goto
 golangci-lint
 IPFS
@@ -36,9 +43,12 @@ Kettensicherheitsschranksysteme
 linter
 Linter
 linters
+matcher
+matchers
 Metamask
 middleware
 Mina
+mockgen
 Monorepo
 Netifly
 npm
@@ -54,9 +64,12 @@ RustFMT
 semver
 Slackbot
 subpackages
+subtest
+subtests
 TBD
 TODO
 unpatched
+Vitalik
 walkthrough
 Walkthroughs
 WIP
