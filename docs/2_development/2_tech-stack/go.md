@@ -13,6 +13,8 @@ TBD
 
 :::
 
+If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
+
 ## Project structure
 
 ### Modules layout perspective
