@@ -45,8 +45,6 @@ jobs:
             fix
             feat
             chore
-          validateSingleCommit: true #single commit can ovveride squash merge commit message
-          validateSingleCommitMatchesPrTitle: false
 ```
 
 ### Cutting release
