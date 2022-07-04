@@ -36,7 +36,7 @@ TBD
 
 ## Linting
 
-Linting is a critical step in the source code life cycle. As not everyone in a given team will have the same programming approach, enforced linting rules can help keep a codebase consistent. 
+Linting is a critical step in the source code life cycle. As not everyone in a given team will have the same programming approach, enforced linting rules can help keep a codebase consistent. As linting is a static analysis process, it will catch problems in you coding style, but not the logical errors. 
 
 For example, if one developer uses the `forEach` iterator and another uses the `for` loop, linting rules will give feedback to team members, ensuring they follow a consistent pattern. The same applies to documenting the source code, so it's essential to check that the tools have linting support. 
 
