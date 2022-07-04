@@ -63,6 +63,7 @@ Rebase
 runnable
 RustFMT
 semver
+skillset
 Slackbot
 subpackages
 subtest
@@ -74,6 +75,7 @@ unpatched
 Vitalik
 walkthrough
 Walkthroughs
+Web3
 WIP
 Zenhub
 Clion
