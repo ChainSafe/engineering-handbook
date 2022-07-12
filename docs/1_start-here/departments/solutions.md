@@ -4,7 +4,7 @@ Solutions is ChainSafe’s research and development team that conducts research 
 
 💡 **Vision:** To give internal and external teams the knowledge to implement their novel ideas and grow Web 3.0.
 
-🎯 **Mission:** We combine our skillset, knowledge and constant research to deliver new perspectives, solve complex problems and help the community drive innovations forward.
+🎯 **Mission:** We combine our skill set, knowledge and constant research to deliver new perspectives, solve complex problems and help the community drive innovations forward.
 
 ## Solutions Services
 
@@ -23,6 +23,6 @@ Solutions department strives to solve:
 
 :::tip
 
-If you would like to request internal research from Solutions department, check out notion section on ["How to Request Research from Solutions"](notion://www.notion.so/How-to-Request-Research-from-Solutions-910030f48f794f06897c2df7a4dd1b51)
+If you would like to request internal research from the Solutions department, check out the notion section on ["How to Request Research from Solutions"](notion://www.notion.so/How-to-Request-Research-from-Solutions-910030f48f794f06897c2df7a4dd1b51)
 
 :::
