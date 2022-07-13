@@ -102,13 +102,6 @@ Clippy and RustFMT are doing a pretty good job nowadays.
 Cargo's audit feature should not disclose any unpatched vulnerabilities.
 * `cargo audit` should always pass without errors
 
-## Vetted Libraries
-
-:::note
-
-TBD
-
-:::
 ### Testing, Mocking
 
 :::note
