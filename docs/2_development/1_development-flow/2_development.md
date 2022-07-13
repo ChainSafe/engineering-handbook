@@ -4,11 +4,11 @@ sidebar_position: 1
 # Development
 
 :::caution
-    🚨 If a repository is owned by ChainSafe there is no reason to fork the repository for pull requests.
+    If a repository is owned by ChainSafe there is no reason to fork the repository for pull requests.
 :::
 
 :::caution
-    🚨  The default branch should be `main`. For the majority of the time, pull requests will be merged into the `main` branch.
+    The default branch should be `main`. For the majority of the time, pull requests will be merged into the `main` branch.
 :::
 
 

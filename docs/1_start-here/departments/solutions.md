@@ -2,9 +2,9 @@
 
 Solutions is ChainSafe’s research and development team that conducts research to explore new technical and business frontiers. This generally includes cracking complex problems and working on novel ideas, producing architecture design and specification, prototyping, and, most importantly, staying up to date on the latest technology updates and exploring certain areas of interest that are beneficial to the whole company.  
 
-💡 **Vision:** To give internal and external teams the knowledge to implement their novel ideas and grow Web 3.0.
+**<img src="https://img.icons8.com/color/16/000000/light.png"/> Vision:** To give internal and external teams the knowledge to implement their novel ideas and grow Web 3.0.
 
-🎯 **Mission:** We combine our skillset, knowledge and constant research to deliver new perspectives, solve complex problems and help the community drive innovations forward.
+**<img src="https://img.icons8.com/color/16/000000/goal--v1.png"/> Mission:** We combine our skillset, knowledge and constant research to deliver new perspectives, solve complex problems and help the community drive innovations forward.
 
 ## Solutions Services
 
