@@ -61,14 +61,6 @@ If you think some rule is missing or unnecessary, feel free to contribute to htt
 
 ## Testing
 
-## Recommended Libraries
-
-:::note
-
-TBD
-
-:::
-
 ## Continuous integration
 
 :::note
