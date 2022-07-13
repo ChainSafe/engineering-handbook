@@ -1,4 +1,74 @@
-# Releasing npm packages
+# Typescript
+
+Our most notable Typescript stack:
+* https://github.com/ChainSafe/lodestar (Ethereum Consensus Client Lodestar)
+* https://github.com/ChainSafe/web3.js/tree/4.x (Web3.js)
+* https://github.com/ChainSafe/ssz (Simple Serialize library)
+* https://github.com/ChainSafe/bls (BLS library)
+* https://github.com/ChainSafe/filsnap (Metamask Snap for Filecoin)
+* [and others](https://github.com/ChainSafe?q=&type=all&language=typescript&sort=)
+
+## IDE configuration
+
+:::note
+
+TBD
+
+:::
+
+If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
+
+## Project structure
+
+:::note
+
+TBD
+
+:::
+
+### Monorepo
+
+:::note
+
+TBD
+
+:::
+
+## Linting
+
+Linting is a critical step in the source code life cycle. As not everyone in a given team will have the same programming approach, enforced linting rules can help keep a codebase consistent. As linting is a static analysis process, it will catch problems in your coding style, but not the logical errors. 
+
+For example, if one developer uses the `forEach` iterator and another uses the `for` loop, linting rules will give feedback to team members, ensuring they follow a consistent pattern. The same applies to documenting the source code, so it's essential to check that the tools have linting support. 
+
+Recommended lint tool is `eslint` with some chosen plugins (like `prettier` for code formatting) and to ensure code style across ChainSafe, we are providing a [shared configuration](https://github.com/ChainSafe/eslint-config) that you can use in your projects as a baseline:
+1. `yarn add --dev eslint@8 @rushstack/eslint-patch @chainsafe/eslint-config` //version depends on version in a shared configuration package.json
+   1. You can read more on why `@rushstack/eslint-patch` is needed here: https://github.com/ChainSafe/eslint-config#usage
+2. Create `.eslintrc.js` file with the following contents:
+```js
+require("@rushstack/eslint-patch/modern-module-resolution");
+
+module.exports = {
+  extends: "@chainsafe",
+}
+```
+3. add `lint` script in your package.json with command `eslint 'src/**/*.ts'` 
+
+:::note
+
+If you think some rule is missing or unnecessary, feel free to contribute to https://github.com/ChainSafe/eslint-config
+
+:::
+
+## Testing
+
+## Continuous integration
+
+:::note
+TBD
+:::
+
+
+## Releasing npm packages
 
 :::note
 This is a mostly automated process to enable consistency and make it hassle-free
@@ -6,7 +76,7 @@ to release new versions more often
 :::
 
 :::caution
-Make sure the repository is using squash merging and branching rules as described in [Setup repository section](../1_setup_repository.md)!
+Make sure the repository is using squash merging and branching rules as described in [Setup repository section](../1_development-flow/1_setup_repository.md)!
 :::
 
 ### Semantic Pull Requests
@@ -14,11 +84,11 @@ Make sure the repository is using squash merging and branching rules as describe
 For automatic releasing and version bumps, you should use semantic Pull Request titles.
 
 Semantic keywords and their meaning:
-- **fix** - your PR contains a bugfix which will bump a patch version - Example PR: `fix: resolved bug with automatic releasing`
-- **feat** - your PR contains a new feature that will bump a minor version - Example PR: `feat: added a new API endpoint`
-- **chore** - your PR contains trivial changes like editing README, bumping packages versions etc - Example PR: `chore: bumped typescript dependency`
-- **feat!** or **fix!** (notice exclamation)- your PR contains a breaking change which will trigger a major version update - Example PR: `feat!: new API endpoint, old one is deprecated`
 
+* **fix** - your PR contains a bugfix which will bump a patch version - Example PR: `fix: resolved bug with automatic releasing`
+* **feat** - your PR contains a new feature that will bump a minor version - Example PR: `feat: added a new API endpoint`
+* **chore** - your PR contains trivial changes like editing README, bumping packages versions etc - Example PR: `chore: bumped typescript dependency`
+* **feat!** or **fix!** (notice exclamation)- your PR contains a breaking change which will trigger a major version update * Example PR: `feat!: new API `endpoint, `the `old`` one is` deprecated`
 
 You can use the following Github action to ensure your Pull Requests follow this convention.
 
@@ -51,7 +121,7 @@ jobs:
 
 1. Merge Pull Request with semantic title
 2. Github Actions will open PR with a version bump in package.json and updated CHANGELOG.md
-3. After merging Release Pull Request, the package will be published on npm and a release with the changelog created on Github
+3. After merging the Release Pull Request, the package will be published on npm and a release with the changelog created on Github
 
 Following Github action will ensure that the above flow is working.
 
