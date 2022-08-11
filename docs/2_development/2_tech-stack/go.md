@@ -378,7 +378,10 @@ The only breaking change would be to rename the sentinel error Go variable name.
 ### Whether to export sentinel errors
 
 * If the sentinel error is wrapped and returned outside the package, the error should be **exported** so callers can handle it with `errors.Is`
-* If the sentinel error is handled in the same package it is defined in (for example: logged, checked with `errors.Is`), the error should be unexported
+* If the sentinel error is handled in the same package it is defined in (for example: logged, checked with `errors.Is`), the error should be unexported.
+
+Keeping package-local errors unexported produces a narrower Go API which is great.
+However, it's also tricky to follow up errors in the call stack to check if they should be exported or not; as a consequence you might want to just export all your sentinel errors if this is too much of a burden to check.
 
 Even if we don't need to check the sentinel error with `errors.Is`, using them is still useful for the test assertion `assert.ErrorIs` (see the [Testing errors section](#testing-errors) below)
 
