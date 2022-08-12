@@ -23,6 +23,6 @@ Solutions department strives to solve:
 
 :::tip
 
-If you would like to request internal research from Solutions department, check out notion section on ["How to Request Research from Solutions"](notion://www.notion.so/How-to-Request-Research-from-Solutions-910030f48f794f06897c2df7a4dd1b51)
+If you would like to request internal research from the Solutions department, check out the notion section on ["How to Request Research from Solutions"](notion://www.notion.so/How-to-Request-Research-from-Solutions-910030f48f794f06897c2df7a4dd1b51)
 
 :::

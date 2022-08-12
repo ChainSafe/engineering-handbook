@@ -1,5 +1,6 @@
 .github
 Afri
+blockchains
 BLS
 bugfix
 Buterin
@@ -51,6 +52,7 @@ middleware
 Mina
 mockgen
 Monorepo
+multichain
 Netifly
 npm
 OpenApi
@@ -75,6 +77,7 @@ unpatched
 Vitalik
 walkthrough
 Walkthroughs
+whitehats
 Web3
 WIP
 Zenhub
