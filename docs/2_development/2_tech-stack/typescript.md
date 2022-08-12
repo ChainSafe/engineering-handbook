@@ -10,11 +10,22 @@ Our most notable Typescript stack:
 
 ## IDE configuration
 
+### Visual Studio Code
+
+You can download it here: https://code.visualstudio.com/
+
+It is recommended to install the following extensions:
+
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - enables highlighting lint errors and fixing them
+* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) - enables advanced git overview
+* [DotEnv](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - support for .env files
+* [Yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - support for writing YAML files (useful for Github Actions)
+
 :::note
-
-TBD
-
+Visual Studio Code already has basic support for Markdown: https://code.visualstudio.com/docs/languages/markdown#_markdown-preview
 :::
+
+### Others
 
 If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
 
