@@ -16,15 +16,6 @@ TBD
 
 If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
 
-## Recommended Libraries
-
-:::note
-
-TBD
-
-:::
-
-
 ## Project structure
 
 ### Modules layout perspective
@@ -340,7 +331,7 @@ Make sure to pin the linter version (`version: v1.45`) since the same linters ca
 TBD: testing
 :::
 
-- [Linting](#linting-continous-integration)
+* [Linting](#linting-continous-integration)
 
 ## Mocking
 
@@ -418,8 +409,8 @@ This is to be done only once on your development environment.
 
 You should have two files **where the mocks are needed**:
 
-- `mocks_generate_test.go`
-- `mocks_test.go`
+* `mocks_generate_test.go`
+* `mocks_test.go`
 
 The `mocks_generate_test.go` is a single line file defining what mocks to generate, using a single `//go:generate mockgen` comment-command.
 
@@ -435,7 +426,7 @@ package something
 
 You have to put each interface you want to generate a mock for at the end of the mockgen command, separated by commas.
 
-    In our example case, this is the `something` package name.
+In our example case, this is the `something` package name.
 
 This file setup is designed such that:
 
@@ -532,60 +523,60 @@ We use again our example code, modifying the test we had for the `something` fun
 package something
 
 import (
-	"context"
-	"errors"
-	"testing"
+ "context"
+ "errors"
+ "testing"
 
-	"github.com/golang/mock/gomock"
-	"github.com/stretchr/testify/assert"
+ "github.com/golang/mock/gomock"
+ "github.com/stretchr/testify/assert"
 )
 
 func Test_something(t *testing.T) {
-	errTest := errors.New("test error")
+ errTest := errors.New("test error")
 
-	testCases := map[string]struct {
-		ctx            context.Context
-		fetcherBuilder func(ctrl *gomock.Controller) Fetcher
-		parserBuilder  func(ctrl *gomock.Controller) Parser
-		id             string
-		errWrapped     error
-		errMessage     string
-	}{
-		"parser error": {
-			ctx: context.Background(),
-			fetcherBuilder: func(ctrl *gomock.Controller) Fetcher {
-				fetcher := NewMockFetcher(ctrl)
-				fetcher.EXPECT().Fetch(context.Background()).
-					Return([]byte{1, 2, 3}, nil)
-				return fetcher
-			},
-			parserBuilder: func(ctrl *gomock.Controller) Parser {
-				parser := NewMockParser(ctrl)
-				parser.EXPECT().Parse([]byte{1, 2, 3}).
-					Return("", errTest)
-				return parser
-			},
-			errWrapped: errTest,
-			errMessage: "cannot parse: test error",
-		},
-	}
+ testCases := map[string]struct {
+  ctx            context.Context
+  fetcherBuilder func(ctrl *gomock.Controller) Fetcher
+  parserBuilder  func(ctrl *gomock.Controller) Parser
+  id             string
+  errWrapped     error
+  errMessage     string
+ }{
+  "parser error": {
+   ctx: context.Background(),
+   fetcherBuilder: func(ctrl *gomock.Controller) Fetcher {
+    fetcher := NewMockFetcher(ctrl)
+    fetcher.EXPECT().Fetch(context.Background()).
+     Return([]byte{1, 2, 3}, nil)
+    return fetcher
+   },
+   parserBuilder: func(ctrl *gomock.Controller) Parser {
+    parser := NewMockParser(ctrl)
+    parser.EXPECT().Parse([]byte{1, 2, 3}).
+     Return("", errTest)
+    return parser
+   },
+   errWrapped: errTest,
+   errMessage: "cannot parse: test error",
+  },
+ }
 
-	for name, testCase := range testCases {
-		t.Run(name, func(t *testing.T) {
-			ctrl := gomock.NewController(t) // we inject the testing t to construct the controller inside the subtest
+ for name, testCase := range testCases {
+  t.Run(name, func(t *testing.T) {
+   ctrl := gomock.NewController(t) // we inject the testing t to construct the controller inside the subtest
 
-			fetcher := testCase.fetcherBuilder(ctrl) // we inject the controller here inside the subtest
-			parser := testCase.parserBuilder(ctrl)
+   fetcher := testCase.fetcherBuilder(ctrl) // we inject the controller here inside the subtest
+   parser := testCase.parserBuilder(ctrl)
 
-			id, err := something(testCase.ctx, fetcher, parser)
+   id, err := something(testCase.ctx, fetcher, parser)
 
-			assert.Equal(t, testCase.id, id)
-			assert.ErrorIs(t, err, testCase.errWrapped)
-			if testCase.errWrapped != nil {
-				assert.EqualError(t, err, testCase.errMessage)
-			}
-		})
-	}
+   assert.Equal(t, testCase.id, id)
+   assert.ErrorIs(t, err, testCase.errWrapped)
+   if testCase.errWrapped != nil {
+    assert.EqualError(t, err, testCase.errMessage)
+   }
+  })
+ }
 }
 ```
 
@@ -661,8 +652,8 @@ Although ideal, it's not necessary to assert the calls order for every test.
 
 It is however quite important in a few cases such as:
 
-- Calls to a buffer's `Write` method, since you want to make sure things are written in the right order
-- Asynchronous code where you want to sure calls happen in a certain predictable order
+* Calls to a buffer's `Write` method, since you want to make sure things are written in the right order
+* Asynchronous code where you want to sure calls happen in a certain predictable order
 
 #### Custom GoMock matchers
 
@@ -674,33 +665,33 @@ In the following we implement the `gomock.Matcher` interface for a string regula
 package server
 
 import (
-	"regexp"
+ "regexp"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 var _ gomock.Matcher = (*regexMatcher)(nil)
 
 type regexMatcher struct {
-	regexp *regexp.Regexp
+ regexp *regexp.Regexp
 }
 
 func (r *regexMatcher) Matches(x interface{}) bool {
-	s, ok := x.(string)
-	if !ok {
-		return false
-	}
-	return r.regexp.MatchString(s)
+ s, ok := x.(string)
+ if !ok {
+  return false
+ }
+ return r.regexp.MatchString(s)
 }
 
 func (r *regexMatcher) String() string {
-	return "regular expression " + r.regexp.String()
+ return "regular expression " + r.regexp.String()
 }
 
 func newRegexMatcher(regex string) *regexMatcher {
-	return &regexMatcher{
-		regexp: regexp.MustCompile(regex),
-	}
+ return &regexMatcher{
+  regexp: regexp.MustCompile(regex),
+ }
 }
 ```
 
@@ -710,28 +701,27 @@ Indeed, in this particular case, we cannot predict which port will be available 
 
 Our production code to test looks like:
 
-
 ```go title="server/server.go"
 package server
 
 import (
-	"fmt"
-	"net"
+ "fmt"
+ "net"
 )
 
 type Logger interface {
-	Info(s string)
+ Info(s string)
 }
 
 func listenAndLog(logger Logger) (err error) {
-	listener, err := net.Listen("tcp", "127.0.0.1:0")
-	if err != nil {
-		return fmt.Errorf("cannot listen: %w", err)
-	}
+ listener, err := net.Listen("tcp", "127.0.0.1:0")
+ if err != nil {
+  return fmt.Errorf("cannot listen: %w", err)
+ }
 
-	logger.Info("listening on " + listener.Addr().String())
+ logger.Info("listening on " + listener.Addr().String())
 
-	return listener.Close()
+ return listener.Close()
 }
 ```
 
@@ -742,19 +732,19 @@ package server
 
 
 import (
-	"testing"
+ "testing"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 func Test_listenAndLog(t *testing.T) {
-	ctrl := gomock.NewController(t)
+ ctrl := gomock.NewController(t)
 
-	logger := NewMockLogger(ctrl)
-	regexMatcher := newRegexMatcher(`^listening on 127.0.0.1:[0-9]{1,5}$`)
-	logger.EXPECT().Info(regexMatcher)
+ logger := NewMockLogger(ctrl)
+ regexMatcher := newRegexMatcher(`^listening on 127.0.0.1:[0-9]{1,5}$`)
+ logger.EXPECT().Info(regexMatcher)
 
-	listenAndLog(logger)
+ listenAndLog(logger)
 }
 ```
 
@@ -772,34 +762,34 @@ BUT there are corner cases. For example, modifying slightly our `something` exam
 package something
 
 import (
-	"context"
-	"fmt"
-	"time"
+ "context"
+ "fmt"
+ "time"
 )
 
 type Fetcher interface {
-	Fetch(ctx context.Context) (data []byte, err error)
+ Fetch(ctx context.Context) (data []byte, err error)
 }
 
 type Parser interface {
-	Parse(data []byte) (id string, err error)
+ Parse(data []byte) (id string, err error)
 }
 
 func something(ctx context.Context, fetcher Fetcher, parser Parser) (id string, err error) {
-	ctx, cancel := context.WithTimeout(ctx, time.Second) // time based and unpredictable
-	defer cancel()
+ ctx, cancel := context.WithTimeout(ctx, time.Second) // time based and unpredictable
+ defer cancel()
 
-	data, err := fetcher.Fetch(ctx)
-	if err != nil {
-		return "", fmt.Errorf("cannot fetch: %w", err)
-	}
+ data, err := fetcher.Fetch(ctx)
+ if err != nil {
+  return "", fmt.Errorf("cannot fetch: %w", err)
+ }
 
-	id, err = parser.Parse(data)
-	if err != nil {
-		return "", fmt.Errorf("cannot parse: %w", err)
-	}
+ id, err = parser.Parse(data)
+ if err != nil {
+  return "", fmt.Errorf("cannot parse: %w", err)
+ }
 
-	return id, nil
+ return id, nil
 }
 ```
 
@@ -809,30 +799,29 @@ We can't really use a custom matcher for the context either, since depending on 
 
 In that case, you can use `gomock.AssignableToTypeOf()` such that the implementation is at least asserted for the `context.Context` interface:
 
-
 ```go title="something/something_test.go"
 package something
 
 import (
-	"context"
-	"testing"
-	"time"
+ "context"
+ "testing"
+ "time"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 func Test_something(t *testing.T) {
-	ctrl := gomock.NewController(t)
+ ctrl := gomock.NewController(t)
 
-	fetcher := NewMockFetcher(ctrl)
-	timedCtx, cancel := context.WithTimeout(context.Background(), time.Hour)
-	cancel()
-	timedCtxMatcher := gomock.AssignableToTypeOf(timedCtx)
-	fetcher.EXPECT().Fetch(timedCtxMatcher).Return([]byte{1}, nil)
+ fetcher := NewMockFetcher(ctrl)
+ timedCtx, cancel := context.WithTimeout(context.Background(), time.Hour)
+ cancel()
+ timedCtxMatcher := gomock.AssignableToTypeOf(timedCtx)
+ fetcher.EXPECT().Fetch(timedCtxMatcher).Return([]byte{1}, nil)
 
-	parser := NewMockParser(ctrl)
-	parser.EXPECT().Parse([]byte{1}).Return("1", nil)
+ parser := NewMockParser(ctrl)
+ parser.EXPECT().Parse([]byte{1}).Return("1", nil)
 
-	_, _ = something(context.Background(), fetcher, parser)
+ _, _ = something(context.Background(), fetcher, parser)
 }
 ```
