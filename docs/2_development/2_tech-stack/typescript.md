@@ -38,7 +38,7 @@ Recommended lint tool is `eslint` with some chosen plugins (like `prettier` for 
 1. `yarn add --dev eslint@8 @rushstack/eslint-patch @chainsafe/eslint-config` //version depends on version in a shared configuration package.json
    1. You can read more on why `@rushstack/eslint-patch` is needed here: https://github.com/ChainSafe/eslint-config#usage
 
-1. Create `.eslintrc.js` file with the following contents:
+2. Create `.eslintrc.js` file with the following contents:
 
 ```js
 require("@rushstack/eslint-patch/modern-module-resolution");
@@ -48,7 +48,7 @@ module.exports = {
 }
 ```
 
-1. add `lint` script in your package.json with command `eslint 'src/**/*.ts'`
+3. add `lint` script in your package.json with command `eslint 'src/**/*.ts'`
 
 :::note
 
