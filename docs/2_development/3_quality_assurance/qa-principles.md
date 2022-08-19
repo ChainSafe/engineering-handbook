@@ -10,7 +10,7 @@ The main objective of QA is to continuously improve development and testing proc
  
 - **Prevention > Reaction**. Test early and often in the life cycle and be thorough on pull requests. It's always better to find an issue before it is merged to the repository. 
 
-- **Be explorative and creative**. Consider the different scenarios by which people could be interacting with our software. Test across multiple devices / browsers / resolutions / networks / environments / wallet extensions. 
+- **Be exploratory and creative**. Consider the different scenarios by which people could be interacting with our software. Test across multiple devices / browsers / resolutions / networks / environments / wallet extensions. 
 
 
  

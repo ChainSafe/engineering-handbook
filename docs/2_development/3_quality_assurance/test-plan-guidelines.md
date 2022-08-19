@@ -18,7 +18,7 @@ The sections described below are applicable to most test plans and can be used a
 ### Scope of testing definition:
 
 - Add specific details on what will be tested and what types of tests they will be. For example, manual and/or automated
-- For any automated tests please state what levels of the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid) they cover (Unit / Integration / Service / UI etc)
+- For any automated tests please state what levels of the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html#TheTestPyramid) they cover (Unit / Integration / Service / User Interface etc)
 
 ### Resources / Roles & Responsibilities:
 - Outline all the people who will be involved with the testing effort and what their responsibility is within it
@@ -42,7 +42,7 @@ Examples:
 
 ### Test Environment & CI
 - Add details here on where / when / how the tests are executed in CI
-- List the environments required to run the tests (dev, test, staging)
+- List the environments required to run the tests (development, staging etc)
 
 ### Test Data:
 - Add details outlining any data requirements for testing and details on how to setup/clear down after testing
