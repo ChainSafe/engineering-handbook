@@ -1,4 +1,5 @@
 .github
+.env
 Afri
 blockchains
 BLS
@@ -99,8 +100,8 @@ unpatched
 USD
 Vimawesome
 Vitalik
+YAML
 VSCode
-
 walkthrough
 Walkthroughs
 whitehats
