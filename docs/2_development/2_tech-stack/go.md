@@ -325,6 +325,42 @@ jobs:
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
 
+## Panic
+
+In Go, `panic` should only be used when a **programming error** has been encountered.
+
+For any error caused by external factors such as files or network, you should **NOT panic** and use errors instead.
+
+An example of such a panic usage would be:
+
+```go
+type logLevel uint8
+
+const (
+  Info logLevel = iota
+  Warn
+  Error
+)
+
+func (l *logLevel) String() string {
+  switch *l {
+  case Info:
+    return "info"
+  case Warn:
+    return "warn"
+  case Error:
+    return "error"
+  default:
+    // we panic since this should never happen
+    panic(fmt.Sprintf("invalid log level: %d", *l))
+  }
+}
+```
+
+A `panic` should be placed such that its trigger condition is so critical that the program should crash and the end user should report it to the programmer.
+
+Its counterpart `recover` should not really be used, except for testing a panic in test code (or use `assert.PanicsWithValue`).
+
 ## Continuous integration
 
 :::note
