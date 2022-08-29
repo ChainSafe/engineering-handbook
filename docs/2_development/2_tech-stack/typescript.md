@@ -239,7 +239,7 @@ Feel free to extend this flow with nightly/alpha/beta releases.
 
 In case of npm publish fails for whatever reason, release-please won't allow you to try to re-run the Github action. 
 Instead,
-you should open the "revert" Pull Request either from Github UI or the local git client.
+you should open the "revert" Pull Request either using Github or the local git client.
 
 Before merging it, make sure, you have deleted the git tag and GitHub release upstream.
 
