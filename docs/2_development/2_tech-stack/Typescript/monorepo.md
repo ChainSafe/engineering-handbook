@@ -15,7 +15,7 @@ If you are running node@16+, you just need to run `corepack enable`.
 If you are running older version, run `npm i -g corepack`.
 Make sure you put this in README file for future contributors.
 
-### 2. Init repo
+### 2. Init repository
 
 - Make sure your root `package.json` contains:
 

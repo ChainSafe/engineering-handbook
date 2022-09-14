@@ -21,6 +21,7 @@ Clippy
 coc-rust-analyzer
 codebase
 codeowners
+Corepack
 customizable
 CTO
 facto
@@ -37,6 +38,7 @@ Ethereum
 eg
 eg.
 Filecoin
+FilSnap
 Frontend
 fzf
 GitBook
@@ -47,6 +49,7 @@ GoMock
 Goto
 golangci-lint
 gruvbox
+Init
 IntelliJ
 IntelliSense
 IPFS
