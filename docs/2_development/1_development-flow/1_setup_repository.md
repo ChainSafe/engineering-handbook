@@ -6,7 +6,7 @@ sidebar_position: 1
 These are steps to setup a new repository under the ChainSafe Github organization:
 
 :::info
-💡 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
+The org owners are now the Heads of Engineering and they can assist you with any changes you require.
 :::
 
 ## Project Creation
@@ -17,7 +17,7 @@ These are steps to setup a new repository under the ChainSafe Github organizatio
 ## Setup Team Permissions
 
 1. Go to `Settings` → `Manage Access`. 
-2.  Add the team and give them **Write** permissions. Avoid inviting individuals, there should be a team on the organization that has everyone working on the project. 
+2. Add the team and give them **Write** permissions. Avoid inviting individuals, there should be a team on the organization that has everyone working on the project. 
     1. If the team or the admin team doesn't exist, please reach out to an org owner (see note above)
 
 ![create_repository_assets/Screenshot_2020-05-07_11-28-00.png](create_repository_assets/Screenshot_2020-05-07_11-28-00.png)
@@ -47,7 +47,7 @@ Some additional options:
 
 ## Disable Merge Commits & Rebase
 
-1. Goto `Settings`  and scroll down to `Merge button`
+1. Goto `Settings` and scroll down to `Merge button`
     
     ![create_repository_assets/Screenshot_2020-05-12_09-40-08.png](create_repository_assets/Screenshot_2020-05-12_09-40-08.png)
     

@@ -1,8 +1,9 @@
 # Go
 
-Our most notable Go stack:
-* https://github.com/ChainSafe/gossamer (Polkadot Gossamer)
-* https://github.com/ChainSafe/chainbridge-core (ChainBridge)
+Our most notable Go projects:
+
+* [Polkadot Gossamer](https://github.com/ChainSafe/gossamer)
+* [ChainBridge Core](https://github.com/ChainSafe/chainbridge-core)
 * [and others](https://github.com/chainsafe?q=&type=all&language=go&sort=)
 
 ## IDE configuration
@@ -12,6 +13,8 @@ Our most notable Go stack:
 TBD
 
 :::
+
+If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
 
 ## Project structure
 
@@ -93,8 +96,8 @@ Each can be imported for example by `cmd/myapp/main.go` with:
 
 ```go
 import (
-	"github.com/ChainSafe/repo/internal/config"
-	"github.com/ChainSafe/repo/internal/store"
+ "github.com/ChainSafe/repo/internal/config"
+ "github.com/ChainSafe/repo/internal/store"
 )
 ```
 
@@ -123,7 +126,7 @@ Each can be imported by any Go project (including this one) with for example
 
 ```go
 import (
-	"github.com/user/repo/pkg/public1"
+ "github.com/user/repo/pkg/public1"
 )
 ```
 
@@ -173,9 +176,9 @@ For example with this file structure:
 
 The differences are as follows:
 
-- no `cmd` directory since this is not a runnable application
-- no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
-- `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
+* no `cmd` directory since this is not a runnable application
+* no `pkg` directory since this is a library, all exported Go API should be at the top level to reduce the length of import statements
+* `api.go` file containing all your Go public API. It should contain your exported interfaces, constants and constructors.
 
 Note that most of your code should still reside in the `internal` directory, and you should keep your public Go API to a minimum.
 
@@ -189,21 +192,21 @@ First time concept was described by [Ben Jonson in an article with the same name
 
 ### Other tips
 
-- Package naming
-  - Your package name should be the same as the directory containing it, **except for the `main` package**
-  - Use single words for package names
-  - Do not use generic names for package names such as `utils` or `helpers`
-- Package nesting
-  - Try to avoid nesting packages by default
-  - You can nest packages if you have different implementations for the same interface (e.g. a store interface)
-  - You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
+* Package naming
+  * Your package name should be the same as the directory containing it, **except for the `main` package**
+  * Use single words for package names
+  * Do not use generic names for package names such as `utils` or `helpers`
+* Package nesting
+  * Try to avoid nesting packages by default
+  * You can nest packages if you have different implementations for the same interface (e.g. a store interface)
+  * You can nest packages if you start having a lot of Go files (more than 10) and it really does make sense to make subpackages
 
 ## Linting
 
 Use [golangci-lint](https://golangci-lint.run/):
 
 ```sh
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.45
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.46
 ```
 
 Together with a `.golangci.yml` at the root of your project:
@@ -298,22 +301,9 @@ linters:
     - whitespace
 ```
 
-## Recommended Libraries
-
-:::note
-
-TBD
-
-:::
-
-## Continuous integration
-
-:::note
-TBD: testing 
-:::
+### Linting continuous integration
 
 For your CI, you should have lint Github job. For example:
-
 
 ```yml title=".github/workflows/lint.yaml"
 on:
@@ -334,6 +324,50 @@ jobs:
 :::caution
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
+
+## Panic
+
+In Go, `panic` should only be used when a **programming error** has been encountered.
+
+For any error caused by external factors such as files or network, you should **NOT panic** and use errors instead.
+
+An example of such a panic usage would be:
+
+```go
+type logLevel uint8
+
+const (
+  Info logLevel = iota
+  Warn
+  Error
+)
+
+func (l *logLevel) String() string {
+  switch *l {
+  case Info:
+    return "info"
+  case Warn:
+    return "warn"
+  case Error:
+    return "error"
+  default:
+    // we panic since this should never happen
+    panic(fmt.Sprintf("invalid log level: %d", *l))
+  }
+}
+```
+
+A `panic` should be placed such that its trigger condition is so critical that the program should crash and the end user should report it to the programmer.
+
+Its counterpart `recover` should not really be used, except for testing a panic in test code (or use `assert.PanicsWithValue`).
+
+## Continuous integration
+
+:::note
+TBD: testing
+:::
+
+* [Linting](#linting-continous-integration)
 
 ## Mocking
 
@@ -411,8 +445,8 @@ This is to be done only once on your development environment.
 
 You should have two files **where the mocks are needed**:
 
-- `mocks_generate_test.go`
-- `mocks_test.go`
+* `mocks_generate_test.go`
+* `mocks_test.go`
 
 The `mocks_generate_test.go` is a single line file defining what mocks to generate, using a single `//go:generate mockgen` comment-command.
 
@@ -428,7 +462,7 @@ package something
 
 You have to put each interface you want to generate a mock for at the end of the mockgen command, separated by commas.
 
-    In our example case, this is the `something` package name.
+In our example case, this is the `something` package name.
 
 This file setup is designed such that:
 
@@ -525,60 +559,60 @@ We use again our example code, modifying the test we had for the `something` fun
 package something
 
 import (
-	"context"
-	"errors"
-	"testing"
+ "context"
+ "errors"
+ "testing"
 
-	"github.com/golang/mock/gomock"
-	"github.com/stretchr/testify/assert"
+ "github.com/golang/mock/gomock"
+ "github.com/stretchr/testify/assert"
 )
 
 func Test_something(t *testing.T) {
-	errTest := errors.New("test error")
+ errTest := errors.New("test error")
 
-	testCases := map[string]struct {
-		ctx            context.Context
-		fetcherBuilder func(ctrl *gomock.Controller) Fetcher
-		parserBuilder  func(ctrl *gomock.Controller) Parser
-		id             string
-		errWrapped     error
-		errMessage     string
-	}{
-		"parser error": {
-			ctx: context.Background(),
-			fetcherBuilder: func(ctrl *gomock.Controller) Fetcher {
-				fetcher := NewMockFetcher(ctrl)
-				fetcher.EXPECT().Fetch(context.Background()).
-					Return([]byte{1, 2, 3}, nil)
-				return fetcher
-			},
-			parserBuilder: func(ctrl *gomock.Controller) Parser {
-				parser := NewMockParser(ctrl)
-				parser.EXPECT().Parse([]byte{1, 2, 3}).
-					Return("", errTest)
-				return parser
-			},
-			errWrapped: errTest,
-			errMessage: "cannot parse: test error",
-		},
-	}
+ testCases := map[string]struct {
+  ctx            context.Context
+  fetcherBuilder func(ctrl *gomock.Controller) Fetcher
+  parserBuilder  func(ctrl *gomock.Controller) Parser
+  id             string
+  errWrapped     error
+  errMessage     string
+ }{
+  "parser error": {
+   ctx: context.Background(),
+   fetcherBuilder: func(ctrl *gomock.Controller) Fetcher {
+    fetcher := NewMockFetcher(ctrl)
+    fetcher.EXPECT().Fetch(context.Background()).
+     Return([]byte{1, 2, 3}, nil)
+    return fetcher
+   },
+   parserBuilder: func(ctrl *gomock.Controller) Parser {
+    parser := NewMockParser(ctrl)
+    parser.EXPECT().Parse([]byte{1, 2, 3}).
+     Return("", errTest)
+    return parser
+   },
+   errWrapped: errTest,
+   errMessage: "cannot parse: test error",
+  },
+ }
 
-	for name, testCase := range testCases {
-		t.Run(name, func(t *testing.T) {
-			ctrl := gomock.NewController(t) // we inject the testing t to construct the controller inside the subtest
+ for name, testCase := range testCases {
+  t.Run(name, func(t *testing.T) {
+   ctrl := gomock.NewController(t) // we inject the testing t to construct the controller inside the subtest
 
-			fetcher := testCase.fetcherBuilder(ctrl) // we inject the controller here inside the subtest
-			parser := testCase.parserBuilder(ctrl)
+   fetcher := testCase.fetcherBuilder(ctrl) // we inject the controller here inside the subtest
+   parser := testCase.parserBuilder(ctrl)
 
-			id, err := something(testCase.ctx, fetcher, parser)
+   id, err := something(testCase.ctx, fetcher, parser)
 
-			assert.Equal(t, testCase.id, id)
-			assert.ErrorIs(t, err, testCase.errWrapped)
-			if testCase.errWrapped != nil {
-				assert.EqualError(t, err, testCase.errMessage)
-			}
-		})
-	}
+   assert.Equal(t, testCase.id, id)
+   assert.ErrorIs(t, err, testCase.errWrapped)
+   if testCase.errWrapped != nil {
+    assert.EqualError(t, err, testCase.errMessage)
+   }
+  })
+ }
 }
 ```
 
@@ -654,8 +688,8 @@ Although ideal, it's not necessary to assert the calls order for every test.
 
 It is however quite important in a few cases such as:
 
-- Calls to a buffer's `Write` method, since you want to make sure things are written in the right order
-- Asynchronous code where you want to sure calls happen in a certain predictable order
+* Calls to a buffer's `Write` method, since you want to make sure things are written in the right order
+* Asynchronous code where you want to sure calls happen in a certain predictable order
 
 #### Custom GoMock matchers
 
@@ -667,33 +701,33 @@ In the following we implement the `gomock.Matcher` interface for a string regula
 package server
 
 import (
-	"regexp"
+ "regexp"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 var _ gomock.Matcher = (*regexMatcher)(nil)
 
 type regexMatcher struct {
-	regexp *regexp.Regexp
+ regexp *regexp.Regexp
 }
 
 func (r *regexMatcher) Matches(x interface{}) bool {
-	s, ok := x.(string)
-	if !ok {
-		return false
-	}
-	return r.regexp.MatchString(s)
+ s, ok := x.(string)
+ if !ok {
+  return false
+ }
+ return r.regexp.MatchString(s)
 }
 
 func (r *regexMatcher) String() string {
-	return "regular expression " + r.regexp.String()
+ return "regular expression " + r.regexp.String()
 }
 
 func newRegexMatcher(regex string) *regexMatcher {
-	return &regexMatcher{
-		regexp: regexp.MustCompile(regex),
-	}
+ return &regexMatcher{
+  regexp: regexp.MustCompile(regex),
+ }
 }
 ```
 
@@ -703,28 +737,27 @@ Indeed, in this particular case, we cannot predict which port will be available 
 
 Our production code to test looks like:
 
-
 ```go title="server/server.go"
 package server
 
 import (
-	"fmt"
-	"net"
+ "fmt"
+ "net"
 )
 
 type Logger interface {
-	Info(s string)
+ Info(s string)
 }
 
 func listenAndLog(logger Logger) (err error) {
-	listener, err := net.Listen("tcp", "127.0.0.1:0")
-	if err != nil {
-		return fmt.Errorf("cannot listen: %w", err)
-	}
+ listener, err := net.Listen("tcp", "127.0.0.1:0")
+ if err != nil {
+  return fmt.Errorf("cannot listen: %w", err)
+ }
 
-	logger.Info("listening on " + listener.Addr().String())
+ logger.Info("listening on " + listener.Addr().String())
 
-	return listener.Close()
+ return listener.Close()
 }
 ```
 
@@ -735,19 +768,19 @@ package server
 
 
 import (
-	"testing"
+ "testing"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 func Test_listenAndLog(t *testing.T) {
-	ctrl := gomock.NewController(t)
+ ctrl := gomock.NewController(t)
 
-	logger := NewMockLogger(ctrl)
-	regexMatcher := newRegexMatcher(`^listening on 127.0.0.1:[0-9]{1,5}$`)
-	logger.EXPECT().Info(regexMatcher)
+ logger := NewMockLogger(ctrl)
+ regexMatcher := newRegexMatcher(`^listening on 127.0.0.1:[0-9]{1,5}$`)
+ logger.EXPECT().Info(regexMatcher)
 
-	listenAndLog(logger)
+ listenAndLog(logger)
 }
 ```
 
@@ -765,34 +798,34 @@ BUT there are corner cases. For example, modifying slightly our `something` exam
 package something
 
 import (
-	"context"
-	"fmt"
-	"time"
+ "context"
+ "fmt"
+ "time"
 )
 
 type Fetcher interface {
-	Fetch(ctx context.Context) (data []byte, err error)
+ Fetch(ctx context.Context) (data []byte, err error)
 }
 
 type Parser interface {
-	Parse(data []byte) (id string, err error)
+ Parse(data []byte) (id string, err error)
 }
 
 func something(ctx context.Context, fetcher Fetcher, parser Parser) (id string, err error) {
-	ctx, cancel := context.WithTimeout(ctx, time.Second) // time based and unpredictable
-	defer cancel()
+ ctx, cancel := context.WithTimeout(ctx, time.Second) // time based and unpredictable
+ defer cancel()
 
-	data, err := fetcher.Fetch(ctx)
-	if err != nil {
-		return "", fmt.Errorf("cannot fetch: %w", err)
-	}
+ data, err := fetcher.Fetch(ctx)
+ if err != nil {
+  return "", fmt.Errorf("cannot fetch: %w", err)
+ }
 
-	id, err = parser.Parse(data)
-	if err != nil {
-		return "", fmt.Errorf("cannot parse: %w", err)
-	}
+ id, err = parser.Parse(data)
+ if err != nil {
+  return "", fmt.Errorf("cannot parse: %w", err)
+ }
 
-	return id, nil
+ return id, nil
 }
 ```
 
@@ -802,30 +835,29 @@ We can't really use a custom matcher for the context either, since depending on 
 
 In that case, you can use `gomock.AssignableToTypeOf()` such that the implementation is at least asserted for the `context.Context` interface:
 
-
 ```go title="something/something_test.go"
 package something
 
 import (
-	"context"
-	"testing"
-	"time"
+ "context"
+ "testing"
+ "time"
 
-	"github.com/golang/mock/gomock"
+ "github.com/golang/mock/gomock"
 )
 
 func Test_something(t *testing.T) {
-	ctrl := gomock.NewController(t)
+ ctrl := gomock.NewController(t)
 
-	fetcher := NewMockFetcher(ctrl)
-	timedCtx, cancel := context.WithTimeout(context.Background(), time.Hour)
-	cancel()
-	timedCtxMatcher := gomock.AssignableToTypeOf(timedCtx)
-	fetcher.EXPECT().Fetch(timedCtxMatcher).Return([]byte{1}, nil)
+ fetcher := NewMockFetcher(ctrl)
+ timedCtx, cancel := context.WithTimeout(context.Background(), time.Hour)
+ cancel()
+ timedCtxMatcher := gomock.AssignableToTypeOf(timedCtx)
+ fetcher.EXPECT().Fetch(timedCtxMatcher).Return([]byte{1}, nil)
 
-	parser := NewMockParser(ctrl)
-	parser.EXPECT().Parse([]byte{1}).Return("1", nil)
+ parser := NewMockParser(ctrl)
+ parser.EXPECT().Parse([]byte{1}).Return("1", nil)
 
-	_, _ = something(context.Background(), fetcher, parser)
+ _, _ = something(context.Background(), fetcher, parser)
 }
 ```
