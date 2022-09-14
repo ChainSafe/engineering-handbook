@@ -177,7 +177,7 @@ Make sure to read more about the new workspace resolution option: https://yarnpk
 #### Independent versioning
 If you track versions of your package independently, 
 you can use `yarn workspace workspace-1 version -i <major|minor|patch|semver range>`
-but it's probably better to automate this using [release please](./readme.md#releasing-npm-packages)
+but it's probably better to automate this using [release please](./#cutting-release)
 
 #### Uniform versioning
 

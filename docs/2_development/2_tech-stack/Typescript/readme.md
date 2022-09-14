@@ -164,7 +164,7 @@ jobs:
             chore
 ```
 
-### Cutting release
+### Cutting release {#cutting-release}
 
 1. Merge Pull Request with semantic title
 2. Github Actions will open PR with a version bump in package.json and updated CHANGELOG.md
