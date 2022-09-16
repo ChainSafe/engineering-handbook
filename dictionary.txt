@@ -88,6 +88,8 @@ SDK
 semver
 skillset
 Slackbot
+struct
+subpackage
 subpackages
 subtest
 subtests
@@ -95,6 +97,7 @@ Sygma
 TBD
 TODO
 Udemy
+unexported
 unintuitive
 unpatched
 USD
