@@ -466,8 +466,11 @@ In our example case, this is the `something` package name.
 
 This file setup is designed such that:
 
-* Mocks are only accessible to test files in the current Go package. Indeed `*_test.go` files are not exported and only accessible by other test files in the same package.This avoids pollution of the package Go API, and possible horrendous package dependencies.
+* Mocks are only accessible to test files in the current Go package. Indeed `*_test.go` files are not exported and only accessible by other test files in the same package. This avoids pollution of the package Go API, and possible horrendous package dependencies.
 * Minimal amount of files per package, and minimal Git diffs at code evolves
+* No effect on Go test coverage, since `*_test.go` files are not included.
+* Github auto collapses `*mock*` files in the PR diff view, making it easier to review.
+* No particular mocking library or style is suggested to the user of the package, since no mock is exported.
 
 :::caution
 NEVER ever export mocks to other packages
