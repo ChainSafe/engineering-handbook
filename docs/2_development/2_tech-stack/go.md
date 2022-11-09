@@ -452,7 +452,7 @@ The `mocks_generate_test.go` is a single line file defining what mocks to genera
 
 The `mocks_test.go` is the generate mock code for all the mocks needed by the package.
 
-For example, to generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#Example-production-code)):
+For example, to generate mocks for the `Fetcher` and `Parser` interfaces (defined in [the section above](#example-production-code)):
 
 ```go title="something/mocks_generate_test.go"
 package something
@@ -793,7 +793,7 @@ This is very rare. Most of the time:
 
 1. Arguments are predictable
 2. Production code can be changed to have predictable arguments in test code
-3. You can use a [custom GoMock matcher](#Custom-GoMock-matchers) to have some level of assertion
+3. You can use a [custom GoMock matcher](#custom-gomock-matchers) to have some level of assertion
 
 BUT there are corner cases. For example, modifying slightly our `something` example function:
 

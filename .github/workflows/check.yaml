@@ -20,4 +20,12 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn typecheck
     - run: yarn spellcheck
+    - name: Check for uppercase section links
+      run: |
+        found="$(grep -rE '\(#.*[A-Z].*\)?' ./docs || echo '')"
+        if [ "$found" = "" ]; then
+          exit 0
+        fi
+        echo -e "Found problematic uppercase section links:\n$found"
+        exit 1
     - run: yarn build
