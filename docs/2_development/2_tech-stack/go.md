@@ -874,7 +874,7 @@ There is often a debate within code reviews about if we should pass an argument 
 As a general rule, **prefer passing by value**:
 
 - it removes the risk of `nil` arguments making the code panic
-- callers should inject a value, functions should not behave specifically when a `nil` argument is passed, to avoid *dark magic code*. Prefer expliciteness over laziness.
+- callers should inject a value, functions should not behave specifically when a `nil` argument is passed, to avoid *dark magic code*. Prefer explicitness over laziness.
 - Even when you need to modify an argument, often taking the argument as value and returning the updated argument is clearer.
 
 The following addresses how commonly used types should be passed as argument:

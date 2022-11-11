@@ -67,6 +67,8 @@ Mina
 mockgen
 Monorepo
 multichain
+mutex
+mutexes
 natively
 Neovim
 nerdtree
@@ -88,6 +90,8 @@ SDK
 semver
 skillset
 Slackbot
+struct
+structs
 subpackages
 subtest
 subtests
@@ -95,6 +99,7 @@ Sygma
 TBD
 TODO
 Udemy
+unexported
 unintuitive
 unpatched
 USD
