@@ -337,7 +337,8 @@ There are three rules to define interfaces and enforce good code quality, as des
 ### Accept interfaces, return concrete types
 
 This is by far the most important and fruitful rule.
-When returning something meant to be used as an interface, always return a pointer.
+When returning something meant to be used as an interface, always return a pointer,
+except when the function can return one of multiple implementations (which is not that common).
 
 For example:
 
