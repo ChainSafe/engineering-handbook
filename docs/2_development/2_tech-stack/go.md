@@ -325,6 +325,114 @@ jobs:
 Make sure to pin the linter version (`version: v1.45`) since the same linters can behave differently from a version to another.
 :::
 
+## Interfaces
+
+Go interfaces are useful for two main reasons:
+
+1. Abstract implementation details
+2. Test mocks generation (see the [Mocking section](#mocking))
+
+There are three rules to define interfaces and enforce good code quality, as described in the subsections below:
+
+### Accept interfaces, return concrete types
+
+This is by far the most important and fruitful rule.
+When returning something meant to be used as an interface, always return a pointer.
+
+For example:
+
+```go
+package database
+
+type Database struct {}
+
+func New() *Database {
+  return &Database{}
+}
+
+func (d *Database) Get(key string) (value string) {
+  // ...
+}
+
+func (d *Database) Set(key string, value string) {
+  // ...
+}
+```
+
+For callers, they should define **their own interface in their own package** (and **NOT import them** from another package).
+Continuing our example:
+
+```go
+package service
+
+type Database interface {
+  Get(key string) (value string)
+  Set(key string, value string)
+}
+
+type Service struct {
+  database Database
+}
+
+func New(database Database) *Service {
+  return &Service{database: database}
+}
+```
+
+An additional element to note is that you should inject the actual implementation down your call stack.
+Implementation initialization should ideally occur at the top-most layer of your call stack, such as the `main.main` function.
+
+Finally, to enforce such rule, you can use the [`ireturn` linter](https://github.com/butuzov/ireturn) in your [.golangci.yml configuration](#linting).
+
+### Narrow interfaces and composition
+
+All your interfaces should be as **narrow** as possible.
+
+Interfaces should only have methods that must be used in your **production code** of your Go package.
+For example if you need only a single method and the concrete implementation has 2 methods, your interface should only contain that single method.
+As a side effect, this also produces smaller generated mock test file.
+
+If you need to call a method on an interface in **test code** but it's not needed in production code, **DO NOT ADD THE METHOD TO THE INTERFACE**.
+Instead do a type assertion on the interface to call the method. For example:
+
+```go
+value := myInterface.(*myImplementation).GetValue()
+```
+
+Interfaces should have one or two methods. If you need a larger interface, compose it using smaller interfaces. For example:
+
+```go
+type Database interface {
+  Getter
+  Setter
+}
+
+type Getter interface {
+  Get(key string) (value string)
+}
+
+type Setter interface {
+  Set(key string, value string)
+}
+```
+
+This is also useful such that you can use the narrow interfaces (such as `Getter`) in unexported package-local functions.
+
+### Exported interfaces with exported methods only
+
+All your interfaces and their methods should be **EXPORTED**. This forces you to either:
+
+* dependency inject the concrete implementation, which would force you to export the interface
+* test the actual implementation if it's defined in the same package (you shouldn't interface & mock it), which would force you to remove the interface definition.
+* split out the implementation in its own subpackage and then define your exported interface with exported methods.
+
+A side note is that `mockgen` is rather terrible at generating mocks from interfaces with unexported methods, so that's something you can avoid by having exported methods.
+
+### Importing interfaces
+
+As a general rule, interface should **NOT** be imported in order to have narrower interfaces, decouple code and reduce package dependency contention.
+The exception is to import interfaces from the **standard library**, some commonly imported interfaces are for example: `io.Reader`, `io.Writer`, `io.Closer`, `fmt.Stringer`, `rand.Source`, `sort.Interface`, `http.Handler`.
+
 ## Panic
 
 In Go, `panic` should only be used when a **programming error** has been encountered.
