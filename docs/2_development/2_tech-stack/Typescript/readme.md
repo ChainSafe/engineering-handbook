@@ -27,15 +27,7 @@ Visual Studio Code already has basic support for Markdown: https://code.visualst
 
 ### Others
 
-If you need a license for your development tooling, [read on how to request one](../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
-
-### Monorepo
-
-:::note
-
-TBD
-
-:::
+If you need a license for your development tooling, [read on how to request one](../../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
 
 ## Linting
 
@@ -131,7 +123,7 @@ jobs:
 ::: note This is a mostly automated process to enable consistency and make it hassle-free
 to release new versions more often
 :::
-::: caution Make sure the repository is using squash merging and branching rules as described in [Setup repository section](../1_development-flow/1_setup_repository.md)!
+::: caution Make sure the repository is using squash merging and branching rules as described in [Setup repository section](../../1_development-flow/1_setup_repository.md)!
 :::
 
 ### Semantic Pull Requests
@@ -172,7 +164,7 @@ jobs:
             chore
 ```
 
-### Cutting release
+### Cutting release {#cutting-release}
 
 1. Merge Pull Request with semantic title
 2. Github Actions will open PR with a version bump in package.json and updated CHANGELOG.md
