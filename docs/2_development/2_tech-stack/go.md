@@ -864,3 +864,37 @@ func Test_something(t *testing.T) {
  _, _ = something(context.Background(), fetcher, parser)
 }
 ```
+
+## Passing arguments
+
+### By value or by reference
+
+There is often a debate within code reviews about if we should pass an argument by value or by reference.
+
+As a general rule, **prefer passing by value**:
+
+- it removes the risk of `nil` arguments making the code panic
+- callers should inject a value, functions should not behave specifically when a `nil` argument is passed, to avoid *dark magic code*. Prefer explicitness over laziness.
+- Even when you need to modify an argument, often taking the argument as value and returning the updated argument is clearer.
+
+The following addresses how commonly used types should be passed as argument:
+
+- **slices** can have their elements changed if passed by value. Only pass them as pointers if you want to change the length of the slice.
+- **maps**, **channels**, (most) **interfaces**  are pointers under the hood, so always pass them as values.
+- **arrays**: if performance does not matter, pass it as value. Otherwise:
+  - pass it as value if it is smaller or equal to 80 bytes (i.e. `[9]int64`)
+  - pass it as pointer if it is larger than 80 bytes (i.e. `[90]byte`)
+- **structs**: if performance does not matter, pass it as value (such as **configuration structs**). Otherwise:
+  - pass it as pointer if it needs one of its non-pointer field or sub-field to be modified
+  - pass it as pointer if its size is larger than 80 bytes
+- **mutexes** should be passed as pointers to avoid locking/unlocking a copy of a mutex
+- Other types should mostly be passed as values since they are less than 80 bytes, some exceptions:
+  - if you want to use the `atomic` package, you need to pass i.e. `uint32` as a pointer
+
+### Number of arguments and retro-compatibility
+
+As the codebase evolves, there are two cases for a function:
+
+1. A changing number of arguments allows for the compiler to scream at you (which is good) when you change the number of arguments. You should use this for all **unexported functions** and all functions in the **internal/** directory.
+2. A fixed number of arguments keeps retro-compatibility with previous code. You should use this for all **exported functions outside the `internal/`** directory.
+A useful technique is to have a single `Settings` struct for publicly exposed exported constructors, so that more settings can be added as fields to the struct without breaking compatibility.
