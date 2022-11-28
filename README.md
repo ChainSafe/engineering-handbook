@@ -8,7 +8,7 @@ The handbook is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 This project requires `yarn`. You can find installation instructions [here](https://yarnpkg.com/getting-started/install).
 
-# Getting Started
+# Running Locally
 
 Fetch project dependencies:
 ```
@@ -37,7 +37,7 @@ This command generates static content into the `build` directory and can be serv
 
 # Contributing
 
-All contributions are welcomed! This is intended to be a living document and requires the contributions of many to be maintained.
+All contributions are welcomed! This is intended to be a living document and requires contributions of many to be maintained.
 
 Please use Github Issues to propose any large changes and to facilitate discussion and questions regarding content and structure.
 
@@ -45,7 +45,7 @@ It is recommended you review the [Docusaurus docs](https://docusaurus.io/docs) t
 
 # Project Structure
 
-`docs/` -- The handbook content lives here, seperated by section
+`docs/` -- The handbook content lives here, separated by sections
 
 `src/` -- Individual page assets 
 
