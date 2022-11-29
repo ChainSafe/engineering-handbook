@@ -1,6 +1,7 @@
 .github
 .env
 Afri
+amongst
 blockchains
 BLS
 backend
@@ -20,18 +21,22 @@ clion
 Clippy
 coc-rust-analyzer
 codebase
+codebases
 codeowners
 Corepack
 customizable
 CTO
+CSV
 facto
 de
 Dependabot
 DevOps
-E4
-E6
-E3
+E1
 E2
+E3
+E4
+E5
+E6
 Docusaurus
 Emacs
 Ethereum
@@ -58,6 +63,7 @@ Kakoune
 Ketelsen
 Kettensicherheitsschranksysteme
 Lerna
+libp2p
 linter
 Linter
 linters
@@ -82,6 +88,7 @@ Netifly
 NFT
 npm
 nx
+Observability
 OpenApi
 Organization
 opensource
@@ -89,6 +96,7 @@ Polkadot
 PR
 PRs
 README
+readme
 Rebase
 Recursiveness
 reproducibility
