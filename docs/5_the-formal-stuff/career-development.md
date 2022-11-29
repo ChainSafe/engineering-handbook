@@ -20,7 +20,7 @@ A competency matrix establishes a set of competencies, a scale on which to measu
 Some important things to remember about this matrix:
 
 - There will be alternative matrices created for specialized positions such as Engineering Managers, Software Architects etc.
-- E6 is intentionally left undefined to give us the ability to distinguish exceptional leaders. The placeholder of Vitalik Buterin was chosen to highlight the industry and community impact qualifying engineers are expected to have. It's very likely most engineers will never reach E6, unless they position themselves as cornerstones of our industry or communities.
+- E6 is intentionally left undefined to give us the ability to distinguish exceptional leaders. We want to highlight the industry and community impact qualifying engineers are expected to have, rather than specific competencies. It's very likely most engineers will never reach E6, unless they position themselves as cornerstones of our industry or communities.
 
 ## How is it used?
 
