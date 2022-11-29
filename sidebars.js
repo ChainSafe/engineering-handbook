@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: 'link',
       href: "https://chainsafe.io/careers",
-      label: "Join ChainSafe Engineering",
+      label: "Join ChainSafe",
       className: "join-us"
     }
 ],
