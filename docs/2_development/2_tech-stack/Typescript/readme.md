@@ -162,6 +162,7 @@ jobs:
             fix
             feat
             chore
+            revert
 ```
 
 ### Cutting release {#cutting-release}
@@ -197,7 +198,7 @@ jobs:
         with:
           release-type: node
           package-name: release-please-action
-          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
+          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":true}]'
       
       - uses: actions/checkout@v3
         # these if statements ensure that a publication only occurs when
@@ -244,9 +245,12 @@ The following configuration should ensure this happens:
 version: 2
 updates:
   - package-ecosystem: "yarn"
-    allow:
-      # Allow both direct and indirect updates for all packages
-      - dependency-type: "production"
+    schedule:
+      interval: daily
+    requiredLabels:
+      - dependencies
     commit-message:
-      prefix: "chore: "
+      prefix: fix
+      prefix-development: chore
+      include: scope
 ```
