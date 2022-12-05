@@ -365,7 +365,12 @@ Its counterpart `recover` should not really be used, except for testing a panic 
 
 [Since Go 1.13](https://go.dev/blog/go1.13-errors), errors can be wrapped with `fmt.Errorf` using the `%w` verb.
 The (possibly multiple times wrapped) error can then be checked against its bottom wrapped error with `errors.Is(err, ErrSomething)`.
-`ErrSomething` is often called a *sentinel error*, and must be defined at global scope.
+`ErrSomething` is often called a *sentinel error*.
+
+A try at defining a sentinel error:
+
+> A sentinel error is an error variable accessible by return statements and by callers of the function returning the error (wrapped or not).
+> In production code, it is usually defined at global scope to fulfill these two properties.
 
 The reason for all this is for robust and compatibility-friendly error handling:
 
