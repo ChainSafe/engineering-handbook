@@ -51,7 +51,7 @@ the Lodestar client.
   - <https://www.npmjs.com/package/@chainsafe/bls-keygen>
   - <https://www.npmjs.com/package/@chainsafe/bls-keystore>
 
-The Lodestar team is also main contributor and co-maintainer of the JavaScript
+ChainSafe Systems is also the main contributor and co-maintainer of the JavaScript
 LipP2P implementation. <https://github.com/libp2p/js-libp2p>
 
 ### Forest
