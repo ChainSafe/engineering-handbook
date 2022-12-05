@@ -423,9 +423,9 @@ This is also useful such that you can use the narrow interfaces (such as `Getter
 
 All your interfaces and their methods should be **EXPORTED**. This forces you to either:
 
-* dependency inject the concrete implementation, which would force you to export the interface
-* test the actual implementation if it's defined in the same package (you shouldn't interface & mock it), which would force you to remove the interface definition.
-* split out the implementation in its own subpackage and then define your exported interface with exported methods.
+* dependency inject the concrete implementation from outside your package, which would force you to export the interface
+* have good testing depth by testing the actual implementation (not a mock) if it's defined in the same package.
+* split out the implementation in its own package and then dependency inject it (see first point)
 
 A side note is that `mockgen` is rather terrible at generating mocks from interfaces with unexported methods, so that's something you can avoid by having exported methods.
 
