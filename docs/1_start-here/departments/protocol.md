@@ -4,34 +4,32 @@ The Protocol-Engineering Department at ChainSafe Systems hosts all teams
 that implement specifications of decentralized ledger technologies as well as
 communication protocols. In general, protocols are clearly specified sets of
 rules and regulations that determine how data is transmitted and processed,
-as well as defining the interfaces to access and manipulate even those.
+as well as define the interfaces to access and manipulate even those.
 
-### Overview
-
+## Overview
 Currently, we are engaged with the following Protocols.
 
 - Ethereum Consensus-Layer Specification
   - <https://github.com/ethereum/consensus-specs>
 - Polkadot-Host Specification
   - <https://github.com/w3f/polkadot-spec>
-- Filecoin-Protocol Specification
+- Filecoin Protocol Specification
   - <https://github.com/filecoin-project/specs>
 - LibP2P Networking Specifications
   - <https://github.com/libp2p/specs>
 
-We contribute to existing open-source libraries and also maintian our own
-protocol implmentations in-house. Our three main teams are:
+We contribute to existing open-source libraries and also maintain our own protocol implementations in-house. Our three main teams are:
 
 - Lodestar: Ethereum Consensus-Layer implementation in TypeScript
   - <https://github.com/ChainSafe/lodestar>
 - Forest: Filecoin Full-Node implementation in Rust
   - <https://github.com/ChainSafe/forest>
-- Gossamer: Pokadot-Host implementation in Go
+- Gossamer: Polkadot-Host implementation in Go
   - <https://github.com/ChainSafe/gossamer>
 
-### Lodestar
+## Lodestar
 
-Lodestar is a collection of libraries that can be bundled to a fully-fledged
+Lodestar is a collection of libraries that can be bundled into a fully-fledged
 Ethereum consensus-layer client. <https://lodestar.chainsafe.io/>
 
 Among others, the following libraries and projects were published along with
@@ -52,9 +50,9 @@ the Lodestar client.
   - <https://www.npmjs.com/package/@chainsafe/bls-keystore>
 
 ChainSafe Systems is also the main contributor and co-maintainer of the JavaScript
-LipP2P implementation. <https://github.com/libp2p/js-libp2p>
+LibP2P implementation. <https://github.com/libp2p/js-libp2p>
 
-### Forest
+## Forest
 
 Forest is a highly efficient Rust implementation of the Filecoin specification.
 <https://chainsafe.github.io/forest>
@@ -62,14 +60,15 @@ Forest is a highly efficient Rust implementation of the Filecoin specification.
 Even though the client is not yet feature complete, it provided the canonical
 implementation of the Filecoin Virtual Machine and Builtin Actors used by
 every other client on the Filecoin network.
+
 - <https://github.com/filecoin-project/ref-fvm>
 - <https://github.com/filecoin-project/builtin-actors>
 
 Initially part of the Forest code, these projects and libraries are now
-stand-alone components of the Filecoin network and co-maintained by Filecoin
+stand-alone components of the Filecoin network and are co-maintained by Filecoin
 Foundation and the Forest team.
 
-### Gossamer
+## Gossamer
 
 Gossamer is a Polkadot host written in Go, a framework to build and run nodes
 for different blockchain protocols compatible with the Polkadot ecosystem,

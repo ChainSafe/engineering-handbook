@@ -4,6 +4,7 @@ Afri
 blockchains
 BLS
 backend
+blockchain
 bugfix
 Buterin
 ChainBridge
@@ -27,6 +28,7 @@ CTO
 facto
 de
 Dependabot
+deserialize
 DevOps
 E4
 E6
@@ -35,6 +37,7 @@ E2
 Docusaurus
 Emacs
 Ethereum
+Ethereum's
 eg
 eg.
 Filecoin
@@ -57,7 +60,10 @@ Jetbrains
 Kakoune
 Ketelsen
 Kettensicherheitsschranksysteme
+keypairs
+Kusama
 Lerna
+LibP2P
 linter
 Linter
 linters
@@ -86,6 +92,7 @@ OpenApi
 Organization
 opensource
 Polkadot
+Polkadot-Host
 PR
 PRs
 README
@@ -104,7 +111,9 @@ subpackages
 subtest
 subtests
 Sygma
+SSZ
 TBD
+testnets
 TODO
 Udemy
 unexported
