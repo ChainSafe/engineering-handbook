@@ -113,11 +113,6 @@ This would force usage of the `bignumber.js`, in the `web3` dependency only, to 
 
 If you cannot do it you can put `checksumBehavior: "update"` in your `.yarnrc` file.
 
-### Dependabot
-
-Dependabot is currently [not supporting yarn 2+](https://github.com/dependabot/dependabot-core/issues/1297) but there is 
-a drop-in replacement [Renovate](https://docs.renovatebot.com/). Reach out to your department head to enable Renovate on your repository.
-
 ## Migration from Lerna
 
 1. Run `corepack enable`
