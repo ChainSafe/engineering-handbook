@@ -361,6 +361,193 @@ A `panic` should be placed such that its trigger condition is so critical that t
 
 Its counterpart `recover` should not really be used, except for testing a panic in test code (or use `assert.PanicsWithValue`).
 
+## Errors
+
+[Since Go 1.13](https://go.dev/blog/go1.13-errors), errors can be wrapped with `fmt.Errorf` using the `%w` verb.
+The (possibly multiple times wrapped) error can then be checked against its bottom wrapped error with `errors.Is(err, ErrSomething)`.
+`ErrSomething` is often called a *sentinel error*.
+
+A try at defining a sentinel error:
+
+> A sentinel error is an error variable accessible by return statements and by callers of the function returning the error (wrapped or not).
+> In production code, it is usually defined at global scope to fulfill these two properties.
+
+The reason for all this is for robust and compatibility-friendly error handling:
+
+* there is no need to do string checks on the error string
+* the (1 or more) contexts added to the sentinel error can change without breaking compatibility
+* the string of the sentinel error can change without breaking compatibility
+
+The only breaking change would be to rename the sentinel error Go variable name.
+
+### Whether to export sentinel errors
+
+* If the sentinel error is wrapped and returned outside the package, the error should be **exported** so callers can handle it with `errors.Is`
+* If the sentinel error is handled in the same package it is defined in (for example: logged, checked with `errors.Is`), the error should be unexported.
+
+Keeping package-local errors unexported produces a narrower Go API which is great.
+However, it's also tricky to follow up errors in the call stack to check if they should be exported or not; as a consequence you might want to just export all your sentinel errors if this is too much of a burden to check.
+
+Even if we don't need to check the sentinel error with `errors.Is`, using them is still useful for the test assertion `assert.ErrorIs` (see the [Testing errors section](#testing-errors) below)
+
+### Wrap or wrapped
+
+From the [Go blog](https://go.dev/blog/go1.13-errors)'s `Whether to Wrap` section:
+
+> When adding additional context to an error, either with fmt.Errorf or by implementing a custom type, you need to decide whether the new error should wrap the original. There is no single answer to this question; it depends on the context in which the new error is created. Wrap an error to expose it to callers. Do not wrap an error when doing so would expose implementation details.
+
+So it is rather unclear, but, unless you need such case, you should wrap the error returned from other functions.
+
+If you are unhappy with this, one solution would be to have a chain of multiple wrapped errors in a single error, so 👍 [this Go issue](https://github.com/golang/go/issues/53435).
+
+### Whether to add context
+
+#### Wrapping the sentinel error
+
+In most cases, wrapping the sentinel error should use the format `fmt.Errorf("%w: some context", ErrSentinel)` where the context is **on the right side**. For example:
+
+```go
+return fmt.Errorf("%w: for user id %d", ErrUsernameNotFound, userID)
+```
+
+Context in this case is important because it provides details on why the error happened, with what inputs.
+
+There are also cases where it is not necessary to add error context. For example if the database is 'closed', there is no need to add context really.
+In this case, use the format `return fmt.Errorf("%w", ErrSentinel)` and **NOT** `return ErrSentinel`.
+The reason is to prevent callers from using `err == ErrDatabaseClosed`, and force them to use `errors.Is(err, ErrSentinel)`, so context can be added later on if needed.
+
+#### Wrapping an error returned from a function
+
+In most cases, you should wrap errors coming from a function using the format `fmt.Errorf("doing this: %w", err)` where `doing this` is what the function is meant to do. For example:
+
+```go
+err := sendMessage(message)
+if err != nil {
+  return fmt.Errorf("sending message: %w", err)
+}
+```
+
+💁 You should avoid using prefixes such as `cannot` or `failed to` in error contexts since these build up in the call stack, and the full error string then contains that prefix repeated a lot.
+
+⚠️ You should **NOT** add argument passed down to a function to the error context. Only the function handling directly the argument should add it to the error context.
+This prevents repeating argument values in the full error string.
+In the example above, it means the `message` context should be added in `sendMessage` (or a below function in the call stack), but not in `fmt.Errorf("sending message: %w", err)`.
+
+There are some cases where you should **NOT wrap context** and just `return err` directly:
+
+* If the function is called **recursively**, since we don't wrap the wrapping multiple times for each recursion
+* If the current function only statement is the call to another function, for example:
+
+    ```go
+    func (s *Struct) Fetch() error {
+      return fetch() // do not wrap the error
+    }
+    ```
+
+### Concrete example
+
+The following example gets a user name given a user id and an in-memory map 'database'.
+
+```go title="internal/store/users.go"
+package store
+
+import (
+ "errors"
+ "fmt"
+
+ "github.com/org/repo/internal/models"
+)
+
+var (
+  // ErrUserNotFound is a sentinel error and is exported because
+  // it is wrapped and returned by `GetUsername`.
+  ErrUsernameNotFound = errors.New("username not found")
+  // ErrDatabaseClosed is a sentinel error and is exported because
+  // it is wrapped and returned by `GetUsername`.
+  ErrDatabaseClosed = errors.New("database is closed")
+)
+
+type Database struct {
+ idToName map[int]string
+ closed   bool
+}
+
+func New() *Database {
+ return &Database{
+  idToName: make(map[int]string),
+ }
+}
+
+func (d *Database) Close() {
+  d.closed = true
+}
+
+func (d *Database) GetUsername(userID int) (username string, err error) {
+ if d.closed {
+  // there is no need to wrap context since this is not relevant to
+  // the user id given.
+  return "", ErrDatabaseClosed
+ }
+
+ username, ok := d.idToName[userID]
+ if !ok {
+  // we add the context the function handles
+  return "", fmt.Errorf("%w: for user id %d", ErrUsernameNotFound, userID)
+ }
+
+ return username, nil
+}
+
+```
+
+```go title="cmd/app/main.go"
+package store
+
+import (
+ "errors"
+ "fmt"
+
+ "github.com/org/repo/internal/store"
+)
+
+func main() {
+  database := store.New()
+
+  const userID = 1
+  username, err := database.getUsername(userID)
+  if err != nil {
+   if errors.Is(err, store.ErrUserNotFound) {
+     // handler user not found
+   }
+   // handler other error
+  }
+  // handler username
+}
+```
+
+### Testing errors
+
+To test errors returned, you should use the following, using [`testify/assert`](https://github.com/stretchr/testify/assert):
+
+```go
+err := someFunction()
+
+// ErrorIs uses `errors.Is` to check if the wrapped error matches
+// the sentinel error set for testCase.errWrapped.
+// It also passes if both testCase.errWrapped and err are nil.
+assert.ErrorIs(t, err, testCase.errWrapped)
+
+// nil check since if err == nil, its string representation is expected to be `<nil>` by assert.EqualError
+if testCase.errWrapped != nil {
+  // Check the full wrapped error string of err against
+  // testCase.errMessage. This allows to check the formatting
+  // and arguments are set correctly in the context.
+  // This is less critical than `assert.ErrorIs` but comes
+  // useful from time to time.
+ assert.EqualError(t, err, testCase.errMessage)
+}
+```
+
 ## Continuous integration
 
 :::note
