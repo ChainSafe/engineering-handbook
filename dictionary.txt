@@ -131,6 +131,7 @@ walkthrough
 Walkthroughs
 whitehats
 Web3
+web3
 web3.js
 web3.unity
 WIP
