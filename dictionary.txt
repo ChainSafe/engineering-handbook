@@ -11,6 +11,7 @@ ChainBridge
 ChainSafe
 ChainSafe's
 ChainSafer
+ChainSafers
 Changelog
 changelog
 checksums
@@ -36,6 +37,7 @@ E3
 E2
 Docusaurus
 Emacs
+enablement
 Ethereum
 Ethereum's
 eg
@@ -114,6 +116,7 @@ Sygma
 SSZ
 TBD
 testnets
+timeframes
 TODO
 Udemy
 unexported
@@ -128,6 +131,7 @@ walkthrough
 Walkthroughs
 whitehats
 Web3
+web3
 web3.js
 web3.unity
 WIP

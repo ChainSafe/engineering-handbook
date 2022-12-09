@@ -27,7 +27,7 @@ Visual Studio Code already has basic support for Markdown: https://code.visualst
 
 ### Others
 
-If you need a license for your development tooling, [read on how to request one](../../../5_the-formal-stuff/process_and_policy.md#requesting-license)!
+If you need a license for your development tooling, [read on how to request one](../../../4_the-formal-stuff/process_and_policy.md#requesting-license)!
 
 ## Linting
 
