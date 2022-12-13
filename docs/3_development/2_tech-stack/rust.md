@@ -1,18 +1,12 @@
 # Rust
+
 Our most notable Rust stack:
+
 * https://github.com/ChainSafe/forest/ (Filecoin Rust)
 * https://github.com/ChainSafe/mina-rs (Mina Rust)
 * https://github.com/ChainSafe/chainbridge-substrate (ChainBridge Substrate)
 * https://github.com/ChainSafe/PINT (Polkadot Index Network Token)
 * [and others](https://github.com/chainsafe?q=&type=all&language=rust&sort=)
-
-## Repository Structure
-
-:::note
-
-TBD
-
-:::
 
 ## IDE Configurations
 
@@ -24,13 +18,15 @@ You'd be considered insane if you use Vim to write java code.
 Luckily rust code is shorter to write so it is practical to just use very simple editing tools.
 
 ### Easy
+
 - **Clion**
     - Clion is a fully-featured and powerful IDE from Jetbrains, the creator of IntelliJ IDE
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Well-polished IDE and streamlined workflow for code editing.
-    - ChainSafe will get a license for you - [Read more](../../5_the-formal-stuff/process_and_policy.md#requesting-license)
+    - ChainSafe will get a license for you - [Read more](../../4_the-formal-stuff/process_and_policy.md#requesting-license)
 
 - **Visual Studio code**
+
     - [VSCode](https://github.com/microsoft/vscode) for short, is an open source code editor from Microsoft
     - Built on top of electron
     - You can install the rust and rust-analyzer plugin in the Preferences settings
@@ -38,6 +34,7 @@ Luckily rust code is shorter to write so it is practical to just use very simple
     - With the ever-growing [marketplace](https://marketplace.visualstudio.com/vscode) you can install a wide variety of plugins into the editor
 
 ### Intermediate
+
 - **Sublime text**
     - [Sublime text](https://www.sublimetext.com/) a snappy text editor with syntax highlighting for a wide range of language syntax, including rust
 - **Lapce**
@@ -49,6 +46,7 @@ Luckily rust code is shorter to write so it is practical to just use very simple
 
 
 ### Advance
+
 - **VIM**
     - Vim is a highly configurable and powerful text editor which gives its user the most efficient way to edit text regardless of the size, language and format
     - Vim is shipped in most Linux distributions and it is a bare minimal configuration
@@ -68,11 +66,13 @@ Luckily rust code is shorter to write so it is practical to just use very simple
         - [Kakoune](https://kakoune.org/) editor, an alternative editor to Vim with different order of the modal editing actions
 
 ### Insanity
+
 - **Emacs**
     - Emacs is a text editor, which happens to ship an entire Operating system with it
     - you can install rust-analyzer as a plugin in Emacs
 
 ### Summary
+
 In summary, the choice of editor is really up to the users and it is affected by the following:
  - skill level,
  - types of projects they are usually working with
@@ -94,6 +94,7 @@ The shell script could contain the list of terminal commands to install `vim` an
 
 
 ## Linter Configuration
+
 Clippy and RustFMT are doing a pretty good job nowadays.
 * `cargo fmt --all --check` should always pass without warnings/errors
 * `cargo clippy --all-targets -- -D warnings` should always pass without errors
@@ -111,6 +112,7 @@ TBD
 :::
 
 ## Continuous Integration
+
 Check out Forest's collection of Rust workflows: [ChainSafe/forest/.github/workflows/rust.yml](https://github.com/ChainSafe/forest/blob/main/.github/workflows/rust.yml)
 
 * Rust is slow on CI and therefore, we should always use _Github Actions_ with third-party hosted runners

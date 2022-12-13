@@ -1,7 +1,14 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
+collapsible: true
+collapsed: false
 ---
-# Organization
+
+# Departments
+
+ChainSafe's engineering consists of 4 departments (Consulting, Products, Protocols, Solutions). Each department is focusing
+on different parts of the ChainSafe business and has a slightly different way of doing things.
+You can read more about each of them in the following sections.
 
 ## Engineering Reporting Structure
 
