@@ -42,8 +42,7 @@ E3
 E4
 E5
 E6
-eg
-eg.
+e.g.
 Emacs
 enablement
 Ethereum

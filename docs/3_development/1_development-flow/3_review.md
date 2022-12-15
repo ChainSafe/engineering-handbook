@@ -9,7 +9,7 @@ Document everything, communicate with your team transparently, review together.
 
 ## Documentation
 
-- Ensure readability is retained in code eg. complex nested ternary operators should have a comment note
+- Ensure readability is retained in code e.g complex nested ternary operators should have a comment note
 - Ensure adequate testing exists where needed
 - PRs include a summary of work which outlines the objectives, decisions & considerations for the PR. Examples:
     - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside of the logging scope at the moment.

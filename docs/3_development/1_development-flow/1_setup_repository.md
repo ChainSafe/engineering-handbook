@@ -43,7 +43,7 @@ Some additional options:
 
 - **Branch name pattern**: some projects use different branch names. `main` is usually the default branch, but rules may also need to applied to a `develop` or `release` branch
 - **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repositories.
-- **Require status checks to pass before merging**: this should be enabled if CI (eg. GitHub Actions) is used in the repository.
+- **Require status checks to pass before merging**: this should be enabled if CI (e.g GitHub Actions) is used in the repository.
 
 ## Disable Merge Commits & Rebase
 
