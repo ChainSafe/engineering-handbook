@@ -42,3 +42,30 @@ If you ran `yarn start` in the new repository you should see your documentation 
 | Gitbook | Docusaurus |
 | --- | --- |
 | `# Heading <a href="#heading2" id="heading2"></a>` |  `# Heading {#heading2}` |
+
+### Description sections to callouts
+
+| Gitbook | Docusaurus |
+| --- | --- |
+| <code>---<br/>description: >-<br/>---</code> |  <code>:::info<br/><br/>:::</code> |
+
+### Syntax highlight for non-defaule languages
+
+Docusaurus by deafult supports only [this set of langage higlights](https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js). In order to add highlight support for other popular languages `docusaurus.conf.js` needs to be extented with the desired languages list:
+
+```js
+themeConfig:
+    ...
+    prism: {
+        ...
+        additionalLanguages: ['csharp'],
+    }
+    ...
+```
+
+More information can be found [here](https://docusaurus.io/docs/markdown-features/code-blocks#supported-languages).
+### Code blocks line numbering
+
+| Gitbook | Docusaurus |
+| --- | --- |
+| <code>{% code lineNumbers="true" %}</code> |  <code>showLineNumbers</code> |
