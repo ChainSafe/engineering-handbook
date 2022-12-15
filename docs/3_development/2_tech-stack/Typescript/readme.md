@@ -19,7 +19,7 @@ It is recommended to install the following extensions:
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - enables highlighting lint errors and fixing them
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) - enables advanced git overview
 * [DotEnv](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - support for .env files
-* [Yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - support for writing YAML files (useful for Github Actions)
+* [Yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) - support for writing YAML files (useful for GitHub Actions)
 
 :::note
 Visual Studio Code already has basic support for Markdown: https://code.visualstudio.com/docs/languages/markdown#_markdown-preview
@@ -70,7 +70,7 @@ TBD
 
 It is very difficult to develop one-size-fits-all continuous integration, so this is a guideline rather than an actual configuration file. You will see many repositories at ChainSafe modified CI to fit their needs.
 
-You should almost always use Github Actions. Consult with your manager if you need to use something else.
+You should almost always use GitHub Actions. Consult with your manager if you need to use something else.
 
 ```yaml title="./.github/workflows/ci"
 name: 'ci / test'
@@ -137,7 +137,7 @@ Semantic keywords and their meaning:
 * **chore** - your PR contains trivial changes like editing README, bumping packages versions etc - Example PR: `chore: bumped typescript dependency`
 * **feat!** or **fix!** (notice exclamation)- your PR contains a breaking change which will trigger a major version update * Example PR: `feat!: new API `endpoint, `the `old`` one is` deprecated`
 
-You can use the following Github action to ensure your Pull Requests follow this convention.
+You can use the following GitHub action to ensure your Pull Requests follow this convention.
 
 ```yaml title="/.github/workflows/pr.yaml"
 name: "Semantic PR"
@@ -168,15 +168,15 @@ jobs:
 ### Cutting release {#cutting-release}
 
 1. Merge Pull Request with semantic title
-2. Github Actions will open PR with a version bump in package.json and updated CHANGELOG.md
-3. After merging the Release Pull Request, the package will be published on npm and a release with the changelog created on Github
+2. GitHub Actions will open PR with a version bump in package.json and updated CHANGELOG.md
+3. After merging the Release Pull Request, the package will be published on npm and a release with the changelog created on GitHub
 
-Following Github action will ensure that the above flow is working.
+Following GitHub action will ensure that the above flow is working.
 
 :::caution
 
 Automatic Pull Request cannot trigger workflow so required status checks cannot pass.
-You can either remove the requirement for status checks to pass or set GITHUB_TOKEN to your Github PAT token.
+You can either remove the requirement for status checks to pass or set GITHUB_TOKEN to your GitHub PAT token.
 
 :::
 
@@ -220,7 +220,7 @@ jobs:
 
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # use npm "Automation" token and put in Github repository secrets under "NPM_TOKEN"
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # use npm "Automation" token and put in GitHub repository secrets under "NPM_TOKEN"
         if: ${{ steps.release.outputs.release_created }}
 ```
 
@@ -230,9 +230,9 @@ Feel free to extend this flow with nightly/alpha/beta releases.
 
 #### Reverting
 
-In case of npm publish fails for whatever reason, release-please won't allow you to try to re-run the Github action. 
+In case of npm publish fails for whatever reason, release-please won't allow you to try to re-run the GitHub action. 
 Instead,
-you should open the "revert" Pull Request either using Github or the local git client.
+you should open the "revert" Pull Request either using GitHub or the local git client.
 
 Before merging it, make sure, you have deleted the git tag and GitHub release upstream.
 

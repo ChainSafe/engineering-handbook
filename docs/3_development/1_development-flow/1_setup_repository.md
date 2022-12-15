@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
 ---
-# Setup Github Repository
+# Setup GitHub Repository
 
-These are steps to setup a new repository under the ChainSafe Github organization:
+These are steps to setup a new repository under the ChainSafe GitHub organization:
 
 :::info
 The org owners are now the Heads of Engineering and they can assist you with any changes you require.
@@ -11,7 +11,7 @@ The org owners are now the Heads of Engineering and they can assist you with any
 
 ## Project Creation
 
-1. Create the project in the ChainSafe organization on Github
+1. Create the project in the ChainSafe organization on GitHub
     1. If you do not have permission reach out to an org owner (see note above).
 
 ## Setup Team Permissions
@@ -43,7 +43,7 @@ Some additional options:
 
 - **Branch name pattern**: some projects use different branch names. `main` is usually the default branch, but rules may also need to applied to a `develop` or `release` branch
 - **Required approving reviews**: this can be increased to a number that makes sense for the team size. This is usually 1-3 for most repositories.
-- **Require status checks to pass before merging**: this should be enabled if CI (eg. Github Actions) is used in the repository.
+- **Require status checks to pass before merging**: this should be enabled if CI (eg. GitHub Actions) is used in the repository.
 
 ## Disable Merge Commits & Rebase
 
@@ -68,11 +68,11 @@ Lodestar: [https://github.com/ChainSafe/lodestar/](https://github.com/ChainSafe/
 
 ## License
 
-A license file must be added to the root of the repository in a file named `LICENSE`. Github will automatically pick this up and display it. It's recommended to also ensure the source code of the repository has matching license headers. Please reach out to `David Ansermino` for more details. 
+A license file must be added to the root of the repository in a file named `LICENSE`. GitHub will automatically pick this up and display it. It's recommended to also ensure the source code of the repository has matching license headers. Please reach out to `David Ansermino` for more details. 
 
 ## Continuous Integration
 
-A continuous integration (CI) service must be setup before code is committed. We strongly advise using Github Actions. Even though you may not know what the repository setup structure may resemble, you will know the basic language that will be used, therefore the most simple CI can be setup:
+A continuous integration (CI) service must be setup before code is committed. We strongly advise using GitHub Actions. Even though you may not know what the repository setup structure may resemble, you will know the basic language that will be used, therefore the most simple CI can be setup:
 
 1. Include the linter
 2. Include your test runner
@@ -86,7 +86,7 @@ Please use [https://cla-assistant.io/](https://cla-assistant.io/). This will be 
 
 ## Code Owners
 
-Depending on the project, it might make sense to add a code owners file. Please reference the [Github guide](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) for more information.
+Depending on the project, it might make sense to add a code owners file. Please reference the [GitHub guide](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) for more information.
 
 ## License Checker
 

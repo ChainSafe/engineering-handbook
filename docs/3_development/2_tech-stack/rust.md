@@ -115,7 +115,7 @@ TBD
 
 Check out Forest's collection of Rust workflows: [ChainSafe/forest/.github/workflows/rust.yml](https://github.com/ChainSafe/forest/blob/main/.github/workflows/rust.yml)
 
-* Rust is slow on CI and therefore, we should always use _Github Actions_ with third-party hosted runners
+* Rust is slow on CI and therefore, we should always use _GitHub Actions_ with third-party hosted runners
   * e.g., `runs-on: buildjet-16vcpu-ubuntu-2004`
   * see https://buildjet.com
   * consult Elizabeth or Afri for details
@@ -128,7 +128,7 @@ Check out Forest's collection of Rust workflows: [ChainSafe/forest/.github/workf
       CI: 1
       CARGO_INCREMENTAL: 1
     ```
-* Don't use Github Actions cache, use _Rust Cache_
+* Don't use GitHub Actions cache, use _Rust Cache_
   * e.g., `uses: Swatinem/rust-cache@v1.3.0`
   * https://github.com/marketplace/actions/rust-cache
 * Use always nightly/beta/stable build matrices

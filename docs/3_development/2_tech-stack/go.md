@@ -303,7 +303,7 @@ linters:
 
 ### Linting continuous integration
 
-For your CI, you should have lint Github job. For example:
+For your CI, you should have lint GitHub job. For example:
 
 ```yml title=".github/workflows/lint.yaml"
 on:
@@ -469,7 +469,7 @@ This file setup is designed such that:
 * Mocks are only accessible to test files in the current Go package. Indeed `*_test.go` files are not exported and only accessible by other test files in the same package. This avoids pollution of the package Go API, and possible horrendous package dependencies.
 * Minimal amount of files per package, and minimal Git diffs at code evolves
 * No effect on Go test coverage, since `*_test.go` files are not included.
-* Github auto collapses `*mock*` files in the PR diff view, making it easier to review.
+* GitHub auto collapses `*mock*` files in the PR diff view, making it easier to review.
 * No particular mocking library or style is suggested to the user of the package, since no mock is exported.
 
 :::caution
@@ -637,7 +637,7 @@ The CI should enforce:
 2. mocks with a `//go:generate` comment are updated when their corresponding interface is changed
 3. mocks with a removed `//go:genereate` comment are removed
 
-The following Github workflow should achieve the 3 points above:
+The following GitHub workflow should achieve the 3 points above:
 
 ```yml title=".github/workflows/mocks.yaml"
 name: Mocks check

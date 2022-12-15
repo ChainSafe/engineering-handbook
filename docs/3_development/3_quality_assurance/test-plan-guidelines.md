@@ -28,13 +28,13 @@ The sections described below are applicable to most test plans and can be used a
 Include details of the test tools that will be used.
 Examples: 
 
-- Bug tracking tool (eg Github issue)
+- Bug tracking tool (eg GitHub issue)
 - Test Case Management (eg Notion)
 - Test Automation tools (eg Visual studio code)
 - Programming languages
 - Test Automation frameworks (eg Jest, Cypress)
-- CI/CD tool (usually this would be Github actions)
-- Version control (usually this would be Github)
+- CI/CD tool (usually this would be GitHub actions)
+- Version control (usually this would be GitHub)
 
 ### Deliverables:
 
