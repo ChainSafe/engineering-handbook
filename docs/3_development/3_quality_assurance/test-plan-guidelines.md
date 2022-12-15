@@ -28,11 +28,11 @@ The sections described below are applicable to most test plans and can be used a
 Include details of the test tools that will be used.
 Examples: 
 
-- Bug tracking tool (e.g GitHub issue)
-- Test Case Management (e.g Notion)
-- Test Automation tools (e.g Visual studio code)
+- Bug tracking tool (e.g. GitHub issue)
+- Test Case Management (e.g. Notion)
+- Test Automation tools (e.g. Visual studio code)
 - Programming languages
-- Test Automation frameworks (e.g Jest, Cypress)
+- Test Automation frameworks (e.g. Jest, Cypress)
 - CI/CD tool (usually this would be GitHub actions)
 - Version control (usually this would be GitHub)
 
@@ -49,7 +49,7 @@ Examples:
 - If any private/confidential data is involved include details on how this will be managed securely
 
 ### Bug template:
-- Provide a link to the template or document what a bug issue needs to contain (e.g environment, version, browser/device, reproduction steps, evidences)
+- Provide a link to the template or document what a bug issue needs to contain (e.g. environment, version, browser/device, reproduction steps, evidences)
 
 ### Risk & Issues:
 - Outline any potential issues that could happen during the testing phase. 
