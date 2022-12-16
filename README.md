@@ -39,7 +39,7 @@ This command generates static content into the `build` directory and can be serv
 
 All contributions are welcomed! This is intended to be a living document and requires contributions of many to be maintained.
 
-Please use Github Issues to propose any large changes and to facilitate discussion and questions regarding content and structure.
+Please use GitHub Issues to propose any large changes and to facilitate discussion and questions regarding content and structure.
 
 It is recommended you review the [Docusaurus docs](https://docusaurus.io/docs) to ensure you utilize its features correctly.
 

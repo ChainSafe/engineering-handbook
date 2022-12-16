@@ -20,10 +20,10 @@ Should follow the format `<name>/<feature>` for example: `greg/create-readme`. Y
 
 ### Release Branches
 
-When making a release, a corresponding tag should be created using git ex: `git tag v0.23.1-rc`. In the case where a previous build needs to be back ported, a release branch should be created with the prefix `release` and the corresponding version number eg: `release/v0.23.1-rc`.
+When making a release, a corresponding tag should be created using git ex: `git tag v0.23.1-rc`. In the case where a previous build needs to be back ported, a release branch should be created with the prefix `release` and the corresponding version number e.g.: `release/v0.23.1-rc`.
 
 
-## 2. Opening a PR (Pull Request) on Github
+## 2. Opening a PR (Pull Request) on GitHub
 
 When opening a pull request there are two types that can be opened: draft and regular. If you are prepping for a new release, or you are migrating a codebase, opening a draft PR is a great way for publicly showing the current development status of that given milestone. When a branch is feature complete, and has been adequately tested then you should open up a regular PR.
 

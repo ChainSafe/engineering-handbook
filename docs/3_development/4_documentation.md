@@ -23,18 +23,18 @@ Better way to do it is to choose "Import repository" option and put URL of the s
 
 :::caution
 
-Don't forget to update repository settings as described in [Setup Github Repository section](1_development-flow/1_setup_repository.md)
+Don't forget to update repository settings as described in [Setup GitHub Repository section](1_development-flow/1_setup_repository.md)
 
 :::
 
 ### Deployment
 
 Result of the Docusaurus build step is a static website that can be deployed to
-any of the popular hosting services including Github Pages, Render, Netifly or IPFS.
+any of the popular hosting services including GitHub Pages, Render, Netifly or IPFS.
 
 #### Deploy to Render
 
-Even though using Github Actions is the easiest option, to this date, they don't have Pull Request previews
+Even though using GitHub Actions is the easiest option, to this date, they don't have Pull Request previews
 which make it hard to view changes in the browser. Deploying to [Render](https://render.com/) requires
 a one-time setup for which, if you don't have access to ChainSafe's Render account, you can ask your Department Head or DevOps team.
 

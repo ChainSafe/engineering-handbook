@@ -9,7 +9,7 @@ Document everything, communicate with your team transparently, review together.
 
 ## Documentation
 
-- Ensure readability is retained in code eg. complex nested ternary operators should have a comment note
+- Ensure readability is retained in code e.g. complex nested ternary operators should have a comment note
 - Ensure adequate testing exists where needed
 - PRs include a summary of work which outlines the objectives, decisions & considerations for the PR. Examples:
     - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside of the logging scope at the moment.
@@ -25,7 +25,7 @@ Walkthroughs is peer programming for reviews, if possible/required, ask for a wa
 
 ## Requesting Reviews
 
-If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different Github teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
+If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different GitHub teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
 
 ## Changelog
 
