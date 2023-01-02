@@ -4,6 +4,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+/** @type {import('@docusaurus/mdx-loader').MDXPlugin} */
+// @ts-ignore
+const mermaidPlugin = require('mdx-mermaid')
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ChainSafe Documentation Starter',
@@ -28,7 +32,9 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/chainsafe/documentation-starter',
-          remarkPlugins: [require('mdx-mermaid')],
+          remarkPlugins: [
+            mermaidPlugin
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/index.css'),
