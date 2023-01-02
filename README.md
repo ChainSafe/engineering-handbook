@@ -1,4 +1,4 @@
-# ChainSafe Engineering Handbook
+# ChainSafe Documentation Starter
 
 This handbook is a guide for all engineers at ChainSafe. It contains content relating to organizational structure and processes, as well as technical guidelines and best practices.
 

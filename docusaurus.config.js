@@ -4,9 +4,13 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+/** @type {import('@docusaurus/mdx-loader').MDXPlugin} */
+// @ts-ignore
+const mermaidPlugin = require('mdx-mermaid')
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ChainSafe Engineering Handbook',
+  title: 'ChainSafe Documentation Starter',
   tagline: 'Gophers are cool',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -14,7 +18,7 @@ const config = {
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/logo.png',
   organizationName: 'ChainSafer', // Usually your GitHub org/user name.
-  projectName: 'engineering-wiki', // Usually your repo name.
+  projectName: 'documentation-starter', // Usually your repo name.
 
   presets: [
     [
@@ -28,11 +32,12 @@ const config = {
         },
         docs: {
           routeBasePath: '/',
-          // routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/chainsafe/engineering-wiki/tree/main/',
-          remarkPlugins: [require('mdx-mermaid')],
+          remarkPlugins: [
+            mermaidPlugin
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/index.css'),
@@ -50,14 +55,14 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'ChainSafe Engineering Handbook',
+        title: 'ChainSafe Documentation Starter',
         logo: {
           alt: 'ChainSafe Logo',
           src: 'img/logo.png',
         },
         items: [
           {
-            href: 'https://github.com/chainsafe/engineering-wiki',
+            href: 'https://github.com/chainsafe/documentation-starter',
             label: 'GitHub',
             position: 'right',
           },

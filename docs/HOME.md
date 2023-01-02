@@ -4,7 +4,7 @@ sidebar_position: 1
 sidebar_label: Intro
 ---
 
-# ChainSafe Engineering Handbook
+# ChainSafe Documentation Starter
 
 Welcome to ChainSafe's Engineering Handbook!
 
