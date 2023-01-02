@@ -50,7 +50,7 @@ node_modules
 !.yarn/versions
 ```
 
-You can check out the [FilSnap repository](https://github.com/chainsafe/filsnap)](https://github.com/chainsafe/filsnap) as an example of such a setup.
+You can check out the [FilSnap repository](https://github.com/chainsafe/filsnap) as an example of such a setup.
 
 ## Publishing
 
