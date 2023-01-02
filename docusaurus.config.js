@@ -4,6 +4,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+/** @type {import('@docusaurus/mdx-loader').MDXPlugin} */
+// @ts-ignore
+const mermaidPlugin = require('mdx-mermaid')
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ChainSafe Engineering Handbook',
@@ -31,8 +35,8 @@ const config = {
           // routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/chainsafe/engineering-wiki/tree/main/',
-          remarkPlugins: [require('mdx-mermaid')],
+          editUrl: 'https://github.com/chainsafe/engineering-handbook/tree/main/',
+          remarkPlugins: [mermaidPlugin],
         },
         theme: {
           customCss: require.resolve('./src/css/index.css'),
