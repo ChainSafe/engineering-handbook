@@ -6,6 +6,18 @@ At ChainSafe, we used to use `lerna` to manage our monorepos.
 It was not ideal but it got the job done. Since `lerna` is being [taken over by nx](https://github.com/lerna/lerna/issues/3121) and her future is not really clear, we decided to switch to `yarn 3` and its workspaces.
 
 :::
+## Template
+
+:::note
+
+Template is currently in WIP state.
+
+:::
+
+
+To speedup setting up monorepo you can use [yarn workspaces typescript template](https://github.com/ChainSafe/yarn-workspaces-typescript-template)  
+For manual setup or to understate what is all inside template go to **Setup** section
+
 
 ## Setup
 
@@ -43,6 +55,9 @@ nodeLinker: node-modules
 
 ```txt
 node_modules
+*DS_Store
+.idea
+.vscode
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -78,15 +93,19 @@ Let's say you have the following scripts in your root `package.json`:
 
 ```json title="package.json"
 {
-    "scripts":{
-        "build": "yarn run build:local",
-        "build:local": "yarn workspaces foreach -vpt run build"
-    }:::note
+  "scripts": {
+    "build": "yarn run build:local",
+    "build:local": "yarn workspaces foreach -vpt run build"
+  }
+}
+```
+:::note
 
 TBD
 
-::: which you can fix by adding `--exclude root` or by 
-changing build to `yarn workspaces foreach -vpt run build` instead of invoking another script.
+:::
+
+which you can fix by adding `--exclude root` or by changing build to `yarn workspaces foreach -vpt run build` instead of invoking another script.
 
 
 ### Updating yarn version
