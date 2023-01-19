@@ -72,7 +72,7 @@ It is very difficult to develop one-size-fits-all continuous integration, so thi
 
 You should almost always use GitHub Actions. Consult with your manager if you need to use something else.
 
-```yaml title="./.github/workflows/ci"
+```yaml title=".github/workflows/ci.yml"
 name: 'ci / test'
 on:
   push:
@@ -139,7 +139,7 @@ Semantic keywords and their meaning:
 
 You can use the following GitHub action to ensure your Pull Requests follow this convention.
 
-```yaml title="/.github/workflows/pr.yaml"
+```yaml title=".github/workflows/pr.yml"
 name: "Semantic PR"
 
 on:
@@ -180,7 +180,7 @@ You can either remove the requirement for status checks to pass or set GITHUB_TO
 
 :::
 
-```yaml title="/.github/workflows/cd.yaml"
+```yaml title=".github/workflows/cd.yml"
 name: Release
 on:
   push:
@@ -241,7 +241,7 @@ Before merging it, make sure, you have deleted the git tag and GitHub release up
 Dependabot updates may or may not conform to our semantic rules.
 The following configuration should ensure this happens:
 
-```yaml title=".github/.dependabot.yaml"
+```yaml title=".github/.dependabot.yml"
 version: 2
 updates:
   - package-ecosystem: "yarn"
