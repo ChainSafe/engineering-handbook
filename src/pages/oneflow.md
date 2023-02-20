@@ -31,6 +31,8 @@ On this illustration branches are underlined and tags put into boxes.
 
 All that approach states nothing about PR-preview deployments or any other additional deployments that are needed for development cycle. Those are established on "on-need" basis.
 
+GitHub also has a feature that allows [tags protection](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules) which means that only users with write access to the repository can creates tags that follows selected patterns and only admins can delete such tags. Configuring protection rules considered as a best security practices and should be enabled by the repository admin if the development happening on a GitHub.
+
 ## Hot fixes of tagged deployments
 There are situations when a hot fix is needed. For that purpose a `hotfix/*`  branch can be made. This branch will use broken production tag as a parent commit and as soon as all changes are ready and tested a new `v.*.*` tags can be made which will be picked up by CD to deploy a new version.
 
