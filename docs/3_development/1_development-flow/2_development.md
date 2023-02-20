@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Development
 
@@ -42,3 +42,7 @@ Our repositories typically have a template for pull requests, therefore writing 
 - Ensure you adhere to the repositories PR template.
     - If a template is not provided contact you Tech Lead or Project Manager for insights.
 - Always ensure you are descriptive, when explaining the nature of your pull request.
+
+## 5. Approaches in use
+
+In many of the [ChainSafe Products](/departments/product) development cycles OneFlow approach is used. You can find more [detailed description here](/pages/oneflow).
