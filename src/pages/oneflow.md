@@ -11,7 +11,7 @@ There are multiple ways to deal with branching and CI. The most famous ones are 
 The approach described below is not ideal and far from being a sliver bullet but its minimalistic design have some advantages, especially in CI/CD-first development cycle.
 
 ## Branches
-There is a pretty good description of branching rules and naming convention in the [Development](https://handbook.chainsafe.dev/development/development-flow/development) section of this handbook and we will not repeat it here but just encourage to follow it.
+There is a pretty good description of branching rules and naming convention in the [Development](/development/development-flow/development) section of this handbook and we will not repeat it here but just encourage to follow it.
 
 ![oneflow_assets/oneflow-3.png](oneflow_assets/oneflow-3.png)
 
