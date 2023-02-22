@@ -32,7 +32,7 @@ Make sure you put this in README file for future contributors.
 - Make sure your root `package.json` contains:
 
 ```json
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@3.4.1",
   "workspaces": [
     "packages/*"
   ],
