@@ -35,5 +35,6 @@ GitHub also has a feature that allows [tags protection](https://docs.github.com/
 
 ## Hot fixes of tagged deployments
 There are situations when a hot fix is needed. For that purpose a `hotfix/*`  branch can be made. This branch will use broken production tag as a parent commit and as soon as all changes are ready and tested a new `v.*.*` tags can be made which will be picked up by CD to deploy a new version.
+The `hotfix/*` branch should be merged to the `main` branch, tested and go through the staging environment before the next release tag.
 
 ![oneflow_assets/oneflow-2.png](oneflow_assets/oneflow-2.png)
