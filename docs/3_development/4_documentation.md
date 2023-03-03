@@ -44,13 +44,21 @@ CloudFlare Pages is a modern platform for building and deploying websites. It of
 
 While CloudFlare workers is a relatively inexpensive option for Continuous Deployment, it still has quotas and requires a monthly subscription. On the other hand, GitHub Actions is free for public repositories so it's a preferred way of deploying websites.
 
+Another reason to use GitHub Actions instead of CloudFlare Workers is the visibility of the deployment process in the PR. CloudFlare Worker following the repository changes will attempt to build and deploy the code in the CloudFlare environment and if PR comments for the deployment results are not enabled failure to build or to deploy would be left unnoticed. On the contrary, check, build and deploy steps executed in GitHub Actions not only increase the visibility of the whole process but are also incorporated into the PR approval process.
+
 Here's an example of how you can deploy your website using GitHub Actions:
 
 1. [Obtain access to "ChainSafeDev" CloudFlare account](https://github.com/ChainSafe/cloudflare-hosting-mgmt/blob/master/members.tf) if you don't have one already.
 2. Create new Pages project either via CloudFlare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
-3. Create a workflow file in their GitHub repository (e.g. .github/workflows/deploy.yml).
-4. Add a step to the workflow that deploys the built site to CloudFlare Pages using the CloudFlare Pages API.
-5. Set new chainsafe.dev subdomain available inside the "ChainSafeDev" CloudFlare account.
+3. [Generate CloudFlare API Token](https://github.com/cloudflare/pages-action#generate-an-api-token) and add it to the repository secrets under `CLOUDFLARE_API_TOKEN` name.
+
+:::note
+You don't need to define `GITHUB_TOKEN` yourself. The workflow-specific token going to be [generated automatically by the GitHub Actions](https://docs.github.com/en/actions/security-guides/automatic-token-authentication).
+:::
+
+4. Create a workflow file in their GitHub repository (e.g. .github/workflows/deploy.yml).
+5. Add a step to the workflow that deploys the built site to CloudFlare Pages using the CloudFlare Pages API.
+6. Set new chainsafe.dev subdomain available inside the "ChainSafeDev" CloudFlare account.
 
 Here's a sample workflow file:
 
@@ -87,6 +95,10 @@ jobs:
               directory: ./build
               gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+:::tip
+To find PR-specific deployment URL go to the `Actions` tab, select deployment workflow on the left and choose one corresponding to your PR number. The URL will be located in the `deploy summary` section.
+:::
 
 #### Deploy to IPFS
 
