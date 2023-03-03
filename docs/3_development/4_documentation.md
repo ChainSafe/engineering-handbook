@@ -30,13 +30,62 @@ Don't forget to update repository settings as described in [Setup GitHub Reposit
 ### Deployment
 
 Result of the Docusaurus build step is a static website that can be deployed to
-any of the popular hosting services including GitHub Pages, Render, Netifly or IPFS.
+any of the popular hosting services including GitHub Pages, Cloudflare or IPFS.
 
-#### Deploy to Render
+#### Deploy to CloudFlare Pages
 
-Even though using GitHub Actions is the easiest option, to this date, they don't have Pull Request previews
-which make it hard to view changes in the browser. Deploying to [Render](https://render.com/) requires
-a one-time setup for which, if you don't have access to ChainSafe's Render account, you can ask your Department Head or DevOps team.
+One way to achieve this is by deploying their websites on CloudFlare Pages.
+
+CloudFlare Pages is a modern platform for building and deploying websites. It offers a number of benefits, including:
+
+- High-performance: CloudFlare Pages uses the same global network as CloudFlare's CDN, which means websites load quickly no matter where the visitor is located.
+- Easy to use: Setting up a website on CloudFlare Pages is simple and straightforward. You can connect your GitHub repository and deploy your site with just a few clicks.
+- Security: CloudFlare Pages offers built-in security features such as HTTPS encryption and DDoS protection.
+
+While CloudFlare workers is a relatively inexpensive option for Continuos Deployment, it still has quotas and requires a monthly subscription. On the other hand, GitHub Actions is free for public repositories so it's a preferred way of deploying websites.
+
+Here's an example of how Chainsafe can deploy their website using GitHub Actions:
+
+1. [Obtain access to ChainSafeDev Cloudflare account](https://github.com/ChainSafe/cloudflare-hosting-mgmt/blob/master/members.tf) if you don't have one already.
+2. Create new Pages project either via Cloudflare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
+3. Create a workflow file in their GitHub repository (e.g. .github/workflows/deploy.yml).
+4. Add a step to the workflow that deploys the built site to CloudFlare Pages using the CloudFlare Pages API.
+5. Set new chainsafe.dev subdomain available inside the ChainSafeDev Cloudflare account.
+
+Here's a sample workflow file:
+```yaml
+name: CloudFlare Deploy
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      permissions:
+        contents: read
+        deployments: write
+      steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+            with:
+              cache: yarn
+              node-version: '16'
+          - run: yarn install --frozen-lockfile
+          - run: yarn run build
+          - name: Publish to Cloudflare Pages
+            uses: cloudflare/pages-action@1
+            with:
+              apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+              accountId: 2238a825c5aca59233eab1f221f7aefb
+              projectName: <cloudflare project name>
+              directory: ./build
+              gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+```
 
 #### Deploy to IPFS
 
