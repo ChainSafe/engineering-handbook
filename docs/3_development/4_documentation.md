@@ -29,30 +29,31 @@ Don't forget to update repository settings as described in [Setup GitHub Reposit
 
 ### Deployment
 
-Result of the Docusaurus build step is a static website that can be deployed to
-any of the popular hosting services including GitHub Pages, Cloudflare or IPFS.
+The result of the Docusaurus build step is a static website that can be deployed to
+any of the popular hosting services including GitHub Pages, CloudFlare or IPFS.
 
 #### Deploy to CloudFlare Pages
 
 One way to achieve this is by deploying their websites on CloudFlare Pages.
 
-CloudFlare Pages is a modern platform for building and deploying websites. It offers a number of benefits, including:
+CloudFlare Pages is a modern platform for building and deploying websites. It offers several benefits, including:
 
 - High-performance: CloudFlare Pages uses the same global network as CloudFlare's CDN, which means websites load quickly no matter where the visitor is located.
-- Easy to use: Setting up a website on CloudFlare Pages is simple and straightforward. You can connect your GitHub repository and deploy your site with just a few clicks.
+- Easy to use: Setting up a website on CloudFlare Pages is simple. You can connect your GitHub repository and deploy your site with just a few clicks.
 - Security: CloudFlare Pages offers built-in security features such as HTTPS encryption and DDoS protection.
 
-While CloudFlare workers is a relatively inexpensive option for Continuos Deployment, it still has quotas and requires a monthly subscription. On the other hand, GitHub Actions is free for public repositories so it's a preferred way of deploying websites.
+While CloudFlare workers is a relatively inexpensive option for Continuous Deployment, it still has quotas and requires a monthly subscription. On the other hand, GitHub Actions is free for public repositories so it's a preferred way of deploying websites.
 
-Here's an example of how Chainsafe can deploy their website using GitHub Actions:
+Here's an example of how you can deploy your website using GitHub Actions:
 
-1. [Obtain access to ChainSafeDev Cloudflare account](https://github.com/ChainSafe/cloudflare-hosting-mgmt/blob/master/members.tf) if you don't have one already.
-2. Create new Pages project either via Cloudflare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
+1. [Obtain access to "ChainSafeDev" CloudFlare account](https://github.com/ChainSafe/cloudflare-hosting-mgmt/blob/master/members.tf) if you don't have one already.
+2. Create new Pages project either via CloudFlare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 3. Create a workflow file in their GitHub repository (e.g. .github/workflows/deploy.yml).
 4. Add a step to the workflow that deploys the built site to CloudFlare Pages using the CloudFlare Pages API.
-5. Set new chainsafe.dev subdomain available inside the ChainSafeDev Cloudflare account.
+5. Set new chainsafe.dev subdomain available inside the "ChainSafeDev" CloudFlare account.
 
 Here's a sample workflow file:
+
 ```yaml
 name: CloudFlare Deploy
 on:
