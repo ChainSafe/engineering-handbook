@@ -72,6 +72,11 @@ on:
     branches:
       - '**'
 
+permissions:
+  contents: read
+  deployments: write
+  pull-requests: write
+
 jobs:
   deploy:
       runs-on: ubuntu-latest
