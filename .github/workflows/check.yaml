@@ -29,3 +29,11 @@ jobs:
         echo -e "Found problematic uppercase section links:\n$found"
         exit 1
     - run: yarn build
+    - name: Publish to Cloudflare Pages
+      uses: cloudflare/pages-action@1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: 2238a825c5aca59233eab1f221f7aefb
+        projectName: engineering-handbook
+        directory: ./build
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
