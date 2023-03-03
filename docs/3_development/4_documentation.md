@@ -64,12 +64,13 @@ Here's a sample workflow file:
 
 ```yaml
 name: CloudFlare Deploy
-on:
-  workflow_run:
-    workflows:
-      - CI
-    types:
-      - completed
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
 
 jobs:
   deploy:
