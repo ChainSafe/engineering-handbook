@@ -81,9 +81,6 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
       if: ${{ github.event.workflow_run.conclusion == 'success' }}
-      permissions:
-        contents: read
-        deployments: write
       steps:
           - uses: actions/checkout@v3
           - uses: actions/setup-node@v3
