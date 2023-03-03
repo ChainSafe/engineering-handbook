@@ -43,3 +43,4 @@ jobs:
         projectName: engineering-handbook
         directory: ./build
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref_name }}
