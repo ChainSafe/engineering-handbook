@@ -7,6 +7,10 @@ on:
     branches:
       - '**'
 
+permissions:
+      contents: read
+      deployments: write
+
 jobs:
   check:
     name: Check
