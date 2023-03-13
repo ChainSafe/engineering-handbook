@@ -27,7 +27,7 @@ jobs:
     - run: yarn spellcheck
     - name: Check for uppercase section links
       run: |
-        found="$(grep -rE '\(#.*[A-Z].*\)?' ./docs || echo '')"
+        found="$(grep -rE '\(#[^\)]*?[A-Z].*?\)?' ./docs || echo '')"
         if [ "$found" = "" ]; then
           exit 0
         fi
