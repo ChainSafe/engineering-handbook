@@ -97,7 +97,6 @@ jobs:
               projectName: <cloudflare project name>
               directory: ./build
               gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-              branch: ${{ github.head_ref || github.ref_name }}
 ```
 
 :::tip
