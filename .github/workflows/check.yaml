@@ -2,7 +2,7 @@ name: CI
 on: 
   push:
     branches:
-      - main
+      - '**'
   pull_request:
     branches:
       - '**'
@@ -43,4 +43,3 @@ jobs:
         projectName: engineering-handbook
         directory: ./build
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.head_ref || github.ref_name }}
