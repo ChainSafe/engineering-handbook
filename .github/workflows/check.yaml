@@ -35,7 +35,7 @@ jobs:
         exit 1
     - run: yarn build
     - name: Publish to Cloudflare Pages
-      uses: cloudflare/pages-action@1
+      uses: cloudflare/pages-action@v1
       if: '! github.event.pull_request.draft'
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
