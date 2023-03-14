@@ -8,6 +8,7 @@ blockchains
 BLS
 bugfix
 Buterin
+CDN
 ChainBridge
 ChainSafe
 ChainSafe's
@@ -21,6 +22,8 @@ CLI
 clion
 Clion
 Clippy
+CloudFlare
+CloudFlare's
 coc-rust-analyzer
 codebase
 codebases
@@ -30,6 +33,7 @@ Corepack
 CSV
 CTO
 customizable
+DDoS
 de
 Dependabot
 deserialize
@@ -63,6 +67,7 @@ GoMock
 Goto
 gruvbox
 html
+HTTPS
 Init
 IntelliJ
 IntelliSense

@@ -2,14 +2,15 @@ name: CI
 on: 
   push:
     branches:
-      - main
+      - 'main'
   pull_request:
     branches:
       - '**'
 
 permissions:
-      contents: read
-      deployments: write
+  contents: read
+  deployments: write
+  pull-requests: write
 
 jobs:
   check:
@@ -26,7 +27,7 @@ jobs:
     - run: yarn spellcheck
     - name: Check for uppercase section links
       run: |
-        found="$(grep -rE '\(#.*[A-Z].*\)?' ./docs || echo '')"
+        found="$(grep -rE '\(#[^\)]*?[A-Z].*?\)?' ./docs || echo '')"
         if [ "$found" = "" ]; then
           exit 0
         fi
@@ -34,7 +35,7 @@ jobs:
         exit 1
     - run: yarn build
     - name: Publish to Cloudflare Pages
-      uses: cloudflare/pages-action@1
+      uses: cloudflare/pages-action@v1
       if: '! github.event.pull_request.draft'
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

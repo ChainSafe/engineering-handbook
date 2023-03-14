@@ -29,14 +29,79 @@ Don't forget to update repository settings as described in [Setup GitHub Reposit
 
 ### Deployment
 
-Result of the Docusaurus build step is a static website that can be deployed to
-any of the popular hosting services including GitHub Pages, Render, Netifly or IPFS.
+The result of the Docusaurus build step is a static website that can be deployed to
+any of the popular hosting services including GitHub Pages, CloudFlare or IPFS.
 
-#### Deploy to Render
+#### Deploy to CloudFlare Pages
 
-Even though using GitHub Actions is the easiest option, to this date, they don't have Pull Request previews
-which make it hard to view changes in the browser. Deploying to [Render](https://render.com/) requires
-a one-time setup for which, if you don't have access to ChainSafe's Render account, you can ask your Department Head or DevOps team.
+One way to achieve this is by deploying their websites on CloudFlare Pages.
+
+CloudFlare Pages is a modern platform for building and deploying websites. It offers several benefits, including:
+
+- High-performance: CloudFlare Pages uses the same global network as CloudFlare's CDN, which means websites load quickly no matter where the visitor is located.
+- Easy to use: Setting up a website on CloudFlare Pages is simple. You can connect your GitHub repository and deploy your site with just a few clicks.
+- Security: CloudFlare Pages offers built-in security features such as HTTPS encryption and DDoS protection.
+
+While CloudFlare workers is a relatively inexpensive option for Continuous Deployment, it still has quotas and requires a monthly subscription. On the other hand, GitHub Actions is free for public repositories so it's a preferred way of deploying websites.
+
+Another reason to use GitHub Actions instead of CloudFlare Workers is the visibility of the deployment process in the PR. CloudFlare Worker following the repository changes will attempt to build and deploy the code in the CloudFlare environment and if PR comments for the deployment results are not enabled failure to build or to deploy would be left unnoticed. On the contrary, check, build and deploy steps executed in GitHub Actions not only increase the visibility of the whole process but are also incorporated into the PR approval process.
+
+Here's an example of how you can deploy your website using GitHub Actions:
+
+1. [Obtain access to "ChainSafeDev" CloudFlare account](https://github.com/ChainSafe/cloudflare-hosting-mgmt/blob/master/members.tf) if you don't have one already.
+2. Create new Pages project either via CloudFlare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
+3. [Generate CloudFlare API Token](https://github.com/cloudflare/pages-action#generate-an-api-token) and add it to the repository secrets under `CLOUDFLARE_API_TOKEN` name.
+
+:::note
+You don't need to define `GITHUB_TOKEN` yourself. The workflow-specific token going to be [generated automatically by the GitHub Actions](https://docs.github.com/en/actions/security-guides/automatic-token-authentication).
+:::
+
+4. Create a workflow file in their GitHub repository (e.g. .github/workflows/deploy.yml).
+5. Add a step to the workflow that deploys the built site to CloudFlare Pages using the CloudFlare Pages API.
+6. Set new chainsafe.dev subdomain available inside the "ChainSafeDev" CloudFlare account.
+
+Here's a sample workflow file:
+
+```yaml
+name: CloudFlare Deploy
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+permissions:
+  contents: read
+  deployments: write
+  pull-requests: write
+
+jobs:
+  deploy:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+            with:
+              cache: yarn
+              node-version: '16'
+          - run: yarn install --frozen-lockfile
+          - run: yarn run build
+          - name: Publish to Cloudflare Pages
+            uses: cloudflare/pages-action@v1
+            with:
+              apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+              accountId: 2238a825c5aca59233eab1f221f7aefb
+              projectName: <cloudflare project name>
+              directory: ./build
+              gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+```
+
+:::tip
+To find PR-specific deployment URL go to the `Actions` tab, select deployment workflow on the left and choose one corresponding to your PR number. The URL will be located in the `deploy summary` section.
+:::
 
 #### Deploy to IPFS
 
