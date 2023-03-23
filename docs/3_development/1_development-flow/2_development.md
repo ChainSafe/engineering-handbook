@@ -27,6 +27,10 @@ When making a release, a corresponding tag should be created using git ex: `git 
 
 When opening a pull request there are two types that can be opened: draft and regular. If you are prepping for a new release, or you are migrating a codebase, opening a draft PR is a great way for publicly showing the current development status of that given milestone. When a branch is feature complete, and has been adequately tested then you should open up a regular PR.
 
+:::tip
+    If you are making changes to the Github Actions, a great way to debug would be to use [`act`](https://github.com/nektos/act) to test the issues before making multiple commits.
+:::
+
 ## 3. Writing a title & description
 
 Please make the title clean and concise, preferably explaining what the objective of the pieces of committed code are doing. Some things to know:
