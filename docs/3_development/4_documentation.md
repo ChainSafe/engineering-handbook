@@ -48,7 +48,7 @@ Another reason to use GitHub Actions instead of CloudFlare Workers is the visibi
 
 Here's an example of how you can deploy your website using GitHub Actions:
 
-1. If you don't have access to our Cloudflare account, please reach out to your manager/head of department.
+1. If you don't have access to our CloudFlare account, please reach out to your manager/head of department.
 2. Create new Pages project either via CloudFlare Dashboard or [wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 3. [Generate CloudFlare API Token](https://github.com/cloudflare/pages-action#generate-an-api-token) and add it to the repository secrets under `CLOUDFLARE_API_TOKEN` name.
 
