@@ -63,6 +63,7 @@ fzf
 GitBook
 gitbook
 GitFlow
+GitHub
 GitHub's
 GITHUB_TOKEN
 Gitlab
