@@ -37,13 +37,10 @@ For example, if one developer uses the `forEach` iterator and another uses the `
 
 Recommended lint tool is `eslint` with some chosen plugins (like `prettier` for code formatting) and to ensure code style across ChainSafe, we are providing a [shared configuration](https://github.com/ChainSafe/eslint-config) that you can use in your projects as a baseline:
 
-1. `yarn add --dev eslint@8 @rushstack/eslint-patch @chainsafe/eslint-config` //version depends on version in a shared configuration package.json
-   1. You can read more on why `@rushstack/eslint-patch` is needed here: https://github.com/ChainSafe/eslint-config#usage
-
+1. `yarn add --dev eslint@8 @chainsafe/eslint-config` //version depends on version in a shared configuration package.json
 2. Create `.eslintrc.js` file with the following contents:
 
 ```js
-require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   extends: "@chainsafe",
