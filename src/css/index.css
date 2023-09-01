@@ -37,3 +37,9 @@ a:hover {
 .join-us > .menu__link {
     color: #FFEC3D !important;
 }
+
+.page-caption {
+    color: #8c8c8c;
+    font-size: 1.2rem;
+    font-style: italic;
+}
