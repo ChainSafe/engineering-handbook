@@ -41,6 +41,7 @@ de
 Dependabot
 deserialize
 DevOps
+disempower
 Docusarus
 Docusaurus
 e.g.
