@@ -1,4 +1,4 @@
-# Principles
+# QA Principles
 
 The main objective of QA is to continuously improve development and testing processes in order to reduce the chance of defects arising during the software development life cycle. 
 
