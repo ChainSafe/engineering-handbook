@@ -5,11 +5,11 @@ sidebar_label: Principles
 
 # Engineering Principles
 
-<p class="page-caption">The following principles should provide a solid base for all engineers in ChainSafe to act, help them make decisions and navigate their autonomy.</p>
+<p class="page-caption">The following principles should provide a solid base for all engineers at ChainSafe to act, make decisions, and navigate their autonomy.</p>
 
 - **Open-source everything.** Everything we build, code or otherwise, should be open-source. Any exceptions to this should be deeply considered. License restrictions should only be used to ensure the continued freedom of individuals to build on top of or modify our work. Published work should be accessible and welcoming to external contributors.
 
-- **Empower people.** It is very easy for processes and structures to disempower individuals, which is why we strive we self-organizing teams with high autonomy. Individuals that feel empowered are far more productive. This empowerment leads to greater satisfaction and engagement, which helps to build better teams and ultimately better software.
+- **Empower people.** It is very easy for processes and structures to disempower individuals, which is why we strive for self-organizing teams with high autonomy. Individuals that feel empowered are far more productive. This empowerment leads to greater satisfaction and engagement, which helps to build better teams and ultimately better software.
 
 - **Standards lead to better code.** Use a systematic approach to ensure that code is of high quality. This involves using established practices and tools to create software that is easy to read, test, maintain, and extend. Standards should be encouraged, or enforced where necessary, through established processes such as code reviews. These standards should always be documented, and automated wherever possible. 
 
