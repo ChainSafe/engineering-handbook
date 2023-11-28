@@ -30,7 +30,7 @@ Make sure you put this in README file for future contributors.
 :::warning
 
 Date: 22 November 2023
-There is an issue with `actions/setup-node@v3` it is used with `cache: 'yarn'`
+There is an issue with `actions/setup-node@v3` if is used with `cache: 'yarn'`
 
 :::
 
