@@ -1,6 +1,6 @@
 # Career Development
 
-We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework.
+We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (inspired by [engineeringladders.com](https://www.engineeringladders.com/) by Jorge Fioranelli).
 
 This framework provides an outline for progression within the Engineering team at ChainSafe. It allows software engineering managers to have meaningful conversations with their direct reports around the expectations of each position and how to plan for the next level in their career ladder.
 The framework relies heavily on radar charts to visually represent the different perspectives and expectations of a given position. At ChainSafe, we have the following reference roles:
