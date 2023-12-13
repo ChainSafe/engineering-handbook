@@ -60,6 +60,7 @@ Ethereum's
 facto
 Filecoin
 FilSnap
+Fioranelli
 Frontend
 fzf
 gitbook
