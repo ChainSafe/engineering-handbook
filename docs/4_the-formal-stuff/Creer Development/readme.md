@@ -3,22 +3,18 @@
 We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (see [Acknowledgments](#acknowledgments) for more details).
 
 This framework provides an outline for progression within the Engineering team at ChainSafe. It allows software engineering managers to have meaningful conversations with their direct reports around the expectations of each position and how to plan for the next level in their career ladder.
-The framework relies heavily on radar charts to visually represent the different perspectives and expectations of a given position. At ChainSafe, we have the following reference roles:
-
-- E1  - [Associate Engineer](#associate-engineer) / [Associate Engineer in Research](#associate-engineer-in-research)
-- E2 - [Engineer](#engineer) / [Engineer in Research](#engineer-in-research)
-- E3 - [Senior Engineer](#senior-engineer) / [Senior Engineer in Research](#senior-engineer-in-research)
-- E3M - [Engineering Manager](#engineering-manager)
-- E4 - [Principal Engineer](#principal-engineer) / [Principal Engineer in Research](#principal-engineer-in-research)
-- E4M - [Senior Engineering Manager](#senior-engineering-manager)
-- E5 - [Distinguished Engineer](#distinguished-engineer) / [Distinguished Engineer in Research](#distinguished-engineer-in-research)
-- E5M - [Engineering Head](#engineering-head)
-
+The framework relies heavily on radar charts to visually represent the different perspectives and expectations of a given position. At ChainSafe career progression we recognize 3 slightly different directions:
 
 ![assets/roles-progression.png](assets/roles-progression.png)
 
 
-The attributes typically associated with each of these roles can be found [here](#levels).
+Each of this direction represents a sequence of roles and the attributes typically associated with each of these roles can be found [in Levels section](#levels).
+
+Current roles progression assumes following roles:
+
+ - [Engineering Roles](engineering)
+ - [Research Roles](research)
+ - [Engineering Management Roles](engineering-management)
 
 Roles described here serve strictly as a reference and it is expected for each individual to have a unique shape on this chart. A promotion to the next ladder requires meeting ⅗ axes.
 
@@ -30,20 +26,19 @@ While assigning levels to each axis make sure the meaning and definitions of sel
 
 ## Levels
 
+Currently we differentiate [two charts](charts) that describes levels for different functions. One chart relates to [Engineering](engineering) and another to [Research](research). [Engineering Management](engineering-management) career progression built with the Engineering chart and effectively relates to both functions.
+
 Our engineering ladders have the following 5 axes (categories):
-- **Technical Expertise**: knowledge of the stack and tools being specialized
 - **System**: scope of the impact on the technology, level of ownership of the system(s)
 - **People**: relationship with the team(s)
 - **Process**: level of engagement with the [SDLC](#glossary) process
-- **Impact**: scope of the impact on the value delivery 
+- **Impact**: scope of the impact on the value delivery
 
-### Technical Expertise
+For the Engineering verticals the 5th axis is:
+- **Technical Expertise**: knowledge of the stack and tools being specialized
 
-1. **Adopts**: actively learns and adopts the architectural approaches and tools defined by the Stream
-2. **Specializes**: is the go-to person for one or more architecture domains and takes initiative to learn new ones
-3. **Evangelizes**: researches, creates proofs of concept and introduces new architectural approaches to the Stream
-4. **Masters**: has very deep knowledge about the whole tech stack of the system
-5. **Creates**: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
+And for the Research the 5th axis is:
+- **Research Methodology**: knowledge and ability to conduct a research
 
 ### System
 1. **Enhances**: successfully pushes new features and bug fixes to improve and extend the system
@@ -70,64 +65,24 @@ Our engineering ladders have the following 5 axes (categories):
 1. **Component**: makes an impact on one or more components of the system
 2. **Stream**: makes an impact on the whole Stream, not just on specific parts of it
 3. **Program**: makes an impact not only their Stream but also on other Streams in the Program
-4. **Pillar**: makes an impact on the whole Pillar
-5. **Company**: makes an impact on the multiple Pillar
+4. **Multiple Programs**: makes an impact on more than one Programs
+5. **Company**: makes an impact on most of the Programs
 
-## Engineering Roles
+### Technical Expertise 
+:::info
+Level of the [**Engineering Chart**](charts#engineering-chart)
+:::
 
-### Associate Engineer
-
-![assets/01.assosiate-se.jpg](assets/01.assosiate-se.jpg)
-
----
-
-### Engineer
-
-![assets/02.se.jpg](assets/02.se.jpg)
-
----
-
-### Senior Engineer
-
-![assets/03.senior-se.jpg](assets/03.senior-se.jpg)
-
----
-
-### Principal Engineer
-
-![assets/04.principal-se.jpg](assets/04.principal-se.jpg)
-
----
-
-### Distinguished Engineer
-
-![assets/05.distinguished-se.jpg](assets/05.distinguished-se.jpg)
-
----
-
-### Engineering Manager
-
-![assets/06.em.jpg](assets/06.em.jpg)
-
----
-
-### Senior Engineering Manager
-
-![assets/07.senior-em.jpg](assets/07.senior-em.jpg)
-
----
-
-### Engineering Head
-
-![assets/08.head.jpg](assets/08.head.jpg)
-
----
-
-## Research Levels
-
-RnD has a small alteration to the role chart. `Technical Expertiese` axis replaced with the `Research Methodology` one.
+1. **Adopts**: actively learns and adopts the architectural approaches and tools defined by the Stream
+2. **Specializes**: is the go-to person for one or more architecture domains and takes initiative to learn new ones
+3. **Evangelizes**: researches, creates proofs of concept and introduces new architectural approaches to the Stream
+4. **Masters**: has very deep knowledge about the whole tech stack of the system
+5. **Creates**: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
 
 ### Research Methodology
+:::info
+Level of the [**Research Chart**](charts#research-chart)
+:::
 
 1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency.
 2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms.
@@ -135,43 +90,11 @@ RnD has a small alteration to the role chart. `Technical Expertiese` axis replac
 4. **Leads**: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work.
 5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications.
 
-## Research Roles
-
-### Associate Engineer in Research
-
-![assets/01.assosiate-se-rnd.jpg](assets/01.assosiate-se-rnd.jpg)
-
----
-
-### Engineer in Research
-
-![assets/02.se-rnd.jpg](assets/02.se-rnd.jpg)
-
----
-
-### Senior Engineer in Research
-
-![assets/03.senior-se-rnd.jpg](assets/03.senior-se-rnd.jpg)
-
----
-
-### Principal Engineer in Research
-
-![assets/04.principal-se-rnd.jpg](assets/04.principal-se-rnd.jpg)
-
----
-
-### Distinguished Engineer in Research
-
-![assets/05.distinguished-se-rnd.jpg](assets/05.distinguished-se-rnd.jpg)
-
----
-
 ## Glossary
 The following list contains brief explanations of the mentioned terms or subjects above in the document.
 
-**Stream / Program / Pillar** - more on [ChainSafe OS pages](https://www.notion.so/chainsafe/Core-Concepts-v1-0-1610247189c949fa9692de950518ac53)
-For example: Forest is a stream. Protocol is a program. Ecosystem is a pillar
+**Stream / Program / Multiple Programs** - more on [ChainSafe OS pages](https://www.notion.so/chainsafe/Core-Concepts-v1-0-1610247189c949fa9692de950518ac53)
+For example: Forest is a stream. Protocol is a program.
 
 **SDLC** - Software Development Life Cycle, including all the software stages
 
