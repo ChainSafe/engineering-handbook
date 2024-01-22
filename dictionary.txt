@@ -134,6 +134,7 @@ README
 Rebase
 Recursiveness
 reproducibility
+RnD
 runnable
 RustFMT
 SDK

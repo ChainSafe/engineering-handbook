@@ -73,7 +73,7 @@ Our engineering ladders have the following 5 axes (categories):
 4. **Pillar**: makes an impact on the whole Pillar
 5. **Company**: makes an impact on the multiple Pillar
 
-## Roles
+## Engineering Roles
 
 ### Associate Engineer
 
@@ -123,6 +123,50 @@ Our engineering ladders have the following 5 axes (categories):
 
 ---
 
+## RnD Levels
+
+RnD has a small alteration to the role chart. `Technical Expertiese` axis replaced with the `Research Methodology` one.
+
+### Research Methodology
+
+1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency.
+2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms.
+3. **Proposes**: Can identify possible research directions, formulates research questions, scopes the research work with tangible outputs. Reviews the work of other team members with an eye for detail. Can write academic style papers, perform systematic literature review and publish it.
+4. **Leads**: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work.
+5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications.
+
+## RnD Roles
+
+### Associate Engineer in RnD
+
+![assets/01.assosiate-se-rnd.jpg](assets/01.assosiate-se-rnd.jpg)
+
+---
+
+### Engineer in RnD
+
+![assets/02.se-rnd.jpg](assets/02.se-rnd.jpg)
+
+---
+
+### Senior Engineer in RnD
+
+![assets/03.senior-se-rnd.jpg](assets/03.senior-se-rnd.jpg)
+
+---
+
+### Principal Engineer in RnD
+
+![assets/04.principal-se-rnd.jpg](assets/04.principal-se-rnd.jpg)
+
+---
+
+### Distinguished Engineer in RnD
+
+![assets/05.distinguished-se-rnd.jpg](assets/05.distinguished-se-rnd.jpg)
+
+---
+
 ## Glossary
 The following list contains brief explanations of the mentioned terms or subjects above in the document.
 
@@ -132,3 +176,6 @@ For example: Forest is a stream. Protocol is a program. Ecosystem is a pillar
 **SDLC** - Software Development Life Cycle, including all the software stages
 
 **SLA** - Service Level Agreement that outlines what exactly a service provider delivers to the customer (client)
+
+## Acknowledgments
+This framework is based on the open source materials from the [Engineering Ladders GitHub repository](https://github.com/jorgef/engineeringladders).
