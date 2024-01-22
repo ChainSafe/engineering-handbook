@@ -1,17 +1,17 @@
 # Career Development
 
-We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (inspired by [engineeringladders.com](https://www.engineeringladders.com/) by Jorge Fioranelli).
+We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (see [Acknowledgments](#acknowledgments) for more details).
 
 This framework provides an outline for progression within the Engineering team at ChainSafe. It allows software engineering managers to have meaningful conversations with their direct reports around the expectations of each position and how to plan for the next level in their career ladder.
 The framework relies heavily on radar charts to visually represent the different perspectives and expectations of a given position. At ChainSafe, we have the following reference roles:
 
-- E1  - [Associate Engineer](#associate-engineer)
-- E2 - [Engineer](#engineer)
-- E3 - [Senior Engineer](#senior-engineer)
+- E1  - [Associate Engineer](#associate-engineer) / [Associate Engineer in Research](#associate-engineer-in-research)
+- E2 - [Engineer](#engineer) / [Engineer in Research](#engineer-in-research)
+- E3 - [Senior Engineer](#senior-engineer) / [Senior Engineer in Research](#senior-engineer-in-research)
 - E3M - [Engineering Manager](#engineering-manager)
-- E4 - [Principal Engineer](#principal-engineer)
+- E4 - [Principal Engineer](#principal-engineer) / [Principal Engineer in Research](#principal-engineer-in-research)
 - E4M - [Senior Engineering Manager](#senior-engineering-manager)
-- E5 - [Distinguished Engineer](#distinguished-engineer)
+- E5 - [Distinguished Engineer](#distinguished-engineer) / [Distinguished Engineer in Research](#distinguished-engineer-in-research)
 - E5M - [Engineering Head](#engineering-head)
 
 
@@ -123,7 +123,7 @@ Our engineering ladders have the following 5 axes (categories):
 
 ---
 
-## RnD Levels
+## Research Levels
 
 RnD has a small alteration to the role chart. `Technical Expertiese` axis replaced with the `Research Methodology` one.
 
@@ -135,33 +135,33 @@ RnD has a small alteration to the role chart. `Technical Expertiese` axis replac
 4. **Leads**: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work.
 5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications.
 
-## RnD Roles
+## Research Roles
 
-### Associate Engineer in RnD
+### Associate Engineer in Research
 
 ![assets/01.assosiate-se-rnd.jpg](assets/01.assosiate-se-rnd.jpg)
 
 ---
 
-### Engineer in RnD
+### Engineer in Research
 
 ![assets/02.se-rnd.jpg](assets/02.se-rnd.jpg)
 
 ---
 
-### Senior Engineer in RnD
+### Senior Engineer in Research
 
 ![assets/03.senior-se-rnd.jpg](assets/03.senior-se-rnd.jpg)
 
 ---
 
-### Principal Engineer in RnD
+### Principal Engineer in Research
 
 ![assets/04.principal-se-rnd.jpg](assets/04.principal-se-rnd.jpg)
 
 ---
 
-### Distinguished Engineer in RnD
+### Distinguished Engineer in Research
 
 ![assets/05.distinguished-se-rnd.jpg](assets/05.distinguished-se-rnd.jpg)
 
