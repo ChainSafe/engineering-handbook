@@ -1,5 +1,7 @@
 # Competence Charts
 
+Blank charts can be found below for each type of ChainSafe engineering ladders.
+
 ## Engineering Chart
 
 ![assets/eng-chart.jpg](assets/eng-chart.jpg)

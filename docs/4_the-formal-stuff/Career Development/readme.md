@@ -84,11 +84,11 @@ Level of the [**Engineering Chart**](charts#engineering-chart)
 Level of the [**Research Chart**](charts#research-chart)
 :::
 
-1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency.
-2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms.
-3. **Proposes**: Can identify possible research directions, formulates research questions, scopes the research work with tangible outputs. Reviews the work of other team members with an eye for detail. Can write academic style papers, perform systematic literature review and publish it.
-4. **Leads**: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work.
-5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications.
+1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency
+2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms
+3. **Proposes**: Can identify possible research directions, formulates research questions, scopes the research work with tangible outputs. Reviews the work of other team members with an eye for detail. Can write academic style papers, perform systematic literature review and publish it
+4. **Leads**: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work
+5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications
 
 ## Glossary
 The following list contains brief explanations of the mentioned terms or subjects above in the document.
