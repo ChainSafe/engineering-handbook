@@ -11,7 +11,7 @@
 ---
 
 ## Senior Engineering Manager
-- <span className="axis">Impact</span> ➡ <span className="level">Program</span>: makes an impact not only their Stream but also on other Streams in the Program
+- <span className="axis">Impact</span> ➡ <span className="level">Program (Multiple Streams)</span>: makes an impact not only their Stream but also on other Streams in the same or other Programs
 - <span className="axis">Technical Expertise</span> ➡ <span className="level">Evangelizes</span>: researches, creates proofs of concept and introduces new architectural approaches to the Stream
 - <span className="axis">System</span> ➡ <span className="level">Evolves</span>: evolves the architecture to support future requirements and defines its SLAs
 - <span className="axis">People</span> ➡ <span className="level">Manages</span>: manages the team members’ career, expectations, performance and level of happiness

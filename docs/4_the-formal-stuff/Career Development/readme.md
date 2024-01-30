@@ -29,13 +29,13 @@ While assigning levels to each axis make sure the meaning and definitions of sel
 Currently we differentiate [two charts](charts) that describes levels for different functions. One chart relates to [Engineering](engineering) and another to [Research](research). [Engineering Management](engineering-management) career progression built with the Engineering chart and effectively relates to both functions.
 
 Our engineering ladders have the following 5 axes (categories):
-- **System**: scope of the impact on the technology, level of ownership of the system(s)
+- **Technical Expertise**: knowledge of the stack and tools being specialized
 - **People**: relationship with the team(s)
 - **Process**: level of engagement with the [SDLC](#glossary) process
 - **Impact**: scope of the impact on the value delivery
 
 For the Engineering verticals the 5th axis is:
-- **Technical Expertise**: knowledge of the stack and tools being specialized
+- **System**: scope of the impact on the technology, level of ownership of the system(s)
 
 And for the Research the 5th axis is:
 - **Research Methodology**: knowledge and ability to conduct a research
@@ -64,7 +64,7 @@ And for the Research the 5th axis is:
 ### Impact
 1. **Component**: makes an impact on one or more components of the system
 2. **Stream**: makes an impact on the whole Stream, not just on specific parts of it
-3. **Program**: makes an impact not only their Stream but also on other Streams in the Program
+3. **Program (Multiple Streams)**: makes an impact not only their Stream but also on other Streams in the same or other Programs
 4. **Multiple Programs**: makes an impact on more than one Programs
 5. **Company**: makes an impact on most of the Programs
 

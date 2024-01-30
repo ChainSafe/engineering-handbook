@@ -37,7 +37,7 @@
 
 ## Principal Engineer in Research
 
-- <span className="axis">Impact</span> ➡ <span className="level">Program</span>: makes an impact not only their Stream but also on other Streams in the Program
+- <span className="axis">Impact</span> ➡ <span className="level">Program (Multiple Streams)</span>: makes an impact not only their Stream but also on other Streams in the same or other Programs
 - <span className="axis">Technical Expertise</span> ➡ <span className="level">Masters</span>: has very deep knowledge about the whole tech stack of the system
 - <span className="axis">Research Methodology</span> ➡ <span className="level">Leads</span>: Has the ability to foresee future impediments in any research undertaking. And if it is worth pursuing. Has a sufficient breadth of domain knowledge to facilitate cross-domain research. Leads and helps other team members develop a critical eye for the work
 - <span className="axis">People</span> ➡ <span className="level">Mentors</span>: mentors others to accelerate their career-growth and encourages them to participate

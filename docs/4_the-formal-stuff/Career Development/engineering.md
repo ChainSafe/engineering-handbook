@@ -37,7 +37,7 @@
 ---
 
 ## Principal Engineer
-- <span className="axis">Impact</span> ➡ <span className="level">Program</span>: makes an impact not only their Stream but also on other Streams in the Program
+- <span className="axis">Impact</span> ➡ <span className="level">Program (Multiple Streams)</span>: makes an impact not only their Stream but also on other Streams in the same or other Programs
 - <span className="axis">Technical Expertise</span> ➡ <span className="level">Masters</span>: has very deep knowledge about the whole tech stack of the system
 - <span className="axis">System</span> ➡ <span className="level">Evolves</span>: evolves the architecture to support future requirements and defines its SLAs
 - <span className="axis">People</span> ➡ <span className="level">Mentors</span>: mentors others to accelerate their career-growth and encourages them to participate
