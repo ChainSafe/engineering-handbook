@@ -40,12 +40,12 @@ For the Engineering verticals the 5th axis is:
 And for the Research the 5th axis is:
 - **Research Methodology**: knowledge and ability to conduct a research
 
-### System
-1. **Enhances**: successfully pushes new features and bug fixes to improve and extend the system
-2. **Designs**: designs and implements medium to large size features while reducing the system’s tech debt
-3. **Owns**: owns the production operation and monitoring of the system and is aware of its [SLAs](#glossary)
-4. **Evolves**: evolves the architecture to support future requirements and defines its [SLAs](#glossary)
-5. **Leads**: leads the technical excellence of the system and creates plans to mitigate outages
+### Technical Expertise 
+1. **Adopts**: actively learns and adopts the architectural approaches and tools defined by the Stream
+2. **Specializes**: is the go-to person for one or more architecture domains and takes initiative to learn new ones
+3. **Evangelizes**: researches, creates proofs of concept and introduces new architectural approaches to the Stream
+4. **Masters**: has very deep knowledge about the whole tech stack of the system
+5. **Creates**: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
 
 ### People
 1. **Learns**: quickly learns from others and consistently steps up when it is required
@@ -68,22 +68,22 @@ And for the Research the 5th axis is:
 4. **Multiple Programs**: makes an impact on more than one Programs
 5. **Company**: makes an impact on most of the Programs
 
-### Technical Expertise 
+
+### System
 :::info
 Level of the [**Engineering Chart**](charts#engineering-chart)
 :::
+1. **Enhances**: successfully pushes new features and bug fixes to improve and extend the system
+2. **Designs**: designs and implements medium to large size features while reducing the system’s tech debt
+3. **Owns**: owns the production operation and monitoring of the system and is aware of its [SLAs](#glossary)
+4. **Evolves**: evolves the architecture to support future requirements and defines its [SLAs](#glossary)
+5. **Leads**: leads the technical excellence of the system and creates plans to mitigate outages
 
-1. **Adopts**: actively learns and adopts the architectural approaches and tools defined by the Stream
-2. **Specializes**: is the go-to person for one or more architecture domains and takes initiative to learn new ones
-3. **Evangelizes**: researches, creates proofs of concept and introduces new architectural approaches to the Stream
-4. **Masters**: has very deep knowledge about the whole tech stack of the system
-5. **Creates**: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
 
 ### Research Methodology
 :::info
 Level of the [**Research Chart**](charts#research-chart)
 :::
-
 1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency
 2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms
 3. **Proposes**: Can identify possible research directions, formulates research questions, scopes the research work with tangible outputs. Reviews the work of other team members with an eye for detail. Can write academic style papers, perform systematic literature review and publish it
