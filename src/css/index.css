@@ -43,3 +43,17 @@ a:hover {
     font-size: 1.2rem;
     font-style: italic;
 }
+
+.level {
+    background: #FFEC3D;
+    border-radius: 4px;
+    color: #333;
+    padding: 0.2rem;
+}
+
+.axis {
+    background: #fff;
+    border-radius: 4px;
+    color: #333;
+    padding: 0.2rem;
+}
