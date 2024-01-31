@@ -50,13 +50,13 @@
 
 ## Distinguished Engineer
 
-![assets/05.distinguished-se.jpg](assets/05.distinguished-se.jpg)
-
 - <span className="axis">Impact</span> ➡ <span className="level">Multiple Programs</span>: makes an impact on more than one Programs
 - <span className="axis">Technical Expertise</span> ➡ <span className="level">Creates</span>: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
 - <span className="axis">System</span> ➡ <span className="level">Leads</span>: leads the technical excellence of the system and creates plans to mitigate outages
 - <span className="axis">People</span> ➡ <span className="level">Coordinates</span>: coordinates team members providing effective feedback and moderating discussions
 - <span className="axis">Process</span> 
 ➡ <span className="level">Defines</span>: defines the right processes for the Program maturity level, balancing agility and discipline
+
+![assets/05.distinguished-se.jpg](assets/05.distinguished-se.jpg)
 
 ---
