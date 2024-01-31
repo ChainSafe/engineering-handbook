@@ -45,6 +45,7 @@
 ➡ <span className="level">Adjusts</span>: adjusts the SDLC processes on a Stream level and extends it to other Streams within a Program, listening to feedback and guiding the team through the changes
 
 ![assets/04.principal-se.jpg](assets/04.principal-se.jpg)
+
 ---
 
 ## Distinguished Engineer
