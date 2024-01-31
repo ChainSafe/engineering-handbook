@@ -45,11 +45,10 @@
 ➡ <span className="level">Adjusts</span>: adjusts the SDLC processes on a Stream level and extends it to other Streams within a Program, listening to feedback and guiding the team through the changes
 
 ![assets/04.principal-se.jpg](assets/04.principal-se.jpg)
+
 ---
 
 ## Distinguished Engineer
-
-![assets/05.distinguished-se.jpg](assets/05.distinguished-se.jpg)
 
 - <span className="axis">Impact</span> ➡ <span className="level">Multiple Programs</span>: makes an impact on more than one Programs
 - <span className="axis">Technical Expertise</span> ➡ <span className="level">Creates</span>: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
@@ -57,5 +56,7 @@
 - <span className="axis">People</span> ➡ <span className="level">Coordinates</span>: coordinates team members providing effective feedback and moderating discussions
 - <span className="axis">Process</span> 
 ➡ <span className="level">Defines</span>: defines the right processes for the Program maturity level, balancing agility and discipline
+
+![assets/05.distinguished-se.jpg](assets/05.distinguished-se.jpg)
 
 ---
