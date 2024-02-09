@@ -262,7 +262,7 @@ We can't emphasize more how important that is for the team. We shouldn't just th
 
 #### We should not take it personally
 
-The goal of a review is to maintain the quality of our codebase and our products. When a reviewer provides a critique of your code, we should think of it as their attempt to help us, the codebase, and Chainsafe, rather than as a personal attack on us or our abilities.
+The goal of a review is to maintain the quality of our codebase and our products. When a reviewer provides a critique of your code, we should think of it as their attempt to help us, the codebase, and ChainSafe, rather than as a personal attack on us or our abilities.
 
 📢 We should **never respond in anger to code review comments.** That is a serious breach of professional etiquette that will live forever in the code review tool. Even if reviewers expressed their frustration first.
 
