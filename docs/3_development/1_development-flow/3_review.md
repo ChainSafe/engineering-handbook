@@ -27,10 +27,6 @@ Walkthroughs is peer programming for reviews, if possible/required, ask for a wa
 
 If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different GitHub teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
 
-## Changelog
-
-Assuming your project has releases, and is continually making updates, the project will need a changelog. When submitting a pr make sure to update the changelog reflecting the changes that your PR is making. This way, when a new release is made, there is already a changelog ready to go and no extra work is needed.
-
 ## Reviewer guide
 
 The guide for reviewers is mostly a condensed version of [Google’s code review best practices](https://google.github.io/eng-practices/review/reviewer/). Some parts are just c/p, some parts are emphasized, some things are left out, and some are added or are different.
