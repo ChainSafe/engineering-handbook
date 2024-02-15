@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 ---
-# PR Reviews
+# Peer Reviews
 
 :::note
 Document everything, communicate with your team transparently, review together.
@@ -11,8 +11,8 @@ Document everything, communicate with your team transparently, review together.
 
 - Ensure readability is retained in code e.g. complex nested ternary operators should have a comment note
 - Ensure adequate testing exists where needed
-- PRs include a summary of work which outlines the objectives, decisions & considerations for the PR. Examples:
-    - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside of the logging scope at the moment.
+- Code change requests include a summary of work which outlines the objectives, decisions & considerations for the code change. Examples:
+    - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside the logging scope at the moment.
     - This PR includes minor styling tweaks on the desktop & mobile navigation menus, refactored navigation list logic.
 
 ## Communication
@@ -37,7 +37,7 @@ The guide for reviewers is mostly a condensed version of [Google’s code review
 
 ### The goal of the code review
 
-In general, reviewers should favor approving a PR once it is in a state where it definitely improves the overall code health of the system being worked on, even if the PR isn’t perfect.
+In general, reviewers should favor approving a code change request once it is in a state where it definitely improves the overall code health of the system being worked on, even if the code change isn’t perfect.
 
 There is no such thing as “perfect” code — there is only better code. Reviewers should not require the author to polish every tiny piece, but rather reviewers should balance out the need to make forward progress compared to the importance of the changes they are suggesting.
 
@@ -53,21 +53,21 @@ Reviewers can always leave comments — nitpicking, preferences, or comments tha
 
 #### Good things
 
-If we see something nice in the PR we should leave a comment. Code review is too focused on mistakes. If we encourage people when they do something good there is a higher chance they will repeat them. Don’t forget to add why you like it. Why is always important.
+If we see something nice in the code change request we should leave a comment. Code review is too focused on mistakes. If we encourage people when they do something good there is a higher chance they will repeat them. Don’t forget to add why you like it. Why is always important.
 
 #### Design
 
-The most important thing to cover in a review is the overall design of the PR and readability. Do the interactions of various pieces of code in the PR make sense? Does this change belong in our codebase, or in a library?
+The most important thing to cover in a review is the overall design of the code change request and readability. Do the interactions of various pieces of code in the request make sense? Does this change belong in our codebase, or in a library?
 
 Readability is even more important than DRY.
 
 #### Functionality
 
-Does this PR do what the developer intended? Is what the developer intended good for the users of this code? The “users” are usually both end-users and developers (who will have to “use” this code in the future)
+Does this code change do what the developer intended? Is what the developer intended good for the users of this code? The “users” are usually both end-users and developers (who will have to “use” this code in the future)
 
 #### Complexity
 
-Is the PR more complex than it should be? We should check this at every level of the PR — are individual lines too complex? Are functions too complex? “Too complex” usually means “can’t be understood quickly by code readers”. It can also mean that developers are likely to introduce bugs when they try to call or modify this code.
+Is the code change more complex than it should be? We should check this at every level of the code change request — are individual lines too complex? Are functions too complex? “Too complex” usually means “can’t be understood quickly by code readers”. It can also mean that developers are likely to introduce bugs when they try to call or modify this code.
 
 📢 A particular type of complexity is **over-engineering**, where developers have made the code more generic than it needs to be, or added functionality that isn’t presently needed by the system. Reviewers should be especially vigilant about over-engineering.
 
@@ -89,13 +89,13 @@ In the general case, we should look at every human-written line of code that we 
 
 #### Context
 
-Sometimes it is important to understand the underlying context. I personally often pull PRs and check how changes sit in the overall surroundings and files/structure.
+Sometimes it is important to understand the underlying context. Often it's a good practice to pull code changes and check how they sit in the overall surroundings and files/structure.
 
-### Navigating a PR
+### Navigating a code change request
 
-We should always start with the main part of the PR, the one that does the heavy lifting. This will give us a better context later when we start reviewing supporting and secondary changes.
+We should always start with the main part of the code change request, the one that does the heavy lifting. This will give us a better context later when we start reviewing supporting and secondary changes.
 
-If we see issues with the main part we should stop and send our comments immediately to the author. In fact, reviewing the rest of the PR might be a waste of time, because if the design problems are significant enough, a lot of the other code under review is going to disappear and not matter anyway. This will also give an opportunity for engineers to start on any major re-work of the PR as soon as possible.
+If we see issues with the main part we should stop and send our comments immediately to the author. In fact, reviewing the rest of the request might be a waste of time, because if the design problems are significant enough, a lot of the other code under review is going to disappear and not matter anyway. This will also give an opportunity for engineers to start on any major re-work of the code change as soon as possible.
 
 ### Speed of the code review
 
@@ -116,19 +116,19 @@ If we are not in the middle of a focused task, we should do a code review shortl
 
 One business day is the maximum time it should take to respond to a code review request (i.e., the first thing the next morning).
 
-Following these guidelines means that a typical PR should get multiple rounds of review (if needed) within a single day.
+Following these guidelines means that a typical code change request should get multiple rounds of review (if needed) within a single day.
 
-📢 If we are in the middle of a focused task, such as writing code, we shouldn’t interrupt ourselves to do a code review. Instead, we should wait for a breakpoint in our work to respond to PR.
+📢 If we are in the middle of a focused task, such as writing code, we shouldn’t interrupt ourselves to do a code review. Instead, we should wait for a breakpoint in our work to respond to code change request.
 
 #### Fast responses
 
-When we talk about fast code reviews, we are mainly talking about the response time. We should take time when reviewing the actual PR. We need to fully understand the code. Ideally, the whole process should be fast. Remember, the PR doesn’t have to be perfect!
+When we talk about fast code reviews, we are mainly talking about the response time. We should take time when reviewing the actual code change request. We need to fully understand the code. Ideally, the whole process should be fast. Remember, the code change doesn’t have to be perfect!
 
-📢 If we are too busy to do a full review, we can still send a quick response that lets the developer know when we will get to it. Or we can suggest another reviewer! We should delegate, and don’t allow PR to sour for days.
+📢 If we are too busy to do a full review, we can still send a quick response that lets the developer know when we will get to it. Or we can suggest another reviewer! We should delegate, and don’t allow the code cahnge request to sour for days.
 
-#### Large PRs
+#### Large code change requests
 
-Are unacceptable and reviewers have the right to break the fast PR rule. Usually the way-to-go is to ask the author to split the PR into smaller PRs (all branches should be branched from single/main branch for that feature). This way, all PRs can be reviewed in a single day and when they're merged, the feature is complete and large PR is more-or-less already reviewed, so we only need to do a simple final check.
+Are unacceptable and reviewers have the right to break the fast code review rule. Usually the way-to-go is to ask the author to split the code change into smaller requests (all branches should be branched from single/main branch for that feature). This way, all requests can be reviewed in a single day and when they're merged, the feature is complete and large code change is more-or-less already reviewed, so we only need to do a simple final check.
 
 ### How to write code review comments
 
@@ -162,7 +162,7 @@ One thing we can notice about the “good” example from above is that it helps
 
 #### Giving guidance
 
-In general, it is the developer’s responsibility to fix a PR, not the reviewer’s. We are not required to do a detailed design of a solution or write code for the developer.
+In general, it is the developer’s responsibility to fix a code change request, not the reviewer’s. We are not required to do a detailed design of a solution or write code for the developer.
 
 We should also respect the author’s creativity, meaning that we should point problems but refrain from giving exact solutions. It is not fun for the authors if somebody else is telling them how to do something. Only if the author is stuck, we should give more guidance.
 
@@ -180,7 +180,7 @@ When a developer disagrees with our suggestions, we should take a moment to cons
 
 #### Cleaning it up later
 
-Often, authors will ask if they can clean something later. In the following days, or next PRs. This really depends on what your process looks like and how strict it is. If it is not strict, this will rarely happen. We should be cautious when approaching will-do-it-later actions.
+Often, authors will ask if they can clean something later. In the following days, or next code change requests. This really depends on what your process looks like and how strict it is. If it is not strict, this will rarely happen. We should be cautious when approaching will-do-it-later actions.
 
 ### Resolving conversations
 
@@ -200,44 +200,44 @@ The guide for authors is a mix of Google’s code review best practices and our 
 
 ### We are working on a feature, how to start
 
-We should always start with the main part of the PR, the one that is the core of the whole feature.
+We should always start with the main part of the code change, the one that is the core of the whole feature.
 
-**We might create a PR immediately after we are comfortable with the main part to get early feedback.** We should just remember to explicitly describe such requests.
+**We might create a code change request immediately after we are comfortable with the main part to get early feedback.** We should just remember to explicitly describe such requests.
 
 The alternative is highly inefficient where we build the entire feature only to find out that our foundation is wrong and consequently all the secondary code around that foundation is wasted.
 
 We can still work on secondary code while the main feature is being reviewed because we must get the feedback in 1 business day.
 
-### Small and focused PRs
+### Small and focused code change requests
 
-#### Why write small PRs
+#### Why write small code change requests
 
-- Small PRs have a lower mental load. In contrast, large PRs are heavy energy drainers.
-- Reviewed more quickly. It’s easier for a reviewer to find five minutes several times to review small PRs than to set aside a 45+ minute block to review one large PR.
+- Small code changes have a lower mental load. In contrast, large are heavy energy drainers.
+- Reviewed more quickly. It’s easier for a reviewer to find five minutes several times to review small code changes than to set aside a 45+ minute block to review a large code change.
 - Reviewed more thoroughly. With large changes, reviewers and authors tend to get frustrated by large volumes of detailed commentary shifting back and forth — sometimes to the point where important points get missed or dropped.
-- Less likely to introduce bugs. Since we’re making fewer changes, it’s easier for us and our reviewer to reason effectively about the impact of the PR.
-- Less wasted work if they are rejected. If we write a huge PR and then our reviewer says that the overall direction is wrong, we’ve wasted a lot of work.
-- Less blocking on reviews. Sending self-contained portions of our overall change allows us to continue coding while we wait for our current PR in review.
+- Less likely to introduce bugs. Since we’re making fewer changes, it’s easier for us and our reviewer to reason effectively about the impact of the code change.
+- Less wasted work if they are rejected. If we write a huge code change request and then our reviewer says that the overall direction is wrong, we’ve wasted a lot of work.
+- Less blocking on reviews. Sending self-contained portions of our overall change allows us to continue coding while we wait for our current code change in review.
 
 #### What is small and focused
 
-The right size for a PR is one self-contained change. This means that:
+The right size for a code change request is one self-contained change. This means that:
 
-- The PR makes a minimal change that addresses just one thing + tests. This is usually just one part of a feature, rather than a whole feature at once.
-- The system will continue to work well for its users and for the developers after the PR is checked in.
-- The PR is not so small that its implications are difficult to understand. If we add a new API, we should include a usage of the API in the same PR so that reviewers can better understand how the API will be used.
+- The code change makes a minimal change that addresses just one thing + tests. This is usually just one part of a feature, rather than a whole feature at once.
+- The system will continue to work well for its users and for the developers after the code change request is checked in.
+- The code change is not so small that its implications are difficult to understand. If we add a new API, we should include a usage of the API in the same code change request so that reviewers can better understand how the API will be used.
 
-The right question to ask ourselves is: is this change related to this PR or can live on its own. If this can live on its own, we should address this in a separate PR.
+The right question to ask ourselves is: is this change related to this code change or can live on its own. If this can live on its own, we should address this in a separate code change request.
 
-📢 Keep in mind that although we have been intimately involved with our code, reviewers often have no context. What seems like an acceptably-sized PR to us might be **overwhelming to our reviewers**.
+📢 Keep in mind that although we have been intimately involved with our code, reviewers often have no context. What seems like an acceptably-sized code change to us might be **overwhelming to our reviewers**.
 
 #### Separate out refactorings
 
-Focused refactorings should always be a separate PR, containing only refactoring and nothing else! No fixes and features!
+Focused refactorings should always be a separate code change, containing only refactoring and nothing else! No fixes and features!
 
-There are some cases where we find that refactoring makes sense along with a feature or a bugfix, but the resulting PRs should be very small (e.g. if you can do both in less than 50 changed lines, that’s usually ok).
+There are some cases where we find that refactoring makes sense along with a feature or a bugfix, but the resulting code change requests should be very small (e.g. if you can do both in less than 50 changed lines, that’s usually ok).
 
-#### When are large PRs okay
+#### When are large code changes okay
 
 - Small changes across many files, like renaming a function or changing a contract
 - Deletion
@@ -246,17 +246,17 @@ There are some cases where we find that refactoring makes sense along with a fea
 
 #### Can’t make it small enough
 
-Sometimes we will encounter situations where it seems like our PR has to be large. This is very rarely true. Authors who practice writing small PRs can almost always find a way to decompose functionality into a series of small changes.
+Sometimes we will encounter situations where it seems like our code change has to be large. This is very rarely true. Authors who practice writing small code changes can almost always find a way to decompose functionality into a series of small changes.
 
-Before writing a large PR, consider whether preceding it with a refactoring-only PR could pave the way for a cleaner implementation. 
+Before writing a large code change, consider whether preceding it with a refactoring-only code change could pave the way for a cleaner implementation. 
 
-📢 If all of these options fail (which should be extremely rare) then get consent from your reviewers in advance to review a large PR, so they are warned about what is coming.
+📢 If all of these options fail (which should be extremely rare) then get consent from your reviewers in advance to review a large code change, so they are warned about what is coming.
 
-### Before creating a PR
+### Before creating a code change request
 
 We should check every line one more time. [Double-check](#reviewer-guide). JetBrains tools have a nice diff, or we can open a draft PR on GitHub and check everything there.
 
-We can't emphasize more how important that is for the team. We shouldn't just throw out our PR to reviewers as soon as we stop coding and hope for the best, but rather invest some time and see if we can improve anything. There is nothing more time-consuming for a team than millions of comments and PR rewrites.
+We can't emphasize more how important that is for the team. We shouldn't just throw out our code change request to reviewers as soon as we stop coding and hope for the best, but rather invest some time and see if we can improve anything. There is nothing more time-consuming for a team than millions of comments and code change rewrites.
 
 ### How to handle reviewer comments
 
@@ -281,11 +281,11 @@ Also, it'd be good to leave a link to the commit in the actual conversation.
 
 This is better because reviewers know that we actually commit our changes. Emoji reactions and other comments don’t necessarily mean the author actually committed changes.
 
-📢 We should never ever introduce new code and refactorings (even moving code around) when addressing changes. Because this will just make it harder for reviewers to do their re-review. Remember that our target is to finish the re-review in a single day. Refactoring should be addressed in a new PR.
+📢 We should never ever introduce new code and refactorings (even moving code around) when addressing changes. Because this will just make it harder for reviewers to do their re-review. Remember that our target is to finish the re-review in a single day. Refactoring should be addressed in a new code change request.
 
 ### When can we merge
 
-We can merge only if all the conversations are resolved and all reviewers approve the PR. In some cases, reviewers can approve without resolving comments, but the best practice here is for reviewers to resolve all the comments.
+We can merge only if all the conversations are resolved and all reviewers approve the code change request. In some cases, reviewers can approve without resolving comments, but the best practice here is for reviewers to resolve all the comments.
 
 ### References
 
