@@ -272,7 +272,7 @@ If a reviewer says that they don’t understand something in our code, our first
 
 #### Authors can never ever resolve conversations
 
-Only the original reviewer can resolve the conversation.
+Only the original reviewer who wrote the comment can resolve the conversation.
 
 #### The proper way of addressing reviewers comments in commits
 
