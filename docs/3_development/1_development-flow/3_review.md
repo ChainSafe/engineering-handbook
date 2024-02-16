@@ -114,7 +114,9 @@ One business day is the maximum time it should take to respond to a code review 
 
 Following these guidelines means that a typical code change request should get multiple rounds of review (if needed) within a single day.
 
-📢 If we are in the middle of a focused task, such as writing code, we shouldn’t interrupt ourselves to do a code review. Instead, we should wait for a breakpoint in our work to respond to code change request.
+:::note
+If we are in the middle of a focused task, such as writing code, we shouldn’t interrupt ourselves to do a code review. Instead, we should wait for a breakpoint in our work to respond to code change request.
+:::
 
 #### Fast responses
 
