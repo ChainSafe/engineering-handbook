@@ -120,7 +120,9 @@ Following these guidelines means that a typical code change request should get m
 
 When we talk about fast code reviews, we are mainly talking about the response time. We should take time when reviewing the actual code change request. We need to fully understand the code. Ideally, the whole process should be fast. Remember, the code change doesn’t have to be perfect!
 
-📢 If we are too busy to do a full review, we can still send a quick response that lets the developer know when we will get to it. Or we can suggest another reviewer! We should delegate, and don’t allow the code change request to sour for days.
+:::note
+If we are too busy to do a full review, we can still send a quick response that lets the developer know when we will get to it. Or we can suggest another reviewer! We should delegate, and don’t allow the code change request to sour for days.
+:::
 
 #### Large code change requests
 
