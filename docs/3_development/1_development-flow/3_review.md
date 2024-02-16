@@ -189,7 +189,7 @@ The guide for authors is a mix of Google’s code review best practices and our 
 
 ### Communication
 
-While platforms like Github allow selecting peer reviewers, additionally ask a teammate on the relevant team communication channel for a review. This ensures the request is clear and gives transparency to the rest of your team if commentary or considerations need to be made.
+While platforms like GitHub allow selecting peer reviewers, additionally ask a teammate on the relevant team communication channel for a review. This ensures the request is clear and gives transparency to the rest of your team if commentary or considerations need to be made.
 
 ### Walkthroughs
 
@@ -245,7 +245,9 @@ The right size for a code change request is one self-contained change. This mean
 
 The right question to ask ourselves is: is this change related to this code change or can live on its own. If this can live on its own, we should address this in a separate code change request.
 
-📢 Keep in mind that although we have been intimately involved with our code, reviewers often have no context. What seems like an acceptably-sized code change to us might be **overwhelming to our reviewers**.
+:::note
+Keep in mind that although we have been intimately involved with our code, reviewers often have no context. What seems like an acceptably-sized code change to us might be **overwhelming to our reviewers**.
+:::
 
 #### Separate out refactorings
 
@@ -266,7 +268,9 @@ Sometimes we will encounter situations where it seems like our code change has t
 
 Before writing a large code change, consider whether preceding it with a refactoring-only code change could pave the way for a cleaner implementation. 
 
-📢 If all of these options fail (which should be extremely rare) then get consent from your reviewers in advance to review a large code change, so they are warned about what is coming.
+:::note
+If all of these options fail (which should be extremely rare) then get consent from your reviewers in advance to review a large code change, so they are warned about what is coming.
+:::
 
 ### Before creating a code change request
 
@@ -280,7 +284,9 @@ We can't emphasize more how important that is for the team. We shouldn't just th
 
 The goal of a review is to maintain the quality of our codebase and our products. When a reviewer provides a critique of your code, we should think of it as their attempt to help us, the codebase, and ChainSafe, rather than as a personal attack on us or our abilities.
 
-📢 We should **never respond in anger to code review comments.** That is a serious breach of professional etiquette that will live forever in the code review tool. Even if reviewers expressed their frustration first.
+:::note
+We should **never respond in anger to code review comments.** That is a serious breach of professional etiquette that will live forever in the code review tool. Even if reviewers expressed their frustration first.
+:::
 
 #### We should fix the code before commenting
 
@@ -297,7 +303,9 @@ Also, it'd be good to leave a link to the commit in the actual conversation.
 
 This is better because reviewers know that we actually commit our changes. Emoji reactions and other comments don’t necessarily mean the author actually committed changes.
 
-📢 We should never ever introduce new code and refactorings (even moving code around) when addressing changes. Because this will just make it harder for reviewers to do their re-review. Remember that our target is to finish the re-review in a single day. Refactoring should be addressed in a new code change request.
+:::note
+We should never ever introduce new code and refactorings (even moving code around) when addressing changes. Because this will just make it harder for reviewers to do their re-review. Remember that our target is to finish the re-review in a single day. Refactoring should be addressed in a new code change request.
+:::
 
 ### When can we merge
 
