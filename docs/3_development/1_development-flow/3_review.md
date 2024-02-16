@@ -18,7 +18,7 @@ Document everything, communicate with your team transparently, review together.
 
 ## Reviewer guide
 
-The guide for reviewers is mostly a condensed version of [Google’s code review best practices](https://google.github.io/eng-practices/review/reviewer/). Some parts are just c/p, some parts are emphasized, some things are left out, and some are added or are different.
+The following guide for reviewers is mostly a condensed and customized version of [Google’s code review best practices](https://google.github.io/eng-practices/review/reviewer/). For additional context, we recommend reading the full guide, but here are the most important points.
 
 ### The goal of the code review
 
