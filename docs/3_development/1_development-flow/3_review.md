@@ -14,18 +14,7 @@ Document everything, communicate with your team transparently, review together.
 - Code change requests include a summary of work which outlines the objectives, decisions & considerations for the code change. Examples:
     - This PR's objective was to implement middleware for logging, this was completed however presentation & storage of logs is incomplete pending discussion. Certain components are outside the logging scope at the moment.
     - This PR includes minor styling tweaks on the desktop & mobile navigation menus, refactored navigation list logic.
-
-## Communication
-
-Ask a teammate on the relevant team channel for a review, this ensures the request is clear as well as gives transparency to the rest of your team if commentary or considerations need to be made.
-
-## Walkthroughs
-
-Walkthroughs is peer programming for reviews, if possible/required, ask for a walkthrough if your teammate has capacity, reviewing together allows you to share context to your work with your reviewer.
-
-## Requesting Reviews
-
-If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a pull request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different GitHub teams added to it (at minimum): `project_name-admins` and `project_name`, request the **non admin** team for review will allow your whole team to receive a notification about your new pull request.
+    - or simply add a [PR template](https://github.com/ChainSafe/engineering-handbook/blob/main/.github/PULL_REQUEST_TEMPLATE.md) with a description and issue reference
 
 ## Reviewer guide
 
