@@ -187,6 +187,33 @@ https://phauer.com/2018/code-review-guidelines/#be-humble
 
 The guide for authors is a mix of Google’s code review best practices and our own. We still recommend that you read Google’s [version](https://google.github.io/eng-practices/review/developer/).
 
+### Communication
+
+While platforms like Github allow selecting peer reviewers, additionally ask a teammate on the relevant team communication channel for a review. This ensures the request is clear and gives transparency to the rest of your team if commentary or considerations need to be made.
+
+### Walkthroughs
+
+Walkthroughs are peer programming for reviews. If possible or required, ask for a walkthrough within your team. If your teammate has the capacity, reviewing together allows you to share the context of your work with your reviewer.
+
+### Requesting Reviews
+
+If a project isn't setup with [codeowners](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners) when you open a code change request, and mark it ready for review, you'll need to get your peers to review it. Every repository should have two different GitHub teams added to it:
+- `project_name-admins` 
+  - This team is typically comprised of the project's administrative staff or senior developers who have overarching control and responsibilities over the repository. Members of this team are usually responsible for more critical aspects of the project, such as:
+      - Approving or merging code change requests that may have significant implications on the project's direction or stability.
+      - Managing access permissions for the repository, ensuring that contributors have the appropriate level of access according to their roles and responsibilities.
+      - Configuring repository settings, including protection rules for branches, integration of CI/CD pipelines, and setting up or modifying codeowner rules.
+      - Handling administrative tasks such as managing team memberships, resolving conflicts, and enforcing coding standards or guidelines.
+  - Essentially, this team acts as the gatekeepers of the project, ensuring that changes align with the project's goals and maintain its integrity.
+- `project_name`
+  - This team usually consists of the regular contributors or developers working on the project. They may have varying levels of experience and responsibility, but all contribute to the development and progress of the project. The roles of this team typically involve:
+    - Writing code, fixing bugs, and implementing new features or enhancements.
+    - Reviewing code submitted by peers to ensure quality, consistency, and that it adheres to the project's coding standards.
+    - Participating in discussions about the project's direction, design decisions, and potential improvements.
+  - When a code change request is marked ready for review without specific codeowners set up, requesting a review from the project_name team allows the whole team to receive a notification. This practice encourages collective code review and collaboration, ensuring that multiple eyes review the changes before they are merged into the main codebase. It helps maintain code quality and fosters a collaborative team environment.
+
+By structuring GitHub teams in this way, projects can benefit from clear separation of responsibilities, efficient management of access controls, and an inclusive environment where all team members are encouraged to participate in the review process.
+
 ### We are working on a feature, how to start
 
 We should always start with the main part of the code change, the one that is the core of the whole feature.
