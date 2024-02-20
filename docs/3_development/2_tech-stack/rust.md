@@ -20,7 +20,7 @@ Luckily rust code is shorter to write so it is practical to just use very simple
 ### Easy
 
 - **Clion**
-    - Clion is a fully-featured and powerful IDE from Jetbrains, the creator of IntelliJ IDE
+    - Clion is a fully-featured and powerful IDE from JetBrains, the creator of IntelliJ IDE
     - You can then install the rust plugin for Clion from their [marketplace](https://plugins.jetbrains.com/plugin/8182-rust)
     - Well-polished IDE and streamlined workflow for code editing.
     - ChainSafe will get a license for you - [Read more](../../4_the-formal-stuff/process_and_policy.md#requesting-license)

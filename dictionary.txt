@@ -8,6 +8,7 @@ Backend
 blockchain
 blockchains
 BLS
+breakpoint
 bugfix
 Buterin
 CDN
@@ -30,6 +31,7 @@ CloudFlare's
 coc-rust-analyzer
 codebase
 codebases
+codeowner
 codeowners
 configs
 Corepack
@@ -80,7 +82,7 @@ Init
 IntelliJ
 IntelliSense
 IPFS
-Jetbrains
+JetBrains
 Kakoune
 Ketelsen
 Kettensicherheitsschranksysteme
@@ -119,6 +121,7 @@ NFT
 npm
 nx
 Observability
+ok
 oneflow
 OneFlow
 oneflow_assets
@@ -129,10 +132,12 @@ Polkadot
 Polkadot-Host
 PR
 PRs
+pushback
 readme
 README
 Rebase
 Recursiveness
+refactorings
 reproducibility
 RnD
 runnable
