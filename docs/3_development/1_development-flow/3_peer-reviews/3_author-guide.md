@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 ---
-# Author guide
+# Author Guide
 
 The guide for authors is a mix of Google’s code review best practices and our own. We still recommend that you read Google’s [version](https://google.github.io/eng-practices/review/developer/).
 
