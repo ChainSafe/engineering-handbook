@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Competence Charts
 
 Blank charts can be found below for each type of ChainSafe engineering ladders.
