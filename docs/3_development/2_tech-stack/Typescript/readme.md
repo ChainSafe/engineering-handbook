@@ -120,7 +120,7 @@ jobs:
 ::: note This is a mostly automated process to enable consistency and make it hassle-free
 to release new versions more often
 :::
-::: caution Make sure the repository is using squash merging and branching rules as described in [Setup repository section](/development-flow/setup_repository)!
+::: caution Make sure the repository is using squash merging and branching rules as described in [Setup repository section](/development/development-flow/setup_repository)!
 :::
 
 ### Semantic Pull Requests
