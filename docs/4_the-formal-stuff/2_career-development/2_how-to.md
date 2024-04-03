@@ -18,7 +18,7 @@ Engineering Roles
 Research Roles (if you are in the Research Function)
 Engineering Management Roles
 
-In order to qualify for the desired position you need at least to hit 3 points out of 5 of the reference shape.
+In order to qualify for the desired position you need to hit at least 3 points out of 5 of the reference shape.
 
 For example, in order to qualify for the Senior Engineer your "shape" needs to intersect with the [Reference one](engineering#senior-engineer) in 3 points out of Evangelizes, Owns, Mentors, Challenges, Stream.
 
