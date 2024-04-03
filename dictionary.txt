@@ -1,5 +1,6 @@
 .env
 .github
+1:1s
 ⅗
 Afri
 amongst
@@ -54,6 +55,7 @@ E3
 E4
 E5
 E6
+EL
 Emacs
 enablement
 ERC20

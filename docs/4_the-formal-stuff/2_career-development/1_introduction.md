@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+title: "Introduction"
+---
+
 # Career Development
 
 We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (see [Acknowledgments](#acknowledgments) for more details).
@@ -26,7 +31,7 @@ While assigning levels to each axis make sure the meaning and definitions of sel
 
 ## Levels
 
-Currently we differentiate [two charts](charts) that describes levels for different functions. One chart relates to [Engineering](engineering) and another to [Research](research). [Engineering Management](engineering-management) career progression built with the Engineering chart and effectively relates to both functions.
+Currently we differentiate [two charts](how-to#competence-charts) that describes levels for different functions. One chart relates to [Engineering](engineering) and another to [Research](research). [Engineering Management](engineering-management) career progression built with the Engineering chart and effectively relates to both functions.
 
 Our engineering ladders have the following 5 axes (categories):
 - **Technical Expertise**: knowledge of the stack and tools being specialized
@@ -71,7 +76,7 @@ And for the Research the 5th axis is:
 
 ### System
 :::info
-Level of the [**Engineering Chart**](charts#engineering-chart)
+Level of the [**Engineering Chart**](how-to#engineering-chart)
 :::
 1. **Enhances**: successfully pushes new features and bug fixes to improve and extend the system
 2. **Designs**: designs and implements medium to large size features while reducing the system’s tech debt
@@ -82,7 +87,7 @@ Level of the [**Engineering Chart**](charts#engineering-chart)
 
 ### Research Methodology
 :::info
-Level of the [**Research Chart**](charts#research-chart)
+Level of the [**Research Chart**](how-to#research-chart)
 :::
 1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency
 2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms

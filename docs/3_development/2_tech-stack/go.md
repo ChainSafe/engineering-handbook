@@ -14,7 +14,7 @@ TBD
 
 :::
 
-If you need a license for your development tooling, [read on how to request one](../../4_the-formal-stuff/process_and_policy.md#requesting-license)!
+If you need a license for your development tooling, [read on how to request one](/the-formal-stuff/process-and-policy#requesting-license)!
 
 ## Project structure
 
