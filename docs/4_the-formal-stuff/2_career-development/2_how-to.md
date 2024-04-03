@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# How to use Engineering Ladders
+# How to Use Engineering Ladders
 
 There is only a slight difference in the usage of EL depending on if you are looking at it from the personal or direct report perspective.
 
@@ -19,9 +19,9 @@ If you have an aspiration and desire to grow please choose your role type out of
  - [Engineering Management Roles](engineering-management)
 
 
-In order to qualify for the desired position you need at least to hit 3 points out of 5 of the reference shape.
+In order to qualify for the desired position you need to hit at least 3 points out of 5 of the reference shape.
 
-For example, in order to qualify for the Senior Engineer your "shape" needs to intersect with the [Reference one](engineering#senior-engineer) in 3 points out of Evangelizes, Owns, Mentors, Challenges, Stream.
+For example, in order to qualify for the Senior Engineer, your "shape" needs to intersect with the [Reference one](engineering#senior-engineer) in 3 points out of Evangelizes, Owns, Mentors, Challenges, Stream.
 
 Nonetheless, meeting 3 out of 5 requirements does not mean that you are immediately promoted. It is necessary but not sufficient, it can depend on the role complexity and it's up to the manager to evaluate which requirements weigh more. All the promotions happen following a manager's decision and company promotion rules.
 
