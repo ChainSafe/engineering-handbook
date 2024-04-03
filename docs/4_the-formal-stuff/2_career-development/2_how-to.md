@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# How to use Engineering Ladders
+# How to Use Engineering Ladders
 
 There is only a slight difference in the usage of EL depending on if you are looking at it from the personal or direct report perspective.
 
