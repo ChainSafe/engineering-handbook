@@ -14,9 +14,10 @@ If you don't have your representation ("shape") on the EL diagram please ask you
 :::
 
 If you have an aspiration and desire to grow please choose your role type out of the currently available:
-Engineering Roles
-Research Roles (if you are in the Research Function)
-Engineering Management Roles
+ - [Engineering Roles](engineering)
+ - [Research Roles](research) (If you are in the Research Function)
+ - [Engineering Management Roles](engineering-management)
+
 
 In order to qualify for the desired position you need at least to hit 3 points out of 5 of the reference shape.
 
@@ -42,3 +43,19 @@ See what levels are missing for each individual when working on their growth pla
 The `3 out of 5` rule for the promotion at the end of the day is nothing more than a recommendation. It is up to you to decide if all the axis has similar weight or if you need a particular 3 to be covered in or for promotion to happen. This guide is nothing more than a recommendation, adopt and use it to the needs of your team and their areas of impact.
 
 Create a personal development plan for each of your direct reports with their help and collaboration and follow the progress via 1:1s and other dedicated meetings.
+
+## Competence Charts
+
+Blank charts can be found below for each type of ChainSafe engineering ladders.
+
+### Engineering Chart
+
+![assets/eng-chart.jpg](assets/eng-chart.jpg)
+
+---
+
+### Research Chart
+
+![assets/rnd-chart.jpg](assets/rnd-chart.jpg)
+
+---
