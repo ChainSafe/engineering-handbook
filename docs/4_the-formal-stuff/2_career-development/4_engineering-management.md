@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Engineering Manager Roles
 
 ## Engineering Manager
