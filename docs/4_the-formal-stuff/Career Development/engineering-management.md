@@ -8,6 +8,7 @@
 - <span className="axis">Process</span> ➡ <span className="level">Challenges</span>: challenges the SDLC processes on a Stream level, looking for ways to improve them
 
 ![assets/06.em.jpg](assets/06.em.jpg)
+
 ---
 
 ## Senior Engineering Manager
@@ -18,6 +19,7 @@
 - <span className="axis">Process</span> ➡ <span className="level">Adjusts</span>: adjusts the SDLC processes on a Stream level and extends it to other Streams within a Program, listening to feedback and guiding the team through the changes
 
 ![assets/07.senior-em.jpg](assets/07.senior-em.jpg)
+
 ---
 
 ## Engineering Head
@@ -28,4 +30,5 @@
 - <span className="axis">Process</span> ➡ <span className="level">Defines</span>: defines the right processes for the Program maturity level, balancing agility and discipline
 
 ![assets/08.head.jpg](assets/08.head.jpg)
+
 ---

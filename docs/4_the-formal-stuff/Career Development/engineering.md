@@ -18,7 +18,7 @@
 - <span className="axis">System</span> ➡ <span className="level">Designs</span>: designs and implements medium to large size features while reducing the system’s tech debt
 - <span className="axis">People</span> ➡ <span className="level">Supports</span>: proactively supports other team members and helps them to be successful
 - <span className="axis">Process</span> 
-➡ <span className="level">Enforces</span>: enforces the [SDLC](#glossary) processes on a Stream level, making sure everybody understands the benefits and trade offs
+➡ <span className="level">Enforces</span>: enforces the SDLC processes on a Stream level, making sure everybody understands the benefits and trade offs
 
 ![assets/02.se.jpg](assets/02.se.jpg)
 
