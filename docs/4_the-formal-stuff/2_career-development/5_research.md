@@ -26,6 +26,7 @@ sidebar_position: 5
 - <span className="axis">Process</span> ➡ <span className="level">Enforces</span>: enforces the [SDLC](#glossary) processes on a Stream level, making sure everybody understands the benefits and trade offs
 
 ![assets/02.se-rnd.jpg](assets/02.se-rnd.jpg)
+
 ---
 
 ## Senior Engineer in Research
@@ -37,6 +38,7 @@ sidebar_position: 5
 - <span className="axis">Process</span> ➡ <span className="level">Challenges</span>: challenges the SDLC processes on a Stream level, looking for ways to improve them
 
 ![assets/03.senior-se-rnd.jpg](assets/03.senior-se-rnd.jpg)
+
 ---
 
 ## Principal Engineer in Research
@@ -48,6 +50,7 @@ sidebar_position: 5
 - <span className="axis">Process</span> ➡ <span className="level">Adjusts</span>: adjusts the SDLC processes on a Stream level and extends it to other Streams within a Program, listening to feedback and guiding the team through the changes
 
 ![assets/04.principal-se-rnd.jpg](assets/04.principal-se-rnd.jpg)
+
 ---
 
 ## Distinguished Engineer in Research
@@ -59,4 +62,5 @@ sidebar_position: 5
 - <span className="axis">Process</span> ➡ <span className="level">Defines</span>: defines the right processes for the Program maturity level, balancing agility and discipline
 
 ![assets/05.distinguished-se-rnd.jpg](assets/05.distinguished-se-rnd.jpg)
+
 ---
