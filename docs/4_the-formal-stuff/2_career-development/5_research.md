@@ -64,3 +64,11 @@ sidebar_position: 5
 ![assets/05.distinguished-se-rnd.jpg](assets/05.distinguished-se-rnd.jpg)
 
 ---
+
+
+## Compare
+
+
+import EngLadderGraph from "../../../src/components/EngLadderGraph"
+
+<EngLadderGraph type="researcher"></EngLadderGraph>

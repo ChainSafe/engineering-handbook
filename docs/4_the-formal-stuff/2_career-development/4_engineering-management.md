@@ -36,3 +36,11 @@ sidebar_position: 4
 ![assets/08.head.jpg](assets/08.head.jpg)
 
 ---
+
+
+## Compare
+
+
+import EngLadderGraph from "../../../src/components/EngLadderGraph"
+
+<EngLadderGraph type="engineer_management"></EngLadderGraph>
