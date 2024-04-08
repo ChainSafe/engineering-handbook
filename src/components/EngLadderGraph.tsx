@@ -6,6 +6,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { themes } from 'prism-react-renderer'
 
 if (ExecutionEnvironment.canUseDOM) {
   HC_more(Highcharts)
@@ -105,8 +106,8 @@ enum LadderType {
 
 const EngLadderGraph = function ({ type }: { type: LadderType }) {
 
-  const backgroundColor = 'black';
-  const color = 'white';
+  const backgroundColor = themes.dracula.plain.backgroundColor;
+  const color = themes.dracula.plain.color;
 
   const labelArray: Record<string, string[]> = type === LadderType.RESEARCHER ? researcherLabels : engineerLabels;
 
