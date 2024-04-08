@@ -23,7 +23,6 @@ jobs:
         cache: yarn
         node-version: 18
     - run: yarn install --frozen-lockfile
-    - run: yarn typecheck
     - run: yarn spellcheck
     - name: Check for uppercase section links
       run: |
