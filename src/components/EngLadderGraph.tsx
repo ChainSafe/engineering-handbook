@@ -1,12 +1,15 @@
-import React, { useState, type ChangeEventHandler } from 'react'
+import React, { useState, type ChangeEventHandler, useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HC_more from 'highcharts/highcharts-more'
 import HighchartsReact from 'highcharts-react-official'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { PrismTheme } from 'prism-react-renderer';
+import BrowserOnly from '@docusaurus/BrowserOnly'
 
 
-HC_more(Highcharts)
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+
+if (ExecutionEnvironment.canUseDOM) {
+  HC_more(Highcharts)
+}
 
 type Role = {
   name: string,
@@ -102,10 +105,8 @@ enum LadderType {
 
 const EngLadderGraph = function ({ type }: { type: LadderType }) {
 
-  const { siteConfig } = useDocusaurusContext();
-  const theme: PrismTheme = (siteConfig.themeConfig.prism as PrismTheme)["darkTheme"];
-  const backgroundColor = theme.plain.backgroundColor;
-  const color = theme.plain.color;
+  const backgroundColor = 'black';
+  const color = 'white';
 
   const labelArray: Record<string, string[]> = type === LadderType.RESEARCHER ? researcherLabels : engineerLabels;
 
@@ -224,7 +225,11 @@ const EngLadderGraph = function ({ type }: { type: LadderType }) {
   }
 
   return (
-    <div>
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {
+        () => {
+          return (
+            <div>
 
       <div className='dashboard'>
         <div className='compareRole'>
@@ -274,6 +279,10 @@ const EngLadderGraph = function ({ type }: { type: LadderType }) {
         />
       </div>
     </div>
+          )
+        }
+      }
+    </BrowserOnly>
   );
 }
 

@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/mdx-loader').MDXPlugin} */
 // @ts-ignore
@@ -73,8 +72,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ChainSafe. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        darkTheme: themes.dracula,
       }
     }),
     plugins: [
