@@ -209,7 +209,7 @@ const EngLadderGraph = function ({ type }: { type: LadderType }) {
       },
       {
         id: "customResult",
-        name: 'Your Result',
+        name: 'Your Path',
         data: result,
         pointPlacement: 'on'
       },
