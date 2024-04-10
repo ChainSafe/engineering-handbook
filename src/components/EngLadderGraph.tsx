@@ -92,7 +92,7 @@ const engineerLabels = {
 
 const researcherLabels = {
   "Technical Expertise": ['', 'Adopts', 'Specializes', 'Evangelizes', 'Masters', 'Creates'],
-  "Research Metodology": ['', 'Executes', 'Analyzes', 'Proposes', 'Leads', 'Expands'],
+  "Research Methodology": ['', 'Executes', 'Analyzes', 'Proposes', 'Leads', 'Expands'],
   "People": ['', 'Learns', 'Supports', 'Mentors', 'Coordinates', 'Manages'],
   "Process": ['', 'Follows', 'Enforces', 'Challenges', 'Adjusts', 'Defines'],
   "Impact": ['', 'Component', 'Stream', 'Program', 'Multiple Programs', 'Company']
