@@ -2,6 +2,7 @@
   "name": "engineering-handbook",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -16,20 +17,22 @@
     "spellcheck": "spellchecker -f \"./docs/**/*.md\" \"./*.md\" \"./src/**/*.md\" -l en-US -q  -d ./dictionary.txt"
   },
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^0.11.0",
-    "@docusaurus/core": "^2.3.1",
-    "@docusaurus/preset-classic": "^2.3.1",
-    "mdx-mermaid": "^1.3.2",
-    "mermaid": "^9.3.0",
-    "prism-react-renderer": "^1.3.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@cmfcmf/docusaurus-search-local": "^1.1.0",
+    "@docusaurus/core": "^3.2.1",
+    "@docusaurus/preset-classic": "^3.2.1",
+    "highcharts": "^11.4.1",
+    "highcharts-react-official": "^3.2.1",
+    "mdx-mermaid": "^2.0.0",
+    "mermaid": "^10.9.0",
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.3.1",
-    "@tsconfig/docusaurus": "^1.0.6",
+    "@docusaurus/module-type-aliases": "^3.2.1",
+    "@tsconfig/docusaurus": "^2.0.3",
     "spellchecker-cli": "^6.1.0",
-    "typescript": "^4.6.3"
+    "typescript": "^5.4.4"
   },
   "browserslist": {
     "production": [

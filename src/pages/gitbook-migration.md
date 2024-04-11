@@ -68,4 +68,4 @@ More information can be found [here](https://docusaurus.io/docs/markdown-feature
 
 | GitBook | Docusaurus |
 | --- | --- |
-| <code>{% code lineNumbers="true" %}</code> |  <code>showLineNumbers</code> |
+| <code>\{\% code lineNumbers="true" \%\}</code> |  <code>showLineNumbers</code> |

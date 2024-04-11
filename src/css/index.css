@@ -57,3 +57,40 @@ a:hover {
     color: #333;
     padding: 0.2rem;
 }
+
+.dashboard select {
+    height: 1.5rem;
+}
+
+.dashboard label {
+    width: 12rem;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.dashboard > .compareRole > label {
+    font-weight: bold;
+}
+
+.dashboard .compareRole {
+    margin-bottom: 2rem;
+}
+
+.dashboard .compare {
+    margin-bottom: 2rem;
+}
+
+.dashboard > .compare label{
+    display: inline-block;
+    width: 12rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard > .compare select{
+    width: 10rem;
+}
+
+.dashboard > .compare > span {
+    margin-bottom: 2rem;
+    font-weight: bold;
+}

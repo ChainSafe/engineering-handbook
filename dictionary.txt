@@ -78,6 +78,7 @@ golangci-lint
 GoMock
 Goto
 gruvbox
+EngLadderGraph
 html
 HTTPS
 Init
@@ -151,6 +152,7 @@ showLineNumbers
 skillset
 Slackbot
 SLAs
+src
 SSZ
 struct
 structs
