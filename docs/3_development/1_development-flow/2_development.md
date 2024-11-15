@@ -49,4 +49,4 @@ Our repositories typically have a template for pull requests, therefore writing 
 
 ## 5. Approaches in use
 
-In many of the [ChainSafe Products](/departments/product) development cycles OneFlow approach is used. You can find more [detailed description here](/pages/oneflow).
+In many of the ChainSafe development cycles OneFlow approach is used. You can find more detailed [ description about OneFlow here](/pages/oneflow).
