@@ -27,6 +27,13 @@ If you are running node@16+, you just need to run `corepack enable`.
 If you are running older version, run `npm i -g corepack`.
 Make sure you put this in README file for future contributors.
 
+:::warning
+
+Date: 22 November 2023
+There is an issue with `actions/setup-node@v3` if is used with `cache: 'yarn'`
+
+:::
+
 ### 2. Init repository
 
 - Make sure your root `package.json` contains:
