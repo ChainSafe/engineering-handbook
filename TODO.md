@@ -29,7 +29,7 @@ Conventions:
 
 ## Phase 1 — Operator-first spine (the load-bearing pages)
 
-- [ ] **1.1 Draft `00-operating-model/collaborator-statement.md`.** The flagship page: the operator/agent contract. Most novel piece; everything else hangs off this. *Single PR.*
+- [x] **1.1 Draft `00-operating-model/collaborator-statement.md`.** Done 2026-05-27. Flagship operator/agent contract. ~1200 words. Structure: definitions (operator / agent / the work), why-a-contract (autopilot fails subtly; pure mistrust wastes capability; contract is the middle path), operator responsibilities (5 duties), agent responsibilities (8 duties), when-the-agent-refuses (6 cases), when-the-agent-escalates (4 cases), what-this-is-not (4 anti-patterns), when-the-contract-breaks (4 failure modes + recovery), living-document section with forward links to gates-and-escalation, model-and-tool-selection, mcp-and-llm-txt, memory-conventions (all forthcoming in 1.2–1.5) and agent-era-invariants (Phase 2). Includes YAML frontmatter convention (title, status, authors, last_updated) as the inline-attribution baseline for all future content files. The `00-operating-model/.gitkeep` is now redundant since the directory has content; harmless if left, can be removed in a cleanup pass.
 - [ ] **1.2 Draft `00-operating-model/gates-and-escalation.md`.** When agents stop, what requires human approval, escalation paths.
 - [ ] **1.3 Draft `00-operating-model/model-and-tool-selection.md`.** Which model for which class of task; which MCPs to reach for.
 - [ ] **1.4 Draft `00-operating-model/mcp-and-llm-txt.md`.** How agents discover and load this handbook; how `llms.txt` is structured.
