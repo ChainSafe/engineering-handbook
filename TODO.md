@@ -1,19 +1,23 @@
 # Engineering Handbook — Execution TODO
 
+> **Working agreement — read first.** Every PR in this overhaul targets the branch **`peter/agentic-handbook-overhaul`**, *never* `main`. See PLAN.md top banner for the full rationale. If you (human or agent) find yourself about to open a PR against `main`, stop and redirect.
+
 Bite-sized steps for executing the overhaul described in [PLAN.md](./PLAN.md). Each step is scoped to a single PR-sized unit of work. Order is suggested, not strict — items in the same phase can parallelize.
 
 Conventions:
 - `[ ]` = not started, `[~]` = in progress, `[x]` = done
 - Each step names its **owner** (default: Peter as curator) and lists its **deliverable**.
+- **Every step's "deliverable" lands as a PR against `peter/agentic-handbook-overhaul`.** Never against `main`.
 
 ---
 
 ## Phase 0 — Decisions and scaffolding
 
 - [x] **0.1 Resolve open decisions in PLAN.md §7.** Done 2026-05-27. Resolutions: (1) rename to `engineering-handbook`; (2) skill packaging via `skill-creator`; (3) MCP distribution = GitHub MCP + llms.txt for v0, in-house MCP as Phase 8+ enhancement; (4) attribution via all three layers (CODEOWNERS + CONTRIBUTORS.md + inline credits); (5) reviewer tiering by language risk with no agent-blocks. See PLAN.md §7.
-- [ ] **0.2 Rename the GitHub repo to `engineering-handbook`.** Do this before any content lands so external links stabilize early. Rely on GitHub's automatic redirect from the old name; audit known external surfaces (blog, recruiting pages, internal docs) in Phase 8 launch prep.
-- [ ] **0.3 Archive the legacy Docusaurus tree.** Move `1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md` to a `legacy/` subtree (or a separate archive branch) so source material is preserved for cross-referencing during the rewrite. Do not delete.
-- [ ] **0.4 Create the new top-level directory skeleton.** Empty folders for `00-operating-model/`, `10-invariants/`, `20-workflows/`, `30-languages/<each-lang>/`, `40-references/`, `skills/`. Add a `.gitkeep` in each.
+- [x] **0.2 Repo naming.** Closed 2026-05-27. No rename needed — the target repo is `github.com/ChainSafe/engineering-handbook`, which already exists and currently hosts the legacy Docusaurus handbook. The overhaul ships as PRs against this existing repo, replacing its content. PLAN.md §7.1 updated to reflect this. Implication: TODO 0.3 (archive legacy Docusaurus tree) is on the critical path — must land before any replacement content does.
+- [x] **0.2a Working-branch strategy.** Closed 2026-05-27. Branch `peter/agentic-handbook-overhaul` already exists in `github.com/ChainSafe/engineering-handbook`. Legacy state on `main` tagged as `v1`. The rewrite is "v2" conceptually but stays untagged until the next major milestone (tag-on-v3 convention). Implication for all subsequent TODOs: every PR in Phases 0–8 lands against `peter/agentic-handbook-overhaul`, not `main`. A single merge of that branch to `main` happens once v0 is complete and review-ready.
+- [x] **0.3 Legacy Docusaurus tree — decision: do not archive into `legacy/`.** Closed 2026-05-27. Initial plan was to move `1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md` into a `legacy/` subtree. Reversed after Peter's challenge: the `v1` tag on `main` already preserves the legacy content in git history forever (`git show v1:<path>` or `git worktree add ../handbook-v1 v1` retrieves any file), so a working-tree archive is redundant. More importantly, this repo's purpose is to be the *canonical* AI-native handbook — an in-tree `legacy/` would surface in agent search results alongside current pages, polluting the "what's current" contract. The legacy files stay at the root for now and will be **deleted outright** during the v0 launch sweep (Phase 8), with `v1` as the permanent reference. Stale `.github/CODEOWNERS` path (`/docs/2_development/...`) still flagged for cleanup in 0.8. `.bookignore` and `.spellcheck.yml` (Docusaurus-era tooling configs) similarly assessed for deletion in Phase 8.
+- [x] **0.4 Create the new top-level directory skeleton.** Done 2026-05-27. Created with `.gitkeep` files: `00-operating-model/`, `10-invariants/`, `20-workflows/`, `30-languages/{go,rust,typescript,solidity,daml,python,zig}/`, `40-references/`. `skills/` already populated from the `research-plan-implement` conversion, no `.gitkeep` added there. All seven language placeholders created up front (v0 + v1 + v2 per PLAN §5) to make the planned coverage visible in the tree; empty v2 dirs cost nothing and signal intent.
 - [ ] **0.5 Create root `README.md`.** Human-facing intro: what this repo is, who it's for, how it's organized, link to AGENTS.md.
 - [ ] **0.6 Create root `AGENTS.md` (a.k.a. `CLAUDE.md`).** Agent-facing entrypoint: read-order, where to find what, where to escalate.
 - [ ] **0.7 Carry forward `VISION.md`.** Copy the legacy `VISION.md` verbatim (mission, vision, 8 core values). No rewriting.

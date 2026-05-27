@@ -1,8 +1,10 @@
 # Engineering Handbook — Overhaul Plan
 
+> **Working agreement — read first.** Every PR in this overhaul targets the branch **`peter/agentic-handbook-overhaul`**, *never* `main`. `main` continues to serve the legacy handbook (tagged `v1`) publicly until v0 of the rewrite is complete and review-ready, at which point we ship a single merge to `main`. Tag-on-v3 convention: `v2` stays untagged in the meantime. If you (human or agent) find yourself about to open a PR against `main`, stop and redirect.
+
 **Status:** Draft (2026-05-27)
 **Owner:** peter@chainsafe.io
-**Scope:** Complete rewrite of the existing ChainSafe public engineering-standards repo, replacing the legacy Docusaurus handbook with an AI-native source of truth consumable by agents (Claude Code, Cursor, Continue, etc.) via MCP or `chainsafe.io/llms.txt`.
+**Scope:** Complete content replacement of the existing public **`github.com/ChainSafe/engineering-handbook`** repo. The legacy Docusaurus handbook currently in that repo is replaced by an AI-native source of truth consumable by agents (Claude Code, Cursor, Continue, etc.) via MCP or `chainsafe.io/llms.txt`. Delivery is a series of PRs against the existing repo, not a new repo. Legacy content is preserved by the `v1` tag in git history, not by an in-tree archive (see §6).
 
 ---
 
@@ -21,7 +23,7 @@ The handbook is the contract that lets a human stay accountable for output witho
 
 ## 2. Repo layout
 
-Reorganize the existing engineering-standards repo around four top-level concerns plus the language matrix. The Docusaurus tree is retired; markdown is rendered on GitHub and pointed to from `chainsafe.io/llm.txt`.
+Reorganize the existing `engineering-handbook` repo around four top-level concerns plus the language matrix. The Docusaurus tree is retired; markdown is rendered on GitHub and pointed to from `chainsafe.io/llms.txt`.
 
 ```
 /
@@ -199,13 +201,15 @@ Calling these out so they don't waste cycles in v0:
 
 VISION.md is explicitly **not** skipped. It carries forward under its existing name.
 
+**No `legacy/` archive subtree.** An earlier plan version proposed moving the legacy Docusaurus pages into `legacy/` so they'd be available for cross-referencing in the working tree. Dropped: the `v1` tag on `main` already preserves every legacy file in git history forever, and an in-tree archive would surface in agent search results alongside current pages — undermining the "this is the canonical AI-native handbook" contract. Legacy pages are deleted outright during the v0 launch sweep (Phase 8). `git show v1:<path>` or a temporary `git worktree add ../handbook-v1 v1` are the canonical retrieval paths if anyone needs the old content.
+
 ---
 
 ## 7. Decisions (resolved 2026-05-27)
 
 All five open decisions closed. Resolutions are load-bearing for the sections above; implications are summarized here.
 
-1. **Repo name → `engineering-handbook`.** The existing public ChainSafe engineering-standards repo is renamed to `engineering-handbook`. Matches what we're building and the title used consistently throughout PLAN/TODO. Mitigation for external link breakage: rely on GitHub's automatic redirect from the old name, and audit any internal/external surface that references the old name during Phase 8 launch prep.
+1. **Repo name → already `engineering-handbook`.** No rename action needed. The target repo `github.com/ChainSafe/engineering-handbook` already exists and is the repo we are overhauling — it currently hosts the legacy Docusaurus handbook. The overhaul is delivered as a series of PRs against the existing branch `peter/agentic-handbook-overhaul`, with a single merge to `main` once v0 is complete. The legacy state on `main` is tagged `v1`; the rewrite stays untagged until the next major milestone (tag-on-v3 convention). The legacy pages stay at the repo root during Phases 0–7 (in-place, untouched) and get deleted outright in the Phase 8 launch sweep — the `v1` tag preserves them in history (see §6).
 2. **Skill packaging → `skill-creator` for all skills.** No custom generator script. Every skill in `skills/` is authored, edited, or optimized via Anthropic's `skill-creator`. See §5a.
 3. **MCP distribution → both, phased.** v0 ships with GitHub MCP + `llms.txt` deep links (zero infra, defensible immediately). An in-house ChainSafe MCP server is a Phase 8+ enhancement, justified only if observed agent-usage patterns show GitHub MCP discovery is the bottleneck. See §5b.
 4. **Attribution → all three layers.** `CODEOWNERS` enforces review on changes to a section, `CONTRIBUTORS.md` is the central index, and every content file carries an inline credit in its header. The curatorial model only works if credit is visible at every level it matters.
