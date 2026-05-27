@@ -1,11 +1,12 @@
 ---
 name: chainsafe-research-plan-implement
-description: Research-first coding workflow that gates code changes behind a human-approved written plan. Use when starting any non-trivial change — a new feature, refactor, multi-file edit, or anything touching existing systems — but not for one-line fixes or pure formatting. The skill produces research.md (deep read of existing code, conventions, hidden coupling), then plan.md (approach, code snippets, file paths, trade-offs), runs an annotation cycle of 1–6 rounds with the human editing the plan inline, and only then executes implementation mechanically with continuous typechecks. Trigger phrases include "implement X feature", "refactor the Y system", "fix this bug across the codebase", "add a new endpoint", "I want to change how Z works".
+description: Research-first coding workflow that gates ALL non-trivial code changes behind a human-approved written plan. Use this skill whenever the user asks for any substantive code change — implementing a feature, refactoring, fixing a multi-file bug, adding an endpoint, integrating a service, migrating between systems, wiring something up, or changing how an existing system works — EVEN IF they do not explicitly ask for "research" or a "plan." The skill enforces three artifacts (research.md, plan.md, annotated plan) that survive context compaction and gate implementation behind explicit operator approval. Triggers on phrases like "implement", "refactor", "fix this bug", "add a feature", "change how X works", "integrate", "migrate from X to Y", "rewrite", "restructure", "wire up", "build out", "extend", "modify the X system", "I want to add", "let's change". Do NOT use for one-line typo fixes, pure formatting, lint-only changes, or other trivial single-file edits where research would be overkill.
 metadata:
   type: workflow
   origin: ~/.config/agents/research-plan-implement.md
   based-on: Boris Tane — https://boristane.com/blog/how-i-use-claude-code/
   curator: Peter Kalambet (ChainSafe CTO)
+  authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 ## Core principle

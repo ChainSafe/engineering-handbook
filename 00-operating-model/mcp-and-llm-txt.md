@@ -81,7 +81,7 @@ This is the agent-facing index. For humans, see the
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md): Infrastructure & DevOps canonical source. The handbook's `20-workflows/infrastructure-and-devops.md` deep-links here.
 ```
 
-The real file at `chainsafe.io/llms.txt` is the responsibility of [TODO 6.1](../TODO.md). Until that lands, agents fall back to GitHub MCP or direct raw URLs against the repo on the appropriate branch.
+The actual `llms.txt` lives at the repo root: [`llms.txt`](../llms.txt). It is published to `chainsafe.io/llms.txt` as part of the v0 launch — `chainsafe.io` is configured (Phase 8 step) to serve the file from `https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/llms.txt` or an equivalent route. The repo-root file is the source of truth; the chainsafe.io URL is the public surface.
 
 ## How an agent should use this
 

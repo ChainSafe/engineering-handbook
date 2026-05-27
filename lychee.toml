@@ -1,0 +1,61 @@
+# Lychee link-check configuration
+# See https://lychee.cli.rs/ for the full reference.
+
+#############
+# Behaviour #
+#############
+
+# Verbose output makes CI failures self-explanatory.
+verbose = "info"
+
+# Treat 200, 204, 206, 301, 302, 304, 307, 308 as success.
+# 403 is allowed because some hosts rate-limit unauthenticated probes (the link
+# is probably fine; treating 403 as failure produces flaky CI).
+accept = ["200..=299", "301..=308", "403"]
+
+# Reasonable timeouts for slow upstreams.
+timeout = 30
+max_retries = 3
+retry_wait_time = 10
+
+# GitHub limits unauthenticated request rates; pass a token in CI to lift the
+# limit. The workflow injects this automatically when running on GH Actions.
+# Locally: `lychee --github-token $(gh auth token) ...`
+
+#######################
+# Inclusion patterns  #
+#######################
+
+# Check both file links and bare URLs.
+include_verbatim = true
+
+# Resolve relative links from the file's location.
+base = "."
+
+####################
+# Excluded targets #
+####################
+
+# Skip mail-to and tel: URIs; they aren't reachable by HTTP.
+exclude = [
+    "^mailto:",
+    "^tel:",
+    # Placeholder URLs in the .invariance pointer page and language architect pages;
+    # those use bracketed markers like `[TODO: confirm anchor]`, not real URLs.
+    # No exclusion needed — lychee only follows real URLs.
+]
+
+# Don't fail on links to the working branch during v2 rewrite. main is the
+# canonical target post-merge; pre-merge, some main-targeted links won't have
+# their content yet. Comment out before v0 merge to verify all main links work.
+exclude_path = [
+    # No excluded paths at v0 — all markdown is in scope.
+]
+
+###########
+# Caching #
+###########
+
+# Match the workflow's --cache flag.
+cache = true
+max_cache_age = "1d"
