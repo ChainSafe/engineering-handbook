@@ -1,0 +1,109 @@
+# Engineering Handbook — Execution TODO
+
+Bite-sized steps for executing the overhaul described in [PLAN.md](./PLAN.md). Each step is scoped to a single PR-sized unit of work. Order is suggested, not strict — items in the same phase can parallelize.
+
+Conventions:
+- `[ ]` = not started, `[~]` = in progress, `[x]` = done
+- Each step names its **owner** (default: Peter as curator) and lists its **deliverable**.
+
+---
+
+## Phase 0 — Decisions and scaffolding
+
+- [x] **0.1 Resolve open decisions in PLAN.md §7.** Done 2026-05-27. Resolutions: (1) rename to `engineering-handbook`; (2) skill packaging via `skill-creator`; (3) MCP distribution = GitHub MCP + llms.txt for v0, in-house MCP as Phase 8+ enhancement; (4) attribution via all three layers (CODEOWNERS + CONTRIBUTORS.md + inline credits); (5) reviewer tiering by language risk with no agent-blocks. See PLAN.md §7.
+- [ ] **0.2 Rename the GitHub repo to `engineering-handbook`.** Do this before any content lands so external links stabilize early. Rely on GitHub's automatic redirect from the old name; audit known external surfaces (blog, recruiting pages, internal docs) in Phase 8 launch prep.
+- [ ] **0.3 Archive the legacy Docusaurus tree.** Move `1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md` to a `legacy/` subtree (or a separate archive branch) so source material is preserved for cross-referencing during the rewrite. Do not delete.
+- [ ] **0.4 Create the new top-level directory skeleton.** Empty folders for `00-operating-model/`, `10-invariants/`, `20-workflows/`, `30-languages/<each-lang>/`, `40-references/`, `skills/`. Add a `.gitkeep` in each.
+- [ ] **0.5 Create root `README.md`.** Human-facing intro: what this repo is, who it's for, how it's organized, link to AGENTS.md.
+- [ ] **0.6 Create root `AGENTS.md` (a.k.a. `CLAUDE.md`).** Agent-facing entrypoint: read-order, where to find what, where to escalate.
+- [ ] **0.7 Carry forward `VISION.md`.** Copy the legacy `VISION.md` verbatim (mission, vision, 8 core values). No rewriting.
+- [ ] **0.8 Create `CODEOWNERS`.** Per §7.4: assign owners per section so changes route to the right reviewer (Peter as default curator, Martin for `10-invariants/invariance-framework.md`, Josh for the `20-workflows/` pointer pages into `infrastructure-general`, original authors for content they own). Start minimal; refine as Phases 2–4 land.
+- [ ] **0.9 Create `40-references/CONTRIBUTORS.md` stub.** Empty index file that Phases 2–4 will populate as content authors are added.
+
+---
+
+## Phase 1 — Operator-first spine (the load-bearing pages)
+
+- [ ] **1.1 Draft `00-operating-model/collaborator-statement.md`.** The flagship page: the operator/agent contract. Most novel piece; everything else hangs off this. *Single PR.*
+- [ ] **1.2 Draft `00-operating-model/gates-and-escalation.md`.** When agents stop, what requires human approval, escalation paths.
+- [ ] **1.3 Draft `00-operating-model/model-and-tool-selection.md`.** Which model for which class of task; which MCPs to reach for.
+- [ ] **1.4 Draft `00-operating-model/mcp-and-llm-txt.md`.** How agents discover and load this handbook; how `llms.txt` is structured.
+- [ ] **1.5 Draft `00-operating-model/memory-conventions.md`.** Read/write conventions, what's appropriate to persist, sensitive-data rules.
+
+---
+
+## Phase 2 — Invariants and external canonical sources
+
+- [ ] **2.1 Draft `10-invariants/engineering-invariants.md`.** Rewrite of the legacy 10 principles into crisp rules.
+- [ ] **2.2 Draft `10-invariants/agent-era-invariants.md`.** No silent edits, no fabricated APIs, no committing secrets, no merging without approval, scope discipline.
+- [ ] **2.3 Draft `10-invariants/invariance-framework.md` (pointer page).** Deep-link map into Martin Maurer's `.invariance` repo by question/intent. Coordinate with Martin to ensure target headings/anchors exist; request additions if not.
+- [ ] **2.4 Draft `40-references/sources.md`.** Catalog of external canonical sources with attribution: `.invariance` (Martin Maurer), `infrastructure-general` (Josh, Head of Infra), Forest `AI_POLICY.md` (Ghostty origin preserved), Peter's `research-plan-implement` skill, anything else surfaced from the team.
+- [ ] **2.5 Draft `40-references/attribution.md` + `40-references/contributors.md`.** Curatorial credit model — how original authors are surfaced.
+
+---
+
+## Phase 3 — Cross-cutting workflows
+
+- [ ] **3.1 Draft `20-workflows/pr-authoring.md`.** Author guide rewritten for the agent era. Deep-links into the packaged `research-plan-implement` skill (see step 5.1).
+- [ ] **3.2 Draft `20-workflows/code-review.md`.** Two modes: operator-reviewing-agent, agent-reviewing-PR.
+- [ ] **3.3 Draft `20-workflows/repo-and-ci-setup.md`.** Per-repo hygiene checklist as an agent-runnable runbook.
+- [ ] **3.4 Draft `20-workflows/testing-and-qa.md`.** What agents generate vs what operators own. Borrows from Forest `AI_POLICY.md` with attribution.
+- [ ] **3.5 Draft `20-workflows/infrastructure-and-devops.md` (pointer page).** Deep-link map into `infrastructure-general` by intent. Coordinate with Josh on anchor/heading additions where needed.
+- [ ] **3.6 Draft `20-workflows/incident-response.md` (pointer page).** Operator decision policy inline; deep-links into `infrastructure-general/docs/runbooks/`.
+- [ ] **3.7 Draft `20-workflows/release-and-deploy.md` (pointer page).** Same pattern as 3.6.
+
+---
+
+## Phase 4 — Language ecosystems (v0 production languages)
+
+Each language is its own step, expanded into three role pages plus shared idioms/gotchas. Per PLAN.md §5 phasing, v0 covers the four languages with active ChainSafe production use.
+
+- [ ] **4.1 Go (Gossamer).** `30-languages/go/{architect.md, developer.md, reviewer.md, idioms.md, gotchas.md}`. Architect page deep-links into the relevant `.invariance` sections.
+- [ ] **4.2 Rust (Forest).** `30-languages/rust/{architect.md, developer.md, reviewer.md, idioms.md, gotchas.md}`. Pull from Forest's existing AI policy where applicable.
+- [ ] **4.3 TypeScript (Lodestar).** `30-languages/typescript/{architect.md, developer.md, reviewer.md, idioms.md, gotchas.md}`. Lift the strongest material from the legacy `tech-stack/Typescript/` pages.
+- [ ] **4.4 Solidity (Sygma + crypto work).** `30-languages/solidity/{architect.md, developer.md, reviewer.md, idioms.md, gotchas.md}`. Reviewer page is the aggressive variant — reentrancy, upgrade safety, audit-readiness — per the §7 open decision.
+
+---
+
+## Phase 5 — Skills authoring (via `skill-creator`)
+
+**Convention:** every skill in this project is authored, converted, or edited using Anthropic's `skill-creator` skill. No hand-rolled SKILL.md files, no custom generator script. See PLAN.md §5a.
+
+- [x] **5.1 Source-fetch Peter's `research-plan-implement` skill.** Copied from `Copilot/research-plan-implement.md` into `engineering-handbook/skills/chainsafe-research-plan-implement/SKILL.md`. Audit done: missing frontmatter, titled `# AGENTS.md`, lived as a loose `.md` rather than a kebab-case folder.
+- [~] **5.2 Convert `research-plan-implement` to SKILL.md format.** Manual conversion completed 2026-05-27 but **needs re-run through `skill-creator`** to align with project convention (see PLAN.md §5a). Treat the current file as a draft input; re-author via `skill-creator` iteration mode against the existing `SKILL.md`.
+- [ ] **5.3 Re-author `research-plan-implement` via `skill-creator`.** Invoke `skill-creator` against the existing `skills/chainsafe-research-plan-implement/SKILL.md`. Take its output as the canonical version. Closes 5.2.
+- [ ] **5.4 Author v0 language × role skills via `skill-creator`.** One `skill-creator` invocation per skill, sourcing from the corresponding `30-languages/<lang>/<role>.md`. v0 = 4 languages × 3 roles = 12 skills. Commit each output bundle to `skills/`.
+- [ ] **5.5 Author cross-cutting workflow skills via `skill-creator` as needed.** Candidate skills derived from `20-workflows/`: `chainsafe-pr-author`, `chainsafe-code-review`, `chainsafe-repo-setup`, `chainsafe-testing-qa`. Confirm scope before authoring each — not every workflow page needs a packaged skill.
+
+---
+
+## Phase 6 — Distribution
+
+- [ ] **6.1 Draft `chainsafe.io/llms.txt`.** Top-level index pointing to handbook sections (deep links) + every skill in `skills/` (name, one-line description, direct raw `SKILL.md` URL, trigger conditions).
+- [ ] **6.2 Wire MCP distribution via GitHub MCP + `llms.txt`.** Per resolved §7.3: v0 ships the lightweight path. Document the discovery flow in `00-operating-model/mcp-and-llm-txt.md`. In-house ChainSafe MCP server is deferred to Phase 8+ as an enhancement, only if observed agent-usage shows GitHub MCP discovery is the bottleneck.
+- [ ] **6.3 CI: external link checker.** Validates every external deep link (into `.invariance`, `infrastructure-general`, Forest, etc.) resolves to a real anchor.
+- [ ] **6.4 CI: skill ↔ llms.txt sync check.** Every skill in `skills/` appears in `llms.txt`; every `llms.txt` skill entry resolves to an existing `SKILL.md`.
+
+---
+
+## Phase 7 — v1 / v2 language coverage
+
+- [ ] **7.1 Daml (Canton).** `30-languages/daml/{architect.md, reviewer.md, idioms.md, gotchas.md}`. Developer page deferred unless demand surfaces. Reviewer is the aggressive variant — ledger semantics, upgrade safety, audit-readiness.
+- [ ] **7.2 Python.** Confirm scope (scripts, ML, ops) before drafting. Then `30-languages/python/{architect.md, developer.md, reviewer.md, idioms.md, gotchas.md}`.
+- [ ] **7.3 Zig.** Confirm current usage at ChainSafe. If experimental only, ship a single `30-languages/zig/README.md` page covering "when not to reach for this" rather than fabricating a full role triad.
+
+---
+
+## Phase 8 — Public launch
+
+- [ ] **8.1 HN-defensibility pass.** Read every public page as if it were going to the front page. Cut filler. Tighten claims. Confirm attribution is visible.
+- [ ] **8.2 Internal review with Josh and Martin.** Specifically the pointer pages into their repos.
+- [ ] **8.3 Announce internally.** ChainSafe-wide post; invite contributions and corrections.
+- [ ] **8.4 Wire `chainsafe.io/llms.txt` live.**
+- [ ] **8.5 External announcement.** Public post + recruiting/DD signal as applicable (M&A context — coordinate with Areta on timing).
+
+---
+
+## Tracking
+
+This file is the single source of truth for execution progress. Update inline (`[ ]` → `[~]` → `[x]`) as steps move. When a step grows beyond a single PR, split it into sub-steps in place rather than letting it sit half-done.
