@@ -1,4 +1,34 @@
-* @morrigan @mpetrunic @kalambet @AlexeyKrasnoperov @joshdougall
+# CODEOWNERS — ChainSafe Engineering Handbook
+#
+# Default owner is the curator (@kalambet). Section-specific overrides route
+# changes to the right reviewer. During the v2 rewrite, this file is
+# deliberately minimal — section overrides are added as Phases 2–4 land and
+# original authors are credited.
+#
+# Working agreement: PRs target `peter/agentic-handbook-overhaul`, not `main`.
+# See AGENTS.md and PLAN.md.
 
-/docs/2_development/2_tech-stack/Typescript/readme.md @wemeetagain @beroburny
+# Default: curator
+*                                               @kalambet
 
+# Project artifacts (curator-level)
+/PLAN.md                                        @kalambet
+/TODO.md                                        @kalambet
+/VISION.md                                      @kalambet
+/AGENTS.md                                      @kalambet
+/CLAUDE.md                                      @kalambet
+/README.md                                      @kalambet
+/.github/CODEOWNERS                             @kalambet
+
+# 10-invariants — `.invariance` pointer page is owned by its upstream maintainer.
+/10-invariants/invariance-framework.md          @boorich @kalambet
+
+# 20-workflows — pointer pages into ChainSafe/infrastructure-general are
+# owned by the Head of Infra alongside the curator.
+/20-workflows/infrastructure-and-devops.md      @joshdougall @kalambet
+/20-workflows/incident-response.md              @joshdougall @kalambet
+/20-workflows/release-and-deploy.md             @joshdougall @kalambet
+
+# 30-languages — section overrides added as language pages land (Phase 4 / 7).
+# Inherited from legacy CODEOWNERS pending v2 review:
+/30-languages/typescript/                       @wemeetagain @beroburny @kalambet

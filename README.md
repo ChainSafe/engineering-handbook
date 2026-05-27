@@ -47,4 +47,4 @@ ChainSafe is a blockchain research and development firm building infrastructure 
 
 ## License
 
-A formal license is a Phase 8 decision and will be added before v0 ships. Until then, content is published with author attribution preserved; reuse with credit is welcome.
+Apache License 2.0 — see [`LICENSE`](./LICENSE). Third-party content carried into this repository (e.g. the `chainsafe-research-plan-implement` skill, adapted from Boris Tane; the Forest AI policy, originally adapted from Ghostty) is credited in [`NOTICE`](./NOTICE) and inline in the relevant files. Derivative works must preserve these attributions per Section 4(d) of the License.
