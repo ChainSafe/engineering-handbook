@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: typescript
   role: developer
-  source: 30-languages/typescript/developer.md
+  source: languages/typescript/developer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # TypeScript Developer
 
-Idiomatic TypeScript at ChainSafe. Full reference: [`30-languages/typescript/developer.md`](../../30-languages/typescript/developer.md).
+Idiomatic TypeScript at ChainSafe. Full reference: [`languages/typescript/developer.md`](../../languages/typescript/developer.md).
 
 ## Tooling baselines
 
@@ -116,8 +116,8 @@ Template: https://github.com/ChainSafe/yarn-workspaces-typescript-template.
 
 ## Related
 
-- Full reference: [`30-languages/typescript/developer.md`](../../30-languages/typescript/developer.md)
-- Idioms: [`30-languages/typescript/idioms.md`](../../30-languages/typescript/idioms.md)
-- Gotchas: [`30-languages/typescript/gotchas.md`](../../30-languages/typescript/gotchas.md)
+- Full reference: [`languages/typescript/developer.md`](../../languages/typescript/developer.md)
+- Idioms: [`languages/typescript/idioms.md`](../../languages/typescript/idioms.md)
+- Gotchas: [`languages/typescript/gotchas.md`](../../languages/typescript/gotchas.md)
 - Sister roles: `chainsafe-typescript-architect`, `chainsafe-typescript-reviewer`
 - Shared ESLint config: https://github.com/ChainSafe/eslint-config

@@ -6,15 +6,15 @@ metadata:
   language: solidity
   role: reviewer
   severity-tier: HARD FAIL
-  source: 30-languages/solidity/reviewer.md
+  source: languages/solidity/reviewer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Solidity Reviewer (HARD FAIL tier)
 
-Reviewer skill for Solidity PRs. Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), emits **HARD FAIL** for security-critical findings. Agent reports; operator decides; bypass is logged in the PR with explicit `Override: HARD FAIL <id> for reason <reason>` per [agent-era invariant §7](../../10-invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).
+Reviewer skill for Solidity PRs. Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), emits **HARD FAIL** for security-critical findings. Agent reports; operator decides; bypass is logged in the PR with explicit `Override: HARD FAIL <id> for reason <reason>` per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).
 
-Full reference: [`30-languages/solidity/reviewer.md`](../../30-languages/solidity/reviewer.md).
+Full reference: [`languages/solidity/reviewer.md`](../../languages/solidity/reviewer.md).
 
 ## HARD FAIL checks (refuses LGTM until resolved or explicitly overridden)
 
@@ -98,7 +98,7 @@ Escalate to a Solidity CODEOWNER and the curator.
 
 ## Override mechanics
 
-Per [agent-era invariant §7](../../10-invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings):
+Per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings):
 
 1. Reviewer skill emits finding with unique identifier.
 2. Operator (CODEOWNER) reviews and decides to override.
@@ -111,14 +111,14 @@ The agent does not override on the operator's behalf. The operator types the ove
 ## Phrasing
 
 - Lead with concern and severity: "**HARD FAIL — reentrancy.** This function transfers ETH via `.call{value:}` and then updates `balances`. CEI requires balance update first."
-- Cite the rule: "Per [Solidity reviewer §reentrancy](../../30-languages/solidity/reviewer.md#hard-fail-checks-reviewer-refuses-lgtm-until-resolved-or-explicitly-overridden)."
+- Cite the rule: "Per [Solidity reviewer §reentrancy](../../languages/solidity/reviewer.md#hard-fail-checks-reviewer-refuses-lgtm-until-resolved-or-explicitly-overridden)."
 - Reference the auditor's perspective.
 
 ## Related
 
-- Full reference: [`30-languages/solidity/reviewer.md`](../../30-languages/solidity/reviewer.md)
-- Gotchas (most are HARD FAIL findings): [`30-languages/solidity/gotchas.md`](../../30-languages/solidity/gotchas.md)
-- Universal review: [`20-workflows/code-review.md`](../../20-workflows/code-review.md)
-- HARD FAIL gate: [`00-operating-model/gates-and-escalation.md`](../../00-operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail)
-- Invariant: [`10-invariants/agent-era-invariants.md`](../../10-invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings)
+- Full reference: [`languages/solidity/reviewer.md`](../../languages/solidity/reviewer.md)
+- Gotchas (most are HARD FAIL findings): [`languages/solidity/gotchas.md`](../../languages/solidity/gotchas.md)
+- Universal review: [`workflows/code-review.md`](../../workflows/code-review.md)
+- HARD FAIL gate: [`operating-model/gates-and-escalation.md`](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail)
+- Invariant: [`invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings)
 - Sister roles: `chainsafe-solidity-architect`, `chainsafe-solidity-developer`

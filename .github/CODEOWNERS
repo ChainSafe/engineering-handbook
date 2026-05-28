@@ -15,20 +15,21 @@
 /PLAN.md                                        @kalambet
 /TODO.md                                        @kalambet
 /VISION.md                                      @kalambet
+/PRINCIPLES.md                                  @kalambet
 /AGENTS.md                                      @kalambet
 /CLAUDE.md                                      @kalambet
 /README.md                                      @kalambet
 /.github/CODEOWNERS                             @kalambet
 
-# 10-invariants — `.invariance` pointer page is owned by its upstream maintainer.
-/10-invariants/invariance-framework.md          @boorich @kalambet
+# invariants — `.invariance` pointer page is owned by its upstream maintainer.
+/invariants/invariance-framework.md             @boorich @kalambet
 
-# 20-workflows — pointer pages into ChainSafe/infrastructure-general are
+# workflows — pointer pages into ChainSafe/infrastructure-general are
 # owned by the Head of Infra alongside the curator.
-/20-workflows/infrastructure-and-devops.md      @joshdougall @kalambet
-/20-workflows/incident-response.md              @joshdougall @kalambet
-/20-workflows/release-and-deploy.md             @joshdougall @kalambet
+/workflows/infrastructure-and-devops.md         @joshdougall @kalambet
+/workflows/incident-response.md                 @joshdougall @kalambet
+/workflows/release-and-deploy.md                @joshdougall @kalambet
 
-# 30-languages — section overrides added as language pages land (Phase 4 / 7).
+# languages — section overrides added as language pages land (Phase 4 / 7).
 # Inherited from legacy CODEOWNERS pending v2 review:
-/30-languages/typescript/                       @wemeetagain @beroburny @kalambet
+/languages/typescript/                          @wemeetagain @beroburny @kalambet

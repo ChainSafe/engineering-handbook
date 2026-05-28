@@ -31,17 +31,17 @@ Reorganize the existing `engineering-handbook` repo around four top-level concer
 ├── AGENTS.md                   # agent-facing entrypoint (or CLAUDE.md)
 ├── VISION.md                   # ChainSafe mission, vision, core values — carried forward unchanged
 ├── PLAN.md                     # this file
-├── 00-operating-model/
+├── operating-model/
 │   ├── collaborator-statement.md   # the operator/agent contract (new)
 │   ├── gates-and-escalation.md
 │   ├── model-and-tool-selection.md
 │   ├── mcp-and-llm-txt.md
 │   └── memory-conventions.md
-├── 10-invariants/
+├── invariants/
 │   ├── engineering-invariants.md   # rewrite of the 10 principles
 │   ├── invariance-framework.md     # pointer to Martin Maurer's `.invariance` repo
 │   └── agent-era-invariants.md     # no silent edits, no fabricated APIs, etc.
-├── 20-workflows/
+├── workflows/
 │   ├── repo-and-ci-setup.md
 │   ├── pr-authoring.md
 │   ├── code-review.md
@@ -49,7 +49,7 @@ Reorganize the existing `engineering-handbook` repo around four top-level concer
 │   ├── incident-response.md        # pointer to ChainSafe/infrastructure-general
 │   ├── release-and-deploy.md       # pointer to ChainSafe/infrastructure-general
 │   └── infrastructure-and-devops.md # pointer to ChainSafe/infrastructure-general
-├── 30-languages/
+├── languages/
 │   ├── go/         { architect.md, developer.md, reviewer.md, idioms.md, gotchas.md }
 │   ├── rust/       { ... }
 │   ├── typescript/ { ... }
@@ -57,7 +57,7 @@ Reorganize the existing `engineering-handbook` repo around four top-level concer
 │   ├── daml/       { ... }
 │   ├── python/     { ... }   (v2)
 │   └── zig/        { ... }   (v2)
-├── 40-references/
+├── references/
 │   ├── attribution.md
 │   ├── sources.md              # Infra IR (Josh), Forest AI_POLICY, .invariance, etc.
 │   ├── contributors.md
@@ -77,7 +77,7 @@ Two access modes are supported by design: an agent can either consume the handbo
 
 **VISION.md** carries forward the existing ChainSafe mission, vision, and core values (Openness, Learning, Collaboration, Compassion, Accountability, Diligence, Freedom, Friendliness) verbatim from the legacy handbook. The file keeps its name. These are not replaced. They describe the people and culture of ChainSafe; the agent contract is additive, not a substitute.
 
-**`00-operating-model/collaborator-statement.md`** is the new flagship page — the operator/agent contract. It is intentionally separate from VISION.md because it answers a different question: not "what do we believe as humans," but "how do an operator and an AI collaborator share responsibility for an output." It is the page every agent loads first.
+**`operating-model/collaborator-statement.md`** is the new flagship page — the operator/agent contract. It is intentionally separate from VISION.md because it answers a different question: not "what do we believe as humans," but "how do an operator and an AI collaborator share responsibility for an output." It is the page every agent loads first.
 
 **AGENTS.md** is the directory map: where to find what, in what order to read it, when to ask. Lives at the root so any tool dropped into the repo can find its way.
 
@@ -107,8 +107,8 @@ For **all architecture and system design work**, this handbook does not re-deriv
 
 Concretely:
 
-- `10-invariants/invariance-framework.md` is a navigation page, not a "see also" page. It surfaces a short, curated map of deep links into specific `.invariance` files, headings, and anchors — keyed by question ("how do I name an invariant?", "what makes an invariant testable?", "how is a violation reported?") — so an agent reading the handbook lands on the exact paragraph it needs in the upstream repo. It also names Martin as the maintainer and lists the small set of `.invariance`-derived rules that other handbook pages reference inline (so trivial lookups don't require a hop).
-- Every language **`architect.md`** in `30-languages/<lang>/` does not say "consult `.invariance` first." It opens with a section of deep links into the specific `.invariance` pages that govern architectural decisions for that language's typical workloads — e.g., the concurrency invariants page anchored to the relevant heading for the Rust architect, the data-integrity invariants page for the Daml architect.
+- `invariants/invariance-framework.md` is a navigation page, not a "see also" page. It surfaces a short, curated map of deep links into specific `.invariance` files, headings, and anchors — keyed by question ("how do I name an invariant?", "what makes an invariant testable?", "how is a violation reported?") — so an agent reading the handbook lands on the exact paragraph it needs in the upstream repo. It also names Martin as the maintainer and lists the small set of `.invariance`-derived rules that other handbook pages reference inline (so trivial lookups don't require a hop).
+- Every language **`architect.md`** in `languages/<lang>/` does not say "consult `.invariance` first." It opens with a section of deep links into the specific `.invariance` pages that govern architectural decisions for that language's typical workloads — e.g., the concurrency invariants page anchored to the relevant heading for the Rust architect, the data-integrity invariants page for the Daml architect.
 - ADR templates referenced from the workflows section have an "Invariants impacted" field that takes deep links into `.invariance` (file + heading anchor), not free-text mentions.
 
 If `.invariance` content needs to be mirrored locally for agent ergonomics (e.g., a stripped-down cheatsheet), it is mirrored with attribution and a back-link to the upstream file/anchor as the source of truth.
@@ -121,9 +121,9 @@ For **all infrastructure, IaC, deployment, observability, on-call, and DevOps pr
 
 Concretely:
 
-- `20-workflows/infrastructure-and-devops.md` is a navigation page, not a "see also" page. It does not link to the repo root and stop. It deep-links into the specific files an agent needs by intent — e.g., "to bootstrap a new service" links to the precise Terraform module or Ansible role; "to add an alert" links to the specific observability config file and heading; "to onboard a new engineer to infra" links to `docs/onboarding.md` at the relevant section anchor.
-- `20-workflows/incident-response.md` and `20-workflows/release-and-deploy.md` link to the specific runbook files and anchors in `infrastructure-general/docs/runbooks/`, indexed by scenario (e.g., a degraded validator, a failed deploy, a paging escalation). The handbook keeps only the *operator decision policy* layer inline — when to page, when to roll back, who approves a deploy — and defers every *how-to* step to a linked anchor.
-- `20-workflows/repo-and-ci-setup.md` retains the per-repo hygiene checklist inline (branch protection, CODEOWNERS, etc.) because that's a property of individual product repos, not infra. Anything cluster-, account-, or env-level deep-links into `infrastructure-general`.
+- `workflows/infrastructure-and-devops.md` is a navigation page, not a "see also" page. It does not link to the repo root and stop. It deep-links into the specific files an agent needs by intent — e.g., "to bootstrap a new service" links to the precise Terraform module or Ansible role; "to add an alert" links to the specific observability config file and heading; "to onboard a new engineer to infra" links to `docs/onboarding.md` at the relevant section anchor.
+- `workflows/incident-response.md` and `workflows/release-and-deploy.md` link to the specific runbook files and anchors in `infrastructure-general/docs/runbooks/`, indexed by scenario (e.g., a degraded validator, a failed deploy, a paging escalation). The handbook keeps only the *operator decision policy* layer inline — when to page, when to roll back, who approves a deploy — and defers every *how-to* step to a linked anchor.
+- `workflows/repo-and-ci-setup.md` retains the per-repo hygiene checklist inline (branch protection, CODEOWNERS, etc.) because that's a property of individual product repos, not infra. Anything cluster-, account-, or env-level deep-links into `infrastructure-general`.
 - Coordination point: Josh (Head of Infra) is the owner of `infrastructure-general`; any change to handbook pointers that touches infra practice gets reviewed with him.
 
 The Infra IR doc previously flagged as a v0 candidate for the standards repo is reframed under this model: it stays in `infrastructure-general`, and the handbook deep-links into its sections rather than copying them.
@@ -158,10 +158,10 @@ Each role page is the markdown source; the corresponding skill bundle in `skills
 
 Every skill in `skills/` is authored, edited, or optimized using Anthropic's **`skill-creator`** skill. This is non-negotiable for this project:
 
-- **From scratch:** invoke `skill-creator` in bootstrap mode with the source content (a role page in `30-languages/`, a workflow page in `20-workflows/`, or a brought-in skill like `research-plan-implement`).
+- **From scratch:** invoke `skill-creator` in bootstrap mode with the source content (a role page in `languages/`, a workflow page in `workflows/`, or a brought-in skill like `research-plan-implement`).
 - **Edits:** invoke `skill-creator` in iteration/optimization mode against the existing `SKILL.md`.
 - **Triggering quality:** rely on `skill-creator`'s eval loop rather than eyeballing whether a description fires.
-- **No custom generator script.** An earlier plan version proposed a Python/Node script that emitted SKILL.md from role markdown and stored output under `dist/skills/`; that's dropped. Skills live at the root `skills/` directory as authored content, each one a `skill-creator` output committed by hand. The role-page markdown in `30-languages/` is reference material the author draws on; it is not a build input.
+- **No custom generator script.** An earlier plan version proposed a Python/Node script that emitted SKILL.md from role markdown and stored output under `dist/skills/`; that's dropped. Skills live at the root `skills/` directory as authored content, each one a `skill-creator` output committed by hand. The role-page markdown in `languages/` is reference material the author draws on; it is not a build input.
 
 ### 5b. Skill distribution via `llms.txt`
 
@@ -219,4 +219,4 @@ All five open decisions closed. Resolutions are load-bearing for the sections ab
 
 ## 8. Suggested next step
 
-Draft `00-operating-model/collaborator-statement.md` first. It is the most novel page and the one every other section hangs off. If the operator/agent contract is crisp in a page or two, every other rewrite has a clear lens to apply against. After that lands, the v0 invariants page is the next natural target.
+Draft `operating-model/collaborator-statement.md` first. It is the most novel page and the one every other section hangs off. If the operator/agent contract is crisp in a page or two, every other rewrite has a clear lens to apply against. After that lands, the v0 invariants page is the next natural target.

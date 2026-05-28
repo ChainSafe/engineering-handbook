@@ -3,13 +3,13 @@ name: chainsafe-code-review
 description: Universal code-review framework at ChainSafe — language-agnostic principles plus the two reviewer modes (operator-reviewing-agent and agent-reviewing-PR). Use this skill whenever the user is reviewing a PR, asking for a code review, checking how to review, deciding what to flag vs fix, or handling a review disagreement. EVEN IF the user does not explicitly ask for "review" — triggers on "look at this PR", "check this diff", "what should I look for in this PR", "is this code OK", "how do I review", "approve this PR", "block this PR", "review disagreement", "review comments", "nit prefix", "should I flag this". For language-specific review (Go, Rust, TypeScript, Solidity), additionally load the corresponding language reviewer skill (chainsafe-<lang>-reviewer). For PR authoring (outgoing), use chainsafe-pr-author.
 metadata:
   type: workflow
-  source: 20-workflows/code-review.md
+  source: workflows/code-review.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Code Review
 
-Universal review framework at ChainSafe. Two reviewer modes; language-specific surface lives in the language reviewer skills. Full reference: [`20-workflows/code-review.md`](../../20-workflows/code-review.md).
+Universal review framework at ChainSafe. Two reviewer modes; language-specific surface lives in the language reviewer skills. Full reference: [`workflows/code-review.md`](../../workflows/code-review.md).
 
 ## Universal principles
 
@@ -100,8 +100,8 @@ Escalate rather than reviewing if:
 
 ## Related
 
-- Full reference: [`20-workflows/code-review.md`](../../20-workflows/code-review.md)
+- Full reference: [`workflows/code-review.md`](../../workflows/code-review.md)
 - Language reviewer skills: `chainsafe-go-reviewer`, `chainsafe-rust-reviewer`, `chainsafe-typescript-reviewer`, `chainsafe-solidity-reviewer`
 - Counterpart skill: `chainsafe-pr-author`
-- Invariants: [`10-invariants/agent-era-invariants.md`](../../10-invariants/agent-era-invariants.md)
-- HARD FAIL semantics: [`00-operating-model/gates-and-escalation.md`](../../00-operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail)
+- Invariants: [`invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md)
+- HARD FAIL semantics: [`operating-model/gates-and-escalation.md`](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail)

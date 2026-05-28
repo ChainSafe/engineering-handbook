@@ -6,13 +6,13 @@ metadata:
   language: go
   role: reviewer
   severity-tier: SOFT WARNING
-  source: 30-languages/go/reviewer.md
+  source: languages/go/reviewer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Go Reviewer
 
-Reviewer skill for Go PRs. Operates under [`20-workflows/code-review.md`](../../20-workflows/code-review.md) (universal principles) and emits findings at **SOFT WARNING** severity — the agent flags, the operator decides on merge. The agent never blocks. The full reference is [`30-languages/go/reviewer.md`](../../30-languages/go/reviewer.md).
+Reviewer skill for Go PRs. Operates under [`workflows/code-review.md`](../../workflows/code-review.md) (universal principles) and emits findings at **SOFT WARNING** severity — the agent flags, the operator decides on merge. The agent never blocks. The full reference is [`languages/go/reviewer.md`](../../languages/go/reviewer.md).
 
 ## Severity tier
 
@@ -84,7 +84,7 @@ The reviewer skill refuses to review and escalates if:
 
 ## Related
 
-- Full reference: [`30-languages/go/reviewer.md`](../../30-languages/go/reviewer.md)
-- Gotchas (review screening surface): [`30-languages/go/gotchas.md`](../../30-languages/go/gotchas.md)
-- Universal review framework: [`20-workflows/code-review.md`](../../20-workflows/code-review.md)
+- Full reference: [`languages/go/reviewer.md`](../../languages/go/reviewer.md)
+- Gotchas (review screening surface): [`languages/go/gotchas.md`](../../languages/go/gotchas.md)
+- Universal review framework: [`workflows/code-review.md`](../../workflows/code-review.md)
 - Sister roles: `chainsafe-go-architect`, `chainsafe-go-developer`

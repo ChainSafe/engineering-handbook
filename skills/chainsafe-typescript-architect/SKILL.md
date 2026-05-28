@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: typescript
   role: architect
-  source: 30-languages/typescript/architect.md
+  source: languages/typescript/architect.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # TypeScript Architect
 
-Use this when designing TypeScript systems at ChainSafe — Lodestar-shaped work or any TS package/library/app. Full reference: [`30-languages/typescript/architect.md`](../../30-languages/typescript/architect.md).
+Use this when designing TypeScript systems at ChainSafe — Lodestar-shaped work or any TS package/library/app. Full reference: [`languages/typescript/architect.md`](../../languages/typescript/architect.md).
 
 ## Key TypeScript-specific decisions
 
@@ -85,7 +85,7 @@ Domain identifiers must not be interchangeable. Branded types enforce at the typ
 
 ## Related
 
-- Full reference: [`30-languages/typescript/architect.md`](../../30-languages/typescript/architect.md)
+- Full reference: [`languages/typescript/architect.md`](../../languages/typescript/architect.md)
 - Sister roles: `chainsafe-typescript-developer`, `chainsafe-typescript-reviewer`
-- Framework: [`10-invariants/invariance-framework.md`](../../10-invariants/invariance-framework.md)
+- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
 - Workflow: `chainsafe-research-plan-implement`

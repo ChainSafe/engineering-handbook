@@ -2,7 +2,7 @@
 
 This directory preserves the pre-v2 ChainSafe Engineering Handbook — the Docusaurus-era markdown tree as it stood when the AI-native rewrite began.
 
-**Why it's here.** The rewrite is a content replacement, not a fresh start. Many pages in the new handbook (under `00-operating-model/`, `10-invariants/`, `20-workflows/`, `30-languages/`) carry forward, reframe, or deliberately drop material from these legacy pages. Keeping the source available in-tree means rewrites can reference the original without checking out an old tag.
+**Why it's here.** The rewrite is a content replacement, not a fresh start. Many pages in the new handbook (under `operating-model/`, `invariants/`, `workflows/`, `languages/`) carry forward, reframe, or deliberately drop material from these legacy pages. Keeping the source available in-tree means rewrites can reference the original without checking out an old tag.
 
 **Status.** Not maintained. Not authoritative. Not linked from the active handbook navigation. The canonical pre-v2 state is the `v1` tag on `main`; this directory is a working-tree convenience copy.
 

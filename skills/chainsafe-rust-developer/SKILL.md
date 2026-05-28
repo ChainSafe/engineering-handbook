@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: rust
   role: developer
-  source: 30-languages/rust/developer.md
+  source: languages/rust/developer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Rust Developer
 
-Idiomatic Rust at ChainSafe. Full reference: [`30-languages/rust/developer.md`](../../30-languages/rust/developer.md).
+Idiomatic Rust at ChainSafe. Full reference: [`languages/rust/developer.md`](../../languages/rust/developer.md).
 
 ## Tooling baselines
 
@@ -120,8 +120,8 @@ Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLIC
 
 ## Related
 
-- Full reference: [`30-languages/rust/developer.md`](../../30-languages/rust/developer.md)
-- Idioms: [`30-languages/rust/idioms.md`](../../30-languages/rust/idioms.md)
-- Gotchas: [`30-languages/rust/gotchas.md`](../../30-languages/rust/gotchas.md)
+- Full reference: [`languages/rust/developer.md`](../../languages/rust/developer.md)
+- Idioms: [`languages/rust/idioms.md`](../../languages/rust/idioms.md)
+- Gotchas: [`languages/rust/gotchas.md`](../../languages/rust/gotchas.md)
 - Sister roles: `chainsafe-rust-architect`, `chainsafe-rust-reviewer`
 - Forest AI policy: https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md

@@ -3,13 +3,13 @@ name: chainsafe-pr-author
 description: How to open and shepherd a pull request at ChainSafe — language-agnostic PR authoring guidance. Use this skill whenever the user is opening a PR, drafting a PR description, deciding how to scope a PR, handling reviewer comments, structuring commits within a PR, declaring AI-generated content, or shepherding a PR through review. EVEN IF the user does not explicitly say "PR" — triggers on "open a pull request", "draft a PR description", "what should I put in the PR", "PR is too big", "split this PR", "how do I respond to this reviewer comment", "self-resolve threads", "AI declaration in PR", "scope drift", "commit message", "stack of PRs". For the actual code-change workflow that produces the PR, use chainsafe-research-plan-implement. For PR review (incoming), use chainsafe-code-review.
 metadata:
   type: workflow
-  source: 20-workflows/pr-authoring.md
+  source: workflows/pr-authoring.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # PR Authoring
 
-How to open and shepherd a PR at ChainSafe. Language-agnostic; language-specific reviewer surface is in the language skills. Full reference: [`20-workflows/pr-authoring.md`](../../20-workflows/pr-authoring.md).
+How to open and shepherd a PR at ChainSafe. Language-agnostic; language-specific reviewer surface is in the language skills. Full reference: [`workflows/pr-authoring.md`](../../workflows/pr-authoring.md).
 
 ## Working agreement
 
@@ -42,7 +42,7 @@ The right question: *is this change related to the PR's stated goal, or can it l
 - **AI-generated declaration.** If an agent drafted substantive portion, say so. "Drafted by Claude Code following `chainsafe-research-plan-implement`; reviewed by @author" works.
 - **Link to the plan artifact** (research.md, plan.md) so reviewers see what the operator approved.
 - **Assumption surfacing** — non-obvious assumptions the agent made without explicit operator confirmation, called out for review.
-- **Scope drift flags** — any file touched that wasn't in the original ticket scope, named with a one-line reason. This is the [scope-discipline invariant](../../10-invariants/agent-era-invariants.md#1-no-silent-edits-outside-the-operator-named-scope) made visible.
+- **Scope drift flags** — any file touched that wasn't in the original ticket scope, named with a one-line reason. This is the [scope-discipline invariant](../../invariants/agent-era-invariants.md#1-no-silent-edits-outside-the-operator-named-scope) made visible.
 
 ## Commits
 
@@ -73,7 +73,7 @@ The right question: *is this change related to the PR's stated goal, or can it l
 
 ## Related
 
-- Full reference: [`20-workflows/pr-authoring.md`](../../20-workflows/pr-authoring.md)
+- Full reference: [`workflows/pr-authoring.md`](../../workflows/pr-authoring.md)
 - The workflow itself: `chainsafe-research-plan-implement`
 - Counterpart skill: `chainsafe-code-review`
-- Invariants: [`10-invariants/agent-era-invariants.md`](../../10-invariants/agent-era-invariants.md) (especially §1, §8)
+- Invariants: [`invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md) (especially §1, §8)

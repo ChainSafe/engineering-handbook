@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: rust
   role: architect
-  source: 30-languages/rust/architect.md
+  source: languages/rust/architect.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Rust Architect
 
-Use this when designing Rust systems at ChainSafe — Forest-shaped work or any Rust crate/library/binary. Full reference: [`30-languages/rust/architect.md`](../../30-languages/rust/architect.md).
+Use this when designing Rust systems at ChainSafe — Forest-shaped work or any Rust crate/library/binary. Full reference: [`languages/rust/architect.md`](../../languages/rust/architect.md).
 
 ## Key Rust-specific decisions
 
@@ -80,7 +80,7 @@ Forest carries [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI
 
 ## Related
 
-- Full reference: [`30-languages/rust/architect.md`](../../30-languages/rust/architect.md)
+- Full reference: [`languages/rust/architect.md`](../../languages/rust/architect.md)
 - Sister roles: `chainsafe-rust-developer`, `chainsafe-rust-reviewer`
-- Framework: [`10-invariants/invariance-framework.md`](../../10-invariants/invariance-framework.md)
+- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
 - Workflow: `chainsafe-research-plan-implement`

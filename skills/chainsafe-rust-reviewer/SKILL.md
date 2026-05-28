@@ -6,13 +6,13 @@ metadata:
   language: rust
   role: reviewer
   severity-tier: SOFT WARNING (unsafe promotes to near-HARD-FAIL)
-  source: 30-languages/rust/reviewer.md
+  source: languages/rust/reviewer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Rust Reviewer
 
-Reviewer skill for Rust PRs. Universal review framework at [`20-workflows/code-review.md`](../../20-workflows/code-review.md); full Rust-specific reference at [`30-languages/rust/reviewer.md`](../../30-languages/rust/reviewer.md).
+Reviewer skill for Rust PRs. Universal review framework at [`workflows/code-review.md`](../../workflows/code-review.md); full Rust-specific reference at [`languages/rust/reviewer.md`](../../languages/rust/reviewer.md).
 
 ## Severity tier
 
@@ -93,8 +93,8 @@ The reviewer skill refuses to review and escalates if:
 
 ## Related
 
-- Full reference: [`30-languages/rust/reviewer.md`](../../30-languages/rust/reviewer.md)
-- Gotchas: [`30-languages/rust/gotchas.md`](../../30-languages/rust/gotchas.md)
-- Universal review: [`20-workflows/code-review.md`](../../20-workflows/code-review.md)
+- Full reference: [`languages/rust/reviewer.md`](../../languages/rust/reviewer.md)
+- Gotchas: [`languages/rust/gotchas.md`](../../languages/rust/gotchas.md)
+- Universal review: [`workflows/code-review.md`](../../workflows/code-review.md)
 - Sister roles: `chainsafe-rust-architect`, `chainsafe-rust-developer`
 - Forest AI policy: https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md

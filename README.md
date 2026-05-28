@@ -16,16 +16,20 @@ The premise: engineering practices are a competitive asset, AI agents are now fi
 
 Once v2 lands, the structure is:
 
-- **`00-operating-model/`** — the operator/agent contract. How a human and an AI collaborator share responsibility for an output. Read this first.
-- **`10-invariants/`** — the non-negotiables. Engineering invariants, the `.invariance` framework (deep-linked, not duplicated), and agent-era invariants.
-- **`20-workflows/`** — PR authoring, code review, repo & CI setup, testing & QA, infrastructure & DevOps (deep-linked into `ChainSafe/infrastructure-general`), incident response, release & deploy.
-- **`30-languages/`** — opinionated guidance per language ecosystem (Go, Rust, TypeScript, Solidity, Daml, Python, Zig) split into three roles: architect, developer, reviewer.
-- **`40-references/`** — attribution, source pointers, contributors, changelog.
+- **`operating-model/`** — the operator/agent contract. How a human and an AI collaborator share responsibility for an output. Read this first.
+- **`invariants/`** — the non-negotiables. Engineering invariants, the `.invariance` framework (deep-linked, not duplicated), and agent-era invariants.
+- **`workflows/`** — PR authoring, code review, repo & CI setup, testing & QA, infrastructure & DevOps (deep-linked into `ChainSafe/infrastructure-general`), incident response, release & deploy.
+- **`languages/`** — opinionated guidance per language ecosystem (Go, Rust, TypeScript, Solidity, Daml, Python, Zig) split into three roles: architect, developer, reviewer.
+- **`references/`** — attribution, source pointers, contributors, changelog.
 - **`skills/`** — packaged Anthropic Skills authored via `skill-creator`, distributable to any agent runtime that supports them.
 
-`VISION.md` (mission, vision, core values) stays at the repo root and carries forward unchanged.
+Three top-level guiding documents sit at the repo root, layered from most general to most enforceable:
 
-During the rewrite, you'll also see the legacy `1_principles/`, `3_development/`, `4_the-formal-stuff/`, and `HOME.md` at the root. These get removed in the v0 launch sweep; `v1` preserves them in git history.
+- **`VISION.md`** — ChainSafe's mission, vision, and core values. Company-wide. Carries forward unchanged from v1.
+- **`PRINCIPLES.md`** — General Engineering Principles. Engineering's manifestation of the values; ten principles guiding how we build software.
+- **`invariants/engineering-invariants.md`** — the testable subset of those principles. What gets enforced in CI, in review, and at gates.
+
+During the rewrite, you'll also see the legacy `3_development/`, `4_the-formal-stuff/`, and `HOME.md` at the root. These get removed in the v0 launch sweep; `v1` preserves them in git history. The legacy `1_principles/` content has been extracted to `PRINCIPLES.md` and is preserved that way.
 
 ## How to use it
 
@@ -39,7 +43,7 @@ During the rewrite, you'll also see the legacy `1_principles/`, `3_development/`
 
 > **Working agreement.** During the v2 rewrite, every PR targets the branch **`peter/agentic-handbook-overhaul`**, not `main`. The legacy state on `main` is tagged `v1`. The branch will be merged to `main` as a single drop once v0 is complete. If you find yourself about to open a PR against `main`, stop and redirect — unless you're shipping a bugfix against the legacy handbook (rare).
 
-Contributions follow the curatorial model: practices already exist across the org, get aggregated here with original authors credited via `CODEOWNERS`, `40-references/CONTRIBUTORS.md` (when populated), and inline credits in each content file's header.
+Contributions follow the curatorial model: practices already exist across the org, get aggregated here with original authors credited via `CODEOWNERS`, `references/CONTRIBUTORS.md` (when populated), and inline credits in each content file's header.
 
 ## About ChainSafe
 

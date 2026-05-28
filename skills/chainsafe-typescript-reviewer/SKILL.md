@@ -6,13 +6,13 @@ metadata:
   language: typescript
   role: reviewer
   severity-tier: SOFT WARNING
-  source: 30-languages/typescript/reviewer.md
+  source: languages/typescript/reviewer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # TypeScript Reviewer
 
-Reviewer skill for TypeScript PRs. Universal review framework at [`20-workflows/code-review.md`](../../20-workflows/code-review.md); full reference at [`30-languages/typescript/reviewer.md`](../../30-languages/typescript/reviewer.md).
+Reviewer skill for TypeScript PRs. Universal review framework at [`workflows/code-review.md`](../../workflows/code-review.md); full reference at [`languages/typescript/reviewer.md`](../../languages/typescript/reviewer.md).
 
 ## Severity tier
 
@@ -94,7 +94,7 @@ The reviewer skill refuses to review and escalates if:
 
 ## Related
 
-- Full reference: [`30-languages/typescript/reviewer.md`](../../30-languages/typescript/reviewer.md)
-- Gotchas: [`30-languages/typescript/gotchas.md`](../../30-languages/typescript/gotchas.md)
-- Universal review: [`20-workflows/code-review.md`](../../20-workflows/code-review.md)
+- Full reference: [`languages/typescript/reviewer.md`](../../languages/typescript/reviewer.md)
+- Gotchas: [`languages/typescript/gotchas.md`](../../languages/typescript/gotchas.md)
+- Universal review: [`workflows/code-review.md`](../../workflows/code-review.md)
 - Sister roles: `chainsafe-typescript-architect`, `chainsafe-typescript-developer`

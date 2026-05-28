@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: solidity
   role: architect
-  source: 30-languages/solidity/architect.md
+  source: languages/solidity/architect.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Solidity Architect
 
-Use this when designing Solidity systems at ChainSafe — Sygma-shaped work or any contract. **Every decision here is a security decision.** The reviewer skill is HARD FAIL tier. Architecture that doesn't anticipate that will get blocked. Full reference: [`30-languages/solidity/architect.md`](../../30-languages/solidity/architect.md).
+Use this when designing Solidity systems at ChainSafe — Sygma-shaped work or any contract. **Every decision here is a security decision.** The reviewer skill is HARD FAIL tier. Architecture that doesn't anticipate that will get blocked. Full reference: [`languages/solidity/architect.md`](../../languages/solidity/architect.md).
 
 ## Key Solidity-specific decisions
 
@@ -79,6 +79,6 @@ Migrating between upgrade strategies is itself a migration risk. Pick once.
 
 ## Related
 
-- Full reference: [`30-languages/solidity/architect.md`](../../30-languages/solidity/architect.md)
+- Full reference: [`languages/solidity/architect.md`](../../languages/solidity/architect.md)
 - Sister roles: `chainsafe-solidity-developer`, `chainsafe-solidity-reviewer` (HARD FAIL tier)
 - Workflow: `chainsafe-research-plan-implement`

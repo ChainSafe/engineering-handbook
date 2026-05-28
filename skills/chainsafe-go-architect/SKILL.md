@@ -5,7 +5,7 @@ metadata:
   type: role-workflow
   language: go
   role: architect
-  source: 30-languages/go/architect.md
+  source: languages/go/architect.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
@@ -15,9 +15,9 @@ Use this when designing Go systems at ChainSafe — Gossamer-shaped work or any 
 
 ## Operating context
 
-You are the architect role for Go work. The architectural framework (invariant naming, lifecycle, testability) is `.invariance`; consult [`10-invariants/invariance-framework.md`](../../10-invariants/invariance-framework.md) and the upstream `.invariance` repo before proposing a design. This skill covers what is Go-specific *under* that framework.
+You are the architect role for Go work. The architectural framework (invariant naming, lifecycle, testability) is `.invariance`; consult [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md) and the upstream `.invariance` repo before proposing a design. This skill covers what is Go-specific *under* that framework.
 
-The full reference is [`30-languages/go/architect.md`](../../30-languages/go/architect.md). Load that file for the complete guidance.
+The full reference is [`languages/go/architect.md`](../../languages/go/architect.md). Load that file for the complete guidance.
 
 ## Key Go-specific decisions
 
@@ -61,7 +61,7 @@ This skill covers Go-specific *shape*; the framework is upstream.
 
 ## Related
 
-- Full reference: [`30-languages/go/architect.md`](../../30-languages/go/architect.md)
+- Full reference: [`languages/go/architect.md`](../../languages/go/architect.md)
 - Sister roles: `chainsafe-go-developer` (implementation), `chainsafe-go-reviewer` (PR review)
 - Workflow: `chainsafe-research-plan-implement` for the design-to-implementation flow
-- Framework: [`10-invariants/invariance-framework.md`](../../10-invariants/invariance-framework.md)
+- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)

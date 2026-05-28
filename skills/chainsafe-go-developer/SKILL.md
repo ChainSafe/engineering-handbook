@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: go
   role: developer
-  source: 30-languages/go/developer.md
+  source: languages/go/developer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Go Developer
 
-Idiomatic Go implementation at ChainSafe. The full reference is [`30-languages/go/developer.md`](../../30-languages/go/developer.md); load that file for complete guidance. This skill is the operational summary.
+Idiomatic Go implementation at ChainSafe. The full reference is [`languages/go/developer.md`](../../languages/go/developer.md); load that file for complete guidance. This skill is the operational summary.
 
 ## Tooling baselines
 
@@ -94,8 +94,8 @@ if err != nil {
 
 ## Related
 
-- Full reference: [`30-languages/go/developer.md`](../../30-languages/go/developer.md)
-- Idioms cheat sheet: [`30-languages/go/idioms.md`](../../30-languages/go/idioms.md)
-- Gotchas: [`30-languages/go/gotchas.md`](../../30-languages/go/gotchas.md)
+- Full reference: [`languages/go/developer.md`](../../languages/go/developer.md)
+- Idioms cheat sheet: [`languages/go/idioms.md`](../../languages/go/idioms.md)
+- Gotchas: [`languages/go/gotchas.md`](../../languages/go/gotchas.md)
 - Sister roles: `chainsafe-go-architect`, `chainsafe-go-reviewer`
 - Workflow: `chainsafe-research-plan-implement`

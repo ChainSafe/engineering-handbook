@@ -5,13 +5,13 @@ metadata:
   type: role-workflow
   language: solidity
   role: developer
-  source: 30-languages/solidity/developer.md
+  source: languages/solidity/developer.md
   authored-via: anthropic-skills:skill-creator (2026-05-27)
 ---
 
 # Solidity Developer
 
-Idiomatic Solidity at ChainSafe. Reviewer is **HARD FAIL** tier; this skill teaches you to stay out of HARD-FAIL territory. Full reference: [`30-languages/solidity/developer.md`](../../30-languages/solidity/developer.md).
+Idiomatic Solidity at ChainSafe. Reviewer is **HARD FAIL** tier; this skill teaches you to stay out of HARD-FAIL territory. Full reference: [`languages/solidity/developer.md`](../../languages/solidity/developer.md).
 
 ## Tooling baselines
 
@@ -139,7 +139,7 @@ Coverage via `forge coverage`. Security-critical code: 100% line coverage is nec
 
 ## Related
 
-- Full reference: [`30-languages/solidity/developer.md`](../../30-languages/solidity/developer.md)
-- Idioms: [`30-languages/solidity/idioms.md`](../../30-languages/solidity/idioms.md)
-- Gotchas: [`30-languages/solidity/gotchas.md`](../../30-languages/solidity/gotchas.md)
+- Full reference: [`languages/solidity/developer.md`](../../languages/solidity/developer.md)
+- Idioms: [`languages/solidity/idioms.md`](../../languages/solidity/idioms.md)
+- Gotchas: [`languages/solidity/gotchas.md`](../../languages/solidity/gotchas.md)
 - Sister roles: `chainsafe-solidity-architect`, `chainsafe-solidity-reviewer` (HARD FAIL tier)

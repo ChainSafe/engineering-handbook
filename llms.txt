@@ -2,81 +2,81 @@
 
 > The AI-native handbook for how ChainSafe builds software. Operator-first, opinionated, public.
 
-This is the agent-facing index. For humans, see the [README](https://github.com/ChainSafe/engineering-handbook/blob/main/README.md). The repository assumes you have read [`AGENTS.md`](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/AGENTS.md) and the [Collaborator Contract](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/collaborator-statement.md) before applying any of its content. License: [Apache 2.0](https://github.com/ChainSafe/engineering-handbook/blob/main/LICENSE).
+This is the agent-facing index. For humans, see the [README](https://github.com/ChainSafe/engineering-handbook/blob/main/README.md). The repository assumes you have read [`AGENTS.md`](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/AGENTS.md) and the [Collaborator Contract](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/collaborator-statement.md) before applying any of its content. License: [Apache 2.0](https://github.com/ChainSafe/engineering-handbook/blob/main/LICENSE).
 
 URLs below point at the `main` branch and resolve to raw markdown. While the v2 rewrite is in flight on `peter/agentic-handbook-overhaul`, this index reflects the post-merge state — published when v0 lands on `main`.
 
 ## Operating model
 
-- [Collaborator Statement](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/collaborator-statement.md): The operator/agent contract. Load before any non-trivial task. Operator responsibilities, agent responsibilities, refusal cases, escalation cases, failure modes.
-- [Gates and Escalation](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/gates-and-escalation.md): Eight gate categories (production, secrets, irreversible writes, external comms, version control, repo boundaries, cost, HARD FAIL). Stop pattern, escalation matrix.
-- [Model and Tool Selection](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/model-and-tool-selection.md): Model tier mapping (Haiku / Sonnet / Opus), MCP loadout, skill selection, anti-patterns.
-- [MCP and llms.txt](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/mcp-and-llm-txt.md): How agents discover this handbook. Two channels (static deep links + GitHub MCP). Versioning policy during v2 rewrite.
-- [Memory Conventions](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/00-operating-model/memory-conventions.md): What to persist across sessions, what not to, sensitive-data rules including M&A confidentiality.
+- [Collaborator Statement](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/collaborator-statement.md): The operator/agent contract. Load before any non-trivial task. Operator responsibilities, agent responsibilities, refusal cases, escalation cases, failure modes.
+- [Gates and Escalation](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/gates-and-escalation.md): Eight gate categories (production, secrets, irreversible writes, external comms, version control, repo boundaries, cost, HARD FAIL). Stop pattern, escalation matrix.
+- [Model and Tool Selection](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/model-and-tool-selection.md): Model tier mapping (Haiku / Sonnet / Opus), MCP loadout, skill selection, anti-patterns.
+- [MCP and llms.txt](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/mcp-and-llm-txt.md): How agents discover this handbook. Two channels (static deep links + GitHub MCP). Versioning policy during v2 rewrite.
+- [Memory Conventions](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/operating-model/memory-conventions.md): What to persist across sessions, what not to, sensitive-data rules including M&A confidentiality.
 
 ## Invariants
 
-- [Engineering Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/10-invariants/engineering-invariants.md): The seven non-negotiables (open-source by default, standards enforced, quality defined before build, composable by design, decisions in the repo, ship value not effort, auditable context).
-- [Agent-Era Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/10-invariants/agent-era-invariants.md): Eight invariants specific to agent-assisted work (no silent edits, no fabrication, no secret commits, no protected-branch push, scope boundary, no external comms without per-message auth, no HARD FAIL bypass, audit trail).
-- [.invariance Framework (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/10-invariants/invariance-framework.md): Deep-link map into Martin Maurer's `.invariance` repo for architectural invariants. Maintained by [@boorich](https://github.com/boorich).
+- [Engineering Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/engineering-invariants.md): The seven non-negotiables (open-source by default, standards enforced, quality defined before build, composable by design, decisions in the repo, ship value not effort, auditable context).
+- [Agent-Era Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/agent-era-invariants.md): Eight invariants specific to agent-assisted work (no silent edits, no fabrication, no secret commits, no protected-branch push, scope boundary, no external comms without per-message auth, no HARD FAIL bypass, audit trail).
+- [.invariance Framework (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/invariance-framework.md): Deep-link map into Martin Maurer's `.invariance` repo for architectural invariants. Maintained by [@boorich](https://github.com/boorich).
 
 ## Workflows
 
-- [PR Authoring](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/pr-authoring.md): Agent-era author guide. Small/focused/self-contained PRs, AI-generated declaration, scope-drift flags. Delegates non-trivial workflow to the `chainsafe-research-plan-implement` skill.
-- [Code Review](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/code-review.md): Two modes (operator-reviewing-agent, agent-reviewing-PR). Universal principles, what-to-look-for, speed of review, when-reviews-go-wrong.
-- [Repo and CI Setup](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/repo-and-ci-setup.md): Ten-step per-repo hygiene checklist as an agent-runnable runbook. Branch protection, CODEOWNERS, CI baseline, security baseline.
-- [Testing and QA](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/testing-and-qa.md): What agents generate vs what operators own. Carries the Forest / Ghostty AI-policy pattern. Test type guidance.
-- [Infrastructure and DevOps (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/infrastructure-and-devops.md): Deep-link map into `ChainSafe/infrastructure-general`. Maintained by [@joshdougall](https://github.com/joshdougall).
-- [Incident Response (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/incident-response.md): When to page, when to roll back, approval matrix. Runbook deep links by chain/product.
-- [Release and Deploy (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/20-workflows/release-and-deploy.md): Pre-flight readiness, approval matrix, during-the-deploy discipline, deploy-procedure deep links.
+- [PR Authoring](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/pr-authoring.md): Agent-era author guide. Small/focused/self-contained PRs, AI-generated declaration, scope-drift flags. Delegates non-trivial workflow to the `chainsafe-research-plan-implement` skill.
+- [Code Review](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/code-review.md): Two modes (operator-reviewing-agent, agent-reviewing-PR). Universal principles, what-to-look-for, speed of review, when-reviews-go-wrong.
+- [Repo and CI Setup](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/repo-and-ci-setup.md): Ten-step per-repo hygiene checklist as an agent-runnable runbook. Branch protection, CODEOWNERS, CI baseline, security baseline.
+- [Testing and QA](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/testing-and-qa.md): What agents generate vs what operators own. Carries the Forest / Ghostty AI-policy pattern. Test type guidance.
+- [Infrastructure and DevOps (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/infrastructure-and-devops.md): Deep-link map into `ChainSafe/infrastructure-general`. Maintained by [@joshdougall](https://github.com/joshdougall).
+- [Incident Response (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/incident-response.md): When to page, when to roll back, approval matrix. Runbook deep links by chain/product.
+- [Release and Deploy (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/release-and-deploy.md): Pre-flight readiness, approval matrix, during-the-deploy discipline, deploy-procedure deep links.
 
 ## Languages
 
 ### Go (Gossamer)
 
-- [Go Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/go/architect.md): Project layout, public surface discipline, concurrency model, error model. Defers to `.invariance`.
-- [Go Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/go/developer.md): golangci-lint, gomock conventions, argument-passing heuristics, panic discipline, context propagation, CI baseline.
-- [Go Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/go/reviewer.md): Checklist for reviewing Go PRs. Concurrency, errors, panic, layout, testing.
-- [Go Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/go/idioms.md) · [Go Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/go/gotchas.md)
+- [Go Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/architect.md): Project layout, public surface discipline, concurrency model, error model. Defers to `.invariance`.
+- [Go Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/developer.md): golangci-lint, gomock conventions, argument-passing heuristics, panic discipline, context propagation, CI baseline.
+- [Go Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/reviewer.md): Checklist for reviewing Go PRs. Concurrency, errors, panic, layout, testing.
+- [Go Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/idioms.md) · [Go Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/gotchas.md)
 
 ### Rust (Forest)
 
-- [Rust Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/rust/architect.md): Cargo workspaces, error model, async runtime choice, concurrency, public API hygiene, unsafe soundness.
-- [Rust Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/rust/developer.md): fmt + clippy as CI gates, error handling, unwrap discipline, async, unsafe + miri, testing with proptest.
-- [Rust Reviewer (SOFT WARNING; `unsafe` near-HARD-FAIL)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/rust/reviewer.md): Checklist for Rust PRs. `unsafe` blocks promote to near-HARD-FAIL scrutiny per Forest's [AI_POLICY](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md).
-- [Rust Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/rust/idioms.md) · [Rust Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/rust/gotchas.md)
+- [Rust Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/rust/architect.md): Cargo workspaces, error model, async runtime choice, concurrency, public API hygiene, unsafe soundness.
+- [Rust Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/rust/developer.md): fmt + clippy as CI gates, error handling, unwrap discipline, async, unsafe + miri, testing with proptest.
+- [Rust Reviewer (SOFT WARNING; `unsafe` near-HARD-FAIL)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/rust/reviewer.md): Checklist for Rust PRs. `unsafe` blocks promote to near-HARD-FAIL scrutiny per Forest's [AI_POLICY](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md).
+- [Rust Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/rust/idioms.md) · [Rust Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/rust/gotchas.md)
 
 ### TypeScript (Lodestar)
 
-- [TypeScript Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/typescript/architect.md): Yarn 3 workspaces, type strictness baseline, ESM default, branded types, public API stability.
-- [TypeScript Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/typescript/developer.md): `@chainsafe/eslint-config`, strict tsconfig, type discipline, async patterns, error subclasses, npm publishing.
-- [TypeScript Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/typescript/reviewer.md): Checklist for TS PRs. `any`/`as` discipline, floating promises, module hygiene, type-level tests.
-- [TypeScript Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/typescript/idioms.md) · [TypeScript Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/typescript/gotchas.md)
+- [TypeScript Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/typescript/architect.md): Yarn 3 workspaces, type strictness baseline, ESM default, branded types, public API stability.
+- [TypeScript Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/typescript/developer.md): `@chainsafe/eslint-config`, strict tsconfig, type discipline, async patterns, error subclasses, npm publishing.
+- [TypeScript Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/typescript/reviewer.md): Checklist for TS PRs. `any`/`as` discipline, floating promises, module hygiene, type-level tests.
+- [TypeScript Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/typescript/idioms.md) · [TypeScript Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/typescript/gotchas.md)
 
 ### Solidity (Sygma + crypto)
 
-- [Solidity Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/architect.md): Foundry layout, upgrade strategy (default to immutable), access control with multi-sig + timelocks, reentrancy posture, bridge invariants.
-- [Solidity Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/developer.md): Foundry tooling, pragma pinning, OpenZeppelin primitives, slither, CEI pattern, fuzz/invariant testing, deployment.
-- [Solidity Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/reviewer.md): HARD FAIL checks for reentrancy, upgrade safety, access control, audit-readiness. Override mechanics logged in PR.
-- [Solidity Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/idioms.md) · [Solidity Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/gotchas.md)
+- [Solidity Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/solidity/architect.md): Foundry layout, upgrade strategy (default to immutable), access control with multi-sig + timelocks, reentrancy posture, bridge invariants.
+- [Solidity Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/solidity/developer.md): Foundry tooling, pragma pinning, OpenZeppelin primitives, slither, CEI pattern, fuzz/invariant testing, deployment.
+- [Solidity Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/solidity/reviewer.md): HARD FAIL checks for reentrancy, upgrade safety, access control, audit-readiness. Override mechanics logged in PR.
+- [Solidity Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/solidity/idioms.md) · [Solidity Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/solidity/gotchas.md)
 
 ### Daml (Canton — v1)
 
-- [Daml Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/architect.md): Template design, signatory/observer authorization model, atomicity, upgrade strategy via versioned packages, privacy, Canton-specific (domain/synchronizer/sequencer/mediator).
-- [Daml Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/reviewer.md): HARD FAIL checks for authorization correctness, atomicity, upgrade safety, privacy. Override mechanics logged in PR.
-- [Daml Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/idioms.md) · [Daml Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/gotchas.md)
+- [Daml Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/architect.md): Template design, signatory/observer authorization model, atomicity, upgrade strategy via versioned packages, privacy, Canton-specific (domain/synchronizer/sequencer/mediator).
+- [Daml Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/reviewer.md): HARD FAIL checks for authorization correctness, atomicity, upgrade safety, privacy. Override mechanics logged in PR.
+- [Daml Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/idioms.md) · [Daml Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/gotchas.md)
 - *Note:* developer.md intentionally deferred — Daml practice at ChainSafe is established enough at the architect / reviewer layer; line-level developer guidance can be added when demand surfaces.
 
 ### Python (internal tooling — v2)
 
-- [Python Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/architect.md): Python's scope at ChainSafe is internal-tooling-grade (ops, Ansible, scripts, ML/research prototypes) — NOT production user-facing services or smart contracts. Project layout, type discipline, error model, async, CLI design.
-- [Python Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/developer.md): Python 3.11+, `ruff` + `mypy --strict`, `uv` for deps, dataclasses, `pathlib`, `click` for CLIs, `pytest` for tests.
-- [Python Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/reviewer.md): Type hints at boundaries, no bare excepts, lockfile up-to-date. Refuses if Python lands in a production-product hot path — language choice itself is the finding.
-- [Python Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/idioms.md) · [Python Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/gotchas.md)
+- [Python Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/architect.md): Python's scope at ChainSafe is internal-tooling-grade (ops, Ansible, scripts, ML/research prototypes) — NOT production user-facing services or smart contracts. Project layout, type discipline, error model, async, CLI design.
+- [Python Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/developer.md): Python 3.11+, `ruff` + `mypy --strict`, `uv` for deps, dataclasses, `pathlib`, `click` for CLIs, `pytest` for tests.
+- [Python Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/reviewer.md): Type hints at boundaries, no bare excepts, lockfile up-to-date. Refuses if Python lands in a production-product hot path — language choice itself is the finding.
+- [Python Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/idioms.md) · [Python Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/gotchas.md)
 
 ### Zig (v2 — placeholder)
 
-- [Zig at ChainSafe](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/zig/README.md): No confirmed production use as of v2. Single page setting a rebuttable presumption against reaching for Zig before talking to the curator. Replace with full role triad when ChainSafe genuinely adopts Zig.
+- [Zig at ChainSafe](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/README.md): No confirmed production use as of v2. Single page setting a rebuttable presumption against reaching for Zig before talking to the curator. Replace with full role triad when ChainSafe genuinely adopts Zig.
 
 ## Skills
 
@@ -105,7 +105,7 @@ Packaged Anthropic Skills authored via `skill-creator`. Each skill is self-conta
 
 ## External canonical sources
 
-The handbook deep-links into these upstream sources rather than duplicating them. See [`40-references/sources.md`](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/40-references/sources.md) for the full catalog with maintainer and coordination notes.
+The handbook deep-links into these upstream sources rather than duplicating them. See [`references/sources.md`](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/references/sources.md) for the full catalog with maintainer and coordination notes.
 
 - [.invariance framework](https://github.com/boorich): Martin Maurer's architectural invariance project. Canonical source for architecture and system-design invariants.
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general): Canonical source for infrastructure, IaC, deployment, observability, on-call, runbooks. Maintained by [@joshdougall](https://github.com/joshdougall). Ships its own [AGENTS.md](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md) and [CLAUDE.md](https://github.com/ChainSafe/infrastructure-general/blob/main/CLAUDE.md).
@@ -116,10 +116,11 @@ The handbook deep-links into these upstream sources rather than duplicating them
 
 - [README](https://github.com/ChainSafe/engineering-handbook/blob/main/README.md) — human-facing intro
 - [AGENTS.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/AGENTS.md) — agent entrypoint
-- [VISION.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/VISION.md) — ChainSafe mission, vision, and core values
+- [VISION.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/VISION.md) — ChainSafe mission, vision, and core values (company-wide)
+- [PRINCIPLES.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/PRINCIPLES.md) — General Engineering Principles — engineering's manifestation of the company values. Ten principles guiding how we build software. The testable subset is `invariants/engineering-invariants.md`.
 - [PLAN.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/PLAN.md) — overhaul plan
 - [TODO.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/TODO.md) — execution status
-- [40-references/CONTRIBUTORS.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/40-references/CONTRIBUTORS.md) — contributors and credits
-- [40-references/attribution.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/40-references/attribution.md) — three-layer attribution policy (file headers + CONTRIBUTORS.md + CODEOWNERS) and the curatorial credit model
+- [references/CONTRIBUTORS.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/references/CONTRIBUTORS.md) — contributors and credits
+- [references/attribution.md](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/references/attribution.md) — three-layer attribution policy (file headers + CONTRIBUTORS.md + CODEOWNERS) and the curatorial credit model
 - [LICENSE](https://github.com/ChainSafe/engineering-handbook/blob/main/LICENSE) — Apache 2.0
 - [NOTICE](https://github.com/ChainSafe/engineering-handbook/blob/main/NOTICE) — third-party attribution
