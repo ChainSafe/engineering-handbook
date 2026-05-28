@@ -1,8 +1,3 @@
----
-sidebar_position: 1
-title: "Introduction"
----
-
 # Career Development
 
 We want everyone at ChainSafe to have a sense of how they can grow and challenge themselves. From a career perspective, this means providing a clear sense of how an employee can progress within the organization. To facilitate this within Engineering, we have defined Engineering Ladders Framework (see [Acknowledgments](#acknowledgments) for more details).
@@ -17,9 +12,9 @@ Each of this direction represents a sequence of roles and the attributes typical
 
 Current roles progression assumes following roles:
 
- - [Engineering Roles](engineering)
- - [Research Roles](research)
- - [Engineering Management Roles](engineering-management)
+ - [Engineering Roles](./engineering.md)
+ - [Research Roles](./research.md)
+ - [Engineering Management Roles](./engineering-management.md)
 
 Roles described here serve strictly as a reference and it is expected for each individual to have a unique shape on this chart. A promotion to the next ladder requires meeting ⅗ axes.
 
@@ -31,7 +26,7 @@ While assigning levels to each axis make sure the meaning and definitions of sel
 
 ## Levels
 
-Currently we differentiate [two charts](how-to#competence-charts) that describes levels for different functions. One chart relates to [Engineering](engineering) and another to [Research](research). [Engineering Management](engineering-management) career progression built with the Engineering chart and effectively relates to both functions.
+Currently we differentiate [two charts](./how-to.md#competence-charts) that describes levels for different functions. One chart relates to [Engineering](./engineering.md) and another to [Research](./research.md). [Engineering Management](./engineering-management.md) career progression built with the Engineering chart and effectively relates to both functions.
 
 Our engineering ladders have the following 5 axes (categories):
 - **Technical Expertise**: knowledge of the stack and tools being specialized
@@ -45,7 +40,8 @@ For the Engineering verticals the 5th axis is:
 And for the Research the 5th axis is:
 - **Research Methodology**: knowledge and ability to conduct a research
 
-### Technical Expertise 
+### Technical Expertise
+
 1. **Adopts**: actively learns and adopts the architectural approaches and tools defined by the Stream
 2. **Specializes**: is the go-to person for one or more architecture domains and takes initiative to learn new ones
 3. **Evangelizes**: researches, creates proofs of concept and introduces new architectural approaches to the Stream
@@ -53,13 +49,15 @@ And for the Research the 5th axis is:
 5. **Creates**: designs and creates new architecture parts that are widely used either by the Streams within or outside the Program
 
 ### People
+
 1. **Learns**: quickly learns from others and consistently steps up when it is required
 2. **Supports**: proactively supports other team members and helps them to be successful
 3. **Mentors**: mentors others to accelerate their career-growth and encourages them to participate
 4. **Coordinates**: coordinates team members providing effective feedback and moderating discussions
-5. **Manages**: manages the team members’ career, expectations, performance and level of happiness
+5. **Manages**: manages the team members' career, expectations, performance and level of happiness
 
 ### Process
+
 1. **Follows**: follows the [SDLC](#glossary) processes on a Stream level, delivering a consistent flow of features to production
 2. **Enforces**: enforces the [SDLC](#glossary) processes on a Stream level, making sure everybody understands the benefits and trade offs
 3. **Challenges**: challenges the [SDLC](#glossary) processes on a Stream level, looking for ways to improve them
@@ -67,28 +65,27 @@ And for the Research the 5th axis is:
 5. **Defines**: defines the right processes for the Program maturity level, balancing agility and discipline
 
 ### Impact
+
 1. **Component**: makes an impact on one or more components of the system
 2. **Stream**: makes an impact on the whole Stream, not just on specific parts of it
 3. **Program (Multiple Streams)**: makes an impact not only their Stream but also on other Streams in the same or other Programs
 4. **Multiple Programs**: makes an impact on more than one Programs
 5. **Company**: makes an impact on most of the Programs
 
-
 ### System
-:::info
-Level of the [**Engineering Chart**](how-to#engineering-chart)
-:::
+
+> Level of the [**Engineering Chart**](./how-to.md#engineering-chart).
+
 1. **Enhances**: successfully pushes new features and bug fixes to improve and extend the system
-2. **Designs**: designs and implements medium to large size features while reducing the system’s tech debt
+2. **Designs**: designs and implements medium to large size features while reducing the system's tech debt
 3. **Owns**: owns the production operation and monitoring of the system and is aware of its [SLAs](#glossary)
 4. **Evolves**: evolves the architecture to support future requirements and defines its [SLAs](#glossary)
 5. **Leads**: leads the technical excellence of the system and creates plans to mitigate outages
 
-
 ### Research Methodology
-:::info
-Level of the [**Research Chart**](how-to#research-chart)
-:::
+
+> Level of the [**Research Chart**](./how-to.md#research-chart).
+
 1. **Executes**: Given a research question, knows where to look and gather all state-of-the-art articles and papers and summarize them with good coherency
 2. **Analyzes**: Is able to filter out relevant and high quality papers, articles, projects. Can sufficiently critique the usefulness of the method. Can write longer articles on a topic explaining complex matters in simpler terms
 3. **Proposes**: Can identify possible research directions, formulates research questions, scopes the research work with tangible outputs. Reviews the work of other team members with an eye for detail. Can write academic style papers, perform systematic literature review and publish it
@@ -96,14 +93,16 @@ Level of the [**Research Chart**](how-to#research-chart)
 5. **Expands**: Pushes the boundaries of fundamental research throughout the community. Veteran and champion known in one or more research domains. Knows the process and importance of high impact publications
 
 ## Glossary
+
 The following list contains brief explanations of the mentioned terms or subjects above in the document.
 
-**Stream / Program / Multiple Programs** - more on [ChainSafe OS pages](https://www.notion.so/chainsafe/Core-Concepts-v1-0-1610247189c949fa9692de950518ac53)
+**Stream / Program / Multiple Programs** — internal ChainSafe-OS concept; see the Core Concepts page in the ChainSafe Notion workspace (internal link).
 For example: Forest is a stream. Protocol is a program.
 
-**SDLC** - Software Development Life Cycle, including all the software stages
+**SDLC** — Software Development Life Cycle, including all the software stages.
 
-**SLA** - Service Level Agreement that outlines what exactly a service provider delivers to the customer (client)
+**SLA** — Service Level Agreement that outlines what exactly a service provider delivers to the customer (client).
 
 ## Acknowledgments
+
 This framework is based on the open source materials from the [Engineering Ladders GitHub repository](https://github.com/jorgef/engineeringladders).
