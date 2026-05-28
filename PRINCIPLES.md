@@ -1,12 +1,3 @@
----
-title: General Engineering Principles
-status: active
-authors:
-  - "@kalambet"
-adapted_from: legacy 1_principles/index.md — carried forward with a reframed preamble; principle wording preserved verbatim
-last_updated: 2026-05-27
----
-
 # General Engineering Principles
 
 The principles that guide how we engineer at ChainSafe.
