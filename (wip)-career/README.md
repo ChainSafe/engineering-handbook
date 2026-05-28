@@ -6,12 +6,7 @@ This directory holds career-development and people-process content extracted fro
 
 [PLAN.md §6](../PLAN.md) explicitly skipped career ladders, 360 reviews, and process-and-policy from the v2 handbook on the grounds that "career ladders and 360 reviews — that's HR/people, not agent guidance. Lives elsewhere." The handbook's primary audience is engineering practice — for humans doing the work and for AI agents helping them — and people-process documentation belongs in a different home.
 
-Two open questions decide where this content eventually lives:
-
-1. **Public or internal?** Career ladders + ChainSafe-specific stream/program vocabulary mix engineering signal with internal-org context. The Engineering Ladders framework itself (the radar-chart model) is open-source-derived (see Acknowledgments in [`career-development/introduction.md`](./career-development/introduction.md)); the ChainSafe specifics aren't.
-2. **Same repo or different repo?** If it stays, a `career/` or `people/` top-level might make sense as a peer to `operating-model/` etc. If it moves, the People-Ops / HR home is the natural destination.
-
-The decision is deferred until the v2 launch settles. Until then, this directory keeps the content reachable and clean.
+This content is **public-safe** — no secrets, no confidential org material. The open question isn't whether to publish, only where to publish it: a `career/` or `people/` top-level here as a peer to `operating-model/` etc., or a separate People-Ops / HR home. The decision is deferred until the v2 launch settles. Until then, this directory keeps the content reachable and clean.
 
 ## What was cleaned in the extraction (2026-05-27)
 
@@ -24,7 +19,7 @@ The legacy files arrived with Docusaurus-specific markup. The following was stri
 - `:::info` / `:::note` admonitions — converted to markdown blockquotes.
 - JSX inline `<span className="axis">X</span> ➡ <span className="level">Y</span>` — converted to plain markdown `**X** → **Y**`.
 - `import EngLadderGraph from "@site/src/components/EngLadderGraph"` and `<EngLadderGraph type="..." />` React component embeds — removed; these only rendered under Docusaurus as interactive comparison charts and have no markdown equivalent. The static role charts (per-role JPGs in `career-development/assets/`) still render fine.
-- Internal Notion link to "ChainSafe OS pages / Core Concepts v1.0" — replaced with an inline note marking it as internal.
+- Notion link to "ChainSafe OS pages / Core Concepts v1.0" — preserved as-is; content is public-safe.
 
 Note: a few macOS `.DS_Store` files and the original `_category_.yml` may still be on disk — the sandbox permission model prevented deletion. They are git-ignored (`.DS_Store`) or harmless residue; clean them up from the Mac terminal as needed.
 

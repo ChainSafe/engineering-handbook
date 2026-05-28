@@ -96,7 +96,7 @@ And for the Research the 5th axis is:
 
 The following list contains brief explanations of the mentioned terms or subjects above in the document.
 
-**Stream / Program / Multiple Programs** — internal ChainSafe-OS concept; see the Core Concepts page in the ChainSafe Notion workspace (internal link).
+**Stream / Program / Multiple Programs** — more on [ChainSafe OS pages](https://www.notion.so/chainsafe/Core-Concepts-v1-0-1610247189c949fa9692de950518ac53).
 For example: Forest is a stream. Protocol is a program.
 
 **SDLC** — Software Development Life Cycle, including all the software stages.
