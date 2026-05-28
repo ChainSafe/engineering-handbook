@@ -60,6 +60,24 @@ URLs below point at the `main` branch and resolve to raw markdown. While the v2 
 - [Solidity Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/reviewer.md): HARD FAIL checks for reentrancy, upgrade safety, access control, audit-readiness. Override mechanics logged in PR.
 - [Solidity Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/idioms.md) · [Solidity Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/solidity/gotchas.md)
 
+### Daml (Canton — v1)
+
+- [Daml Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/architect.md): Template design, signatory/observer authorization model, atomicity, upgrade strategy via versioned packages, privacy, Canton-specific (domain/synchronizer/sequencer/mediator).
+- [Daml Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/reviewer.md): HARD FAIL checks for authorization correctness, atomicity, upgrade safety, privacy. Override mechanics logged in PR.
+- [Daml Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/idioms.md) · [Daml Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/daml/gotchas.md)
+- *Note:* developer.md intentionally deferred — Daml practice at ChainSafe is established enough at the architect / reviewer layer; line-level developer guidance can be added when demand surfaces.
+
+### Python (internal tooling — v2)
+
+- [Python Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/architect.md): Python's scope at ChainSafe is internal-tooling-grade (ops, Ansible, scripts, ML/research prototypes) — NOT production user-facing services or smart contracts. Project layout, type discipline, error model, async, CLI design.
+- [Python Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/developer.md): Python 3.11+, `ruff` + `mypy --strict`, `uv` for deps, dataclasses, `pathlib`, `click` for CLIs, `pytest` for tests.
+- [Python Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/reviewer.md): Type hints at boundaries, no bare excepts, lockfile up-to-date. Refuses if Python lands in a production-product hot path — language choice itself is the finding.
+- [Python Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/idioms.md) · [Python Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/python/gotchas.md)
+
+### Zig (v2 — placeholder)
+
+- [Zig at ChainSafe](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/30-languages/zig/README.md): No confirmed production use as of v2. Single page setting a rebuttable presumption against reaching for Zig before talking to the curator. Replace with full role triad when ChainSafe genuinely adopts Zig.
+
 ## Skills
 
 Packaged Anthropic Skills authored via `skill-creator`. Each skill is self-contained and discoverable; load by URL or via the GitHub MCP.
