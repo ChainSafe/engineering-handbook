@@ -1,11 +1,3 @@
----
-title: Collaborator Statement
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # The Operator–Agent Collaborator Contract
 
 This is the contract that governs how a human operator and an AI agent share responsibility for an output at ChainSafe. Every other page in this handbook assumes you have read this one. So does every skill in `skills/`. So does every PR opened by an agent into this organization.

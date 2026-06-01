@@ -144,6 +144,26 @@ Requirements that follow from this:
 
 ---
 
+## 4d. Convention: no YAML frontmatter on content pages
+
+Content pages in the handbook (everything outside `skills/`) do **not** carry YAML frontmatter. No `title:`, `status:`, `authors:`, `language:`, `role:`, `last_updated:`, or `defers_to:` blocks. The reasons:
+
+- `title:` duplicates the H1 directly below it.
+- `authors:` and `last_updated:` rot the moment another contributor touches the file. Git history is true by construction; `git log` and `git blame` are the authoritative record.
+- `language:` / `role:` taxonomy fields are read by *nothing* — the folder path (`languages/go/architect.md`) already encodes them, and `llms.txt` indexes by URL and section.
+- `status:` and `defers_to:` claims are restated more readably in the prose where readers actually see them (the H1 paragraph or a `> **In one line:**` / `> **Status note.**` callout).
+
+What replaces frontmatter:
+
+- **Attribution** — git history (Layer 1), [`references/CONTRIBUTORS.md`](./references/CONTRIBUTORS.md) (Layer 2), [`.github/CODEOWNERS`](./.github/CODEOWNERS) (Layer 3). See [`references/attribution.md`](./references/attribution.md) for the full three-layer policy.
+- **License compliance** for adapted upstream content — prose attribution line in the page itself, plus [`NOTICE`](./NOTICE) at the repo root (the authoritative record for Apache 2.0 §4(d)), plus [`references/sources.md`](./references/sources.md).
+- **Status signals** (draft, pending confirmation, deferred-to-upstream) — a `> **Status note.**` callout near the top of the page.
+- **Severity tier** for reviewer pages — a `## Severity tier` section in the body or an in-line statement (e.g., "Findings emit as **HARD FAIL**").
+
+The single exception is `skills/*/SKILL.md` files. The Anthropic skills spec requires YAML frontmatter (`name:`, `description:`, `metadata:`) and a CI sync-check (`scripts/check-skills-sync.sh`) parses it. SKILL.md files keep their frontmatter; nothing else does.
+
+---
+
 ## 5. Language ecosystems — role × language matrix
 
 Each language gets a directory with three roles plus shared idioms and gotchas:

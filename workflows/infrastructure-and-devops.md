@@ -1,13 +1,3 @@
----
-title: Infrastructure and DevOps (Pointer)
-status: draft (v2) — anchors confirmed at file level; heading anchors within targets pending Josh's confirmation
-authors:
-  - "@kalambet"
-defers_to:
-  upstream: "@joshdougall (Josh Dougall, Head of Infra) — `ChainSafe/infrastructure-general`"
-last_updated: 2026-05-27
----
-
 # Infrastructure and DevOps
 
 For all infrastructure, IaC, deployment topology, observability, on-call, and DevOps practice, the canonical source is **[`ChainSafe/infrastructure-general`](https://github.com/ChainSafe/infrastructure-general)**. This handbook does not duplicate it.
@@ -22,7 +12,7 @@ Maintained by [@joshdougall](https://github.com/joshdougall) (Head of Infra). Co
 
 ## Deep-link map
 
-> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/`. Heading anchors *within* those files are pending Josh's confirmation. Per [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also), where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream, not work around it here.
+> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/`. Heading anchors *within* those files are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. Per [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also), where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream, not work around it here.
 
 ### By intent
 

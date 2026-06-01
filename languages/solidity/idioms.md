@@ -1,12 +1,3 @@
----
-title: Solidity Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: solidity
-last_updated: 2026-05-27
----
-
 # Solidity Idioms
 
 Idiomatic patterns for Solidity at ChainSafe.

@@ -1,11 +1,3 @@
----
-title: Skill Description Tuning (Runbook)
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-06-01
----
-
 # Skill Description Tuning
 
 A runbook for running Anthropic's `skill-creator` description-optimization loop on one of the skills in [`skills/`](../skills/). The loop iteratively sharpens a SKILL.md's `description` field for better triggering accuracy.

@@ -1,14 +1,3 @@
----
-title: Go Reviewer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: go
-role: reviewer
-severity: SOFT WARNING (default tier for non-security-critical languages — see PLAN.md §7.5)
-last_updated: 2026-05-27
----
-
 # Go Reviewer
 
 Language-specific checklist when reviewing a Go PR. Operates under the [universal review principles](../../workflows/code-review.md#universal-principles); this page adds the Go-specific surface.

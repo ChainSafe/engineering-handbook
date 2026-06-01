@@ -1,13 +1,3 @@
----
-title: Solidity Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: solidity
-role: architect
-last_updated: 2026-05-27
----
-
 # Solidity Architect
 
 Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sygma](https://github.com/sygmaprotocol) and the broader crypto/bridging surface. The architectural framework is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Solidity-specific shaping.
@@ -18,10 +8,10 @@ Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sy
 
 | Decision | `.invariance` section |
 |---|---|
-| Cross-contract contracts and invariants | Component contracts *[anchor pending]* |
-| Upgrade lifecycle invariants | Lifecycle / migration invariants *[anchor pending]* |
-| Authorization invariants | Authorization model *[anchor pending]* |
-| Bridge / cross-chain invariants | Cross-chain invariants *[anchor pending]* |
+| Cross-contract contracts and invariants | Component contracts *[anchor pending — @boorich]* |
+| Upgrade lifecycle invariants | Lifecycle / migration invariants *[anchor pending — @boorich]* |
+| Authorization invariants | Authorization model *[anchor pending — @boorich]* |
+| Bridge / cross-chain invariants | Cross-chain invariants *[anchor pending — @boorich]* |
 
 ## Solidity-specific architectural choices
 

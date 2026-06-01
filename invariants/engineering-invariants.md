@@ -1,12 +1,3 @@
----
-title: Engineering Invariants
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 1_principles/index.md (ChainSafe engineering principles)
-last_updated: 2026-05-27
----
-
 # Engineering Invariants
 
 The non-negotiables of how we build software. These are the rules every contributor — human or agent — operates under by default. Overriding any of them requires an explicit, logged, operator decision.

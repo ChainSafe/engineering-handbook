@@ -1,12 +1,3 @@
----
-title: Code Review
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/1_development-flow/3_peer-reviews/2_reviewer-guide.md
-last_updated: 2026-05-27
----
-
 # Code Review
 
 Two modes — review of an agent's output by a human operator, and review of a PR (human-authored or agent-authored) by an agent. The principles overlap; the failure modes do not.

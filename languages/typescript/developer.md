@@ -1,14 +1,3 @@
----
-title: TypeScript Developer
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/2_tech-stack/Typescript/{readme.md,monorepo.md}
-language: typescript
-role: developer
-last_updated: 2026-05-27
----
-
 # TypeScript Developer
 
 Idiomatic TypeScript at ChainSafe. Tooling, lint, testing, monorepo setup, and the patterns that come up in review.

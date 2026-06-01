@@ -1,13 +1,3 @@
----
-title: Incident Response (Pointer + Policy)
-status: draft (v2) — runbook anchors confirmed at file level; heading anchors pending Josh's confirmation
-authors:
-  - "@kalambet"
-defers_to:
-  upstream: "`ChainSafe/infrastructure-general/docs/runbooks/` — owned by @joshdougall and the on-call rotation"
-last_updated: 2026-05-27
----
-
 # Incident Response
 
 This handbook holds only the **operator decision policy** layer for incidents. The *how-to* — the actual runbooks, paging procedures, escalation chains, and recovery steps — lives in [`ChainSafe/infrastructure-general/docs/runbooks/`](https://github.com/ChainSafe/infrastructure-general/tree/main/docs/runbooks).
@@ -60,7 +50,7 @@ Rollback decisions are owned by the on-call operator in consultation with the ch
 
 ## Runbook deep-link map
 
-> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/runbooks/`. Heading anchors within the runbooks are pending Josh's confirmation. See [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also) for the deep-link convention.
+> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/runbooks/`. Heading anchors within the runbooks are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. See [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also) for the deep-link convention.
 
 ### By chain / product
 

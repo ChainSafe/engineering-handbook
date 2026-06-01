@@ -1,11 +1,3 @@
----
-title: Agent-Era Invariants
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Agent-Era Invariants
 
 Additional invariants that apply specifically to agent-assisted work. These are the refusals from [`../operating-model/collaborator-statement.md`](../operating-model/collaborator-statement.md) and a small set of related rules, restated as invariants — universal rules an agent never violates without explicit, logged, operator override (and some that no override permits at all).

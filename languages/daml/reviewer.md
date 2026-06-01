@@ -1,14 +1,3 @@
----
-title: Daml Reviewer (HARD FAIL tier)
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: daml
-role: reviewer
-severity: HARD FAIL (per PLAN.md §7.5 — security-critical language for Canton applications)
-last_updated: 2026-05-27
----
-
 # Daml Reviewer
 
 Language-specific review for Daml PRs. Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Daml is security-critical: this reviewer emits **HARD FAIL** findings for ledger invariants, authorization correctness, upgrade safety, and privacy violations. Override is explicit and logged in the PR with `Override: HARD FAIL <id> for reason <reason>` per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).

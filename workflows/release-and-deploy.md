@@ -1,13 +1,3 @@
----
-title: Release and Deploy (Pointer + Policy)
-status: draft (v2) — deploy procedures live upstream; this page is policy + deep links
-authors:
-  - "@kalambet"
-defers_to:
-  upstream: "`ChainSafe/infrastructure-general` (deploy procedures, environment specs) — owned by @joshdougall"
-last_updated: 2026-05-27
----
-
 # Release and Deploy
 
 This handbook holds the **operator decision policy** for shipping work. The underlying branching and tag-driven flow is [OneFlow](./oneflow.md) — trunk-based, with `v.*.*` tags marking production deployments and `stage-*` tags marking staging. The *how-to* for any specific deploy — commands, environment-specific scripts, rollback mechanics — lives in [`ChainSafe/infrastructure-general`](https://github.com/ChainSafe/infrastructure-general).

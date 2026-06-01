@@ -1,12 +1,3 @@
----
-title: Go Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: go
-last_updated: 2026-05-27
----
-
 # Go Gotchas
 
 Common bug classes and surprising behavior in Go. Reviewer's screening list and author's pre-flight check.

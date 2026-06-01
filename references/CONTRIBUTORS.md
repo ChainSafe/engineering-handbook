@@ -1,11 +1,3 @@
----
-title: Contributors
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Contributors
 
 Authors and curators of the ChainSafe Engineering Handbook. This file is the central index of who contributed what and complements two other attribution layers: inline credits in each content file's header, and `CODEOWNERS` for review routing.

@@ -1,12 +1,3 @@
----
-title: Python Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: python
-last_updated: 2026-05-27
----
-
 # Python Idioms
 
 Idiomatic Python (3.11+) for ChainSafe internal tooling.

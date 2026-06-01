@@ -1,14 +1,3 @@
----
-title: Solidity Reviewer (HARD FAIL tier)
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: solidity
-role: reviewer
-severity: HARD FAIL (per PLAN.md §7.5 — security-critical language)
-last_updated: 2026-05-27
----
-
 # Solidity Reviewer
 
 Language-specific review for Solidity PRs. Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Solidity reviewer findings emit at **HARD FAIL** severity for security-critical checks. The agent reports; the operator decides; bypass is logged in the PR with an explicit `Override: HARD FAIL X for reason Y` per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).

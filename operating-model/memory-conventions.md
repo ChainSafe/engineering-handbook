@@ -1,11 +1,3 @@
----
-title: Memory Conventions
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Memory Conventions
 
 What an agent persists across sessions, what it does not, and how it stays honest about the difference between what was true once and what is true now.

@@ -1,11 +1,3 @@
----
-title: Model and Tool Selection
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Model and Tool Selection
 
 How an agent picks which model to run on, which MCPs and tools to load, and which skills to invoke — without violating the [Collaborator Contract](./collaborator-statement.md).

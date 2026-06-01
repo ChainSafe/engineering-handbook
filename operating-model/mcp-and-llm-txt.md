@@ -1,11 +1,3 @@
----
-title: Discovery — MCP and llms.txt
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Discovery: MCP and `llms.txt`
 
 How an agent discovers and loads this handbook from outside it — what an engineer's Claude Code session, Cursor instance, or other AI runtime should do to pull authoritative ChainSafe engineering context on demand.

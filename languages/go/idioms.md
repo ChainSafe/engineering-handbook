@@ -1,12 +1,3 @@
----
-title: Go Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: go
-last_updated: 2026-05-27
----
-
 # Go Idioms
 
 Idiomatic patterns that come up often. Reference for both authors and reviewers; not exhaustive.

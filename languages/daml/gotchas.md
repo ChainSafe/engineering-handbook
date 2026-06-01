@@ -1,12 +1,3 @@
----
-title: Daml Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: daml
-last_updated: 2026-05-27
----
-
 # Daml Gotchas
 
 Bug classes and surprising behavior in Daml. Many are HARD FAIL findings under the [reviewer](./reviewer.md).

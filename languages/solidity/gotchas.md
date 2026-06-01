@@ -1,12 +1,3 @@
----
-title: Solidity Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: solidity
-last_updated: 2026-05-27
----
-
 # Solidity Gotchas
 
 Bug classes and surprising behavior in Solidity. Most of these are HARD FAIL findings under the [reviewer](./reviewer.md).

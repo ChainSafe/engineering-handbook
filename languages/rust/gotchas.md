@@ -1,12 +1,3 @@
----
-title: Rust Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: rust
-last_updated: 2026-05-27
----
-
 # Rust Gotchas
 
 Common bug classes and surprising behavior in Rust. Reviewer screen and author pre-flight.

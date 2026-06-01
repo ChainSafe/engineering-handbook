@@ -1,12 +1,3 @@
----
-title: OneFlow — Branching and Release Model
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy src/pages/oneflow.md (ChainSafe OneFlow page on main); branch-naming + release-tag conventions from legacy 3_development/1_development-flow/2_development.md
-last_updated: 2026-05-27
----
-
 # OneFlow
 
 ChainSafe's branching and release model. Trunk-based, minimalist, tag-driven. Built around a single long-lived branch (`main`) with tags as the deployment markers — everything else is circumstantial and short-lived.

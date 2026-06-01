@@ -1,11 +1,3 @@
----
-title: Gates and Escalation
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Gates and Escalation
 
 The [Collaborator Contract](./collaborator-statement.md) says agents stop at gates. This page enumerates the gates and the escalation paths an agent takes when stopping is not enough.

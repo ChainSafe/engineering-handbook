@@ -1,12 +1,3 @@
----
-title: TypeScript Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: typescript
-last_updated: 2026-05-27
----
-
 # TypeScript Idioms
 
 Idiomatic patterns in TypeScript at ChainSafe.

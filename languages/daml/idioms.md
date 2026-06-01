@@ -1,12 +1,3 @@
----
-title: Daml Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: daml
-last_updated: 2026-05-27
----
-
 # Daml Idioms
 
 Idiomatic patterns for Daml at ChainSafe — particularly Canton applications.

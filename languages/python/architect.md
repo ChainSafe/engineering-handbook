@@ -1,13 +1,3 @@
----
-title: Python Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: python
-role: architect
-last_updated: 2026-05-27
----
-
 # Python Architect
 
 Architectural guidance for Python work at ChainSafe. Python's scope at ChainSafe is **internal-tooling-grade**: ops scripts, Ansible automation, data analysis, ML/research prototyping, internal CLIs. It is *not* the language of choice for production user-facing services or smart contracts. This shapes the architecture decisions below.

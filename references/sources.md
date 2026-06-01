@@ -1,11 +1,3 @@
----
-title: External Canonical Sources
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # External Canonical Sources
 
 The handbook defers, rather than duplicates, where another artifact is already the canonical source. This page is the catalog: every external source the handbook deep-links into, its maintainer, what it covers, and how it is referenced.

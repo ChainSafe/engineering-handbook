@@ -1,13 +1,3 @@
----
-title: TypeScript Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: typescript
-role: architect
-last_updated: 2026-05-27
----
-
 # TypeScript Architect
 
 Architectural guidance for TypeScript projects at ChainSafe — [Lodestar](https://github.com/ChainSafe/lodestar) (Ethereum consensus client), [web3.js 4.x](https://github.com/ChainSafe/web3.js), [ssz](https://github.com/ChainSafe/ssz), [bls](https://github.com/ChainSafe/bls), [filsnap](https://github.com/ChainSafe/filsnap), and others. The architectural framework is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)).
@@ -18,9 +8,9 @@ Architectural guidance for TypeScript projects at ChainSafe — [Lodestar](https
 
 | Decision | `.invariance` section |
 |---|---|
-| Service boundaries | Component contracts *[anchor pending]* |
-| Invariant naming + testability | Invariant lifecycle *[anchor pending]* |
-| Cross-component contracts | API invariants *[anchor pending]* |
+| Service boundaries | Component contracts *[anchor pending — @boorich]* |
+| Invariant naming + testability | Invariant lifecycle *[anchor pending — @boorich]* |
+| Cross-component contracts | API invariants *[anchor pending — @boorich]* |
 
 ## TypeScript-specific architectural choices
 

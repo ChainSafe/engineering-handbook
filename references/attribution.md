@@ -1,16 +1,8 @@
----
-title: Attribution Policy
-status: draft (v2)
-authors:
-  - "@kalambet"
-last_updated: 2026-05-27
----
-
 # Attribution Policy
 
 How original authors are credited across the ChainSafe Engineering Handbook. The curatorial model is only credible if credit is visible everywhere it matters.
 
-> **In one line:** Three layers, no exceptions. File header, [`CONTRIBUTORS.md`](./CONTRIBUTORS.md), [`CODEOWNERS`](../.github/CODEOWNERS). Plus [`NOTICE`](../NOTICE) for upstream content carrying license obligations.
+> **In one line:** Three layers — git history, [`CONTRIBUTORS.md`](./CONTRIBUTORS.md), [`CODEOWNERS`](../.github/CODEOWNERS). Plus [`NOTICE`](../NOTICE) for upstream content carrying license obligations.
 
 ## The curatorial model
 
@@ -22,29 +14,13 @@ This creates an asymmetry from the usual "author of record" pattern: the person 
 
 Every piece of content carries credit at three layers. None of them can be skipped.
 
-### Layer 1: Inline file-header credit
+### Layer 1: Git history
 
-Every content file in the handbook has YAML frontmatter at the top with at least these fields:
+The authoritative record of *who touched this file and when*. `git log` and `git blame` are true by construction — every commit carries author identity and timestamp, and the history is immutable.
 
-```yaml
----
-title: <human-readable title>
-status: <draft | active | deprecated>
-authors:
-  - "@<github-handle>"
-last_updated: YYYY-MM-DD
----
-```
+This handbook deliberately does **not** maintain `authors:` or `last_updated:` fields in YAML frontmatter on content pages. Hand-maintained authorship and timestamps rot the moment someone else touches the file; git already has the answer, more accurately. For the same reason, the handbook does not maintain a "last reviewed" timestamp — if you want to know how stale a file is, run `git log -1 --format=%cs <file>`.
 
-When content is adapted from an upstream source, a sixth field is added:
-
-```yaml
-adapted_from: <upstream identifier and a brief lineage note>
-```
-
-Example: the [`engineering-invariants.md`](../invariants/engineering-invariants.md) page declares `adapted_from: legacy 1_principles/index.md (ChainSafe engineering principles)` to credit the v1 source. The [`chainsafe-research-plan-implement` skill](../skills/chainsafe-research-plan-implement/SKILL.md) declares its `based-on: Boris Tane — https://boristane.com/blog/how-i-use-claude-code/`.
-
-When multiple authors contributed substantively, list all of them in `authors`. Frontmatter is the single most durable record of authorship — it stays with the file when the file moves, gets renamed, or is reorganized.
+The single exception is `skills/*/SKILL.md` files, where the Anthropic skills spec requires YAML frontmatter (`name:`, `description:`, `metadata:`) and a CI sync-check parses it. Those keep frontmatter; everything else gets attribution from git.
 
 ### Layer 2: `CONTRIBUTORS.md`
 
@@ -68,18 +44,18 @@ CODEOWNERS is not just review routing; it is a public statement of who owns what
 
 Single-layer attribution fails in predictable ways:
 
-- **File headers alone** are easy to skim past. Readers who land on the page from a search may not look at the frontmatter; credit is recorded but not visible.
-- **A central index alone** drifts from the content. The index says X owns section Y, but the file headers say Z wrote it. Readers do not know which to believe.
+- **Git history alone** is not navigable — there is no curator-level view of "who owns the Rust section." `git log` shows commits, not ownership.
+- **A central index alone** drifts from the content. The index says X owns section Y, but the history shows Z wrote it. Readers do not know which to believe.
 - **CODEOWNERS alone** conflates ownership with authorship. The CODEOWNER reviews changes; they did not necessarily write the original content.
 
-All three together provide redundancy and serve different purposes: headers are at the point of use, the index is navigable, and CODEOWNERS enforces routing.
+All three together provide redundancy and serve different purposes: git is true by construction at the line level, the index is navigable at the page level, and CODEOWNERS enforces routing at the directory level.
 
 ## Adapted vs. originated
 
 A distinction worth being deliberate about:
 
-- **Originator** — the person who wrote the substantive content or who developed the practice the content is documenting. Credited in `authors` (when they wrote the page) and in `adapted_from` (when their work was adapted).
-- **Adapter** — the person who pulled the originator's work into the handbook, restructured it, kept it consistent with handbook conventions. Credited in `authors`.
+- **Originator** — the person who wrote the substantive content or who developed the practice the content is documenting. Credited in [`CONTRIBUTORS.md`](./CONTRIBUTORS.md) and, when license obligations apply, in [`NOTICE`](../NOTICE) and [`sources.md`](./sources.md).
+- **Adapter** — the person who pulled the originator's work into the handbook, restructured it, kept it consistent with handbook conventions. Credited in [`CONTRIBUTORS.md`](./CONTRIBUTORS.md) and visible in git history.
 - **Curator** — the person responsible for the handbook as a whole. Credited in CODEOWNERS as the default owner and named explicitly in [`CONTRIBUTORS.md`](./CONTRIBUTORS.md).
 
 The same person can occupy multiple roles for different content. Peter is the curator and the adapter of the `research-plan-implement` skill; Boris Tane is the originator. Both appear in different layers.
@@ -90,17 +66,18 @@ When content carries license obligations from upstream — Ghostty's AI policy v
 
 The handbook satisfies this via:
 
-- Inline credits in the relevant file's header (`adapted_from` or `based-on` frontmatter field).
-- The [`NOTICE`](../NOTICE) file at the repo root, which lists every third-party source the handbook carries and the relevant attribution.
+- A prose attribution line in the page itself (typically in the opening paragraph or a "Related" section), naming the upstream source with a link.
+- For SKILL.md files, the `metadata.based-on` or equivalent field in the YAML frontmatter.
+- The [`NOTICE`](../NOTICE) file at the repo root, which lists every third-party source the handbook carries and the relevant attribution. **This is the authoritative record for license-compliance purposes.**
 - The corresponding entry in [`./sources.md`](./sources.md) (External Canonical Sources catalog).
 
-When new third-party material is incorporated, the NOTICE file is updated in the same PR that adds the material. Drift between NOTICE and the actual file headers is a license-compliance bug; CI checks for this once Phase 6 ships.
+When new third-party material is incorporated, the NOTICE file is updated in the same PR that adds the material. Drift between NOTICE and what the content actually carries is a license-compliance bug.
 
 ## Adding a contributor
 
 When a new person contributes substantive content:
 
-1. Add YAML `authors` entry in the file they wrote or co-wrote.
+1. Commit the change under their GitHub identity (git history captures Layer 1 automatically).
 2. Add an entry in [`./CONTRIBUTORS.md`](./CONTRIBUTORS.md) under the appropriate role section.
 3. If they will review future changes to that section, add them in [`../.github/CODEOWNERS`](../.github/CODEOWNERS).
 4. If the content is adapted from a source with license obligations, update [`../NOTICE`](../NOTICE).

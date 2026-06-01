@@ -12,7 +12,7 @@ This content is **public-safe** — no secrets, no confidential org material. Th
 
 The legacy files arrived with Docusaurus-specific markup. The following was stripped:
 
-- Docusaurus YAML frontmatter (`sidebar_position`, `sidebar_label`, `title:` Docusaurus form) — replaced with the v2 frontmatter convention.
+- Docusaurus YAML frontmatter (`sidebar_position`, `sidebar_label`, `title:` Docusaurus form) — removed entirely; per [PLAN.md §4d](../PLAN.md#4d-convention-no-yaml-frontmatter-on-content-pages), v2 content pages do not carry frontmatter.
 - Numbered filename prefixes (`1_`, `2_`, etc.) — Docusaurus ordering hints; the v2 convention doesn't use them.
 - `.mdx` extensions — renamed to `.md`; without Docusaurus, MDX rendering is moot.
 - `_category_.yml` files — Docusaurus directory config; not applicable.

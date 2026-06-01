@@ -1,12 +1,3 @@
----
-title: Zig at ChainSafe
-status: draft (v2) — placeholder; no active production use confirmed
-authors:
-  - "@kalambet"
-language: zig
-last_updated: 2026-05-27
----
-
 # Zig at ChainSafe
 
 > **In one line:** Zig has no confirmed production use at ChainSafe as of v2. This page exists to be honest about that and to set a rebuttable presumption against reaching for Zig before talking to the curator.

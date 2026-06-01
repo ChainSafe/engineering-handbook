@@ -1,13 +1,3 @@
----
-title: Rust Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: rust
-role: architect
-last_updated: 2026-05-27
----
-
 # Rust Architect
 
 Architectural guidance for Rust projects at ChainSafe — notably [Forest](https://github.com/ChainSafe/forest) (Filecoin), [Mina-rs](https://github.com/ChainSafe/mina-rs), [ChainBridge Substrate](https://github.com/ChainSafe/chainbridge-substrate), and others. The architectural framework lives in `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Rust-specific shaping.
@@ -18,10 +8,10 @@ Architectural guidance for Rust projects at ChainSafe — notably [Forest](https
 
 | Decision | `.invariance` section |
 |---|---|
-| Service boundaries and contracts | Component contracts *[anchor pending]* |
-| Invariant naming and testability | Invariant lifecycle *[anchor pending]* |
-| Cross-component failure modes | Failure-mode invariants *[anchor pending]* |
-| Memory and ownership invariants | Ownership/lifetime invariants *[anchor pending]* |
+| Service boundaries and contracts | Component contracts *[anchor pending — @boorich]* |
+| Invariant naming and testability | Invariant lifecycle *[anchor pending — @boorich]* |
+| Cross-component failure modes | Failure-mode invariants *[anchor pending — @boorich]* |
+| Memory and ownership invariants | Ownership/lifetime invariants *[anchor pending — @boorich]* |
 
 ## Rust-specific architectural choices
 

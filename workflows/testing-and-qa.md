@@ -1,12 +1,3 @@
----
-title: Testing and QA
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/3_quality_assurance/qa-principles.md; Forest AI_POLICY.md (lineage from Ghostty)
-last_updated: 2026-05-27
----
-
 # Testing and QA
 
 How quality is built into the work — what agents generate, what operators own, where the boundary is, and how Forest's AI policy (carried from Ghostty) shapes the agent-era posture.

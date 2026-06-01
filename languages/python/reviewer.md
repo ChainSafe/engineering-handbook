@@ -1,14 +1,3 @@
----
-title: Python Reviewer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: python
-role: reviewer
-severity: SOFT WARNING (Python is internal-tooling-grade at ChainSafe — not in the security-critical-language list per PLAN.md §7.5)
-last_updated: 2026-05-27
----
-
 # Python Reviewer
 
 Language-specific review for Python PRs at ChainSafe. Python's scope is internal-tooling-grade; review is **SOFT WARNING** tier (agent flags, operator decides).

@@ -1,14 +1,3 @@
----
-title: Rust Reviewer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: rust
-role: reviewer
-severity: SOFT WARNING (default tier; `unsafe` blocks promote to HARD-FAIL-equivalent scrutiny per Forest AI_POLICY)
-last_updated: 2026-05-27
----
-
 # Rust Reviewer
 
 Language-specific checklist when reviewing a Rust PR. Operates under the [universal review principles](../../workflows/code-review.md#universal-principles).

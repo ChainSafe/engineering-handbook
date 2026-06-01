@@ -1,13 +1,3 @@
----
-title: The .invariance Framework (Pointer)
-status: draft (v2) — pointer URLs pending Martin's confirmation of upstream anchors
-authors:
-  - "@kalambet"
-defers_to:
-  upstream: "@boorich (Martin Maurer) — `.invariance` repo"
-last_updated: 2026-05-27
----
-
 # The `.invariance` Framework
 
 For architecture and system-design invariants, this handbook does not re-derive a methodology. The canonical source is Martin Maurer's **`.invariance`** project. This page's job is to deep-link into it by intent, not to gesture at it as a separate resource to "go read."
@@ -28,13 +18,13 @@ The deep-link map below is keyed by the question an agent or operator is trying 
 
 | If you are asking… | Go to (upstream `.invariance`) |
 |---|---|
-| What is an invariant in this framework? | `README.md` overview *[TODO: confirm anchor]* |
-| How do I name an invariant? | Naming convention section *[TODO: confirm anchor]* |
-| How do I make an invariant testable? | Testability section *[TODO: confirm anchor]* |
-| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | Lifecycle section *[TODO: confirm anchor]* |
-| How is an invariant violation reported and triaged? | Violation reporting *[TODO: confirm anchor]* |
-| How are invariants versioned and migrated? | Versioning section *[TODO: confirm anchor]* |
-| How does `.invariance` interact with ADRs in product repos? | Cross-repo interaction *[TODO: confirm anchor]* |
+| What is an invariant in this framework? | `README.md` overview *[TODO: confirm anchor — @boorich]* |
+| How do I name an invariant? | Naming convention section *[TODO: confirm anchor — @boorich]* |
+| How do I make an invariant testable? | Testability section *[TODO: confirm anchor — @boorich]* |
+| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | Lifecycle section *[TODO: confirm anchor — @boorich]* |
+| How is an invariant violation reported and triaged? | Violation reporting *[TODO: confirm anchor — @boorich]* |
+| How are invariants versioned and migrated? | Versioning section *[TODO: confirm anchor — @boorich]* |
+| How does `.invariance` interact with ADRs in product repos? | Cross-repo interaction *[TODO: confirm anchor — @boorich]* |
 
 ### By context
 
@@ -43,8 +33,8 @@ Where the handbook deep-links into `.invariance` from elsewhere:
 | Handbook section | Upstream target |
 |---|---|
 | `languages/<lang>/architect.md` (every architect role) | Per-language invariant section, e.g. concurrency invariants for the Rust architect, data-integrity invariants for the Daml architect *[TODO: confirm structure with @boorich]* |
-| `workflows/pr-authoring.md` (ADR templates) | "Invariants impacted" template guidance *[TODO: confirm anchor]* |
-| Reviewer skills — when a language reviewer needs to check whether an architectural invariant is violated | Reviewer-facing rules *[TODO: confirm anchor]* |
+| `workflows/pr-authoring.md` (ADR templates) | "Invariants impacted" template guidance *[TODO: confirm anchor — @boorich]* |
+| Reviewer skills — when a language reviewer needs to check whether an architectural invariant is violated | Reviewer-facing rules *[TODO: confirm anchor — @boorich]* |
 
 ## How to use this page
 

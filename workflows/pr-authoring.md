@@ -1,12 +1,3 @@
----
-title: PR Authoring
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/1_development-flow/3_peer-reviews/3_author-guide.md
-last_updated: 2026-05-27
----
-
 # PR Authoring
 
 How to open and shepherd a pull request — written for the agent era, where many PRs are drafted by an agent under operator supervision and reviewed by humans, agents, or both.

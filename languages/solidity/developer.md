@@ -1,13 +1,3 @@
----
-title: Solidity Developer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: solidity
-role: developer
-last_updated: 2026-05-27
----
-
 # Solidity Developer
 
 Idiomatic Solidity development at ChainSafe. Tooling, testing, common patterns, and the discipline that keeps PRs out of HARD-FAIL territory at review.

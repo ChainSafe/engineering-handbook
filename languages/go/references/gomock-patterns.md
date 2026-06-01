@@ -1,13 +1,3 @@
----
-title: Go — GoMock patterns at ChainSafe
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/2_tech-stack/go.md (Mocking section, worked examples)
-language: go
-last_updated: 2026-05-27
----
-
 # GoMock patterns
 
 Detailed worked examples for [`golang/mock`](https://github.com/golang/mock) at ChainSafe. Lifted from the legacy handbook. The high-level conventions live in [`../developer.md`](../developer.md); this page is the deeper reference.

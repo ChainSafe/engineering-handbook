@@ -1,13 +1,3 @@
----
-title: Go — golangci-lint configuration reference
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/2_tech-stack/go.md (Linting section)
-language: go
-last_updated: 2026-05-27
----
-
 # golangci-lint configuration
 
 A baseline `.golangci.yml` for ChainSafe Go projects. Lifted from the legacy handbook (golangci-lint v1.46 era) with notes on what has changed in current versions.

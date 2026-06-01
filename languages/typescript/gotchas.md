@@ -1,12 +1,3 @@
----
-title: TypeScript Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: typescript
-last_updated: 2026-05-27
----
-
 # TypeScript Gotchas
 
 Common bug classes and surprising behavior in TypeScript.

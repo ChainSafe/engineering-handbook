@@ -1,12 +1,3 @@
----
-title: Repo and CI Setup
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/1_development-flow/1_setup_repository.md
-last_updated: 2026-05-27
----
-
 # Repo and CI Setup
 
 The per-repo hygiene checklist for a new (or newly-audited) repository at ChainSafe, structured as an agent-runnable runbook. The operator approves the plan; the agent executes; each step has a rollback path.

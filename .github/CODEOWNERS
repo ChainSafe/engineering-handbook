@@ -30,9 +30,11 @@
 /workflows/incident-response.md                 @joshdougall @kalambet
 /workflows/release-and-deploy.md                @joshdougall @kalambet
 
-# languages — section overrides added as language pages land (Phase 4 / 7).
-# Inherited from legacy CODEOWNERS pending v2 review:
+# languages — section reviewers per language.
 /languages/typescript/                          @wemeetagain @matthewkeil
 /languages/zig/                                 @wemeetagain @matthewkeil @kalambet
-/languages/go/                                  @timwu20 @kalambet
+/languages/solidity/                            @wemeetagain @matthewkeil @kalambet
+/languages/go/                                  @timwu20 @dhyaniarun1993 @kalambet
 /languages/rust/                                @LesnyRumcajs @hanabi1224
+/languages/daml/                                @boorich @salindne @sqhell
+/languages/python/                              @kalambet

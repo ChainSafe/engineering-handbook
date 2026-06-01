@@ -1,13 +1,3 @@
----
-title: Python Developer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: python
-role: developer
-last_updated: 2026-05-27
----
-
 # Python Developer
 
 Idiomatic Python at ChainSafe — for ops, scripting, internal tooling, and Ansible work.

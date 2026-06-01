@@ -1,14 +1,3 @@
----
-title: Go Developer
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/2_tech-stack/go.md
-language: go
-role: developer
-last_updated: 2026-05-27
----
-
 # Go Developer
 
 Idiomatic Go development at ChainSafe. Tooling, dependency management, testing, CI, panic discipline, and the patterns that come up in code review week after week.

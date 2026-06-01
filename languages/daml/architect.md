@@ -1,13 +1,3 @@
----
-title: Daml Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: daml
-role: architect
-last_updated: 2026-05-27
----
-
 # Daml Architect
 
 Architectural guidance for Daml work at ChainSafe — primarily Canton applications including Super Validator and Featured App work. The architectural framework is `.invariance` ([pointer page](../../invariants/invariance-framework.md)); this page covers Daml-specific shaping.
@@ -18,10 +8,10 @@ Architectural guidance for Daml work at ChainSafe — primarily Canton applicati
 
 | Decision | `.invariance` section |
 |---|---|
-| Ledger-state invariants | Ledger invariants *[anchor pending]* |
-| Authorization invariants | Authorization model *[anchor pending]* |
-| Upgrade lifecycle | Package upgrade invariants *[anchor pending]* |
-| Cross-application invariants (Canton multi-app) | Inter-app contracts *[anchor pending]* |
+| Ledger-state invariants | Ledger invariants *[anchor pending — @boorich]* |
+| Authorization invariants | Authorization model *[anchor pending — @boorich]* |
+| Upgrade lifecycle | Package upgrade invariants *[anchor pending — @boorich]* |
+| Cross-application invariants (Canton multi-app) | Inter-app contracts *[anchor pending — @boorich]* |
 
 ## Daml-specific architectural choices
 

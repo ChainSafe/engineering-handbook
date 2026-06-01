@@ -1,13 +1,3 @@
----
-title: Go Architect
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: go
-role: architect
-last_updated: 2026-05-27
----
-
 # Go Architect
 
 Architectural guidance for Go projects at ChainSafe. The framework for architectural invariants is `.invariance` (see [§4a of PLAN.md](../../PLAN.md#4a-architecture--system-design--canonical-source-invariance) and the [pointer page](../../invariants/invariance-framework.md)). This page covers the Go-specific shape of decisions that sit under that framework.
@@ -20,10 +10,10 @@ Architectural decisions in this language should be expressed in `.invariance` te
 
 | If you are deciding… | Go to (`.invariance`) |
 |---|---|
-| What is the system boundary? | The framework's boundary-definition section *[anchor pending]* |
-| What invariants does this service hold? | Invariant naming + testability *[anchor pending]* |
-| How does this service interact with others? | Cross-component contracts *[anchor pending]* |
-| What's the failure model? | Failure-mode invariants *[anchor pending]* |
+| What is the system boundary? | The framework's boundary-definition section *[anchor pending — @boorich]* |
+| What invariants does this service hold? | Invariant naming + testability *[anchor pending — @boorich]* |
+| How does this service interact with others? | Cross-component contracts *[anchor pending — @boorich]* |
+| What's the failure model? | Failure-mode invariants *[anchor pending — @boorich]* |
 
 Anchors confirmed when the pointer page in `invariants/invariance-framework.md` is finalized with [@boorich](https://github.com/boorich).
 

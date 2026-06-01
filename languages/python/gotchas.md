@@ -1,12 +1,3 @@
----
-title: Python Gotchas
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: python
-last_updated: 2026-05-27
----
-
 # Python Gotchas
 
 Common bug classes and surprising behavior in Python.

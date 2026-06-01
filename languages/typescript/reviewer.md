@@ -1,14 +1,3 @@
----
-title: TypeScript Reviewer
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: typescript
-role: reviewer
-severity: SOFT WARNING (default tier)
-last_updated: 2026-05-27
----
-
 # TypeScript Reviewer
 
 Language-specific checklist for TypeScript PRs. Operates under the [universal review principles](../../workflows/code-review.md#universal-principles).

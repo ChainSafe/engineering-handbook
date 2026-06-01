@@ -1,14 +1,3 @@
----
-title: Rust Developer
-status: draft (v2)
-authors:
-  - "@kalambet"
-adapted_from: legacy 3_development/2_tech-stack/rust.md
-language: rust
-role: developer
-last_updated: 2026-05-27
----
-
 # Rust Developer
 
 Idiomatic Rust development at ChainSafe. Tooling, formatting, lint, testing, dependency hygiene, the patterns that show up in review.

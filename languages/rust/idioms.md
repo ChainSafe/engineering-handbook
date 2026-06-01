@@ -1,12 +1,3 @@
----
-title: Rust Idioms
-status: draft (v2)
-authors:
-  - "@kalambet"
-language: rust
-last_updated: 2026-05-27
----
-
 # Rust Idioms
 
 Idiomatic patterns in Rust at ChainSafe. Reference for authors and reviewers.
