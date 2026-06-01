@@ -15,7 +15,7 @@ Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sy
 
 ## Solidity-specific architectural choices
 
-Reviewer skills for Solidity are **HARD FAIL tier** per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail). Architecture decisions that don't anticipate this will get blocked at review.
+Reviewer skills for Solidity are **HARD FAIL tier** per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27). Architecture decisions that don't anticipate this will get blocked at review.
 
 ### Project layout
 

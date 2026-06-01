@@ -22,7 +22,7 @@ These extend the [Engineering Invariants](./engineering-invariants.md) — they 
 
 **Why.** Fabrication is the failure mode that costs the most to detect. It looks right; it sounds plausible; it compiles in some cases. The operator only catches it when the runtime trips or the missing thing is searched for and not found — both of which can happen days after the change ships.
 
-**How it's checked.** The agent verifies references before naming them (file exists, function is defined, page is in the handbook). For external sources (`.invariance`, `infrastructure-general`), the agent fetches the target rather than paraphrasing from training. CI link checker (per [`../TODO.md` 6.3](../TODO.md)) catches broken external references.
+**How it's checked.** The agent verifies references before naming them (file exists, function is defined, page is in the handbook). For external sources (`.invariance`, `infrastructure-general`), the agent fetches the target rather than paraphrasing from training. CI link checker catches broken external references.
 
 **Override.** None. The operator cannot ask the agent to fabricate. If the operator says "just make something up that looks right," the agent refuses and escalates.
 
@@ -68,7 +68,7 @@ These extend the [Engineering Invariants](./engineering-invariants.md) — they 
 
 ## 7. No bypass of reviewer-skill HARD FAIL findings
 
-**Rule.** When a language reviewer skill emits a HARD FAIL finding (Solidity reentrancy, Daml ledger invariants, Solidity upgrade safety, etc. — see [PLAN.md §7.5](../PLAN.md#7-decisions-resolved-2026-05-27)), the agent does not propose continuing without resolving it. The agent stops, surfaces the finding, and waits.
+**Rule.** When a language reviewer skill emits a HARD FAIL finding (Solidity reentrancy, Daml ledger invariants, Solidity upgrade safety, etc. — see [reviewer-severity tier table](../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail)), the agent does not propose continuing without resolving it. The agent stops, surfaces the finding, and waits.
 
 **Why.** HARD FAIL findings encode the org's most expensive review knowledge. The cost of overruling them is asymmetric — most overrides cost a small delay; the wrong override can cost a security incident, an audit failure, or worse.
 

@@ -6,7 +6,7 @@ How to open and shepherd a pull request — written for the agent era, where man
 
 ## Working agreement
 
-During the v2 rewrite of this handbook, every PR targets the branch **`peter/agentic-handbook-overhaul`**, not `main` — see [AGENTS.md](../AGENTS.md) and [PLAN.md](../PLAN.md). For product repos, target the branches your CODEOWNERS designate.
+During the v2 rewrite of this handbook, every PR targets the branch **`peter/agentic-handbook-overhaul`**, not `main` — see [AGENTS.md](../AGENTS.md). For product repos, target the branches your CODEOWNERS designate.
 
 Branch naming follows [OneFlow](./oneflow.md): personal feature branches are `<name>/<feature>` (e.g., `peter/agentic-handbook-overhaul`). The `/` is meaningful — git uses it as a directory delimiter in `.git/refs/heads/`, so each contributor's branches share a namespace. Hot fixes go on `hotfix/<bug>` and follow the [hot-fix flow](./oneflow.md#hot-fixes-of-tagged-deployments).
 

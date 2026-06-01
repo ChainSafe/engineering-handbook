@@ -1,6 +1,6 @@
 # Go Architect
 
-Architectural guidance for Go projects at ChainSafe. The framework for architectural invariants is `.invariance` (see [§4a of PLAN.md](../../PLAN.md#4a-architecture--system-design--canonical-source-invariance) and the [pointer page](../../invariants/invariance-framework.md)). This page covers the Go-specific shape of decisions that sit under that framework.
+Architectural guidance for Go projects at ChainSafe. The framework for architectural invariants is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)). This page covers the Go-specific shape of decisions that sit under that framework.
 
 > **In one line:** Small public surfaces. Concrete types behind interfaces only where they earn it. Errors are values; panics are programming bugs.
 

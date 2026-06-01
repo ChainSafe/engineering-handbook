@@ -20,7 +20,7 @@ This is the richer channel: agents can navigate the handbook's link graph rather
 
 ### Future: in-house ChainSafe MCP server
 
-Per [PLAN.md §7.3](../PLAN.md#7-decisions-resolved-2026-05-27), a dedicated ChainSafe MCP server is a Phase 8+ enhancement. It would add custom indexing, skill search, and ChainSafe-specific tooling beyond what the generic GitHub MCP provides. It is not part of v0 and is justified only if observed agent-usage patterns show GitHub MCP discovery is the bottleneck.
+A dedicated ChainSafe MCP server is a future enhancement, not part of v0. It would add custom indexing, skill search, and ChainSafe-specific tooling beyond what the generic GitHub MCP provides. It is not part of v0 and is justified only if observed agent-usage patterns show GitHub MCP discovery is the bottleneck.
 
 ## `llms.txt` structure
 
@@ -94,7 +94,7 @@ Do not bulk-load the handbook. The whole tree is larger than any single task nee
 
 ### When the handbook references a page that does not exist yet
 
-The v2 rewrite is in flight. Many pages this handbook cross-references are still forthcoming (see [`TODO.md`](../TODO.md) for progress). When a referenced page is missing:
+The v2 rewrite is in flight. Many pages this handbook cross-references are still forthcoming. When a referenced page is missing:
 
 - Do not fabricate substitute content.
 - Surface the gap to the operator. If the operator wants to proceed without the missing page, the agent flags this explicitly in any artifact it produces ("This plan was drafted without `<page>` because it does not yet exist; verify against `<page>` once available").
@@ -110,11 +110,11 @@ If you (an agent or developer) need to test against in-progress v2 material befo
 
 ## Maintenance
 
-Per [TODO 6.4](../TODO.md), CI guarantees `llms.txt` does not drift from the handbook content:
+CI guarantees `llms.txt` does not drift from the handbook content:
 
 - Every skill in [`skills/`](../skills/) must appear in `llms.txt`.
 - Every `llms.txt` skill entry must resolve to an existing `SKILL.md`.
-- Per [TODO 6.3](../TODO.md), all external deep links (into `.invariance`, `infrastructure-general`, Forest, etc.) are link-checked in CI and the build fails on any broken target.
+- All external deep links (into `.invariance`, `infrastructure-general`, Forest, etc.) are link-checked in CI and the build fails on any broken target.
 
 When you add a new skill, section, or pointer page: update `llms.txt` in the same PR. The handbook treats the index and the content as a single commit, not two.
 

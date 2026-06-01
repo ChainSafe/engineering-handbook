@@ -6,7 +6,7 @@ Language-specific checklist when reviewing a Rust PR. Operates under the [univer
 
 ## Severity tier
 
-Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), Rust reviewer findings emit as **SOFT WARNING** by default. **`unsafe` blocks promote to near-HARD-FAIL scrutiny** per Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — security-critical, requires explicit operator review beyond the agent reviewer.
+Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Rust reviewer findings emit as **SOFT WARNING** by default. **`unsafe` blocks promote to near-HARD-FAIL scrutiny** per Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — security-critical, requires explicit operator review beyond the agent reviewer.
 
 ## What to look for
 

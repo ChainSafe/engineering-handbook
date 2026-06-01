@@ -6,7 +6,7 @@ Language-specific checklist when reviewing a Go PR. Operates under the [universa
 
 ## Severity tier
 
-Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Go reviewer findings emit as **SOFT WARNING**. The agent flags, the operator decides. HARD FAIL is reserved for security-critical languages (Solidity, Daml).
+Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), Go reviewer findings emit as **SOFT WARNING**. The agent flags, the operator decides. HARD FAIL is reserved for security-critical languages (Solidity, Daml).
 
 ## What to look for
 

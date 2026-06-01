@@ -6,7 +6,7 @@ Language-specific checklist for TypeScript PRs. Operates under the [universal re
 
 ## Severity tier
 
-Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), TypeScript reviewer findings emit as **SOFT WARNING**. Agent flags, operator decides.
+Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), TypeScript reviewer findings emit as **SOFT WARNING**. Agent flags, operator decides.
 
 ## What to look for
 

@@ -6,14 +6,12 @@
 # original authors are credited.
 #
 # Working agreement: PRs target `peter/agentic-handbook-overhaul`, not `main`.
-# See AGENTS.md and PLAN.md.
+# See AGENTS.md.
 
 # Default: curator
 *                                               @kalambet
 
 # Project artifacts (curator-level)
-/PLAN.md                                        @kalambet
-/TODO.md                                        @kalambet
 /VISION.md                                      @kalambet
 /PRINCIPLES.md                                  @kalambet
 /AGENTS.md                                      @kalambet

@@ -4,6 +4,8 @@ For all infrastructure, IaC, deployment topology, observability, on-call, and De
 
 > **In one line:** This page is a navigation surface, not a tutorial. Deep links by intent into the canonical repo; no "see also" gestures.
 
+> **Status note.** File-level deep-link targets on this page are confirmed against the current state of `infrastructure-general/docs/`. Heading anchors *within* those files are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. Where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream rather than work around it here.
+
 ## Why we defer here
 
 `infrastructure-general` is the authoritative artifact for ChainSafe infrastructure. It already ships its own [`AGENTS.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md) and [`CLAUDE.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/CLAUDE.md), confirming the agent-native posture. The handbook treats it as canonical for any question whose answer involves how production systems are built, run, observed, or recovered.
@@ -11,8 +13,6 @@ For all infrastructure, IaC, deployment topology, observability, on-call, and De
 Maintained by [@joshdougall](https://github.com/joshdougall) (Head of Infra). Coordination point for anything below.
 
 ## Deep-link map
-
-> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/`. Heading anchors *within* those files are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. Per [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also), where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream, not work around it here.
 
 ### By intent
 
@@ -77,4 +77,4 @@ When the upstream repo restructures, this page updates. The agreement is: the po
 - [`release-and-deploy.md`](./release-and-deploy.md) — release/deploy workflow; deep-links into the same.
 - [`repo-and-ci-setup.md`](./repo-and-ci-setup.md) — per-repo hygiene that sits *under* the infra layer.
 - [`../references/sources.md`](../references/sources.md) — full catalog of external canonical sources.
-- [`../PLAN.md` §4b](../PLAN.md) — the deferral decision that grounded this page.
+

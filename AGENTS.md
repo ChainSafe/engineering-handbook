@@ -10,7 +10,7 @@ You are an AI agent (Claude Code, Cursor, Continue, or other) operating against 
 
 ## Status
 
-This repo is mid-rewrite (v2). Many pages referenced below do not yet exist. The legacy v1 content (`1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md`) still sits at the root alongside the new structure — it will be removed during the Phase 8 launch sweep. For execution progress see **[TODO.md](./TODO.md)**; for structural plan see **[PLAN.md](./PLAN.md)**.
+This repo is mid-rewrite (v2). Many pages referenced below do not yet exist. The legacy v1 content (`1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md`) still sits at the root alongside the new structure — it will be removed during the Phase 8 launch sweep.
 
 When a page this file references doesn't exist yet, treat it as a known gap — do not fabricate substitute content. Escalate to the operator.
 

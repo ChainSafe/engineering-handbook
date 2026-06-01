@@ -10,7 +10,7 @@ This page is the testable subset of the [General Engineering Principles](../PRIN
 
 **Rule.** All work — code, infrastructure config, documentation, handbooks — is public unless there is a specific, documented reason it must be private. Exceptions are written down (in the repo's README or in an internal log) and revisited.
 
-**Why.** Public work is reviewable by more eyes, attracts external contributors, and serves recruiting and DD. Private work is invisible by default; the cost of that invisibility compounds.
+**Why.** Public work is reviewable by more eyes, attracts external contributors, and serves recruiting. Private work is invisible by default; the cost of that invisibility compounds.
 
 **How it's checked.** Repository creation defaults to public; private repos require a written exception in the repo description or `README.md`. Quarterly review of private-repo list.
 

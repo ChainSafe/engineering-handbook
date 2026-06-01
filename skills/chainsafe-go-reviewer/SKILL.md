@@ -16,7 +16,7 @@ Reviewer skill for Go PRs. Operates under [`workflows/code-review.md`](../../wor
 
 ## Severity tier
 
-**SOFT WARNING.** Per [PLAN.md §7.5](../../PLAN.md), Go is not in the security-critical-language list. HARD FAIL is reserved for Solidity and Daml.
+**SOFT WARNING.** Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), Go is not in the security-critical-language list. HARD FAIL is reserved for Solidity and Daml.
 
 ## Checklist
 

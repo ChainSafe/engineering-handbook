@@ -12,7 +12,7 @@ The deep-link map below is keyed by the question an agent or operator is trying 
 
 ## Deep-link map
 
-> **Status note.** The deep-link targets below are placeholders pending coordination with [@boorich](https://github.com/boorich) to confirm that the upstream `.invariance` repo has the required headings and anchors. Where the upstream lacks an anchor needed for clean linking, the convention (per [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also)) is to request the anchor upstream rather than work around it with a deeper inline copy. Each row marked `[TODO: confirm anchor]` is tracked and will be resolved before v0 ships.
+> **Status note.** The deep-link targets below are placeholders pending coordination with [@boorich](https://github.com/boorich) to confirm that the upstream `.invariance` repo has the required headings and anchors. Where the upstream lacks an anchor needed for clean linking, the convention is to request the anchor upstream rather than work around it with a deeper inline copy. Each row marked `[TODO: confirm anchor]` is tracked and will be resolved before v0 ships.
 
 ### By question
 

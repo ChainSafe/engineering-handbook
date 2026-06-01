@@ -68,9 +68,9 @@ These do not get saved without explicit, per-item operator consent. Even when re
 - **Financial account details:** credit card numbers, bank account numbers.
 - **Health information:** medical conditions, diagnoses, lab results, mental-health or therapy details.
 - **Home or personal mailing addresses.** Work addresses are fine.
-- **Active M&A or deal-stage information.** ChainSafe has live M&A processes; details discussed in agent sessions are confidential and do not get persisted to memory. Operator may explicitly authorize specific exceptions.
+- **Confidential commercial information.** Internal financial figures, customer commercial terms, partner contract details, and similar non-public business information are not persisted without explicit per-item consent.
 
-If sensitive material appears in a conversation, complete the task but do not persist it. If the operator says "remember my address is X" or "remember the indicative offer is Y," that explicit instruction is consent — saving is acceptable.
+If sensitive material appears in a conversation, complete the task but do not persist it. If the operator says "remember my address is X" or "remember to flag this in the next review," that explicit instruction is consent — saving is acceptable.
 
 ## Organization
 
@@ -106,7 +106,6 @@ A few things to be deliberate about given how ChainSafe operates:
 - **Multi-product context.** Engineers move between Lodestar, Forest, Gossamer, Sygma, Canton, and gaming. Project memories should name the product explicitly so future sessions know whether the fact is in scope.
 - **Public handbook vs. internal context.** This repository is public. Memory may hold internal information; the agent must never let internal-only context leak into a PR description, an issue comment, or any other output destined for the public handbook.
 - **Security-critical sessions.** When the operator names a session as touching cryptographic code, ledger logic, or production blockchain assets, raise the bar on what gets persisted — both because the work itself is sensitive and because mistakes propagate.
-- **M&A confidentiality.** Per the sensitive-data rules above. Operator may discuss deal context within a session; that context does not survive the session unless explicitly authorized.
 
 ## Related
 

@@ -4,7 +4,7 @@
 
 ## Status
 
-Zig appears in the language coverage list in [PLAN.md §5](../../PLAN.md) as a v2/aspirational language. As of the v2 launch, **there is no confirmed production Zig codebase at ChainSafe** that requires architect / developer / reviewer role pages. Rather than fabricate a full role triad for a language that doesn't have an established practice at the org, this single page records what we know and what to do if Zig comes up.
+Zig appears in the handbook's language coverage list as a v2/aspirational language. As of the v2 launch, **there is no confirmed production Zig codebase at ChainSafe** that requires architect / developer / reviewer role pages. Rather than fabricate a full role triad for a language that doesn't have an established practice at the org, this single page records what we know and what to do if Zig comes up.
 
 ## When not to reach for Zig
 
@@ -43,14 +43,14 @@ If you encounter Zig code in a ChainSafe repository:
 
 When ChainSafe genuinely adopts Zig in production:
 
-- Replace this `README.md` with the full role triad (`architect.md`, `developer.md`, `reviewer.md`) plus `idioms.md` and `gotchas.md` following the [Phase 4 v0 language pattern](../../PLAN.md#5-language-ecosystems--role--language-matrix).
+- Replace this `README.md` with the full role triad (`architect.md`, `developer.md`, `reviewer.md`) plus `idioms.md` and `gotchas.md` following the v0 language pattern used by Go/Rust/TypeScript/Solidity/Daml.
 - Add the corresponding `chainsafe-zig-*` skills in `skills/` via `skill-creator`.
 - Update [`llms.txt`](../../llms.txt) to index the new pages.
-- Add a reviewer-severity entry to [`PLAN.md §7.5`](../../PLAN.md#7-decisions-resolved-2026-05-27) — most Zig contexts at a blockchain org would be SOFT WARNING unless directly handling cryptography, in which case HARD FAIL territory.
+- Add a reviewer-severity entry to the [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail) — most Zig contexts at a blockchain org would be SOFT WARNING unless directly handling cryptography, in which case HARD FAIL territory.
 
 This page is the placeholder that admits the gap rather than fabricating coverage.
 
 ## Related
 
-- [`../../PLAN.md`](../../PLAN.md) — language coverage rationale.
+
 - [`../../operating-model/collaborator-statement.md`](../../operating-model/collaborator-statement.md) — no-fabrication invariant: this page exists because the alternative would have been fabricating Zig practice from a vacuum.

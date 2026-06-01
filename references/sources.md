@@ -55,7 +55,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 - **Source.** Anthropic's "Complete Guide to Building Skills for Claude" (the canonical skill-authoring playbook) and the [`anthropic-skills:skill-creator`](https://github.com/anthropics/skills) skill itself.
 - **Maintainer.** Anthropic.
 - **Covers.** Skill format (kebab-case names, YAML frontmatter, description shape, file-size constraints), authoring workflow, and triggering evals.
-- **Used by.** Every skill in [`../skills/`](../skills/) is authored via `skill-creator` per [PLAN.md §5a](../PLAN.md#5a-authoring-every-skill-goes-through-skill-creator). The handbook references the spec for format requirements but does not duplicate it.
+- **Used by.** Every skill in [`../skills/`](../skills/) is authored via `skill-creator` — the canonical authoring tool, no hand-rolled SKILL.md files. The handbook references the spec for format requirements but does not duplicate it.
 - **Coordination.** External. The spec is treated as authoritative; if it changes, the handbook's skill-authoring guidance changes alongside.
 
 ## Sources we expect to add
@@ -70,4 +70,5 @@ Surfacing known candidates rather than fabricating coverage:
 - [`../NOTICE`](../NOTICE) — third-party attribution required under Apache 2.0 §4(d). Sources with upstream licenses or attribution requirements are also recorded there.
 - [`./attribution.md`](./attribution.md) — the curatorial credit policy; how original authors are surfaced across the three-layer attribution model.
 - [`./CONTRIBUTORS.md`](./CONTRIBUTORS.md) — the contributor index. Maintainers named here also appear there.
-- [`../PLAN.md` §4a and §4b](../PLAN.md) — the architecture/system-design and infrastructure deferral decisions that grounded this catalog.
+- [`../invariants/invariance-framework.md`](../invariants/invariance-framework.md) — the architecture/system-design deferral that grounded this catalog.
+- [`../workflows/infrastructure-and-devops.md`](../workflows/infrastructure-and-devops.md) — the infrastructure deferral that grounded this catalog.

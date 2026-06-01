@@ -12,7 +12,7 @@ metadata:
 
 # Solidity Reviewer (HARD FAIL tier)
 
-Reviewer skill for Solidity PRs. Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), emits **HARD FAIL** for security-critical findings. Agent reports; operator decides; bypass is logged in the PR with explicit `Override: HARD FAIL <id> for reason <reason>` per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).
+Reviewer skill for Solidity PRs. Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), emits **HARD FAIL** for security-critical findings. Agent reports; operator decides; bypass is logged in the PR with explicit `Override: HARD FAIL <id> for reason <reason>` per [agent-era invariant §7](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).
 
 Full reference: [`languages/solidity/reviewer.md`](../../languages/solidity/reviewer.md).
 

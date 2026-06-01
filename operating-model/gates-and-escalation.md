@@ -8,7 +8,7 @@ The [Collaborator Contract](./collaborator-statement.md) says agents stop at gat
 
 - **Before non-trivial work:** skim it. Pattern-match your task against the categories.
 - **During work:** if you trip a gate, stop. Do not try to argue past it.
-- **In doubt:** the gate list is a floor, not a ceiling. If an action feels destructive or unrecoverable and is not listed, treat it as a gate anyway and add the gap to [`TODO.md`](../TODO.md) for the curator.
+- **In doubt:** the gate list is a floor, not a ceiling. If an action feels destructive or unrecoverable and is not listed, treat it as a gate anyway and surface the gap to the curator.
 
 Refusals (a smaller, closed set of things the agent will not do even if the operator approves) live in the [Collaborator Contract](./collaborator-statement.md#when-the-agent-says-no). Do not confuse the two. A gate lets the operator approve. A refusal does not.
 
@@ -79,9 +79,16 @@ Refusals (a smaller, closed set of things the agent will not do even if the oper
 
 ### 8. Reviewer-skill HARD FAIL
 
-- **Solidity reviewer skill HARD FAIL** on reentrancy, upgrade safety, audit-readiness, or other security-critical checks.
-- **Daml reviewer skill HARD FAIL** on ledger invariants, authorization correctness, upgrade safety.
-- **Any future reviewer skill marked as HARD-FAIL-tiered** per [PLAN.md §7.5](../PLAN.md#7-decisions-resolved-2026-05-27).
+Reviewer-skill severity is tiered by language risk. The current tier table — the canonical record for the handbook:
+
+| Language | Reviewer tier | Rationale |
+|---|---|---|
+| **Solidity** | **HARD FAIL** on reentrancy, upgrade safety, audit-readiness, and other security-critical checks | On-chain code; bug class is irreversible and externally exploitable |
+| **Daml** | **HARD FAIL** on ledger invariants, authorization correctness, upgrade safety, privacy violations | Ledger-state correctness is foundational; authorization is a security boundary |
+| **Rust** | **SOFT WARNING** generally; `unsafe` blocks promote to near-HARD-FAIL scrutiny per [Forest `AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) | Memory safety guarantees lost inside `unsafe` |
+| **Go**, **TypeScript**, **Python**, **Zig** | **SOFT WARNING** on style / idiom violations | Style and idiom; operator decides whether to merge |
+
+Severity is set per-language because the cost of a bypassed finding is per-language. An unsafe Solidity reentrancy is an exploit; an unsafe Go style decision is technical debt. Adding a new language to the HARD FAIL list is a CODEOWNER-level decision and gets recorded in this table.
 
 *Why:* HARD FAIL findings are the codified judgment of the org's most expensive review knowledge. An agent overruling them is doing the opposite of operator-first.
 
@@ -128,7 +135,7 @@ The agent escalates — stops and asks beyond the operator — when one of the f
 
 If you think you might be tripping a gate but cannot tell from the list above: stop and ask. It is cheap.
 
-If the action feels destructive, unrecoverable, or visible to people other than the operator, and the situation is not on this page: treat it as a gate anyway, and add the gap to [`TODO.md`](../TODO.md) so the curator can extend the list.
+If the action feels destructive, unrecoverable, or visible to people other than the operator, and the situation is not on this page: treat it as a gate anyway, and surface the gap to the curator so the list can be extended.
 
 The gate list is a floor, not a ceiling. Agents are expected to apply judgment above it, not below it.
 

@@ -6,7 +6,7 @@ Language-specific review for Python PRs at ChainSafe. Python's scope is internal
 
 ## Severity tier
 
-**SOFT WARNING.** Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail), Python is not in the security-critical-language list. If Python ever ends up in a security-critical path at ChainSafe, the language choice itself is the issue — escalate to the curator.
+**SOFT WARNING.** Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Python is not in the security-critical-language list. If Python ever ends up in a security-critical path at ChainSafe, the language choice itself is the issue — escalate to the curator.
 
 ## Checklist
 

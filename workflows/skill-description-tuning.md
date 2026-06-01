@@ -4,7 +4,16 @@ A runbook for running Anthropic's `skill-creator` description-optimization loop 
 
 > **In one line:** Opt-in, local-only, ~30–45 min wall-clock, Opus by default. Run when you have a reason to; not on a schedule, not in CI.
 
-This is the *how*. The *whether* and *why* live in [PLAN.md §5a](../PLAN.md#5a-authoring-every-skill-goes-through-skill-creator) — read that first if you haven't decided you actually want to run the loop.
+## Policy
+
+The handbook's policy for this loop, in four points:
+
+- **Opt-in.** No skill in this repo is *required* to go through the loop. The lightweight "draft + self-check" approach used for v0 skills is the floor; the loop is sharpening, not enforcement.
+- **Local-only.** The loop calls `claude -p` (real Anthropic API spend) and takes ~30–45 minutes per skill. It runs on the operator's machine, on demand. CI does not invoke it. PRs touching a SKILL.md description are not gated by it.
+- **Opus by default.** When you do run the loop, default to the most capable tier (`--model claude-opus-4-6` or current Opus generation). The per-skill quality gain is worth the extra cost on an opt-in run. Sonnet/Haiku overrides are available for cheaper iteration.
+- **Non-deterministic, so re-run if outputs look off.** The optimizer is an LLM; the same input can produce different best-descriptions across runs. A single run is a draft, not an oracle.
+
+The rest of this page is the *how*.
 
 ## When to run
 
@@ -87,7 +96,7 @@ cd ~/.claude/skills/skill-creator   # or wherever scripts/ lives
 
 | Flag | Purpose | Default |
 |---|---|---|
-| `--model` | Which Claude model to use as the optimizer + triggering tester | `claude-opus-4-6` (ChainSafe default; per [PLAN §5a](../PLAN.md#5a-authoring-every-skill-goes-through-skill-creator)) |
+| `--model` | Which Claude model to use as the optimizer + triggering tester | `claude-opus-4-6` (ChainSafe default — Opus is the recommended tier when running the loop) |
 | `--max-iterations` | How many improve-and-re-evaluate cycles | 5 (good default) |
 | `--verbose` | Print iteration progress to stdout | recommended on |
 
@@ -140,14 +149,14 @@ A SKILL.md description change is just another PR.
 
 ## Anti-patterns
 
-- **Running the loop in CI.** Don't. See [PLAN.md §5a](../PLAN.md#5a-authoring-every-skill-goes-through-skill-creator).
+- **Running the loop in CI.** Don't. Per the policy at the top of this page: the loop is opt-in and local-only.
 - **Running the loop on every skill in one batch.** It's a per-skill exercise; batching introduces context-switching that doesn't pay off.
 - **Letting the loop run without an eval set review pass.** The eval set is the contract; treat it as load-bearing.
 - **Committing the eval workspace.** The workspace is scratch space — `report.html`, intermediate JSON, partial logs. None of it belongs in the repo. Add a `.gitignore` entry if you're keeping the workspace inside the clone.
 
 ## Related
 
-- [PLAN.md §5a](../PLAN.md#5a-authoring-every-skill-goes-through-skill-creator) — the policy this runbook serves (opt-in, local-only, Opus-default).
-- [TODO 5.6](../TODO.md) — the decision record closing the description-optimization policy.
+
+
 - [`pr-authoring.md`](./pr-authoring.md) — how the resulting description change gets shipped.
 - Upstream: [`anthropic-skills:skill-creator`](https://github.com/anthropics/skills) — the canonical playbook the runbook implements.

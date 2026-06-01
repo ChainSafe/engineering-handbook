@@ -4,6 +4,8 @@ This handbook holds only the **operator decision policy** layer for incidents. T
 
 > **In one line:** When to page, when to roll back, who approves a recovery action. The *how* defers to the runbooks.
 
+> **Status note.** The operator-decision-policy section below is complete. The [runbook deep-link map](#runbook-deep-link-map) is confirmed at file level; heading anchors *within* the runbooks are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. Per the deep-link convention, where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream rather than work around it here.
+
 ## Operator decision policy
 
 These are the calls a human makes during an incident. The runbooks tell you the mechanics; this page tells you the decisions.
@@ -49,8 +51,6 @@ Rollback decisions are owned by the on-call operator in consultation with the ch
 | Calling for a post-incident review | Always — every page-worthy incident gets one |
 
 ## Runbook deep-link map
-
-> **Status note.** File-level targets below are confirmed against the current state of `infrastructure-general/docs/runbooks/`. Heading anchors within the runbooks are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. See [PLAN.md §4c](../PLAN.md#4c-convention-deep-links-not-see-also) for the deep-link convention.
 
 ### By chain / product
 

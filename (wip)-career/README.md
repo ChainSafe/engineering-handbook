@@ -4,7 +4,7 @@ This directory holds career-development and people-process content extracted fro
 
 ## Why it's here, not in the main tree
 
-[PLAN.md §6](../PLAN.md) explicitly skipped career ladders, 360 reviews, and process-and-policy from the v2 handbook on the grounds that "career ladders and 360 reviews — that's HR/people, not agent guidance. Lives elsewhere." The handbook's primary audience is engineering practice — for humans doing the work and for AI agents helping them — and people-process documentation belongs in a different home.
+The v2 handbook explicitly skipped career ladders, 360 reviews, and process-and-policy on the grounds that career ladders and 360 reviews are HR/people, not agent guidance — they live elsewhere. The handbook's primary audience is engineering practice — for humans doing the work and for AI agents helping them — and people-process documentation belongs in a different home.
 
 This content is **public-safe** — no secrets, no confidential org material. The open question isn't whether to publish, only where to publish it: a `career/` or `people/` top-level here as a peer to `operating-model/` etc., or a separate People-Ops / HR home. The decision is deferred until the v2 launch settles. Until then, this directory keeps the content reachable and clean.
 
@@ -12,7 +12,7 @@ This content is **public-safe** — no secrets, no confidential org material. Th
 
 The legacy files arrived with Docusaurus-specific markup. The following was stripped:
 
-- Docusaurus YAML frontmatter (`sidebar_position`, `sidebar_label`, `title:` Docusaurus form) — removed entirely; per [PLAN.md §4d](../PLAN.md#4d-convention-no-yaml-frontmatter-on-content-pages), v2 content pages do not carry frontmatter.
+- Docusaurus YAML frontmatter (`sidebar_position`, `sidebar_label`, `title:` Docusaurus form) — removed entirely; v2 content pages do not carry YAML frontmatter (see [`references/attribution.md`](../references/attribution.md) for the convention).
 - Numbered filename prefixes (`1_`, `2_`, etc.) — Docusaurus ordering hints; the v2 convention doesn't use them.
 - `.mdx` extensions — renamed to `.md`; without Docusaurus, MDX rendering is moot.
 - `_category_.yml` files — Docusaurus directory config; not applicable.

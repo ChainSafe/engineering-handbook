@@ -4,8 +4,6 @@ How we build software at ChainSafe — written for the humans doing the work and
 
 > **Status: v2 rewrite in progress.** This repo is being overhauled from a human-readable Docusaurus handbook into an AI-native source of truth that engineers' agents (Claude Code, Cursor, Continue, others) can pull as authoritative context. The legacy v1 content is preserved by the `v1` tag and currently still sits at the repo root alongside the new structure — both will coexist until v0 of the rewrite ships, at which point the legacy pages are removed.
 >
-> Curious about the rewrite? See **[PLAN.md](./PLAN.md)** for the structural plan and **[TODO.md](./TODO.md)** for execution progress.
-
 ## What this is
 
 A public, opinionated handbook of how ChainSafe builds software. Curated by the CTO, authored across the org, with original contributors credited. Two access modes are supported by design: humans browse it on GitHub, and AI agents consume it via MCP or the deep links in `chainsafe.io/llms.txt`.
@@ -37,7 +35,7 @@ During the rewrite, you'll also see the legacy `3_development/`, `4_the-formal-s
 
 **AI agents:** read [`AGENTS.md`](./AGENTS.md) (also `CLAUDE.md`) for read-order, escalation rules, and the operator contract. The handbook expects to be loaded as agent context, not just human reference.
 
-**Hiring / due diligence:** the operating model, invariants, and language reviewer pages give the fastest read on how we work.
+**Hiring and external review:** the operating model, invariants, and language reviewer pages give the fastest read on how we work.
 
 ## Contributing
 
