@@ -156,12 +156,23 @@ Each role page is the markdown source; the corresponding skill bundle in `skills
 
 ### 5a. Authoring: every skill goes through `skill-creator`
 
-Every skill in `skills/` is authored, edited, or optimized using Anthropic's **`skill-creator`** skill. This is non-negotiable for this project:
+Every skill in `skills/` is authored or edited using Anthropic's **`skill-creator`** skill. This is non-negotiable for this project:
 
 - **From scratch:** invoke `skill-creator` in bootstrap mode with the source content (a role page in `languages/`, a workflow page in `workflows/`, or a brought-in skill like `research-plan-implement`).
-- **Edits:** invoke `skill-creator` in iteration/optimization mode against the existing `SKILL.md`.
-- **Triggering quality:** rely on `skill-creator`'s eval loop rather than eyeballing whether a description fires.
+- **Edits:** invoke `skill-creator` in iteration mode against the existing `SKILL.md`.
 - **No custom generator script.** An earlier plan version proposed a Python/Node script that emitted SKILL.md from role markdown and stored output under `dist/skills/`; that's dropped. Skills live at the root `skills/` directory as authored content, each one a `skill-creator` output committed by hand. The role-page markdown in `languages/` is reference material the author draws on; it is not a build input.
+
+**Description-optimization is opt-in and local-only.** `skill-creator` ships a `run_loop.py` that iteratively tunes the SKILL.md `description` field for better triggering accuracy. It is **not required** to author or edit a skill, and it is **not a CI gate**. The loop:
+
+- Calls `claude -p` as a subprocess and accumulates Anthropic API cost per run.
+- Takes ~30–45 minutes wall-clock per skill at default settings.
+- Is non-deterministic — re-runs produce slightly different `best_description` outputs.
+
+For those reasons, the loop runs **locally, on the operator's machine, when the operator chooses to run it.** Legitimate triggers: a new skill being added; observed under-/over-triggering complaints from engineers; a periodic hygiene pass before a release. CI does not invoke it. PRs touching a SKILL.md description are not gated by it. Anyone is welcome to skip it entirely — the lightweight "draft + self-check" approach used for the v0 skills in [TODO Phase 5](../TODO.md#phase-5--skills-authoring-via-skill-creator) is the floor.
+
+**Default model: Opus.** Because the loop is opt-in and the operator is already paying for the run, default to the most capable Claude tier — Opus — for the optimization. The improved triggering-rate quality is worth the higher per-token cost when this is a one-shot-per-skill exercise. Operators can override with `--model sonnet` or `--model haiku` if they want a faster/cheaper run (e.g., experimental skills or rapid iteration), but the default in any documented runbook is Opus. Pass `--model claude-opus-4-6` (or the current Opus generation) to `run_loop.py`.
+
+When the loop *is* run, the resulting `best_description` lands in SKILL.md frontmatter via a normal PR that goes through standard review.
 
 ### 5b. Skill distribution via `llms.txt`
 

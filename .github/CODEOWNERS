@@ -32,4 +32,7 @@
 
 # languages — section overrides added as language pages land (Phase 4 / 7).
 # Inherited from legacy CODEOWNERS pending v2 review:
-/languages/typescript/                          @wemeetagain @kalambet
+/languages/typescript/                          @wemeetagain @matthewkeil
+/languages/zig/                                 @wemeetagain @matthewkeil @kalambet
+/languages/go/                                  @timwu20 @kalambet
+/languages/rust/                                @LesnyRumcajs @hanabi1224

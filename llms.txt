@@ -30,6 +30,7 @@ URLs below point at the `main` branch and resolve to raw markdown. While the v2 
 - [Infrastructure and DevOps (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/infrastructure-and-devops.md): Deep-link map into `ChainSafe/infrastructure-general`. Maintained by [@joshdougall](https://github.com/joshdougall).
 - [Incident Response (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/incident-response.md): When to page, when to roll back, approval matrix. Runbook deep links by chain/product.
 - [Release and Deploy (pointer + policy)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/release-and-deploy.md): Pre-flight readiness, approval matrix, during-the-deploy discipline, deploy-procedure deep links.
+- [Skill Description Tuning (runbook)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/workflows/skill-description-tuning.md): How to run Anthropic's `skill-creator` description-optimization loop on a skill in `skills/`. Opt-in, local-only, ~30–45 min, Opus by default. Operator-initiated when a new skill is added, when triggering complaints surface, or for periodic hygiene.
 
 ## Languages
 
