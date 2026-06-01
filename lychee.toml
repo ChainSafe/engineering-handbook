@@ -37,9 +37,14 @@ base = "."
 ####################
 
 # Skip mail-to and tel: URIs; they aren't reachable by HTTP.
+# The Daml MCP server endpoint (daml-autopilot) is a parameterized, auth-gated
+# SSE endpoint — it carries a `payerParty` query param and is not a GET-probeable
+# web page, so exclude it from link-checking (it appears in a config example in
+# languages/daml/developer.md).
 exclude = [
     "^mailto:",
     "^tel:",
+    '^https://mcp-server\.chainsafe\.io',
 ]
 
 # No excluded paths — all markdown is in scope.

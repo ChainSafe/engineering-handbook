@@ -65,10 +65,10 @@ URLs below point at the `main` branch and resolve to raw markdown.
 
 ### Daml (Canton)
 
-- [Daml Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/architect.md): Template design, signatory/observer authorization model, atomicity, upgrade strategy via versioned packages, privacy, Canton-specific (domain/synchronizer/sequencer/mediator).
+- [Daml Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/architect.md): Template design, signatory/observer authorization model, atomicity, upgrade strategy via versioned packages, privacy, Canton-specific (domain/synchronizer/sequencer/mediator). Defers to the Canton docs for language semantics.
+- [Daml Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/developer.md): SDK/`dpm` tooling, ChainSafe's own `daml-autopilot` (the `ChainSafe/canton-ci` GitHub Actions + the Daml MCP server), AI-assisted authoring, Daml Script testing, and CI. Deep-links the Canton docs as the canonical language reference.
 - [Daml Reviewer (HARD FAIL tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/reviewer.md): HARD FAIL checks for authorization correctness, atomicity, upgrade safety, privacy. Override mechanics logged in PR.
 - [Daml Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/idioms.md) · [Daml Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/daml/gotchas.md)
-- *Note:* developer.md intentionally deferred — Daml practice at ChainSafe is established enough at the architect / reviewer layer; line-level developer guidance can be added when demand surfaces.
 
 ### Python (internal tooling)
 
@@ -77,9 +77,12 @@ URLs below point at the `main` branch and resolve to raw markdown.
 - [Python Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/reviewer.md): Type hints at boundaries, no bare excepts, lockfile up-to-date. Refuses if Python lands in a production-product hot path — language choice itself is the finding.
 - [Python Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/idioms.md) · [Python Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/python/gotchas.md)
 
-### Zig
+### Zig (lodestar-z)
 
-- [Zig at ChainSafe](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/README.md): No confirmed production Zig codebase at ChainSafe. Single page setting a rebuttable presumption against reaching for Zig before talking to the curator.
+- [Zig Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/architect.md): When to reach for Zig, project layout (build.zig / build.zig.zon, modules), allocator strategy, error model, build-mode / safety posture, comptime, the C-ABI contract. Defers to `.invariance`.
+- [Zig Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/developer.md): `zig fmt`, the build system, version pinning, allocator / `defer` / `errdefer` discipline, error unions, integer-overflow and safety, comptime, testing (`std.testing.allocator`, spec tests, fuzzing), C interop, CI baseline.
+- [Zig Reviewer (SOFT WARNING; memory-safety + consensus near-HARD-FAIL)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/reviewer.md): Checklist for Zig PRs. Allocator / leak discipline, swallowed errors, undefined behavior, pointer-cast soundness, consensus correctness. Override mechanics logged in PR.
+- [Zig Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/idioms.md) · [Zig Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/gotchas.md)
 
 ## Skills
 
@@ -91,7 +94,7 @@ Packaged Anthropic Skills authored via `skill-creator`. Each skill is self-conta
 - [chainsafe-pr-author](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-pr-author/SKILL.md): Language-agnostic PR authoring. Trigger: "open a pull request", "draft a PR description", "split this PR", "respond to reviewer", "AI declaration", "scope drift".
 - [chainsafe-code-review](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-code-review/SKILL.md): Universal code-review framework. Trigger: "review this PR", "check this diff", "what should I look for", "review disagreement". Pairs with the language-specific reviewer skills.
 
-### Language × role (4 languages × 3 roles)
+### Language × role (5 languages × 3 roles)
 
 - [chainsafe-go-architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-go-architect/SKILL.md): Architectural guidance for Go services. Trigger: "design a Go service", "Gossamer architecture", "internal vs pkg", "concurrency model in Go".
 - [chainsafe-go-developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-go-developer/SKILL.md): Idiomatic Go implementation. Trigger: "write a Go function", "fix this Go code", "gomock", "context handling", "error wrapping with %w".
@@ -105,6 +108,9 @@ Packaged Anthropic Skills authored via `skill-creator`. Each skill is self-conta
 - [chainsafe-solidity-architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-solidity-architect/SKILL.md): Architectural guidance for Solidity contracts. Trigger: "design a contract", "Sygma bridge architecture", "upgrade strategy", "multi-sig setup", "reentrancy strategy".
 - [chainsafe-solidity-developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-solidity-developer/SKILL.md): Idiomatic Solidity implementation. Trigger: "write a contract", "Foundry test", "fuzz test", "reentrancy guard", "AccessControl roles", "SafeERC20", "custom error".
 - [chainsafe-solidity-reviewer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-solidity-reviewer/SKILL.md): **HARD FAIL tier.** Trigger: "review this contract", "reentrancy check", "upgrade safety", "audit-readiness", "security review". Override mechanics logged in PR.
+- [chainsafe-zig-architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-zig-architect/SKILL.md): Architectural guidance for Zig modules. Trigger: "design a Zig module", "build.zig layout", "allocator strategy", "ReleaseSafe or ReleaseFast", "comptime generic", "export to C ABI", "lodestar-z module".
+- [chainsafe-zig-developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-zig-developer/SKILL.md): Idiomatic Zig implementation. Trigger: "write a Zig function", "allocator parameter", "defer vs errdefer", "try and catch", "comptime", "zig build test", "std.testing.allocator", "@cImport".
+- [chainsafe-zig-reviewer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-zig-reviewer/SKILL.md): SOFT WARNING tier; memory-safety / UB and consensus-correctness paths promote to near-HARD-FAIL. Trigger: "review this Zig PR", "memory leak review", "undefined behavior check", "SSZ correctness".
 
 ## External canonical sources
 
@@ -114,6 +120,8 @@ The handbook deep-links into these upstream sources rather than duplicating them
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general): Canonical source for infrastructure, IaC, deployment, observability, on-call, runbooks. Maintained by [@joshdougall](https://github.com/joshdougall). Ships its own [AGENTS.md](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md) and [CLAUDE.md](https://github.com/ChainSafe/infrastructure-general/blob/main/CLAUDE.md).
 - [ChainSafe/forest — AI_POLICY.md](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md): AI-assisted-development policy for the Filecoin client. Originally adapted from the [Ghostty project](https://github.com/ghostty-org/ghostty); attribution preserved. Carried through into the handbook's testing-and-qa and Rust reviewer pages.
 - [Anthropic Skills Specification](https://github.com/anthropics/skills): The canonical playbook for skill authoring. Every skill in this repo is authored via `anthropic-skills:skill-creator`.
+- [Canton Network Docs](https://docs.canton.network) ([llms.txt](https://docs.canton.network/llms.txt)): Authoritative Daml language and Canton platform reference. The `languages/daml/` pages defer here for language semantics instead of re-deriving them.
+- [daml-autopilot](https://daml-autopilot.chainsafe.io) ([ChainSafe/canton-ci](https://github.com/ChainSafe/canton-ci)): ChainSafe's own Daml tooling — the `canton-ci` GitHub Actions (free CI baseline) and the Daml MCP server (AI authoring/review; pay-as-you-go). Recommended Daml dev tooling; we dogfood it.
 
 ## Repository
 

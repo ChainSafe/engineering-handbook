@@ -86,7 +86,8 @@ Reviewer-skill severity is tiered by language risk. The current tier table — t
 | **Solidity** | **HARD FAIL** on reentrancy, upgrade safety, audit-readiness, and other security-critical checks | On-chain code; bug class is irreversible and externally exploitable |
 | **Daml** | **HARD FAIL** on ledger invariants, authorization correctness, upgrade safety, privacy violations | Ledger-state correctness is foundational; authorization is a security boundary |
 | **Rust** | **SOFT WARNING** generally; `unsafe` blocks promote to near-HARD-FAIL scrutiny per [Forest `AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) | Memory safety guarantees lost inside `unsafe` |
-| **Go**, **TypeScript**, **Python**, **Zig** | **SOFT WARNING** on style / idiom violations | Style and idiom; operator decides whether to merge |
+| **Zig** | **SOFT WARNING** generally; the memory-safety / undefined-behavior surface (`@setRuntimeSafety(false)`, pointer casts, `catch unreachable`) and the consensus-correctness surface (SSZ, `hashTreeRoot`, Merkleization) promote to near-HARD-FAIL scrutiny | Manual memory management plus consensus-critical output (lodestar-z) |
+| **Go**, **TypeScript**, **Python** | **SOFT WARNING** on style / idiom violations | Style and idiom; operator decides whether to merge |
 
 Severity is set per-language because the cost of a bypassed finding is per-language. An unsafe Solidity reentrancy is an exploit; an unsafe Go style decision is technical debt. Adding a new language to the HARD FAIL list is a CODEOWNER-level decision and gets recorded in this table.
 

@@ -2,6 +2,8 @@
 
 Idiomatic patterns for Daml at ChainSafe — particularly Canton applications.
 
+> These are the ChainSafe house patterns. For authoritative language semantics, defer to the [Canton docs](https://docs.canton.network) (machine index: [`llms.txt`](https://docs.canton.network/llms.txt)); for tooling, testing, and CI — including ChainSafe's own `daml-autopilot` — see [`developer.md`](./developer.md).
+
 ## Template structure
 
 ```daml
@@ -114,6 +116,7 @@ setup = do
 - `Daml.Script` is the canonical test framework.
 - `submit` runs as a specific party — authorization is checked.
 - `submitMustFail` for negative tests.
+- Full API: [Testing Daml Contracts](https://docs.canton.network/appdev/modules/m3-testing). Run in CI via ChainSafe's [`canton-ci`](https://github.com/ChainSafe/canton-ci) `daml-test` / `daml-script` actions — see [`developer.md`](./developer.md#ci).
 
 ## Time and dates
 
@@ -153,6 +156,7 @@ template Order
 
 - Design migration choices into templates from the start.
 - Version package names; old contracts continue to exist on the ledger.
+- Authoritative rules: [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) · [Writing Your First Upgrade](https://docs.canton.network/appdev/modules/m6-writing-first-upgrade).
 
 ## Canton workspace layout
 
@@ -173,4 +177,5 @@ my-canton-app/
 
 ## Related
 
-- [`architect.md`](./architect.md), [`reviewer.md`](./reviewer.md) **(HARD FAIL tier)**, [`gotchas.md`](./gotchas.md).
+- [`architect.md`](./architect.md), [`developer.md`](./developer.md), [`reviewer.md`](./reviewer.md) **(HARD FAIL tier)**, [`gotchas.md`](./gotchas.md).
+- Upstream: [Canton Network Docs](https://docs.canton.network) — authoritative Daml language reference.

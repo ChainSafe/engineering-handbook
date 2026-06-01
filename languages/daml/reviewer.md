@@ -4,6 +4,8 @@ Language-specific review for Daml PRs. Per [reviewer-severity tier table](../../
 
 > **In one line:** Authorization, atomicity, upgrade safety, privacy. HARD FAIL stops the PR until a CODEOWNER signs off on the override.
 
+Authoritative references for these checks live in the [Canton docs](https://docs.canton.network): [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization), [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility), [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security). ChainSafe's own [`daml-autopilot`](https://daml-autopilot.chainsafe.io) (Daml Reason) can pre-extract the authorization model from the diff as a review aid — but it **informs, it does not approve**. The reviewer still decides; HARD FAIL findings are resolved or overridden by a human CODEOWNER, never by a tool. See [`developer.md`](./developer.md).
+
 ## Severity tier
 
 **HARD FAIL.** Override path is explicit and audit-logged. The agent does not push through; the operator does, in writing.
@@ -67,6 +69,8 @@ A merged Daml PR for production work should be audit-ready:
 - [ ] Coverage threshold met (project-specific).
 - [ ] If Canton-deployed: deployment script and domain governance coordination.
 
+Authoritative references for the above: [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization), [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility), [Upgrade Limitations](https://docs.canton.network/appdev/modules/m6-limitations), [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security).
+
 ## When the reviewer skill refuses to review
 
 - Non-Daml code in the diff.
@@ -97,7 +101,8 @@ The agent does not override on the operator's behalf. The operator types the ove
 
 ## Related
 
-- [`architect.md`](./architect.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
+- [`architect.md`](./architect.md), [`developer.md`](./developer.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
+- Upstream: [Canton Network Docs](https://docs.canton.network) — authoritative authorization, upgrade, and security references.
 - [`../../workflows/code-review.md`](../../workflows/code-review.md).
 - [`../../operating-model/gates-and-escalation.md`](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail) — HARD FAIL gate mechanics.
 - [`../../invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings).

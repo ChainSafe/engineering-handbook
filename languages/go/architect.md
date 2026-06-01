@@ -10,12 +10,10 @@ Architectural decisions in this language should be expressed in `.invariance` te
 
 | If you are deciding… | Go to (`.invariance`) |
 |---|---|
-| What is the system boundary? | The framework's boundary-definition section *[anchor pending — @boorich]* |
-| What invariants does this service hold? | Invariant naming + testability *[anchor pending — @boorich]* |
-| How does this service interact with others? | Cross-component contracts *[anchor pending — @boorich]* |
-| What's the failure model? | Failure-mode invariants *[anchor pending — @boorich]* |
-
-Anchors confirmed when the pointer page in `invariants/invariance-framework.md` is finalized with [@boorich](https://github.com/boorich).
+| What is the system boundary? | The framework's boundary-definition section |
+| What invariants does this service hold? | Invariant naming + testability |
+| How does this service interact with others? | Cross-component contracts |
+| What's the failure model? | Failure-mode invariants |
 
 ## Go-specific architectural choices
 

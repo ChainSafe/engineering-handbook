@@ -8,10 +8,10 @@ Architectural guidance for Rust projects at ChainSafe — notably [Forest](https
 
 | Decision | `.invariance` section |
 |---|---|
-| Service boundaries and contracts | Component contracts *[anchor pending — @boorich]* |
-| Invariant naming and testability | Invariant lifecycle *[anchor pending — @boorich]* |
-| Cross-component failure modes | Failure-mode invariants *[anchor pending — @boorich]* |
-| Memory and ownership invariants | Ownership/lifetime invariants *[anchor pending — @boorich]* |
+| Service boundaries and contracts | Component contracts |
+| Invariant naming and testability | Invariant lifecycle |
+| Cross-component failure modes | Failure-mode invariants |
+| Memory and ownership invariants | Ownership/lifetime invariants |
 
 ## Rust-specific architectural choices
 

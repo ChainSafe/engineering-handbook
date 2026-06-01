@@ -8,10 +8,25 @@ Architectural guidance for Daml work at ChainSafe — primarily Canton applicati
 
 | Decision | `.invariance` section |
 |---|---|
-| Ledger-state invariants | Ledger invariants *[anchor pending — @boorich]* |
-| Authorization invariants | Authorization model *[anchor pending — @boorich]* |
-| Upgrade lifecycle | Package upgrade invariants *[anchor pending — @boorich]* |
-| Cross-application invariants (Canton multi-app) | Inter-app contracts *[anchor pending — @boorich]* |
+| Ledger-state invariants | Ledger invariants |
+| Authorization invariants | Authorization model |
+| Upgrade lifecycle | Package upgrade invariants |
+| Cross-application invariants (Canton multi-app) | Inter-app contracts |
+
+## Defer to the Canton docs for
+
+`.invariance` above governs architectural *invariants*. Language and platform *semantics* — how Daml and Canton actually behave — are documented authoritatively at [docs.canton.network](https://docs.canton.network). Defer to it rather than re-deriving the language; it is a registered [canonical source](../../references/sources.md#canton-network-docs-daml-language--canton-platform).
+
+| Topic | Canton docs |
+|---|---|
+| Authorization model (signatory / observer / controller) | [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization) |
+| Templates, choices, keys, interfaces | [Contract Templates](https://docs.canton.network/appdev/modules/m3-contract-templates) · [Choices](https://docs.canton.network/appdev/modules/m3-choices) · [Contract Keys](https://docs.canton.network/appdev/modules/m3-contract-keys) · [Interfaces](https://docs.canton.network/appdev/modules/m3-interfaces) |
+| Multi-party composition & privacy | [Composition and Design Patterns](https://docs.canton.network/appdev/modules/m3-design-patterns) · [Privacy Model for App Developers](https://docs.canton.network/appdev/deep-dives/privacy-model) |
+| Upgrade lifecycle (SCU) | [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) · [Smart Contract Upgrade (deep dive)](https://docs.canton.network/appdev/deep-dives/smart-contract-upgrade) |
+| Time semantics | [Working with Time](https://docs.canton.network/appdev/modules/m3-working-with-time) |
+| Production hardening | [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security) |
+
+When shaping a template's authorization model, ChainSafe's own [`daml-autopilot`](https://daml-autopilot.chainsafe.io) (Daml Reason) can extract and sanity-check the model against canonical patterns — see [`developer.md`](./developer.md). For setup, tooling, testing, and CI, [`developer.md`](./developer.md) is the developer-layer companion to this page.
 
 ## Daml-specific architectural choices
 
@@ -95,7 +110,9 @@ See [`../../workflows/infrastructure-and-devops.md`](../../workflows/infrastruct
 
 ## Related
 
+- [`developer.md`](./developer.md) — tooling, AI-assisted authoring (`daml-autopilot`), testing, and CI.
 - [`reviewer.md`](./reviewer.md) **(HARD FAIL tier)** — what to look for in a Daml PR.
 - [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md).
 - [`../../workflows/infrastructure-and-devops.md`](../../workflows/infrastructure-and-devops.md) — Canton infra context.
+- Upstream: [Canton Network Docs](https://docs.canton.network) — authoritative Daml language and Canton platform reference ([canonical source](../../references/sources.md#canton-network-docs-daml-language--canton-platform)).

@@ -8,10 +8,10 @@ Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sy
 
 | Decision | `.invariance` section |
 |---|---|
-| Cross-contract contracts and invariants | Component contracts *[anchor pending — @boorich]* |
-| Upgrade lifecycle invariants | Lifecycle / migration invariants *[anchor pending — @boorich]* |
-| Authorization invariants | Authorization model *[anchor pending — @boorich]* |
-| Bridge / cross-chain invariants | Cross-chain invariants *[anchor pending — @boorich]* |
+| Cross-contract contracts and invariants | Component contracts |
+| Upgrade lifecycle invariants | Lifecycle / migration invariants |
+| Authorization invariants | Authorization model |
+| Bridge / cross-chain invariants | Cross-chain invariants |
 
 ## Solidity-specific architectural choices
 

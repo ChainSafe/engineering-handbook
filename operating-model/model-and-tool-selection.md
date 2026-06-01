@@ -71,6 +71,7 @@ That is the default. Everything else is on-demand.
 - **Linear / Jira / project-tracker MCPs** — when the task involves issue triage, sprint planning, or status updates.
 - **Slack / Discord / email MCPs** — when the task involves communication. Note the [external-communication gate](./gates-and-escalation.md#4-external-communication).
 - **Product-specific repos** (`ChainSafe/forest`, `ChainSafe/lodestar`, `ChainSafe/sygma`, etc.) — when working on that product. Do not load a product repo just to browse it; the operator authorized work on a specific scope.
+- **Daml MCP server (`daml-autopilot`)** — when authoring or reviewing Daml / Canton code. ChainSafe's own tool: *Daml Reason* (canonical-pattern search + authorization-model extraction) and *Daml Automater* (environment / CI / build guidance). We dogfood it; it is the recommended Daml dev assistant. The hosted MCP server is **pay-as-you-go**, billed per use via a Canton payer party, so its use falls under the [cost gate](./gates-and-escalation.md#7-cost-and-external-resource-creation) — provision the payer party deliberately. The free [`ChainSafe/canton-ci`](https://github.com/ChainSafe/canton-ci) GitHub Actions need no MCP and carry no per-use cost. Setup and config: [`../languages/daml/developer.md`](../languages/daml/developer.md).
 
 ### Tools to be skeptical of
 

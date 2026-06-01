@@ -2,6 +2,8 @@
 
 Bug classes and surprising behavior in Daml. Many are HARD FAIL findings under the [reviewer](./reviewer.md).
 
+> Many of these are authorization or upgrade traps. ChainSafe's own [`daml-autopilot`](https://daml-autopilot.chainsafe.io) (Daml Reason) catches several by extracting the authorization model from your code — see [`developer.md`](./developer.md). For authoritative semantics, defer to the [Canton docs](https://docs.canton.network): the [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization) underpins the authorization gotchas below.
+
 ## Signatory set too wide
 
 ```daml
@@ -93,7 +95,7 @@ choice CheckDeadline : ()
     assertMsg "Past deadline" (now <= deadline)
 ```
 
-`getTime` returns ledger-effective time. The submitter's wall clock can differ. Time-sensitive logic must use the right semantics — Canton sequences time deliberately, but submitters can race.
+`getTime` returns ledger-effective time. The submitter's wall clock can differ. Time-sensitive logic must use the right semantics — Canton sequences time deliberately, but submitters can race. See [Working with Time](https://docs.canton.network/appdev/modules/m3-working-with-time).
 
 ## Adding a field to a deployed template
 
@@ -105,7 +107,7 @@ template Order
     -- newField : Text   <-- can't add this to an existing template version
 ```
 
-You can't mutate a deployed template. Adding a field requires a new package version with the new template; existing contracts continue under the old version until migrated. Forgetting this means CI fails on type checks against deployed packages.
+You can't mutate a deployed template. Adding a field requires a new package version with the new template; existing contracts continue under the old version until migrated. Forgetting this means CI fails on type checks against deployed packages. See [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) and [Upgrade Limitations](https://docs.canton.network/appdev/modules/m6-limitations) for the allowed/breaking-change rules.
 
 ## Removing a choice silently
 
@@ -201,3 +203,5 @@ For Canton workflows that span multiple domains, the synchronizer choice matters
 
 - [`reviewer.md`](./reviewer.md) — most of these are HARD FAIL findings.
 - [`idioms.md`](./idioms.md) — the inverse.
+- [`developer.md`](./developer.md) — tooling (`daml-autopilot`), testing, CI.
+- Upstream: [Canton Network Docs](https://docs.canton.network) — authoritative Daml language reference.

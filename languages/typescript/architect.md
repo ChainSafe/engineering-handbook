@@ -8,9 +8,9 @@ Architectural guidance for TypeScript projects at ChainSafe — [Lodestar](https
 
 | Decision | `.invariance` section |
 |---|---|
-| Service boundaries | Component contracts *[anchor pending — @boorich]* |
-| Invariant naming + testability | Invariant lifecycle *[anchor pending — @boorich]* |
-| Cross-component contracts | API invariants *[anchor pending — @boorich]* |
+| Service boundaries | Component contracts |
+| Invariant naming + testability | Invariant lifecycle |
+| Cross-component contracts | API invariants |
 
 ## TypeScript-specific architectural choices
 
