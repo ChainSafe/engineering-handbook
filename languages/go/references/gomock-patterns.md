@@ -1,6 +1,6 @@
 # GoMock patterns
 
-Detailed worked examples for [`golang/mock`](https://github.com/golang/mock) at ChainSafe. Lifted from the legacy handbook. The high-level conventions live in [`../developer.md`](../developer.md); this page is the deeper reference.
+Detailed worked examples for [`golang/mock`](https://github.com/golang/mock) at ChainSafe. The high-level conventions live in [`../developer.md`](../developer.md); this page is the deeper reference.
 
 ## Why gomock (not mockery, not hand-written stubs)
 
@@ -155,7 +155,7 @@ func Test_something(t *testing.T) {
 }
 ```
 
-**Hard rules (from the legacy guide, still load-bearing in v2):**
+**Hard rules (load-bearing):**
 
 - **No `gomock.Any()`** for arguments. Use concrete arguments or a custom matcher.
 - **No `.AnyTimes()`** on mock calls. Specify the count: `.Times(3)`.

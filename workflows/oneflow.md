@@ -20,7 +20,7 @@ There is exactly one long-lived branch: **`main`**. Every other branch is short-
 
 | Pattern | Purpose |
 |---|---|
-| `<name>/<feature>` (e.g. `peter/agentic-handbook-overhaul`, `greg/create-readme`) | Personal feature branches. Use your GitHub handle or a consistent identifier as the prefix. Git stores branches with `/` as a directory delimiter (see `.git/refs/heads/`), so this gives every contributor their own namespace. |
+| `<name>/<feature>` (e.g. `alex/add-rate-limiter`, `sam/fix-nonce-bug`) | Personal feature branches. Use your GitHub handle or a consistent identifier as the prefix. Git stores branches with `/` as a directory delimiter (see `.git/refs/heads/`), so this gives every contributor their own namespace. |
 | `hotfix/<bug>` (e.g. `hotfix/auth-leak`) | Branches off a broken production tag to ship an emergency fix. See [Hot fixes](#hot-fixes-of-tagged-deployments). |
 | `release/<version>` (e.g. `release/v0.23.1-rc`) | Used only for back-porting an earlier release. Most ChainSafe work does not need release branches because tags do the job. |
 

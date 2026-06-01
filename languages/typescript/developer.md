@@ -55,7 +55,7 @@ Tighten per project; `strict: true` is the floor.
 
 ### Monorepos: Yarn 3 workspaces
 
-Per the legacy guide, ChainSafe migrated off `lerna` (since its future is uncertain) to **Yarn 3 with workspaces**.
+ChainSafe uses **Yarn 3 with workspaces**, having migrated off `lerna`.
 
 Setup:
 
@@ -82,7 +82,7 @@ Whichever framework: run via `yarn test`, configure with a `test/` or `__tests__
 
 ### Editor
 
-VSCode is the de-facto editor; the legacy guide recommends the following extensions: ESLint, GitLens, DotEnv, YAML. Whatever IDE the developer prefers as long as it talks to `tsserver`.
+VSCode is the de-facto editor; recommended extensions: ESLint, GitLens, DotEnv, YAML. Whatever IDE the developer prefers as long as it talks to `tsserver`.
 
 ## Type discipline
 

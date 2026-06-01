@@ -14,17 +14,17 @@ The curatorial model: practices already exist across the org and get aggregated 
 
 | Handle | Name | Role |
 |---|---|---|
-| [@kalambet](https://github.com/kalambet) | Peter Kalambet | CTO; default curator of the v2 rewrite |
+| [@kalambet](https://github.com/kalambet) | Peter Kalambet | CTO; curator of the handbook |
 
 ## Section owners and contributors
 
-*Populated as Phases 2–4 land. No entries yet beyond curators.*
+*Section owners and contributors are listed here as they take ownership of, or contribute substantive content to, handbook areas.*
 
 ## Third-party content credits
 
 For upstream attribution required under the Apache 2.0 license (Section 4(d)), see [`NOTICE`](../NOTICE) at the repo root. The current third-party lineage recorded there:
 
 - The `chainsafe-research-plan-implement` skill is adapted from Boris Tane.
-- Forest's AI policy (deep-linked from `workflows/` once those pages land) originally derives from the Ghostty project.
+- Forest's AI policy (deep-linked from `workflows/testing-and-qa.md` and the Rust reviewer guidance) originally derives from the Ghostty project.
 
 When new third-party material is carried into the handbook, both `NOTICE` and the relevant file's inline header are updated.

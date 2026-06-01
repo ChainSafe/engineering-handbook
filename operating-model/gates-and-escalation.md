@@ -46,7 +46,7 @@ Refusals (a smaller, closed set of things the agent will not do even if the oper
 
 - **Posting to Slack, Discord, email, or other chat on someone else's behalf.** Including the operator's behalf, unless they authorized this specific message.
 - **Replying to GitHub issues or PRs as the operator** without per-comment authorization.
-- **Opening a public PR.** Internal-branch PRs against `peter/agentic-handbook-overhaul` and similar working branches do not gate; PRs against `main` or any public-facing branch do.
+- **Opening a public PR.** Internal-branch PRs against personal working branches do not gate; PRs against `main` or any public-facing branch do.
 - **Filing a security disclosure, incident report, or anything escalatory.**
 
 *Why:* communication is irreversible in social, not technical, terms. A misposted "we are shipping X" cannot be deleted, and people will remember it.
@@ -142,5 +142,5 @@ The gate list is a floor, not a ceiling. Agents are expected to apply judgment a
 ## Related
 
 - [`collaborator-statement.md`](./collaborator-statement.md) — the principle these gates implement, and the refusal list (which sits *above* gates: gates can be approved, refusals cannot).
-- [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — the refusal cases restated as invariants. *(Forthcoming in Phase 2.)*
+- [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — the refusal cases restated as invariants.
 - [`../languages/`](../languages/) — language-specific reviewer pages name which HARD FAIL checks apply per language.

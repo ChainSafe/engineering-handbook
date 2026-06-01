@@ -172,7 +172,7 @@ Same as the goroutine loop-capture issue. Go 1.22+ fixes; earlier versions need 
 
 ## Mocks with `gomock.Any()` hide real bugs
 
-The legacy guide is firm on this: never use `gomock.Any()`. Tests pass with it; real bugs hide behind it. If you can't specify the argument, your test isn't ready to be written.
+ChainSafe is firm on this: never use `gomock.Any()`. Tests pass with it; real bugs hide behind it. If you can't specify the argument, your test isn't ready to be written.
 
 ## `%v` instead of `%w` in error wrapping
 

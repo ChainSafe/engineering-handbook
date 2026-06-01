@@ -2,7 +2,7 @@
 # scripts/check-skills-sync.sh
 #
 # Verifies that the set of skills in `skills/` matches the set referenced in
-# `llms.txt`. Drift between the two is a CI failure per PLAN §5b — the index
+# `llms.txt`. Drift between the two is a CI failure — the index
 # and the bundles ship together, not separately.
 #
 # Run from the repo root:

@@ -1,12 +1,10 @@
 # CODEOWNERS — ChainSafe Engineering Handbook
 #
 # Default owner is the curator (@kalambet). Section-specific overrides route
-# changes to the right reviewer. During the v2 rewrite, this file is
-# deliberately minimal — section overrides are added as Phases 2–4 land and
-# original authors are credited.
+# changes to the right reviewer. Section overrides are added as sections gain
+# dedicated owners, with original authors credited.
 #
-# Working agreement: PRs target `peter/agentic-handbook-overhaul`, not `main`.
-# See AGENTS.md.
+# PRs target `main` following OneFlow. See AGENTS.md.
 
 # Default: curator
 *                                               @kalambet

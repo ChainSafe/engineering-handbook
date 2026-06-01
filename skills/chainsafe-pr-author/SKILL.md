@@ -11,9 +11,9 @@ metadata:
 
 How to open and shepherd a PR at ChainSafe. Language-agnostic; language-specific reviewer surface is in the language skills. Full reference: [`workflows/pr-authoring.md`](../../workflows/pr-authoring.md).
 
-## Working agreement
+## Branching
 
-During the v2 handbook rewrite, every PR to `ChainSafe/engineering-handbook` targets the branch `peter/agentic-handbook-overhaul`, not `main`. For product repos, target the branches your CODEOWNERS designate.
+Branch naming follows OneFlow: personal feature branches are `<name>/<feature>`. PRs target `main` unless your CODEOWNERS designate otherwise.
 
 ## Default workflow for non-trivial PRs
 
@@ -53,7 +53,7 @@ The right question: *is this change related to the PR's stated goal, or can it l
 ## Reviewer requests
 
 - CODEOWNERS auto-routes; don't override unless adding to that list.
-- No CODEOWNERS? Use the legacy two-team pattern: `<project>-admins` for senior, `<project>` for peer.
+- No CODEOWNERS? Use the two-team pattern: `<project>-admins` for senior, `<project>` for peer.
 - Blocked on review >1 business day → ping reviewer in team channel.
 
 ## Handling reviewer comments

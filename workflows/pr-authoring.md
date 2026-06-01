@@ -4,11 +4,9 @@ How to open and shepherd a pull request — written for the agent era, where man
 
 > **In one line:** Small, focused, audit-able. The PR is the operator's review surface; the author makes that surface tractable.
 
-## Working agreement
+## Branching
 
-During the v2 rewrite of this handbook, every PR targets the branch **`peter/agentic-handbook-overhaul`**, not `main` — see [AGENTS.md](../AGENTS.md). For product repos, target the branches your CODEOWNERS designate.
-
-Branch naming follows [OneFlow](./oneflow.md): personal feature branches are `<name>/<feature>` (e.g., `peter/agentic-handbook-overhaul`). The `/` is meaningful — git uses it as a directory delimiter in `.git/refs/heads/`, so each contributor's branches share a namespace. Hot fixes go on `hotfix/<bug>` and follow the [hot-fix flow](./oneflow.md#hot-fixes-of-tagged-deployments).
+Branch naming follows [OneFlow](./oneflow.md): personal feature branches are `<name>/<feature>` (e.g., `alex/add-rate-limiter`). The `/` is meaningful — git uses it as a directory delimiter in `.git/refs/heads/`, so each contributor's branches share a namespace. PRs target `main` unless your CODEOWNERS designate otherwise. Hot fixes go on `hotfix/<bug>` and follow the [hot-fix flow](./oneflow.md#hot-fixes-of-tagged-deployments).
 
 ## The default workflow
 
@@ -18,7 +16,7 @@ This page does not re-derive the workflow. When the PR author is an agent, the s
 
 ## Small, focused, self-contained
 
-Lifting forward from the legacy guide (and from Google's review best practices, which the legacy guide drew on):
+These practices draw on Google's engineering review best practices and ChainSafe's established conventions:
 
 - **One PR, one self-contained change.** The PR addresses one thing plus its tests. It can be reviewed in a single ~10-minute pass.
 - **Separate refactors from features and fixes.** A refactor is its own PR. The exception is a small refactor (<~50 lines) genuinely entangled with the feature.
@@ -54,7 +52,7 @@ Agent-era additions:
 ## Reviewer requests
 
 - For repos with CODEOWNERS configured, GitHub auto-requests the right reviewers — do not override unless adding to that list.
-- For repos without CODEOWNERS, the legacy two-team pattern still applies: a `<project>-admins` team for senior approvals, a `<project>` team for peer review. (See the rewrite of repo setup at [`repo-and-ci-setup.md`](./repo-and-ci-setup.md).)
+- For repos without CODEOWNERS, the two-team pattern applies: a `<project>-admins` team for senior approvals, a `<project>` team for peer review. (See [`repo-and-ci-setup.md`](./repo-and-ci-setup.md).)
 - If you are blocked on review for >1 business day, ping the reviewer in the team channel. Speed matters; see the [reviewer guide on speed](./code-review.md).
 
 ## Handling reviewer comments

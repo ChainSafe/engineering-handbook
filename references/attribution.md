@@ -38,7 +38,7 @@ Entry conventions:
 
 Lives at [`../.github/CODEOWNERS`](../.github/CODEOWNERS). Routes review of changes — when someone (human or agent) opens a PR touching a section, the right reviewer is auto-requested.
 
-CODEOWNERS is not just review routing; it is a public statement of who owns what. A CODEOWNERS entry is read by humans as "this person has authority and responsibility for this section." During the v2 rewrite, the default owner is [@kalambet](https://github.com/kalambet); section-specific overrides are added as content lands.
+CODEOWNERS is not just review routing; it is a public statement of who owns what. A CODEOWNERS entry is read by humans as "this person has authority and responsibility for this section." The default owner is [@kalambet](https://github.com/kalambet) (CTO and curator); section-specific overrides are added in CODEOWNERS as sections gain dedicated owners.
 
 ## Why three layers and not one
 

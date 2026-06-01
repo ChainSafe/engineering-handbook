@@ -6,7 +6,7 @@ How quality is built into the work — what agents generate, what operators own,
 
 ## Principles
 
-These carry forward from the legacy QA principles, sharpened:
+The core QA principles, sharpened for the agent era:
 
 - **Quality is everyone's responsibility.** Not "the QA team's"; not "the senior reviewer's." Authors, reviewers, operators, and the agents working under them are all on the hook.
 - **Plan to succeed.** A definition of "done" before implementation, not after. See [Engineering Invariant §3 — Quality is defined before the build](../invariants/engineering-invariants.md#3-quality-is-defined-before-the-build-not-after).
@@ -181,7 +181,7 @@ The example is what good looks like: every step is one action, every assertion n
 - **Fuzz tests.** For attack surfaces. Run continuously in CI for security-critical code.
 - **Snapshot tests.** Useful for UI and structured output; brittle if overused. Use when the *shape* is the property you care about; not for everything.
 - **Manual exploratory.** Operator-owned (see above).
-- **Test plans / manual test cases.** Documented, repeatable, for hard-to-automate scenarios (multi-device, hardware-wallet flows, etc.). Legacy guidance: [`legacy guide on test plans`](https://github.com/ChainSafe/engineering-handbook/blob/v1/3_development/3_quality_assurance/test-plan-guidelines.md).
+- **Test plans / manual test cases.** Documented, repeatable, for hard-to-automate scenarios (multi-device, hardware-wallet flows, etc.).
 
 ## What "covered" means
 

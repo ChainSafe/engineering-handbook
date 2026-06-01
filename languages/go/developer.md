@@ -14,7 +14,7 @@ Idiomatic Go development at ChainSafe. Tooling, dependency management, testing, 
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.46
 ```
 
-A `.golangci.yml` at the repo root pins enabled linters. The legacy configuration is a strong starting point; copy it and adjust per-project. Pin the version in CI — different linter versions catch different things.
+A `.golangci.yml` at the repo root pins enabled linters. The [baseline config](./references/golangci-config.md) is a strong starting point; copy it and adjust per-project. Pin the version in CI — different linter versions catch different things.
 
 ### Mocking
 
@@ -29,7 +29,7 @@ Conventions:
 - **Always set `.Return(...)`** for functions that return.
 - For subtests, build a fresh `gomock.NewController(t)` per subtest with the subtest's `t`.
 
-The legacy guide has a full worked example with subtests and functional mock builders; it remains the right pattern. Mocks are committed; CI regenerates and `git diff --exit-code` catches drift.
+The [gomock patterns reference](./references/gomock-patterns.md) has a full worked example with subtests and functional mock builders. Mocks are committed; CI regenerates and `git diff --exit-code` catches drift.
 
 ### Dependency management
 
@@ -41,7 +41,7 @@ Go modules. `go.mod` and `go.sum` live in the repo. `go.sum` is never edited by 
 
 ## Argument passing
 
-The legacy guide's heuristics are still right:
+The argument-passing heuristics:
 
 - **Prefer passing by value.** Removes nil risk; makes function behavior independent of mutation; clearer.
 - **Slices** pass by value if you only mutate elements. Pass `*[]T` only if you need to change the slice length.

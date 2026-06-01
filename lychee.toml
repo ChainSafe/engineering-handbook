@@ -40,16 +40,10 @@ base = "."
 exclude = [
     "^mailto:",
     "^tel:",
-    # Placeholder URLs in the .invariance pointer page and language architect pages;
-    # those use bracketed markers like `[TODO: confirm anchor]`, not real URLs.
-    # No exclusion needed — lychee only follows real URLs.
 ]
 
-# Don't fail on links to the working branch during v2 rewrite. main is the
-# canonical target post-merge; pre-merge, some main-targeted links won't have
-# their content yet. Comment out before v0 merge to verify all main links work.
+# No excluded paths — all markdown is in scope.
 exclude_path = [
-    # No excluded paths at v0 — all markdown is in scope.
 ]
 
 ###########

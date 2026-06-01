@@ -39,7 +39,7 @@ Pinned channels keep CI deterministic. Floating to `stable` is fine for librarie
 
 ### IDEs
 
-Whatever you prefer that gives you `rust-analyzer`. The legacy guide enumerates options (CLion, VSCode, Sublime, Lapce, Helix, Vim, Emacs). The choice doesn't matter; the LSP integration does.
+Whatever you prefer that gives you `rust-analyzer`. Common options include CLion, VSCode, Sublime, Lapce, Helix, Vim, and Emacs. The choice doesn't matter; the LSP integration does.
 
 ## Error handling
 

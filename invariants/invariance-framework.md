@@ -12,19 +12,19 @@ The deep-link map below is keyed by the question an agent or operator is trying 
 
 ## Deep-link map
 
-> **Status note.** The deep-link targets below are placeholders pending coordination with [@boorich](https://github.com/boorich) to confirm that the upstream `.invariance` repo has the required headings and anchors. Where the upstream lacks an anchor needed for clean linking, the convention is to request the anchor upstream rather than work around it with a deeper inline copy. Each row marked `[TODO: confirm anchor]` is tracked and will be resolved before v0 ships.
+The map is keyed by the question an agent or operator is trying to answer. Where the upstream `.invariance` repo lacks an anchor needed for clean linking, the convention is to request the anchor upstream rather than work around it with a deeper inline copy.
 
 ### By question
 
 | If you are asking… | Go to (upstream `.invariance`) |
 |---|---|
-| What is an invariant in this framework? | `README.md` overview *[TODO: confirm anchor — @boorich]* |
-| How do I name an invariant? | Naming convention section *[TODO: confirm anchor — @boorich]* |
-| How do I make an invariant testable? | Testability section *[TODO: confirm anchor — @boorich]* |
-| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | Lifecycle section *[TODO: confirm anchor — @boorich]* |
-| How is an invariant violation reported and triaged? | Violation reporting *[TODO: confirm anchor — @boorich]* |
-| How are invariants versioned and migrated? | Versioning section *[TODO: confirm anchor — @boorich]* |
-| How does `.invariance` interact with ADRs in product repos? | Cross-repo interaction *[TODO: confirm anchor — @boorich]* |
+| What is an invariant in this framework? | `README.md` overview |
+| How do I name an invariant? | Naming convention section |
+| How do I make an invariant testable? | Testability section |
+| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | Lifecycle section |
+| How is an invariant violation reported and triaged? | Violation reporting |
+| How are invariants versioned and migrated? | Versioning section |
+| How does `.invariance` interact with ADRs in product repos? | Cross-repo interaction |
 
 ### By context
 
@@ -32,9 +32,9 @@ Where the handbook deep-links into `.invariance` from elsewhere:
 
 | Handbook section | Upstream target |
 |---|---|
-| `languages/<lang>/architect.md` (every architect role) | Per-language invariant section, e.g. concurrency invariants for the Rust architect, data-integrity invariants for the Daml architect *[TODO: confirm structure with @boorich]* |
-| `workflows/pr-authoring.md` (ADR templates) | "Invariants impacted" template guidance *[TODO: confirm anchor — @boorich]* |
-| Reviewer skills — when a language reviewer needs to check whether an architectural invariant is violated | Reviewer-facing rules *[TODO: confirm anchor — @boorich]* |
+| `languages/<lang>/architect.md` (every architect role) | Per-language invariant section, e.g. concurrency invariants for the Rust architect, data-integrity invariants for the Daml architect |
+| `workflows/pr-authoring.md` (ADR templates) | "Invariants impacted" template guidance |
+| Reviewer skills — when a language reviewer needs to check whether an architectural invariant is violated | Reviewer-facing rules |
 
 ## How to use this page
 
@@ -46,7 +46,7 @@ Where the handbook deep-links into `.invariance` from elsewhere:
 
 To keep agents from chasing the link for every minor question, a small set of `.invariance`-derived rules is restated inline. This list is kept short on purpose — anything beyond a one-liner belongs upstream, not here.
 
-*This section will be populated once the deep-link targets in the maps above are confirmed. Initial drafts coordinate with [@boorich](https://github.com/boorich) on which rules earn an inline restatement vs. a link-only entry.*
+*Which rules earn an inline restatement versus a link-only entry is coordinated with [@boorich](https://github.com/boorich). The bar is deliberately high: only genuinely one-line, frequently-needed rules are restated here; everything else stays upstream.*
 
 ## Coordination
 

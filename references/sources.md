@@ -39,7 +39,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 - **Source.** `AI_POLICY.md` in [github.com/ChainSafe/forest](https://github.com/ChainSafe/forest). Originally adapted from the [Ghostty](https://github.com/ghostty-org/ghostty) project's AI policy, with attribution preserved in the upstream Forest file.
 - **Maintainer.** Forest engineering team (current owners listed in Forest's CODEOWNERS).
 - **Covers.** AI-assisted development policy at the product-repo level. Sets norms for what AI agents may and may not do when contributing to Forest specifically.
-- **Used by.** [`../workflows/testing-and-qa.md`](../workflows/) borrows the QA framing around what agents should generate vs. what operators must own. Forest-specific reviewer skills will reference it once they land.
+- **Used by.** [`../workflows/testing-and-qa.md`](../workflows/) borrows the QA framing around what agents should generate vs. what operators must own; the Rust reviewer guidance references it for `unsafe`-block scrutiny.
 - **Coordination.** Forest team owns the upstream file. Ghostty attribution is preserved per Apache 2.0 §4(d) — see [`../NOTICE`](../NOTICE).
 
 ### `chainsafe-research-plan-implement` skill (Boris Tane lineage)
@@ -63,7 +63,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 Surfacing known candidates rather than fabricating coverage:
 
 - **Other internal artifacts to canonicalize.** When team members surface practices that exist in product repos or docs and could become canonical sources, they get added here with the original author credited (see [`./attribution.md`](./attribution.md)).
-- **Language-specific upstream references.** Per-language reviewer pages may deep-link into language-community standards (e.g., the Rust API guidelines). Those entries land as Phase 4 language pages are drafted.
+- **Language-specific upstream references.** Per-language reviewer pages may deep-link into language-community standards (e.g., the Rust API guidelines). Those entries are added here when a page starts deferring to one.
 
 ## Related
 

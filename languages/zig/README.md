@@ -1,10 +1,10 @@
 # Zig at ChainSafe
 
-> **In one line:** Zig has no confirmed production use at ChainSafe as of v2. This page exists to be honest about that and to set a rebuttable presumption against reaching for Zig before talking to the curator.
+> **In one line:** Zig has no confirmed production use at ChainSafe. This page exists to be honest about that and to set a rebuttable presumption against reaching for Zig before talking to the curator.
 
 ## Status
 
-Zig appears in the handbook's language coverage list as a v2/aspirational language. As of the v2 launch, **there is no confirmed production Zig codebase at ChainSafe** that requires architect / developer / reviewer role pages. Rather than fabricate a full role triad for a language that doesn't have an established practice at the org, this single page records what we know and what to do if Zig comes up.
+Zig appears in the handbook's language coverage list as an aspirational language. **There is no confirmed production Zig codebase at ChainSafe** that requires architect / developer / reviewer role pages. Rather than fabricate a full role triad for a language that doesn't have an established practice at the org, this single page records what we know and what to do if Zig comes up.
 
 ## When not to reach for Zig
 
@@ -43,7 +43,7 @@ If you encounter Zig code in a ChainSafe repository:
 
 When ChainSafe genuinely adopts Zig in production:
 
-- Replace this `README.md` with the full role triad (`architect.md`, `developer.md`, `reviewer.md`) plus `idioms.md` and `gotchas.md` following the v0 language pattern used by Go/Rust/TypeScript/Solidity/Daml.
+- Replace this `README.md` with the full role triad (`architect.md`, `developer.md`, `reviewer.md`) plus `idioms.md` and `gotchas.md` following the language pattern used by Go/Rust/TypeScript/Solidity/Daml.
 - Add the corresponding `chainsafe-zig-*` skills in `skills/` via `skill-creator`.
 - Update [`llms.txt`](../../llms.txt) to index the new pages.
 - Add a reviewer-severity entry to the [reviewer-severity tier table](../../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail) — most Zig contexts at a blockchain org would be SOFT WARNING unless directly handling cryptography, in which case HARD FAIL territory.

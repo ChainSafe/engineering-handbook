@@ -5,14 +5,8 @@ You are an AI agent (Claude Code, Cursor, Continue, or other) operating against 
 ## Read this first
 
 1. **You operate under an operator-first contract.** A human is responsible for every output you produce. Propose plans before acting on multi-step or destructive work. Surface uncertainty. Stop at gates. Do not assume autopilot.
-2. **The canonical statement of the contract lives at `operating-model/collaborator-statement.md`.** Load it before any non-trivial task. If it does not yet exist (the v2 rewrite is in flight — see Status below), ask the operator how to proceed rather than improvising the contract from this file alone.
-3. **PRs target `peter/agentic-handbook-overhaul`, not `main`.** During the v2 rewrite, never open a PR against `main`. If asked to do so, redirect or escalate.
-
-## Status
-
-This repo is mid-rewrite (v2). Many pages referenced below do not yet exist. The legacy v1 content (`1_principles/`, `3_development/`, `4_the-formal-stuff/`, `HOME.md`) still sits at the root alongside the new structure — it will be removed during the Phase 8 launch sweep.
-
-When a page this file references doesn't exist yet, treat it as a known gap — do not fabricate substitute content. Escalate to the operator.
+2. **The canonical statement of the contract lives at `operating-model/collaborator-statement.md`.** Load it before any non-trivial task.
+3. **Never push directly to a protected branch.** Open a PR against `main` (or the branch your CODEOWNERS designate) following [OneFlow](workflows/oneflow.md). The decision to merge is the operator's, not yours.
 
 ## Repo map
 
@@ -20,7 +14,7 @@ When a page this file references doesn't exist yet, treat it as a known gap — 
 - `invariants/` — the non-negotiables. Engineering invariants, deep links into Martin Maurer's `.invariance` framework, agent-era invariants (no silent edits, no fabricated APIs, no committed secrets).
 - `workflows/` — PR authoring (delegates to the `chainsafe-research-plan-implement` skill), code review (operator-reviewing-agent and agent-reviewing-PR modes), repo & CI setup, testing & QA, infrastructure & DevOps (deep links into `ChainSafe/infrastructure-general`), incident response, release & deploy.
 - `languages/<lang>/` — for each of Go, Rust, TypeScript, Solidity, Daml, Python, Zig: `architect.md`, `developer.md`, `reviewer.md`, plus shared `idioms.md` and `gotchas.md`. Architect pages deep-link into `.invariance`.
-- `references/` — attribution, source pointers, contributors, changelog.
+- `references/` — attribution, source pointers, contributors.
 - `skills/` — packaged Anthropic Skills authored via `skill-creator`. Discoverable via `chainsafe.io/llms.txt` and via direct paths in this repo.
 - `VISION.md` — ChainSafe mission, vision, and core values (company-wide). Read for org-wide context; not load-bearing for most agent tasks.
 - `PRINCIPLES.md` — General Engineering Principles. Engineering's manifestation of the values; the aspirational layer above `invariants/engineering-invariants.md`. Read when the question is "why are we building software this way?" rather than "what's the rule?".
@@ -39,7 +33,7 @@ Do not load everything by default. Pull the minimum needed for the task. Skills 
 
 ## Gates and escalation
 
-The full policy lives at `operating-model/gates-and-escalation.md`. Until that page exists, default to the following:
+The full policy lives at `operating-model/gates-and-escalation.md`. In summary:
 
 - Stop before any action touching production, secrets, irreversible writes, public communication, or `git push` / merge.
 - Stop and ask before opening a PR, creating an issue on behalf of a human, or posting to chat on someone's behalf.
@@ -54,7 +48,7 @@ The full policy lives at `operating-model/gates-and-escalation.md`. Until that p
 
 ## Memory conventions
 
-When operating with a persistent memory system, save **only** non-obvious facts that future sessions need (user role, feedback, project context, external references). Do not save derivable repo state, ephemeral task context, or sensitive personal information. Detailed conventions live in `operating-model/memory-conventions.md` when it exists.
+When operating with a persistent memory system, save **only** non-obvious facts that future sessions need (user role, feedback, project context, external references). Do not save derivable repo state, ephemeral task context, or sensitive personal information. Detailed conventions live in `operating-model/memory-conventions.md`.
 
 ## Where to push back
 

@@ -36,7 +36,7 @@ Lead with the rule. Add a **Why** line (the reason the operator gave) and a **Ho
 
 Who is doing what, why, by when — facts that are not derivable from code or git log but that shape current work.
 
-Examples: *"Canton SV go-live is May 1 2026; any work touching SV before that should be reviewed with the SV lead."* / *"The Forest auth-middleware rewrite is driven by legal/compliance, not tech-debt cleanup."*
+Examples: *"The bridge contracts are frozen pending an external audit; work touching them before sign-off is reviewed with the audit owner."* / *"A service's auth-middleware rewrite is driven by a compliance requirement, not tech-debt cleanup — don't quietly descope it."*
 
 Convert relative dates to absolute ones at save time (e.g., "next Thursday" → "2026-06-04") so the memory stays interpretable as time passes.
 
@@ -87,7 +87,7 @@ Memories are point-in-time observations, not live state. The agent treats them a
 
 - **Verify before acting.** A memory that names a function, flag, or file path is a claim about what existed when the memory was written. Before recommending an action that depends on it, check: does the file still exist? Does the function still have that signature? Use `git`, `grep`, or a fresh read.
 - **Trust observations over memory on conflict.** If a recalled fact contradicts what the current repo or current `git log` shows, the current state wins. Update or remove the stale memory; do not act on it.
-- **Stale ≠ wrong.** A memory recording "Canton SV go-live is May 1 2026" is not wrong on May 2nd — it is now history. Decide whether to keep it as history, update it, or remove it.
+- **Stale ≠ wrong.** A memory recording "the release freeze starts 2025-03-01" is not wrong the day after — it is now history. Decide whether to keep it as history, update it, or remove it.
 
 ## Consolidation
 

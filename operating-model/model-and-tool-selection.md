@@ -52,7 +52,7 @@ When the agent notices the model is mismatched, it says so explicitly. Examples:
 
 Do not silently bail. Do not silently push through.
 
-*Current generation (as of 2026-05-27):* Claude Opus 4.6, Sonnet 4.6, Haiku 4.5. This page refers to tiers, not specific versions — re-anchor as newer generations ship.
+This page refers to capability tiers (Haiku-class, Sonnet-class, Opus-class), not specific model versions. Map your provider's current generations onto these tiers; the tier logic holds as new models ship.
 
 ## Tool and MCP selection
 
@@ -97,7 +97,7 @@ When a task matches a packaged skill in [`skills/`](../skills/), prefer the skil
 | Work shape | Skill |
 |---|---|
 | Any non-trivial code change | [`chainsafe-research-plan-implement`](../skills/chainsafe-research-plan-implement/SKILL.md) |
-| Language-specific architecture, development, or review | The matching `chainsafe-<lang>-{architect,developer,reviewer}` skill *(forthcoming, Phase 4 / 7)* |
+| Language-specific architecture, development, or review | The matching `chainsafe-<lang>-{architect,developer,reviewer}` skill |
 | Authoring or editing a Claude skill | Anthropic's `skill-creator` |
 
 When no skill matches, work from first principles using the Collaborator Contract.
@@ -118,5 +118,5 @@ If the work could plausibly invoke two skills, ask the operator which is in scop
 
 - [`collaborator-statement.md`](./collaborator-statement.md) — the contract these selections operate under.
 - [`gates-and-escalation.md`](./gates-and-escalation.md) — what stops the agent regardless of model or tool.
-- [`mcp-and-llm-txt.md`](./mcp-and-llm-txt.md) — how agents discover tools and content from this handbook. *(Forthcoming, Phase 1.4.)*
+- [`mcp-and-llm-txt.md`](./mcp-and-llm-txt.md) — how agents discover tools and content from this handbook.
 - [`../skills/`](../skills/) — the packaged skills the agent can invoke.

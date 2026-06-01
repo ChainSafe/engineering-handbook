@@ -20,7 +20,7 @@ This is the richer channel: agents can navigate the handbook's link graph rather
 
 ### Future: in-house ChainSafe MCP server
 
-A dedicated ChainSafe MCP server is a future enhancement, not part of v0. It would add custom indexing, skill search, and ChainSafe-specific tooling beyond what the generic GitHub MCP provides. It is not part of v0 and is justified only if observed agent-usage patterns show GitHub MCP discovery is the bottleneck.
+A dedicated ChainSafe MCP server is a possible future enhancement. It would add custom indexing, skill search, and ChainSafe-specific tooling beyond what the generic GitHub MCP provides. It is justified only if observed agent-usage patterns show GitHub MCP discovery is the bottleneck.
 
 ## `llms.txt` structure
 
@@ -73,7 +73,7 @@ This is the agent-facing index. For humans, see the
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md): Infrastructure & DevOps canonical source. The handbook's `workflows/infrastructure-and-devops.md` deep-links here.
 ```
 
-The actual `llms.txt` lives at the repo root: [`llms.txt`](../llms.txt). It is published to `chainsafe.io/llms.txt` as part of the v0 launch — `chainsafe.io` is configured (Phase 8 step) to serve the file from `https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/llms.txt` or an equivalent route. The repo-root file is the source of truth; the chainsafe.io URL is the public surface.
+The actual `llms.txt` lives at the repo root: [`llms.txt`](../llms.txt). It is published to `chainsafe.io/llms.txt` — `chainsafe.io` is configured to serve the file from `https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/llms.txt` or an equivalent route. The repo-root file is the source of truth; the chainsafe.io URL is the public surface.
 
 ## How an agent should use this
 
@@ -92,21 +92,13 @@ Do not bulk-load the handbook. The whole tree is larger than any single task nee
 - A skill that does not match → do not load it. The triggering descriptions are written so foreign agents can self-select.
 - Two candidate skills → ask the operator before invoking either. See [`model-and-tool-selection.md` §"Do not chain skills automatically"](./model-and-tool-selection.md#do-not-chain-skills-automatically).
 
-### When the handbook references a page that does not exist yet
+### When a referenced page is missing
 
-The v2 rewrite is in flight. Many pages this handbook cross-references are still forthcoming. When a referenced page is missing:
+Occasionally a cross-referenced page may be missing or moved. When that happens:
 
 - Do not fabricate substitute content.
 - Surface the gap to the operator. If the operator wants to proceed without the missing page, the agent flags this explicitly in any artifact it produces ("This plan was drafted without `<page>` because it does not yet exist; verify against `<page>` once available").
 - Optionally file an issue in `ChainSafe/engineering-handbook` to track the gap.
-
-## Versioning during the v2 rewrite
-
-During Phases 0–7, the canonical state of `chainsafe.io/llms.txt` (when it exists) reflects the **v1 handbook on `main`** — not the in-progress overhaul on `peter/agentic-handbook-overhaul`. This is deliberate: the public discovery surface should not advertise pages that are still being drafted.
-
-When the v2 rewrite merges to `main` (single drop at end of v0), `llms.txt` is updated as part of the same merge. Foreign agents see the new index from that moment on.
-
-If you (an agent or developer) need to test against in-progress v2 material before the merge, use the GitHub MCP against the `peter/agentic-handbook-overhaul` branch directly. There is no `llms.txt` published for the overhaul branch.
 
 ## Maintenance
 
@@ -123,4 +115,4 @@ When you add a new skill, section, or pointer page: update `llms.txt` in the sam
 - [`collaborator-statement.md`](./collaborator-statement.md) — the contract that the discovery layer serves.
 - [`gates-and-escalation.md`](./gates-and-escalation.md) — what stops the agent, including the external-communication gate that affects how agents post about discoveries.
 - [`model-and-tool-selection.md`](./model-and-tool-selection.md) — when to load which MCP and skill.
-- [`memory-conventions.md`](./memory-conventions.md) — what an agent should persist about handbook content across sessions. *(Forthcoming, Phase 1.5.)*
+- [`memory-conventions.md`](./memory-conventions.md) — what an agent should persist about handbook content across sessions.

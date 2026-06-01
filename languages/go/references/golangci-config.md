@@ -1,6 +1,6 @@
 # golangci-lint configuration
 
-A baseline `.golangci.yml` for ChainSafe Go projects. Lifted from the legacy handbook (golangci-lint v1.46 era) with notes on what has changed in current versions.
+A baseline `.golangci.yml` for ChainSafe Go projects, with notes on what changes across golangci-lint versions.
 
 > Treat this as a starting point. Tighten or loosen per project; pin the golangci-lint version in CI so runs are deterministic.
 

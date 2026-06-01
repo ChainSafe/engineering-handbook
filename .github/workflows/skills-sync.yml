@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - 'peter/agentic-handbook-overhaul'
   workflow_dispatch:
 
 jobs:

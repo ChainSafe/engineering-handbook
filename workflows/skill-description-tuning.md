@@ -8,7 +8,7 @@ A runbook for running Anthropic's `skill-creator` description-optimization loop 
 
 The handbook's policy for this loop, in four points:
 
-- **Opt-in.** No skill in this repo is *required* to go through the loop. The lightweight "draft + self-check" approach used for v0 skills is the floor; the loop is sharpening, not enforcement.
+- **Opt-in.** No skill in this repo is *required* to go through the loop. The lightweight "draft + self-check" approach is the floor for any skill; the loop is sharpening, not enforcement.
 - **Local-only.** The loop calls `claude -p` (real Anthropic API spend) and takes ~30–45 minutes per skill. It runs on the operator's machine, on demand. CI does not invoke it. PRs touching a SKILL.md description are not gated by it.
 - **Opus by default.** When you do run the loop, default to the most capable tier (`--model claude-opus-4-6` or current Opus generation). The per-skill quality gain is worth the extra cost on an opt-in run. Sonnet/Haiku overrides are available for cheaper iteration.
 - **Non-deterministic, so re-run if outputs look off.** The optimizer is an LLM; the same input can produce different best-descriptions across runs. A single run is a draft, not an oracle.
@@ -23,13 +23,13 @@ Three legitimate triggers:
 2. **Engineers report triggering issues** — the skill keeps firing when it shouldn't, or never fires when it should. The complaint is your eval-set raw material.
 3. **Periodic hygiene pass** before a release or every quarter — re-check that descriptions still match actual triggering needs.
 
-If none of those apply, don't run it. The lightweight "draft + self-check" floor used for v0 skills is sufficient.
+If none of those apply, don't run it. The lightweight "draft + self-check" floor is sufficient.
 
 ## Prerequisites
 
 - **Claude Code installed** on your local machine with `claude -p` working (the loop calls it as a subprocess).
 - **An active Anthropic API key** or whatever auth your Claude Code uses — the loop will consume real tokens.
-- **Local clone of `engineering-handbook` on the branch you want to update** (typically `peter/agentic-handbook-overhaul` for in-flight work, `main` after v0 ships).
+- **Local clone of `engineering-handbook` on the branch you want to update** (typically `main`, or the working branch your team designates).
 - **The skill-creator package available.** It's bundled with Claude Code; the script path is typically:
   ```
   ~/.claude/skills/skill-creator/scripts/run_loop.py
@@ -124,7 +124,7 @@ name: chainsafe-<name>
 description: <the new best_description>
 metadata:
   ...
-  description-tuned: 2026-06-01 (run_loop on claude-opus-4-6)
+  description-tuned: <YYYY-MM-DD> (run_loop on <opus-class model>)
 ---
 ```
 
@@ -134,7 +134,7 @@ The `description-tuned` metadata field is optional but worth adding — it recor
 
 A SKILL.md description change is just another PR.
 
-- Target branch is the working branch (`peter/agentic-handbook-overhaul` during v2 rewrite, `main` after v0 merge).
+- Target branch is `main` (or the working branch your team designates).
 - PR description includes the before/after description plus the test-score delta from the report.
 - Standard review — see [`pr-authoring.md`](./pr-authoring.md) and [`code-review.md`](./code-review.md).
 - The skills-sync CI check ([`scripts/check-skills-sync.sh`](../scripts/check-skills-sync.sh)) keeps the index honest; if you didn't change `llms.txt`, no update needed (descriptions are inlined in `llms.txt`'s skill entries — see if your one-line description in `llms.txt` should be refreshed alongside).

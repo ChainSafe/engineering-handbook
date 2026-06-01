@@ -48,7 +48,7 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 
 ### Tests
 
-- **Tests exist for the change.** The legacy guide and the [testing-and-qa](../../workflows/testing-and-qa.md) page apply: agent-authored tests need the same scrutiny as agent-authored code.
+- **Tests exist for the change.** The [testing-and-qa](../../workflows/testing-and-qa.md) page applies: agent-authored tests need the same scrutiny as agent-authored code.
 - **Mocks are minimal.** Mock-heavy unit tests asserting "was called" rather than behavior are theatre.
 - **Property tests via `proptest`** for code with formal invariants (parsing, serialization, math, crypto).
 - **`miri` tests for unsafe.** Where applicable.

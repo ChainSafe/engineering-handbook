@@ -20,7 +20,7 @@ Per the [repo-boundaries gate](../operating-model/gates-and-escalation.md#6-repo
 
 - **Action.** Create the repo under the `ChainSafe` GitHub organization.
 - **Defaults.** Public, with a `README.md` and a `LICENSE`. License is Apache 2.0 unless the project has a documented reason otherwise (see [`../README.md` License section](../README.md#license)).
-- **If permission is missing,** reach out to an org owner (the Heads of Engineering, currently).
+- **If permission is missing,** reach out to an org owner (e.g., a Head of Engineering).
 - **Rollback.** Delete the repo if no commits beyond the initial scaffolding have landed.
 
 ## 2. Team permissions
@@ -62,7 +62,7 @@ Rollback: branch protection settings are version-history'd in GitHub's audit log
 - **Always suggest updating PR branches.** On.
 - **Automatically delete head branches.** On.
 
-The legacy guide called for disabling merge commits and rebase by default — this preference holds. Squash keeps `main` history clean.
+Disable merge commits and rebase by default; squash keeps `main` history clean.
 
 ## 5. CODEOWNERS
 
