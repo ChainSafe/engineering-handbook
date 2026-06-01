@@ -67,6 +67,30 @@ Per [PLAN.md §7.5](../../PLAN.md#7-decisions-resolved-2026-05-27), Go reviewer 
 - **`go vet` clean.** No `nolint` directives without a comment explaining why.
 - **No `//nolint`** without a rationale.
 
+### Dependencies (stdlib-first)
+
+- **New entries in `go.mod` require justification.** Every external dep is a supply-chain decision. The PR description should say what stdlib (or `golang.org/x/*`) alternative was considered and why it was insufficient.
+- **Project-approved deps are exempt** from per-PR justification: `golang/mock` (or `go.uber.org/mock`), `stretchr/testify`, `golangci-lint`-bundled linters. Anything else is a real decision.
+- **Watch for the reflexive framework reach.** New HTTP server using `gin`/`echo`/`chi` when `net/http` + `http.ServeMux` would do (Go 1.22+ has method+path routing). New logger using `logrus`/`zap` when `log/slog` would do (Go 1.21+). Flag and ask.
+- **ORM in a new service** → near-HARD scrutiny. ChainSafe Go services default to `database/sql` + `pgx`. An ORM (gorm, ent) needs a real case.
+
+See [`architect.md` § Stdlib first](./architect.md#stdlib-first) for the full policy.
+
+### Effective Go alignment (naming, commentary, structure)
+
+- **Package names** are short, lowercase, single-word nouns. No `util` / `common` / `helpers`. Flag any new package with a generic name.
+- **Getters without a `Get` prefix.** `Owner()`, not `GetOwner()`. Setters have `Set`.
+- **Single-method interfaces named with `-er` suffix.** `Reader`, `Closer`, `Formatter`. Flag if a single-method interface uses a noun name.
+- **MixedCaps**, not snake_case. Acronyms preserve case (`URL`, `ID`, `HTTP`).
+- **Receivers** are one or two letters matching the type. Never `self` / `this` / `me`.
+- **Doc comments on every exported identifier**, starting with the identifier's own name. Missing godoc on exported items is a SOFT WARNING.
+- **Package comment** at the top of one file per package describing what the package does. Missing → SOFT WARNING.
+- **Interface defined consumer-side**, not in the implementing package. Flag interfaces defined alongside their implementations unless there's a reason.
+- **Accept interfaces, return concrete types.** A function returning `interface{...}` when a `*Foo` would do is over-abstracting; flag.
+- **Receiver consistency.** A type with both pointer and value receivers, mixed, is confusing. Ask why.
+
+See [Effective Go](https://go.dev/doc/effective_go) for the canonical reference.
+
 ## What to flag vs. fix in place
 
 - **Flag** (review comment, not a fix): missing context propagation, goroutine leaks, error wrapping issues, panic-vs-error questions, mocking shortcuts, package-layout decisions, naming.

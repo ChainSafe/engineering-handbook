@@ -55,6 +55,132 @@ Forest's `AI_POLICY.md` (in [`ChainSafe/forest`](https://github.com/ChainSafe/fo
 
 Forest extends these into Filecoin-specific norms. The same shape applies across products at ChainSafe — Lodestar, Gossamer, Sygma, Canton — with each product's reviewer skill filling in the language-specific specifics.
 
+## The test plan, as a section of `plan.md`
+
+In the agentic-first model, there is no standalone "test plan document" filled out once per project. The test plan is a **section of the agent's [`plan.md`](../skills/chainsafe-research-plan-implement/SKILL.md)**, prepared as part of the research-plan-implement workflow before any code lands. The operator reviews it as part of approving the plan. Trying to write a test plan after the implementation is already done is the same anti-pattern as writing acceptance criteria after the build — the plan becomes a description of what was built rather than a check on whether it was right.
+
+The agent answers the following questions explicitly in the plan's test section. The operator's review verifies each is answered substantively, not just listed:
+
+- **What is in scope to test?** A concrete list of the behaviors, units, paths, and edge cases this change introduces or touches. Generic "unit tests for the new function" doesn't count.
+- **What level of the test pyramid?** Unit / property-based / integration / end-to-end / fuzz / mainnet-fork. Most changes touch multiple levels; the plan states which and why.
+- **What is automated vs manual?** Default: automate everything that can be automated. Anything left to manual testing needs a reason (security-sensitive UX flow, multi-device behavior, hardware-wallet path, etc.) and a manual test case prepared per the next section.
+- **What test data is required?** Fixtures, seed data, mainnet snapshots, signer keys, etc. For sensitive data: how it's handled and torn down. For multi-environment work: which data lives where.
+- **What test environment runs this?** CI pipeline, local dev, mainnet fork, staging — explicit per test type. If any test requires a non-default environment, the plan names it and links the setup runbook.
+- **What are the known risks the tests aren't catching?** This is the most-skipped section and the most useful. Tests cover what the author can imagine; the gap between "what's tested" and "what could go wrong" is where production breaks. Naming the gap explicitly is honest; pretending the test suite is exhaustive is theatre.
+
+When the change is trivial (a typo fix, a one-line lint adjustment), the test plan section can be one line: "no new tests; existing suite covers." That's a valid answer. The point isn't a long plan — it's a deliberate one.
+
+The reviewer skills check that PRs touching non-trivial code paths include this section. PRs without it draw a SOFT WARNING by default and a HARD FAIL for security-critical languages.
+
+## Manual test cases (when automation isn't sufficient)
+
+**Most tests are automated.** Automation is the default — it runs on every PR, costs nothing per execution after authoring, and gives the operator the verification surface they need to review agent-authored code at speed. A manual test case is the exception, not the norm.
+
+A manual test case exists when the test plan (above) identifies a check that can't reasonably be automated. Common reasons:
+
+- A **hardware path** — hardware wallet signing, USB device behavior, multi-device handoff.
+- A **privileged action** that can't safely run in CI — mainnet signing, irreversible writes to shared infrastructure, deploys to systems whose state matters.
+- A **user-facing flow** where the assertion is "does this feel right" or "does the UI degrade gracefully" — perception-level judgments a script can't make.
+- A **multi-system orchestration** whose setup cost outweighs the value of automating — typically one-off integration validations.
+
+If the manual case doesn't fit one of those, it's probably an automation gap, not a manual test. Ask "can this be automated within the next sprint?" before writing it as manual.
+
+### The hard rule
+
+**A manual test case always has step-by-step instructions.** No exceptions. A manual test without explicit steps is a test that won't run — the person running it three months from now (and that person might be future-you, or an on-call engineer at 3am) will not remember what you intended.
+
+The agent never produces a manual test case that lacks steps and assertions. The operator reviewing one without them rejects it and asks for the steps.
+
+### Required structure
+
+Every manual test case has:
+
+| Field | Required? | What it is |
+|---|---|---|
+| **Title** | Yes | One sentence stating the test's purpose, ending in a verifiable claim. *"User can successfully mint a test ERC-20 on Sepolia from the staging faucet UI"* — not *"Test the faucet"*. |
+| **Component** | Yes | Which part of the system: UI, smart contract, validator, CLI, SDK, etc. |
+| **Feature** | Yes | The named feature this case verifies. |
+| **Environment** | Yes | Where this runs: staging, local, mainnet-fork, devnet, etc. |
+| **Why manual?** | Yes | A one-line reason this isn't automated. Forces the question to be answered explicitly; defends against drift. |
+| **Steps** | Yes — load-bearing | Numbered, single-action steps. Each one a click, a command, a wait. No collapsing multiple actions into one bullet. |
+| **Assertions** | Yes — load-bearing | Numbered, specific success conditions. "Looks right" is not an assertion — name the property: a balance change, a UI element appearing, a log line written, an event emitted. |
+| **Test Data** | When applicable | Specific addresses, fixtures, account states, network parameters. |
+| **Prerequisites** | When applicable | Setup that must be complete before steps begin: contracts deployed, signer funded, environment provisioned. |
+| **Priority** | Optional | If multiple test suites exist, mark which is critical-path vs. nice-to-have. |
+| **Notes** | Optional | Tear-down, known flakiness, related tickets — anything not load-bearing for execution. |
+
+### Step granularity
+
+A step is **one action**. Not "go through the wallet flow" — that's a scenario, not a step. The granularity is:
+
+- *Click the "Connect Wallet" button.*
+- *Select MetaMask from the wallet list.*
+- *Approve the connection in the MetaMask popup.*
+- *Wait for the page to display the connected address.*
+
+If a step contains "and then" or "also," split it.
+
+### Assertion specificity
+
+An assertion names **what changed** and **how to verify it**. Each assertion is independently checkable.
+
+- ✗ *"The mint works."* — vague, not verifiable.
+- ✓ *"Confirm a transaction-complete confirmation appears on the page within 30s."* — specific event, bounded time.
+- ✓ *"Confirm the destination account's balance increased by exactly the minted amount (verify via block explorer)."* — specific quantity, named verification source.
+
+If the test passes, every assertion fires. If any one fails, the test fails. There is no "pass with caveats" — caveats get written up as a new issue.
+
+### When manual becomes automated
+
+A manual test case is a candidate for automation as soon as the conditions that made it manual change. Examples:
+
+- Hardware-wallet flow: when a CI-friendly hardware-wallet emulator is wired in.
+- Mainnet-only signing: when a mainnet-fork environment with test signers becomes available.
+- UI feel: when a screenshot-diff or visual-regression suite is set up.
+
+The agent (or the operator) periodically reviews the manual-test-case set against these conditions. The reviewer skill flags manual cases that could now plausibly be automated.
+
+### Worked example
+
+```markdown
+**Title:** Staging faucet UI can mint a test ERC-20 on Sepolia, end-to-end via MetaMask
+**Component:** UI (web), Sepolia ERC-20 faucet contract
+**Feature:** Faucet — token mint
+**Environment:** Staging (faucet.staging.chainsafe.tech), Sepolia testnet
+**Why manual?** Wallet popup interaction can't be CI-automated reliably with our current tooling
+**Priority:** Critical (every release)
+
+**Prerequisites:**
+- Test ERC-20 contract deployed to Sepolia at the staging-faucet address
+- MetaMask installed in the test browser profile, with a test account funded with at least 0.01 Sepolia ETH for gas
+
+**Test Data:**
+- Test destination account: 0xdc23f52868...  (do not reuse for other tests)
+
+**Steps:**
+1. Navigate to https://faucet.staging.chainsafe.tech in the test browser.
+2. Click "Connect Wallet".
+3. Select MetaMask from the wallet list.
+4. Approve the connection in the MetaMask popup.
+5. Wait for the page to display the connected address.
+6. From the network dropdown, select "Sepolia".
+7. From the token dropdown, select "ERC20Tst".
+8. Paste the test destination account address into the "Destination" field.
+9. Click "Mint".
+10. Approve the transaction in the MetaMask popup.
+11. Wait for the page's status indicator to change from "Pending" to "Complete" (typical: ≤30s).
+
+**Assertions:**
+1. Confirm the page shows a transaction-complete confirmation, including the tx hash.
+2. Confirm, via Sepolia block explorer, the tx hash is mined and shows a Transfer event for the configured amount.
+3. Confirm the destination account's ERC20Tst balance increased by exactly the configured amount.
+4. Confirm the connected account's Sepolia ETH balance decreased by approximately the displayed gas fee.
+
+**Notes:** Tear-down: the test ERC-20 contract has a public `burn` method — reset the destination account's balance after the test run to keep results comparable across runs.
+```
+
+The example is what good looks like: every step is one action, every assertion names a specific verifiable property, the "Why manual?" line defends against future drift toward automation forgetfulness.
+
 ## Test types and when to use which
 
 - **Unit tests.** Default. Every non-trivial function, every changed function. Fast, isolated, deterministic.

@@ -17,6 +17,8 @@ How to open and shepherd a pull request — written for the agent era, where man
 
 During the v2 rewrite of this handbook, every PR targets the branch **`peter/agentic-handbook-overhaul`**, not `main` — see [AGENTS.md](../AGENTS.md) and [PLAN.md](../PLAN.md). For product repos, target the branches your CODEOWNERS designate.
 
+Branch naming follows [OneFlow](./oneflow.md): personal feature branches are `<name>/<feature>` (e.g., `peter/agentic-handbook-overhaul`). The `/` is meaningful — git uses it as a directory delimiter in `.git/refs/heads/`, so each contributor's branches share a namespace. Hot fixes go on `hotfix/<bug>` and follow the [hot-fix flow](./oneflow.md#hot-fixes-of-tagged-deployments).
+
 ## The default workflow
 
 For any non-trivial code change, the canonical workflow is the [`chainsafe-research-plan-implement`](../skills/chainsafe-research-plan-implement/SKILL.md) skill: **research → plan → annotate (1–6 rounds) → implement**. The skill enforces a human-approved plan as a gate on any code change.
@@ -92,6 +94,7 @@ The threshold: if a reviewer's first comment is going to be "can we hop on a cal
 ## Related
 
 - [`code-review.md`](./code-review.md) — the reviewer's counterpart to this page.
+- [`oneflow.md`](./oneflow.md) — ChainSafe's branching and release model; defines branch naming, the trunk-based flow, and the tag patterns that drive deployments.
 - [`../skills/chainsafe-research-plan-implement/SKILL.md`](../skills/chainsafe-research-plan-implement/SKILL.md) — the workflow this page assumes for non-trivial PRs.
 - [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — scope discipline (§1), no-fabrication (§2), audit-trail (§8).
 - [`../operating-model/collaborator-statement.md`](../operating-model/collaborator-statement.md) — operator and agent responsibilities the PR makes concrete.

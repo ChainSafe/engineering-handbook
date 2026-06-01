@@ -10,9 +10,9 @@ last_updated: 2026-05-27
 
 # Release and Deploy
 
-This handbook holds the **operator decision policy** for shipping work. The *how-to* — deploy procedures, environment-specific commands, rollback mechanics — lives in [`ChainSafe/infrastructure-general`](https://github.com/ChainSafe/infrastructure-general).
+This handbook holds the **operator decision policy** for shipping work. The underlying branching and tag-driven flow is [OneFlow](./oneflow.md) — trunk-based, with `v.*.*` tags marking production deployments and `stage-*` tags marking staging. The *how-to* for any specific deploy — commands, environment-specific scripts, rollback mechanics — lives in [`ChainSafe/infrastructure-general`](https://github.com/ChainSafe/infrastructure-general).
 
-> **In one line:** When to ship, who approves, what counts as ready. The *how* defers to the infra repo.
+> **In one line:** When to ship, who approves, what counts as ready. The flow is [OneFlow](./oneflow.md); the operator decisions live here; the *how* defers to the infra repo.
 
 ## Operator decision policy
 
@@ -104,6 +104,7 @@ Not useful:
 
 ## Related
 
+- [`oneflow.md`](./oneflow.md) — the branching and tag-driven release model this page wraps. Defines `v.*.*` and `stage-*` tag conventions and the hot-fix flow.
 - [`infrastructure-and-devops.md`](./infrastructure-and-devops.md) — broader infra deep-link map.
 - [`incident-response.md`](./incident-response.md) — what to do when a deploy goes wrong.
 - [`repo-and-ci-setup.md`](./repo-and-ci-setup.md) — CI baseline the pre-flight readiness check assumes.

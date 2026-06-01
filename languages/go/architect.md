@@ -63,6 +63,49 @@ Choose deliberately. Go's primitives (goroutines, channels, contexts, sync primi
 
 Functional options or explicit `Settings` structs for constructors. No global state, no hidden singletons. Tests build the system from the outside.
 
+### Stdlib first
+
+Go's standard library is unusually capable, and idiomatic Go leans on it heavily. ChainSafe's default for new Go code is **stdlib-first**: reach for an external dependency only when there's a compelling reason and the operator agrees.
+
+**The default loadout — no justification required:**
+
+- The Go standard library (everything at [pkg.go.dev/std](https://pkg.go.dev/std)).
+- The `golang.org/x/*` extension packages (Go-team maintained — `x/sync`, `x/sys`, `x/net`, `x/crypto`, etc.). Treat these as stdlib-equivalent.
+- Tools that ship with or are blessed by the Go distribution (`gofmt`, `go vet`, `go test`, `go mod`).
+
+**Project-approved external deps — established at the org level:**
+
+- `golang/mock` (or `go.uber.org/mock`) — testing mock generation. See [`references/gomock-patterns.md`](./references/gomock-patterns.md).
+- `github.com/stretchr/testify` — test assertions, when not using stdlib's `testing` directly.
+- `golangci-lint` and the linters it bundles — code quality. See [`references/golangci-config.md`](./references/golangci-config.md).
+
+These are documented org-level choices; they don't require per-project justification.
+
+**Everything else — needs a compelling case and operator approval:**
+
+A web framework instead of `net/http`. A logging library instead of `log/slog`. A router instead of `http.ServeMux`. A retry/circuit-breaker library instead of `context`-driven retries. An ORM instead of `database/sql`. In each case, the question is: *what does this give us that the standard library can't, and is that worth the supply-chain, version-skew, and learning-curve cost?*
+
+The architect's ADR must answer this explicitly:
+
+- What stdlib (or `x/*`) primitive was considered first?
+- What's missing or insufficient about it?
+- Why is the external dep worth its cost in dependency surface, audit burden, and ongoing maintenance?
+- What's the exit path if the dep becomes unmaintained?
+
+Reaching for the popular framework reflexively is the anti-pattern. Most Go services don't need one. The standard library was designed by people who knew what they were doing; default to trusting them.
+
+### Effective Go alignment
+
+ChainSafe Go follows [Effective Go](https://go.dev/doc/effective_go) as the canonical idiom guide. The architect's job is to set up the codebase so following it is the path of least resistance:
+
+- **Interfaces small and consumer-side.** Define interfaces where they are *used*, not where they are *implemented*. Single-method interfaces are normal — that's why the standard library is full of `Reader`, `Writer`, `Closer`. Interface names follow the `-er` convention for single-method interfaces.
+- **Accept interfaces, return concrete types.** A function takes a `Reader`, returns a `*Foo`. This keeps callers maximally flexible and implementations maximally clear.
+- **No package-level naming gymnastics.** Package names are short, lowercase, single-word nouns. The package name *is* the namespace, so `store.Get` is fine; `store.GetStore` is repetitive.
+- **Getters do not have a `Get` prefix.** `owner` field → `Owner()` method. Setters do have a `Set` prefix.
+- **`MixedCaps`, not `snake_case` or `lowerCamelCase` for multi-word names.** Exported identifiers `MixedCaps`, unexported `mixedCaps`.
+
+These are detailed in [`developer.md`](./developer.md) and [`idioms.md`](./idioms.md); the architect's job is to not contradict them in the project's foundation.
+
 ## ADR shape for Go services
 
 When opening an ADR for a Go service or significant Go module, the template should cover:
@@ -71,10 +114,12 @@ When opening an ADR for a Go service or significant Go module, the template shou
 - **Concurrency commitments.** Goroutine ownership, context propagation, cancellation semantics.
 - **Error contract.** What errors callers see. Which are sentinel, which are typed, which are wrapped.
 - **Resource ownership.** Connections, files, goroutines — who closes them, when.
+- **Dependency choices.** Any external (non-stdlib, non-`x/*`, non-project-approved) dependency the design assumes, with the compelling-case justification per the stdlib-first rule above.
 - **Invariants impacted.** Deep links into `.invariance` for the architectural invariants this decision touches.
 
 ## Anti-patterns
 
+- **Reaching for a framework reflexively.** `net/http` + `http.ServeMux` (Go 1.22+ adds method+path routing) covers most service needs. Pick a router or framework only when stdlib genuinely can't deliver.
 - **Wide `pkg/` directory.** Most things belong in `internal/` and stay there.
 - **Goroutines without a `context.Context`.** Leak hazards.
 - **`sync.Map` reached for instead of a domain-specific structure.** It's correct but usually wrong for the problem.

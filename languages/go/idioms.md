@@ -131,7 +131,77 @@ func TestThing(t *testing.T) {
 
 Map-keyed test cases give you free naming; subtests give you isolation.
 
+## Godoc commentary
+
+Every exported identifier has a doc comment that begins with the identifier's name:
+
+```go
+// Store persists orders by buyer-seller pair. The zero value is not
+// usable; construct with NewStore.
+type Store struct { /* ... */ }
+
+// Get returns the order for the given id, or ErrNotFound if no such order
+// exists. It is safe to call from multiple goroutines.
+func (s *Store) Get(id OrderID) (Order, error) { /* ... */ }
+```
+
+Every package has a package comment on the `package` clause in one file:
+
+```go
+// Package store provides durable persistence for orders indexed by
+// buyer and seller party identifiers.
+package store
+```
+
+godoc renders these into the standard documentation format and uses the first sentence as the summary. Write the first sentence to stand alone.
+
+## Interface placement (consumer-side)
+
+Define interfaces where they are **consumed**, not where they are **implemented**:
+
+```go
+// in the package that uses the dependency:
+type fetcher interface {
+    Fetch(ctx context.Context, url string) ([]byte, error)
+}
+
+func (s *Service) Process(ctx context.Context, f fetcher) error { /* ... */ }
+```
+
+The consumer knows the shape it needs; the producer's concrete type satisfies whatever shape happens to be needed. This keeps the producer's API surface narrow and lets multiple consumers each declare their own minimum interface.
+
+Single-method interfaces are normal — the standard library is full of them (`io.Reader`, `io.Writer`, `fmt.Stringer`). Their names end in `-er`. Multi-method interfaces get descriptive nouns (`http.Handler`, `sort.Interface`).
+
+## Accept interfaces, return concrete types
+
+```go
+// good: caller can pass any io.Reader
+func ParseConfig(r io.Reader) (*Config, error) { /* ... */ }
+
+// bad: forces caller to wrap in an interface even if they have a *Config
+func Apply(c interface{ Validate() error }) error { /* ... */ }
+```
+
+A function takes interfaces so callers have flexibility about what to pass. A function returns concrete types so callers can use the full API of what they get back. Reversing this rule produces APIs that are simultaneously rigid (about inputs) and underspecified (about outputs).
+
+## Receiver consistency
+
+Pick pointer or value receivers per type and stick with the choice:
+
+```go
+// pointer receivers throughout — type carries state, is large, or has a mutex
+type Store struct { mu sync.Mutex; items map[ID]Item }
+func (s *Store) Get(id ID) Item { /* ... */ }
+func (s *Store) Put(id ID, it Item) { /* ... */ }
+```
+
+Mixing pointer and value receivers on the same type without a reason confuses callers about whether the zero value is usable and whether copies preserve behavior. The rule of thumb:
+
+- **Pointer receivers** when the method modifies state, when the type is large (>~80 bytes), or when the type has a `sync.Mutex` or similar.
+- **Value receivers** for small immutable-like types where copying is cheap.
+
 ## Related
 
 - [`developer.md`](./developer.md) — fuller guidance with rationale.
 - [`gotchas.md`](./gotchas.md) — the inverse: anti-idioms and common mistakes.
+- Upstream: [Effective Go](https://go.dev/doc/effective_go) — canonical idiom guide; this page draws from it.

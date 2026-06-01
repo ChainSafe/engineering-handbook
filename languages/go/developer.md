@@ -92,6 +92,90 @@ Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/rep
 
 Pin Go version per-project in `go.mod` and the CI workflow.
 
+## Dependency policy: stdlib first
+
+ChainSafe's default for new Go code is **stdlib-first**. Reach for the standard library and the `golang.org/x/*` extension packages before reaching for anything else. External dependencies require a compelling case, documented in an ADR, and operator approval.
+
+See [`architect.md` § Stdlib first](./architect.md#stdlib-first) for the full rationale and the list of project-approved deps that don't require per-use justification (`golang/mock` / `go.uber.org/mock`, `testify`, `golangci-lint`).
+
+Common stdlib reaches that catch developers reflexively reaching for external libraries:
+
+| Need | Use this from stdlib | Not these |
+|---|---|---|
+| HTTP server | `net/http` + `http.ServeMux` (Go 1.22+ has method+path patterns) | gin, echo, chi, gorilla/mux, fiber |
+| Structured logging | `log/slog` (Go 1.21+) | logrus, zap, zerolog |
+| JSON | `encoding/json` | jsoniter, easyjson (only if benchmarked) |
+| Test assertions | `testing` (plus testify when established) | gocheck, ginkgo |
+| Validation | hand-rolled `func Validate() error` methods | go-playground/validator (unless schema-driven) |
+| Configuration | `flag` + `os.Getenv` (or simple unmarshalling) | viper |
+| Database access | `database/sql` + `pgx` for Postgres | ORMs (gorm, ent) — usually overkill |
+| HTTP client | `net/http` `Client` | resty, req |
+| Templates | `text/template` / `html/template` | none needed |
+| UUIDs | `crypto/rand` + hand-rolled, or `google/uuid` if v4 is fine | bigger deps |
+
+Every external dep added to `go.mod` is a supply-chain decision. Treat each one accordingly.
+
+## Effective Go alignment
+
+ChainSafe Go follows [Effective Go](https://go.dev/doc/effective_go) as the canonical idiom guide. The following are the items that come up most in review at ChainSafe — see [`idioms.md`](./idioms.md) for the broader idiom set.
+
+### Naming
+
+- **Package names: short, lowercase, single-word nouns.** `store`, `http`, `metrics`. Not `storage_utils`. The package name *is* part of the namespace, so `store.Get` is fine; `store.GetStore` repeats the namespace.
+- **Avoid generic package names** (`util`, `common`, `helpers`, `misc`) — they grow into junk drawers.
+- **Getters don't carry a `Get` prefix.** `Owner()` not `GetOwner()`. Setters do carry `Set`: `SetOwner()`.
+- **Single-method interfaces end in `-er`.** `Reader`, `Writer`, `Closer`, `Formatter`. Multi-method interfaces get a descriptive noun: `FileStore`, `BlockProcessor`.
+- **`MixedCaps`** for multi-word names. Exported `MixedCaps`, unexported `mixedCaps`. Never `snake_case` (and never `ALL_CAPS` for constants either — `MaxItems`, not `MAX_ITEMS`).
+- **Acronyms stay in case.** `URL` not `Url`, `ID` not `Id`, `HTTP` not `Http`. Applies in both exported and unexported names: `parseURL`, `userID`.
+- **Receivers: one or two letters** matching the type. `s *Store`, not `store *Store` (and never `self` / `this` / `me`).
+
+### Commentary (godoc)
+
+- **Every exported identifier has a doc comment** starting with the name itself:
+  ```go
+  // Fetch retrieves the bytes at url. The returned error wraps any
+  // underlying network or parse failure.
+  func Fetch(ctx context.Context, url string) ([]byte, error) { ... }
+  ```
+- **Package comment** at the top of one file per package, describing what the package does:
+  ```go
+  // Package store provides durable persistence for orders, indexed
+  // by buyer and seller party identifiers.
+  package store
+  ```
+- Comments are sentences — start with a capital letter, end with a period. The first word *is* the identifier name; godoc relies on this convention.
+- Comment **why**, not **what**. The code says what. Exceptions: regex, hard-to-understand algorithms, anything where intent isn't obvious from the code.
+
+### Interfaces — consumer-side, small
+
+- **Define interfaces where they are used,** not where they are implemented. The consumer knows the shape it needs; the implementer's concrete type satisfies whatever shape happens to fit.
+- **Small interfaces win.** 1–3 methods. The standard library is full of single-method interfaces because they compose well.
+- **Accept interfaces, return concrete types.** Functions take a `Reader`; return a `*Foo`. This keeps callers maximally flexible and implementations clear at the type level.
+
+### Methods — receiver consistency
+
+- **Pointer receiver** when the method modifies state, when the type is "large" (>~80 bytes), or when the type has a mutex.
+- **Value receiver** when the method doesn't mutate and the type is small (basic types, small structs).
+- **Don't mix** pointer and value receivers on the same type without a reason — it confuses callers about whether the type's zero value is usable.
+
+### Control structures
+
+- **No `else` after `return`.** Handle the error/edge, return, continue with the happy path un-indented:
+  ```go
+  if err != nil {
+      return err
+  }
+  // happy path here
+  ```
+- **`for` is the only loop.** Range over arrays/slices/maps/channels.
+- **`switch`** is more flexible than C's — cases break automatically; use `fallthrough` to override (rarely needed). Switch on values, types, or bare booleans (`switch {`).
+- **`defer`** for cleanup, placed immediately after the resource is acquired. Arguments to `defer` are evaluated at *defer* time, not at call time.
+
+### Functions
+
+- **Multiple return values, especially `(value, error)`.** Don't try to encode errors as sentinel values; return them explicitly.
+- **Named return values** for documentation and for `defer`-pattern manipulation of return values. Don't use them for "naked returns" in long functions — that's hard to read.
+
 ## Patterns that come up in review
 
 - **`context.Context` as first parameter** for any operation that can be canceled or has a deadline. Never `context.TODO()` in committed code; either it's a real context (`context.Background()` at the top level, derived contexts below) or a `context.WithTimeout`/`WithDeadline`/`WithCancel`.
@@ -111,7 +195,11 @@ Pin Go version per-project in `go.mod` and the CI workflow.
 
 ## Related
 
-- [`architect.md`](./architect.md) — design-level decisions.
+- [`architect.md`](./architect.md) — design-level decisions, including the stdlib-first ADR shape.
 - [`reviewer.md`](./reviewer.md) — what to look for when reviewing a Go PR.
 - [`idioms.md`](./idioms.md) and [`gotchas.md`](./gotchas.md).
+- [`references/golangci-config.md`](./references/golangci-config.md) — the lint baseline (`.golangci.yml` + CI workflow).
+- [`references/gomock-patterns.md`](./references/gomock-patterns.md) — detailed GoMock worked examples (subtests, custom matchers, mocks-check CI).
 - [`../../workflows/testing-and-qa.md`](../../workflows/testing-and-qa.md) — the broader testing posture this page lives under.
+- Upstream: [Effective Go](https://go.dev/doc/effective_go) — the canonical idiom guide this page aligns with.
+- Upstream: [Go Standard Library](https://pkg.go.dev/std) — the default loadout for the stdlib-first policy.
