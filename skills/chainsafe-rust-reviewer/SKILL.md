@@ -98,3 +98,4 @@ The reviewer skill refuses to review and escalates if:
 - Universal review: [`workflows/code-review.md`](../../workflows/code-review.md)
 - Sister roles: `chainsafe-rust-architect`, `chainsafe-rust-developer`
 - Forest AI policy: https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md
+- Upstream: [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/)

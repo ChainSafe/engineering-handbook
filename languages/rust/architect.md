@@ -52,11 +52,32 @@ ChainSafe Rust projects use Cargo workspaces for multi-crate projects (Forest is
 - **Builder pattern** for complex constructors. The standard library's `std::process::Command` is a model.
 - **No leaking `tokio::` types in library APIs.** Use abstract bounds or feature-gate.
 
+### Static vs. dynamic dispatch
+
+Generics versus trait objects is an architectural choice, not a style one ([Effective Rust Item 12](https://effective-rust.com/generics.html)):
+
+- **Generics / `impl Trait` — static dispatch.** Monomorphized: fastest at runtime, no indirection. The default, and the right call on hot paths (consensus, crypto, serialization). The cost is code bloat and compile time when over-used.
+- **`dyn Trait` — dynamic dispatch.** One vtable, smaller binary, a pointer indirection per call. Reach for it at plugin boundaries, for heterogeneous collections (`Vec<Box<dyn Trait>>`), or to cut monomorphization bloat. Needs an object-safe trait.
+
+Default to generics; choose `dyn` deliberately, not reflexively.
+
+### API stability and evolution
+
+A `pub` item is a versioning contract; treat the public surface as SemVer-governed ([Effective Rust Items 21–24](https://effective-rust.com/semver.html)):
+
+- **Know what breaks.** Removing or renaming a `pub` item, or adding a field to a struct callers construct, is a breaking change; adding a method or a `#[non_exhaustive]` variant is not.
+- **`#[non_exhaustive]`** on public enums and structs you expect to grow.
+- **Re-export dependency types that appear in your public API** (`pub use dep::Handle`) — otherwise callers can't name the type without pinning the same dependency version (Item 24).
+- **Seal traits** you don't want implemented downstream (a private supertrait), so methods can be added later without breaking implementors.
+- **Boundaries.** Crates targeting WASM or embedded stay `no_std`-compatible where practical; FFI surfaces stay narrow and are generated with `bindgen` / `cbindgen`, not hand-mapped (Items 33–35).
+
 ## ADR shape for Rust crates
 
 When opening an ADR for a Rust crate, the template should cover:
 
 - **Public surface.** What's `pub`, what's `pub(crate)`, what's private. Why.
+- **Public-API stability.** The SemVer guarantees the crate makes; `#[non_exhaustive]` use; which dependency types are re-exported.
+- **Dispatch strategy.** Where the crate uses generics vs. `dyn Trait`, and why.
 - **Error type.** Typed (`thiserror`) or pass-through (`anyhow`). Justify.
 - **Async commitments.** Which runtime, where the runtime is required, how the crate's API is shaped around async.
 - **Unsafe code.** If any `unsafe { }` is involved, justify the soundness argument and the safety invariants the caller must uphold.
@@ -69,6 +90,8 @@ When opening an ADR for a Rust crate, the template should cover:
 - **`String` everywhere when `&str` would do.** Allocations have a cost; types tell the caller about ownership.
 - **`tokio` types leaked through public APIs of library crates** without feature flags.
 - **`unsafe` without a soundness comment.** Every `unsafe` block needs a justification.
+- **Undocumented public items.** A `pub` item with no `///` doc comment ships an unexplained contract.
+- **`dyn Trait` in a hot-path signature** chosen by default rather than measured.
 
 ## Related
 
@@ -77,3 +100,4 @@ When opening an ADR for a Rust crate, the template should cover:
 - [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — Filecoin/Forest-specific AI norms; informs Rust review at ChainSafe.
 - [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md) — architectural framework this page defers to.
+- [Effective Rust](https://effective-rust.com/) (Drysdale) and [The Rust Book](https://doc.rust-lang.org/book/) — the canonical practice references this section builds on; cataloged in [`sources.md`](../../references/sources.md).

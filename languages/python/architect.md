@@ -22,6 +22,8 @@ Python at ChainSafe is *not* appropriate for:
 
 If your task fits the second list, the language choice itself is the architectural question — escalate to the curator before writing Python.
 
+This is [Effective Python](https://effectivepython.com/) Item 94 (*Know When and How to Replace Python with Another Programming Language*) as house policy: when a Python path turns performance-critical, profile it first (Item 92, *Profile Before Optimizing* — measure with `cProfile` / `timeit`, never guess), then push the hot part into a native extension or another language rather than micro-optimizing Python. Python stays the glue and the velocity layer.
+
 ## Defer to `.invariance` for
 
 Python projects generally sit downstream of the main product architecture. The `.invariance` framework applies for cross-component invariants, but most Python work doesn't introduce new architectural invariants — it operates within existing ones.
@@ -104,3 +106,4 @@ For Python work substantial enough to warrant an ADR:
 
 - [`developer.md`](./developer.md), [`reviewer.md`](./reviewer.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - [`../../workflows/infrastructure-and-devops.md`](../../workflows/infrastructure-and-devops.md) — Ansible and ops tooling context.
+- [Effective Python](https://effectivepython.com/) (Slatkin) — the canonical Python practice reference this section builds on; cataloged in [`sources.md`](../../references/sources.md).

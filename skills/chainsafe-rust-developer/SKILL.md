@@ -125,3 +125,4 @@ Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLIC
 - Gotchas: [`languages/rust/gotchas.md`](../../languages/rust/gotchas.md)
 - Sister roles: `chainsafe-rust-architect`, `chainsafe-rust-reviewer`
 - Forest AI policy: https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md
+- Upstream: [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/)

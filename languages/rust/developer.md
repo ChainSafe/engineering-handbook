@@ -103,6 +103,15 @@ Forest's reviewer norms (see [`AI_POLICY.md`](https://github.com/ChainSafe/fores
 - **`miri`** in CI for unsafe code; catches UB at the test level.
 - **`cargo nextest`** for faster test runs in CI.
 
+## Documentation
+
+Public interfaces carry doc comments — they are part of the contract ([Effective Rust Item 27](https://effective-rust.com/documentation.html); [Rust Book ch. 14](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html)):
+
+- **`///` on every `pub` item**, `//!` for module- and crate-level docs. Say what it does, what it returns, when it errors, and what it panics on.
+- **Examples in docs are tests.** Code in `///` examples is compiled and run by `cargo test` (doc-tests), so it can't rot silently.
+- **`#![warn(missing_docs)]`** on library crates turns an undocumented `pub` item into a warning — a CI failure under `-D warnings`.
+- **Intra-doc links** (`` [`Type`] ``) keep `cargo doc` cross-references resolving as the API moves.
+
 ## CI
 
 Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/repo-and-ci-setup.md)):
@@ -110,7 +119,7 @@ Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/rep
 - `cargo fmt --all --check`
 - `cargo clippy --all-targets -- -D warnings`
 - `cargo build --workspace --all-targets`
-- `cargo test --workspace`
+- `cargo test --workspace` (runs unit, integration, and doc-tests)
 - `cargo doc --no-deps` (catches broken doc links)
 - `cargo audit`
 - For unsafe-heavy crates: `cargo miri test`
@@ -122,6 +131,9 @@ Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/rep
 - **`From` / `TryFrom` for conversions** rather than inherent `to_*` methods.
 - **`Deref` only for smart pointers.** Don't lean on `Deref` to fake inheritance.
 - **No `String` in error variants** unless you genuinely have an open set; `&'static str` or typed payload is usually better.
+- **Derive the standard traits that fit** (`Debug`, `Clone`, `PartialEq`, `Eq`, `Hash`, `Default`) instead of hand-rolling them, and respect their contracts — `Hash` and `Eq` must agree, `Ord` must be consistent with `PartialOrd`.
+- **`macro_rules!` only for genuine repetition** the type system can't express; proc-macros are a heavy compile-time dependency, so justify them ([Effective Rust Item 28](https://effective-rust.com/macros.html)).
+- **No wildcard imports** (`use foo::*`) outside a crate prelude or `#[cfg(test)]` — they hide where names come from and break when a dependency adds a symbol ([Item 23](https://effective-rust.com/wildcard.html)).
 
 ## Anti-patterns
 
@@ -137,3 +149,4 @@ Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/rep
 - [`architect.md`](./architect.md), [`reviewer.md`](./reviewer.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - [`../../workflows/testing-and-qa.md`](../../workflows/testing-and-qa.md) — broader testing posture; the Forest/Ghostty pattern lands here.
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — Filecoin-specific AI norms.
+- [Effective Rust](https://effective-rust.com/) and [The Rust Book](https://doc.rust-lang.org/book/) — canonical practice references; cataloged in [`sources.md`](../../references/sources.md).

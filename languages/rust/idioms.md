@@ -131,6 +131,24 @@ Combined with `..Default::default()` in struct literals, this lets callers speci
 
 `Clone`, `Debug`, `PartialEq`, `Eq`, `Hash`, `Default`, `serde::{Serialize, Deserialize}` — derive freely. Re-implementing them by hand is a smell unless you have a specific reason.
 
+## Static vs. dynamic dispatch
+
+```rust
+fn process(items: impl Iterator<Item = Tx>) { ... }   // static: monomorphized, fast
+fn register(handlers: Vec<Box<dyn Handler>>) { ... }   // dynamic: one vtable, heterogeneous
+```
+
+`impl Trait` (and generic `<T: Trait>`) compile to specialized code per type — the default, and what hot paths want. `dyn Trait` trades a pointer indirection for a smaller binary and the ability to hold different concrete types together. Reach for `dyn` at boundaries and for heterogeneous collections; stay generic where performance matters.
+
+## Smart pointers: which one
+
+- **`&T` / `&mut T`** — borrow; the default. No ownership, no allocation.
+- **`Box<T>`** — single heap owner; for recursive types or moving a large value cheaply.
+- **`Rc<T>` / `Arc<T>`** — shared ownership; `Rc` single-threaded, `Arc` across threads. Add a `Mutex` / `RwLock` only when you also need shared *mutation*.
+- **`Cow<'a, T>`** — borrow until you must mutate, then clone-on-write. Good for APIs that usually don't allocate.
+
+Reach for the cheapest one that expresses the ownership you actually need.
+
 ## Module structure
 
 ```
@@ -147,7 +165,20 @@ src/
 
 `mod.rs` (or `<name>.rs` since 2018 edition) is the module's root. The crate root re-exports what's public.
 
+## Doc comments
+
+```rust
+/// Fetches the value stored under `key`.
+///
+/// # Errors
+/// Returns [`FetchError::NotFound`] when the key is absent.
+pub fn fetch(key: &str) -> Result<Data, FetchError> { ... }
+```
+
+`///` on public items, `//!` for the module. Document the error and panic conditions. The example compiles and runs under `cargo test`, so the docs can't drift from the code.
+
 ## Related
 
 - [`developer.md`](./developer.md) — fuller rationale.
 - [`gotchas.md`](./gotchas.md) — what to avoid.
+- [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/) — the upstream practice references.

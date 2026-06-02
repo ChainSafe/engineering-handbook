@@ -39,6 +39,9 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 - **`#[non_exhaustive]`** on enums and structs that may grow. Forgetting this locks the crate into a breaking-change cycle.
 - **No `tokio::` types in public library APIs** unless feature-gated.
 - **Newtypes for domain values.** Bare `u64` or `String` crossing module boundaries is a smell if a newtype would communicate intent.
+- **Public items are documented.** New `pub` items carry `///` docs (what it does, returns, errors, panics); examples are doc-tested (Effective Rust Item 27).
+- **Dispatch is justified.** Generics / `impl Trait` on hot paths; `dyn Trait` only where heterogeneity or binary size earns the indirection.
+- **Breaking changes are intentional.** Removing or renaming a `pub` item, or adding a constructible field, is a SemVer break — flag it. API-visible dependency types are re-exported.
 
 ### Concurrency primitives
 
@@ -58,6 +61,7 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 - **`cargo fmt --check`** clean.
 - **`cargo clippy -D warnings`** clean.
 - **No `#[allow(...)]`** without a comment explaining why.
+- **No wildcard imports** (`use foo::*`) outside a prelude or `#[cfg(test)]`.
 - **`cargo doc --no-deps`** builds (no broken doc links).
 
 ### Dependencies
@@ -91,3 +95,4 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 - [`../../workflows/code-review.md`](../../workflows/code-review.md) — universal review framework.
 - [`../../invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings) — HARD FAIL semantics; `unsafe` promotes here.
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — the Filecoin-specific extension.
+- [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/) — canonical practice references (see [`sources.md`](../../references/sources.md)).

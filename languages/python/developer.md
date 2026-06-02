@@ -106,6 +106,7 @@ def load_config(path: str) -> Config:
 
 - Specific exception classes.
 - `raise X from e` preserves the cause chain (Python's equivalent of error wrapping).
+- **Raise exceptions rather than returning `None`** on failure (Effective Python Item 32) — a `None` return is ambiguous with a legitimately-empty result and pushes error-checking onto every caller.
 - Never bare `except:`.
 
 ## CLI with `click`
@@ -204,6 +205,8 @@ def test_load_missing_raises(tmp_path: pathlib.Path) -> None:
 - **Context managers (`with`)** for resource handling.
 - **List/dict comprehensions** for transformations; loops for side effects.
 - **`functools.lru_cache`** for memoization where appropriate.
+- **Keyword-only arguments** (`def f(*, timeout: int)`) for options at wide call sites — callers can't transpose positional args, and adding a parameter later doesn't shift the others (Effective Python Item 37).
+- **Docstrings on every public function, class, and module** (Effective Python Item 118) — they document the contract (what it does, raises, returns) and surface through `help()` / `pydoc`.
 
 ## Anti-patterns
 

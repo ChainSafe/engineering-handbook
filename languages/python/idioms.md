@@ -149,6 +149,41 @@ multiply_by_two = partial(multiply, 2)
 - `@lru_cache(maxsize=N)` for bounded.
 - `partial` for argument binding.
 
+## Keyword-only arguments
+
+```python
+def connect(host: str, *, timeout: float = 30.0, retries: int = 3) -> Conn:
+    ...
+
+connect("db.internal", timeout=5)   # options must be named
+```
+
+Everything after `*` must be passed by name. Callers can't transpose `timeout` and `retries`, and you can add an option later without breaking positional calls (Effective Python Item 37).
+
+## Missing dict keys
+
+```python
+counts.get(key, 0)                       # one-off default, no KeyError
+
+from collections import defaultdict
+groups = defaultdict(list)
+groups[key].append(value)                # auto-creates the list
+```
+
+`get` for a one-off default; `defaultdict` for accumulating into internal state (Effective Python Items 26–27).
+
+## Return a result object, not a big tuple
+
+```python
+@dataclass(frozen=True)
+class ParseResult:
+    value: int
+    consumed: int
+    warnings: list[str]
+```
+
+Once a function would return more than ~three values, a `@dataclass` beats a tuple — callers read fields by name instead of unpacking by position (Effective Python Item 31).
+
 ## Logging
 
 ```python
@@ -189,3 +224,4 @@ def test_upper(input: str, expected: str) -> None:
 ## Related
 
 - [`developer.md`](./developer.md), [`gotchas.md`](./gotchas.md).
+- [Effective Python](https://effectivepython.com/) (Slatkin) — the upstream practice reference.

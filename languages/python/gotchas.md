@@ -233,6 +233,27 @@ class Box:
 
 Since Python 3.7, dicts preserve insertion order. But don't rely on that for sets — `set` does not preserve order.
 
+## `bytes` vs `str`
+
+```python
+data = path.read_bytes()       # bytes
+text = data.decode("utf-8")     # str — decode at the boundary
+```
+
+`bytes` and `str` don't mix: `b"x" + "y"` is a `TypeError`, and a `bytes` never equals a `str`. Decode to `str` at the input boundary, encode at the output boundary, and keep the middle one type (Effective Python Item 10).
+
+## Iterator exhaustion
+
+```python
+def summarize(rows):
+    total = sum(r.amount for r in rows)
+    count = sum(1 for r in rows)   # 0 if `rows` was a generator — already drained
+    return total, count
+```
+
+A generator can be walked once. A function that iterates its argument twice silently misbehaves when handed an iterator instead of a list. Materialize with `list(rows)` up front, or accept only a concrete sequence (Effective Python Item 21).
+
 ## Related
 
 - [`idioms.md`](./idioms.md), [`reviewer.md`](./reviewer.md).
+- [Effective Python](https://effectivepython.com/) (Slatkin) — the upstream practice reference.

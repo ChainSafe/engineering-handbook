@@ -84,3 +84,4 @@ Forest carries [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI
 - Sister roles: `chainsafe-rust-developer`, `chainsafe-rust-reviewer`
 - Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
 - Workflow: `chainsafe-research-plan-implement`
+- Upstream: [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/)

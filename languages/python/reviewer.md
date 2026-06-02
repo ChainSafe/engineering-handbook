@@ -17,6 +17,8 @@ Language-specific review for Python PRs at ChainSafe. Python's scope is internal
 - **`Any` reaches into typed code** — flag and ask whether a `Protocol` or `Union` would work.
 - **No untyped `**kwargs`** propagated through layers when concrete types would do.
 - **`isinstance(x, Foo)`** for type checks, not `type(x) == Foo`.
+- **Keyword-only arguments** (`*`) at wide call sites so options can't be transposed (Effective Python Item 37).
+- **Public functions, classes, and modules have docstrings** (Effective Python Item 118).
 
 ### Errors
 
@@ -24,6 +26,7 @@ Language-specific review for Python PRs at ChainSafe. Python's scope is internal
 - **No `except Exception:`** without a reason — usually too broad.
 - **`raise X from e`** to preserve the cause chain when wrapping.
 - **No string-message `raise Exception(...)`** for non-trivial errors — use a typed exception class.
+- **Failures raise; they don't return `None`** (Effective Python Item 32) — a `None` return is ambiguous with an empty result.
 - **No silently-swallowed errors.** `pass` in an `except` block deserves a comment.
 
 ### Resource handling
@@ -94,3 +97,4 @@ Language-specific review for Python PRs at ChainSafe. Python's scope is internal
 
 - [`architect.md`](./architect.md), [`developer.md`](./developer.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - [`../../workflows/code-review.md`](../../workflows/code-review.md).
+- [Effective Python](https://effectivepython.com/) (Slatkin) — canonical practice reference (see [`sources.md`](../../references/sources.md)).

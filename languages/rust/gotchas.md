@@ -159,6 +159,24 @@ items.iter().map(transform).filter(...)
 
 The intermediate `Vec` allocates and forces evaluation. Chain the iterator unless you need the materialized collection.
 
+## Integer overflow: debug panics, release wraps
+
+```rust
+let n: u8 = 255;
+let m = n + 1;   // debug build: panics; release build: wraps to 0
+```
+
+Arithmetic overflow is checked in debug builds (panic) and wraps by default in release — so a bug can stay hidden until production. Be explicit about intent: `checked_add` (→ `Option`), `saturating_add`, `wrapping_add`, or `overflowing_add`. For consensus and crypto math, prefer `checked_*` and reject on `None` rather than silently wrapping.
+
+## Wildcard imports
+
+```rust
+use some_crate::prelude::*;   // fine — a curated prelude
+use some_crate::*;            // smell — where did this name come from?
+```
+
+`use foo::*` outside a prelude or `#[cfg(test)]` hides where names come from and silently pulls in new symbols when the dependency grows, which can change resolution or introduce conflicts. Import what you use.
+
 ## `unsafe` without `SAFETY` comment
 
 The single most flagged Rust issue at security-conscious reviews. Every `unsafe { }` block needs the comment. No exceptions.
@@ -167,3 +185,4 @@ The single most flagged Rust issue at security-conscious reviews. Every `unsafe 
 
 - [`idioms.md`](./idioms.md) — the inverse: how to do these right.
 - [`reviewer.md`](./reviewer.md) — uses this list as the screening surface.
+- [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/) — upstream practice references.
