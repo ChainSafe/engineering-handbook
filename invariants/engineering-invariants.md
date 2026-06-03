@@ -28,7 +28,7 @@ This page is the testable subset of the [General Engineering Principles](../PRIN
 
 **Why.** "Done" without a pre-set definition becomes "done" with a post-hoc one. The post-hoc version always matches what was built, even when what was built is wrong.
 
-**How it's checked.** PR template asks for acceptance criteria or links to the ADR/spec containing them. Reviewer skills check the diff against the stated criteria; missing criteria are a SOFT WARNING from the reviewer skill ([`languages/<lang>/reviewer.md`](../languages/) when those land).
+**How it's checked.** PR template asks for acceptance criteria or links to the ADR/spec containing them. Reviewer skills check the diff against the stated criteria; missing criteria are a SOFT WARNING from the reviewer skill ([`languages/<lang>/reviewer.md`](../languages/)).
 
 ## 4. Composable by design
 
@@ -61,6 +61,14 @@ This page is the testable subset of the [General Engineering Principles](../PRIN
 **Why.** Code outlives the heads that wrote it. Reasoning that lives only in the author's memory becomes inaccessible the moment the author moves on, leaves, or simply forgets. The audit trail is the contract with future maintainers.
 
 **How it's checked.** PR template requires a description. CODEOWNERS hold the line on review when descriptions are too thin. Reviewer skills flag commits whose messages or PR descriptions are mismatched to the diff size.
+
+## 8. A change carries its operational contract
+
+**Rule.** A change preserves backwards compatibility by default and ships with its *operational contract* declared in the PR: the environment variables, secrets, configuration keys, schema/migrations, ports, and runtime dependencies it adds or changes, its compatibility impact, and anything the team that runs it (Infra or the owning service team) must do to deploy or operate it. A change that alters that contract is coordinated with the owning team before it ships. Breaking changes are not forbidden — they are explicit, logged, and shipped with a migration path.
+
+**Why.** The cost of an undeclared contract change lands on whoever runs the system, not whoever wrote it — typically the Infra team, days later, reverse-engineering which env vars are required and why old clients broke. Declaring the contract where the work happens turns a cross-team archaeology problem into a review checklist item, and keeps the decision in the repo rather than a Slack thread ([Invariant 5](#5-decisions-live-in-the-repo-not-in-chat)).
+
+**How it's checked.** The PR description carries a required **Operational impact** section ([`../workflows/pr-authoring.md`](../workflows/pr-authoring.md)); "none" is a valid answer, but it must be answered. Reviewer skills flag a diff that adds or changes env vars, config keys, schema, ports, or a public signature without a matching declaration. Changes that touch deploy-time config, secrets, or migrations stop at the [operational-contract gate](../operating-model/gates-and-escalation.md#9-operational-contract-changes) for the owning team's sign-off.
 
 ## What this is not
 

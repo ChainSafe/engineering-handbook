@@ -36,6 +36,7 @@ The right question: *is this change related to the PR's stated goal, or can it l
 - **Why it changed** — link to issue/ADR/spec or write inline.
 - **Acceptance criteria or test plan** — what "done" looks like; how to verify.
 - **Out-of-scope notes** — anything the reader expects to see in the diff but doesn't.
+- **Operational impact** — env vars, secrets, config, schema/migrations, or ports added or changed; backwards-compat impact; what Infra or the owning team must do. "None" is valid but must be answered (Engineering Invariant 8; contract-altering changes trip the operational-contract gate).
 
 ## Agent-era additions
 
