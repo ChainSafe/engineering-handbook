@@ -44,6 +44,35 @@ A `UserId` and `OrderId` are not interchangeable. Newtypes make the type system 
 
 For numeric newtypes, `derive_more` or hand-written `From`/`Into`/`Display` are common.
 
+## Enums over booleans
+
+```rust
+fn set_visibility(v: Visibility)   // Visibility::Hidden — intent is obvious
+fn set_visible(visible: bool)      // what does set_visible(true) mean at the call site?
+```
+
+A `bool` parameter erases intent at the call site, and a pair of them makes illegal combinations representable. An `enum` names the states and gets exhaustiveness checking (mre/idiomatic-rust: *Enums Instead of Booleans*).
+
+## Accept flexible input types
+
+```rust
+fn greet(name: &str)                    // &str, not &String
+fn join(parts: &[&str]) -> String        // &[T], not &Vec<T>
+fn read(path: impl AsRef<Path>) -> ...   // &str / String / &Path / PathBuf all work
+```
+
+Take the most general borrowed form. Callers pass what they already have without converting, and ownership decisions stay at the boundary. A recurring theme across the idiomatic-Rust corpus.
+
+## Conversion method naming
+
+Name conversions by cost, per the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/):
+
+- **`as_`** — cheap, borrow-to-borrow, no allocation (`str::as_bytes`).
+- **`to_`** — expensive, borrow-to-owned; it allocates (`str::to_string`).
+- **`into_`** — consumes `self`, owned-to-owned (`String::into_bytes`).
+
+Iterator producers are `iter` / `iter_mut` / `into_iter`; getters take no `get_` prefix (`config.timeout()`, not `config.get_timeout()`).
+
 ## Builder
 
 ```rust
@@ -182,3 +211,4 @@ pub fn fetch(key: &str) -> Result<Data, FetchError> { ... }
 - [`developer.md`](./developer.md) — fuller rationale.
 - [`gotchas.md`](./gotchas.md) — what to avoid.
 - [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/) — the upstream practice references.
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust) · [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — the idiomatic-Rust corpus and API conventions.
