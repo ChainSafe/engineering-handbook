@@ -27,11 +27,11 @@ The map is keyed by the question an agent or operator is trying to answer. Where
 |---|---|
 | What is an invariant in this framework? | [Starter kit README](https://github.com/boorich/.invariants-starter-kit/blob/main/README.md) · [Landing — What](https://boorich.github.io/.invariants-starter-kit/#what) |
 | What does the dotfile look like? | [`.invariants.example`](https://github.com/boorich/.invariants-starter-kit/blob/main/.invariants.example) · [Landing — Spec](https://boorich.github.io/.invariants-starter-kit/#spec) |
-| How do I name an invariant? | Naming convention section *(anchor TBD upstream — coordinate with @boorich)* |
+| How do I name an invariant? | [Naming assertions](https://github.com/boorich/.invariants-starter-kit#naming-assertions) · [`.invariants.example`](https://github.com/boorich/.invariants-starter-kit/blob/main/.invariants.example) |
 | How do I make an invariant testable? | `verify` hints in dotfile + [conformance agent](https://github.com/boorich/.invariants-starter-kit/blob/main/.cursor/rules/conformance-agent.mdc) |
-| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | Lifecycle section *(anchor TBD upstream)* |
+| What is the lifecycle of an invariant — proposal → approval → enforcement → retirement? | [Lifecycle of assertions](https://github.com/boorich/.invariants-starter-kit#lifecycle-of-assertions) |
 | How is an invariant violation reported and triaged? | [Conformance agent](https://github.com/boorich/.invariants-starter-kit/blob/main/.cursor/rules/conformance-agent.mdc) · GitHub labels (`needs_triage` → `in_triage`) in starter kit README |
-| How are invariants versioned and migrated? | Versioning section *(anchor TBD upstream)* · severity table on [landing — Verdict](https://boorich.github.io/.invariants-starter-kit/#verdict) |
+| How are invariants versioned and migrated? | [Versioning and migration](https://github.com/boorich/.invariants-starter-kit#versioning-and-migration) · [Verdict](https://boorich.github.io/.invariants-starter-kit/#verdict) |
 | How does `.invariants` interact with ADRs in product repos? | [PR authoring — invariants impacted](https://github.com/ChainSafe/engineering-handbook/blob/main/workflows/pr-authoring.md) (handbook) + cascade in dotfile |
 | How do I run the optional agent + code-index loop? | [Landing — Try it](https://boorich.github.io/.invariants-starter-kit/#try) · `bash setup.sh` in starter kit |
 
