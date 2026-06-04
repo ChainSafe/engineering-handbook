@@ -57,6 +57,8 @@ The eval set is ~20 realistic prompts split between *should-trigger* (the skill 
 - *"Write a Fibonacci function"* — too generic, doesn't test anything domain-specific.
 - *"Write code for X"* — won't actually trigger any complex skill since simple coding tasks are handled directly.
 
+**Start from the committed template + a worked example.** Don't start from a blank file — copy [`skill-description-tuning/eval-set.template.json`](./skill-description-tuning/eval-set.template.json) and read a gold-standard set like [`chainsafe-research-plan-implement.eval-set.json`](./skill-description-tuning/chainsafe-research-plan-implement.eval-set.json) to see the should-trigger / should-not-trigger split in practice. Curated eval sets live in [`skill-description-tuning/`](./skill-description-tuning/) and are committed; the loop's scratch outputs are not (see that directory's README for the distinction).
+
 **Save as JSON:**
 
 ```json
@@ -73,9 +75,22 @@ Default file location: `<skill-name>-eval-workspace/eval-set.json` outside the h
 
 ### Step 2: Run the loop
 
-Default command (Opus):
+**The on-ramp:** [`scripts/tune-skill-description.sh`](../scripts/tune-skill-description.sh) wraps the loop with the ChainSafe conventions baked in — Opus by default, sane flags, scratch outputs written outside the repo, and skill-name → path resolution. From the repo root:
 
 ```bash
+# preview the exact command without spending anything:
+bash scripts/tune-skill-description.sh chainsafe-research-plan-implement --dry-run
+
+# run it for real (opt-in, local-only, ~30-45 min on Opus):
+bash scripts/tune-skill-description.sh chainsafe-research-plan-implement
+```
+
+It resolves the eval set from `workflows/skill-description-tuning/<skill>.eval-set.json` by default; override with `--eval-set <path>`. `--help` lists every flag plus the `TUNE_MODEL` / `TUNE_RESULTS_DIR` / `SKILL_CREATOR_DIR` env overrides.
+
+**What it runs under the hood** — the raw skill-creator invocation, if you'd rather drive it yourself:
+
+```bash
+cd ~/.claude/skills/skill-creator   # so `python -m scripts.run_loop` resolves
 python -m scripts.run_loop \
   --eval-set <path-to-eval-set.json> \
   --skill-path <path-to-handbook>/skills/chainsafe-<name> \
@@ -85,12 +100,6 @@ python -m scripts.run_loop \
 ```
 
 (Replace `claude-opus-4-6` with the current Opus generation if it's been bumped — `claude-opus-4-7`, etc.)
-
-**Where to run from:** the skill-creator package directory, so `python -m scripts.run_loop` resolves:
-
-```bash
-cd ~/.claude/skills/skill-creator   # or wherever scripts/ lives
-```
 
 **Override flags worth knowing:**
 
@@ -156,7 +165,7 @@ A SKILL.md description change is just another PR.
 
 ## Related
 
-
-
+- [`scripts/tune-skill-description.sh`](../scripts/tune-skill-description.sh) — the on-ramp wrapper this runbook drives.
+- [`skill-description-tuning/`](./skill-description-tuning/) — committed eval-set template + worked examples (and the inputs-vs-scratch distinction).
 - [`pr-authoring.md`](./pr-authoring.md) — how the resulting description change gets shipped.
 - Upstream: [`anthropic-skills:skill-creator`](https://github.com/anthropics/skills) — the canonical playbook the runbook implements.

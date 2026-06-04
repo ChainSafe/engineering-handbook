@@ -1,0 +1,22 @@
+[
+  { "query": "implement EIP-7594 PeerDAS column custody in Lodestar's network layer", "should_trigger": true },
+  { "query": "refactor Forest's snapshot import so it streams CAR chunks instead of loading the whole file into memory", "should_trigger": true },
+  { "query": "there's a bug in Gossamer's GRANDPA vote tracking that only shows up under reorgs — track it down and fix it across the finality gadget", "should_trigger": true },
+  { "query": "add a REST endpoint to the Lodestar beacon-node API for validator liveness tracking", "should_trigger": true },
+  { "query": "migrate Sygma's relayer off the old fee oracle onto the new dynamic fee module", "should_trigger": true },
+  { "query": "wire up Forest's RPC layer to the new ChainStore so eth_getBlockByNumber returns post-FVM receipts", "should_trigger": true },
+  { "query": "rewrite the SSZ list hashing in lodestar-z to reuse the persistent merkle tree instead of recomputing roots each time", "should_trigger": true },
+  { "query": "extend the Canton Super Validator app to record featured-app activity rewards in a new Daml contract", "should_trigger": true },
+  { "query": "change how Lodestar's attestation pool dedupes aggregates — it's keeping duplicates across slots", "should_trigger": true },
+  { "query": "build out a backfill job for Gossamer that re-indexes historical blocks into the new state trie format", "should_trigger": true },
+  { "query": "integrate a circuit breaker into Sygma's bridge executor so one stuck deposit doesn't block the whole queue", "should_trigger": true },
+  { "query": "restructure Forest's CLI so the daemon and the wallet commands live in separate crates", "should_trigger": true },
+  { "query": "fix the typo in the Lodestar README — 'concensus' should be 'consensus'", "should_trigger": false },
+  { "query": "run prettier on packages/beacon-node", "should_trigger": false },
+  { "query": "bump the eslint version in Lodestar and fix the single lint warning it surfaces", "should_trigger": false },
+  { "query": "what's the difference between GRANDPA and BABE in Gossamer?", "should_trigger": false },
+  { "query": "explain how Forest's StateManager caches tipset state", "should_trigger": false },
+  { "query": "rename the local variable `tmp` to `peerScore` in this one function", "should_trigger": false },
+  { "query": "add a missing semicolon in sygma-core/src/executor.ts", "should_trigger": false },
+  { "query": "what model should we default the skill-tuning loop to?", "should_trigger": false }
+]
