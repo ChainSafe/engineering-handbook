@@ -18,7 +18,7 @@ URLs below point at the `main` branch and resolve to raw markdown.
 
 - [Engineering Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/engineering-invariants.md): The seven non-negotiables (open-source by default, standards enforced, quality defined before build, composable by design, decisions in the repo, ship value not effort, auditable context).
 - [Agent-Era Invariants](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/agent-era-invariants.md): Eight invariants specific to agent-assisted work (no silent edits, no fabrication, no secret commits, no protected-branch push, scope boundary, no external comms without per-message auth, no HARD FAIL bypass, audit trail).
-- [.invariance Framework (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/invariance-framework.md): Deep-link map into Martin Maurer's `.invariance` repo for architectural invariants. Maintained by [@boorich](https://github.com/boorich).
+- [.invariants Framework (pointer)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/invariants/invariants-framework.md): Deep-link map into [@boorich/.invariants-starter-kit](https://github.com/boorich/.invariants-starter-kit) and [landing page](https://boorich.github.io/.invariants-starter-kit/). Maintained by [@boorich](https://github.com/boorich).
 
 ## Workflows
 
@@ -36,7 +36,7 @@ URLs below point at the `main` branch and resolve to raw markdown.
 
 ### Go (Gossamer)
 
-- [Go Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/architect.md): Project layout, public surface discipline, concurrency model, error model. Defers to `.invariance`.
+- [Go Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/architect.md): Project layout, public surface discipline, concurrency model, error model. Defers to `.invariants`.
 - [Go Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/developer.md): golangci-lint, gomock conventions, argument-passing heuristics, panic discipline, context propagation, CI baseline.
 - [Go Reviewer (SOFT WARNING tier)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/reviewer.md): Checklist for reviewing Go PRs. Concurrency, errors, panic, layout, testing.
 - [Go Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/idioms.md) · [Go Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/go/gotchas.md)
@@ -79,7 +79,7 @@ URLs below point at the `main` branch and resolve to raw markdown.
 
 ### Zig (lodestar-z)
 
-- [Zig Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/architect.md): When to reach for Zig, project layout (build.zig / build.zig.zon, modules), allocator strategy, error model, build-mode / safety posture, comptime, the C-ABI contract. Defers to `.invariance`.
+- [Zig Architect](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/architect.md): When to reach for Zig, project layout (build.zig / build.zig.zon, modules), allocator strategy, error model, build-mode / safety posture, comptime, the C-ABI contract. Defers to `.invariants`.
 - [Zig Developer](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/developer.md): `zig fmt`, the build system, version pinning, allocator / `defer` / `errdefer` discipline, error unions, integer-overflow and safety, comptime, testing (`std.testing.allocator`, spec tests, fuzzing), C interop, CI baseline.
 - [Zig Reviewer (SOFT WARNING; memory-safety + consensus near-HARD-FAIL)](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/reviewer.md): Checklist for Zig PRs. Allocator / leak discipline, swallowed errors, undefined behavior, pointer-cast soundness, consensus correctness. Override mechanics logged in PR.
 - [Zig Idioms](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/idioms.md) · [Zig Gotchas](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/languages/zig/gotchas.md)
@@ -116,7 +116,7 @@ Packaged Anthropic Skills authored via `skill-creator`. Each skill is self-conta
 
 The handbook deep-links into these upstream sources rather than duplicating them. See [`references/sources.md`](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/references/sources.md) for the full catalog with maintainer and coordination notes.
 
-- [.invariance framework](https://github.com/boorich): Martin Maurer's architectural invariance project. Canonical source for architecture and system-design invariants.
+- [.invariants starter kit](https://github.com/boorich/.invariants-starter-kit): Dotfile convention + reference workspace. [Landing page](https://boorich.github.io/.invariants-starter-kit/). Canonical source for architecture and system-design invariants.
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general): Canonical source for infrastructure, IaC, deployment, observability, on-call, runbooks. Maintained by [@joshdougall](https://github.com/joshdougall). Ships its own [AGENTS.md](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md) and [CLAUDE.md](https://github.com/ChainSafe/infrastructure-general/blob/main/CLAUDE.md).
 - [ChainSafe/forest — AI_POLICY.md](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md): AI-assisted-development policy for the Filecoin client. Originally adapted from the [Ghostty project](https://github.com/ghostty-org/ghostty); attribution preserved. Carried through into the handbook's testing-and-qa and Rust reviewer pages.
 - [Anthropic Skills Specification](https://github.com/anthropics/skills): The canonical playbook for skill authoring. Every skill in this repo is authored via `anthropic-skills:skill-creator`.

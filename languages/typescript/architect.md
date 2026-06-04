@@ -1,12 +1,12 @@
 # TypeScript Architect
 
-Architectural guidance for TypeScript projects at ChainSafe — [Lodestar](https://github.com/ChainSafe/lodestar) (Ethereum consensus client), [web3.js 4.x](https://github.com/ChainSafe/web3.js), [ssz](https://github.com/ChainSafe/ssz), [bls](https://github.com/ChainSafe/bls), [filsnap](https://github.com/ChainSafe/filsnap), and others. The architectural framework is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)).
+Architectural guidance for TypeScript projects at ChainSafe — [Lodestar](https://github.com/ChainSafe/lodestar) (Ethereum consensus client), [web3.js 4.x](https://github.com/ChainSafe/web3.js), [ssz](https://github.com/ChainSafe/ssz), [bls](https://github.com/ChainSafe/bls), [filsnap](https://github.com/ChainSafe/filsnap), and others. The architectural framework is `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)).
 
 > **In one line:** Strict mode, branded types for domain values, no `any`. ESM by default. Public API stability via type-level tests.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-| Decision | `.invariance` section |
+| Decision | `.invariants` section |
 |---|---|
 | Service boundaries | Component contracts |
 | Invariant naming + testability | Invariant lifecycle |
@@ -75,7 +75,7 @@ When opening an ADR for a TS project or significant module:
 - **Async commitments.** Where cancellation is propagated; where parallelism is exploited.
 - **Error contract.** Thrown types vs. returned types. How callers should handle each.
 - **Build target.** Node version, browser support, ESM/CJS, bundler.
-- **Invariants impacted.** Deep links into `.invariance`.
+- **Invariants impacted.** Deep links into `.invariants`.
 
 ## Anti-patterns
 
@@ -90,4 +90,4 @@ When opening an ADR for a TS project or significant module:
 
 - [`developer.md`](./developer.md) — implementation-level practice.
 - [`reviewer.md`](./reviewer.md), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md) — the architectural framework.
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md) — the architectural framework.

@@ -1,6 +1,6 @@
 # Zig Architect
 
-Architectural guidance for Zig at ChainSafe. The canonical codebase is [lodestar-z](https://github.com/ChainSafe/lodestar-z) — Zig consensus libraries for Lodestar: SSZ serialization, Merkleization, hashing, persistent Merkle trees, and the Ethereum consensus types, consumed by the TypeScript client across a C-ABI boundary. The architectural framework lives in `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Zig-specific shaping.
+Architectural guidance for Zig at ChainSafe. The canonical codebase is [lodestar-z](https://github.com/ChainSafe/lodestar-z) — Zig consensus libraries for Lodestar: SSZ serialization, Merkleization, hashing, persistent Merkle trees, and the Ethereum consensus types, consumed by the TypeScript client across a C-ABI boundary. The architectural framework lives in `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)); this page covers Zig-specific shaping.
 
 > **In one line:** Allocators are explicit and injected. Errors are values. Safety is a build-mode decision you make on purpose. Comptime replaces macros. The exported C ABI is a contract.
 
@@ -10,9 +10,9 @@ Zig earns its place where the realistic alternative is C: small, performance-cri
 
 It is **not** the default for general work. Services and tooling have a chosen language already: TypeScript (Lodestar), Go (Gossamer), Rust (Forest), Solidity (contracts), Python (ops/scripts). Reaching for Zig outside the "C-replacement library" niche is an org-level decision, not an individual-PR one — raise it with the curator and capture the rationale in an ADR before starting.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-| Decision | `.invariance` section |
+| Decision | `.invariants` section |
 |---|---|
 | Service/module boundaries and contracts | Component contracts |
 | Invariant naming and testability | Invariant lifecycle |
@@ -70,7 +70,7 @@ Zig is pre-1.0; the language and standard library change across releases. Pin `m
 - **Comptime surface.** What is resolved at compile time and why.
 - **Exported C ABI.** The stable surface and cross-boundary memory ownership, if any.
 - **Zig version floor.** The `minimum_zig_version` and the upgrade story.
-- **Invariants impacted.** Deep links into `.invariance`.
+- **Invariants impacted.** Deep links into `.invariants`.
 
 ## Anti-patterns
 
@@ -85,5 +85,5 @@ Zig is pre-1.0; the language and standard library change across releases. Pin `m
 - [`developer.md`](./developer.md) — implementation-level Zig practice.
 - [`reviewer.md`](./reviewer.md) — what to look for in a Zig PR.
 - [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md) — the architectural framework this page defers to.
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md) — the architectural framework this page defers to.
 - [Zig Language Reference](https://ziglang.org/documentation/master/) and [Learn Zig](https://ziglang.org/learn/) — the upstream canonical guidance this page is built on.

@@ -41,7 +41,7 @@ URLs in the live file point at the **raw markdown content** on GitHub (or `chain
 - **Project identity.** Title, one-line description, link to the human README.
 - **Section deep links.** One entry per handbook section (`operating-model/collaborator-statement.md`, `invariants/engineering-invariants.md`, `workflows/pr-authoring.md`, etc.) — keyed by question or intent, not by file structure.
 - **Skill listings.** Every packaged skill in [`skills/`](../skills/) gets an entry: name, one-line description (matching the SKILL.md frontmatter), direct URL to the raw `SKILL.md`, and trigger conditions so foreign agents can decide whether to load it.
-- **External canonical sources.** Deep links into the upstream `.invariance` and `ChainSafe/infrastructure-general` repos where the handbook defers to them.
+- **External canonical sources.** Deep links into the upstream `.invariants` and `ChainSafe/infrastructure-general` repos where the handbook defers to them.
 
 ### What does not go in it
 
@@ -69,7 +69,7 @@ This is the agent-facing index. For humans, see the
 - [chainsafe-research-plan-implement](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-research-plan-implement/SKILL.md): Research → plan → annotate → implement workflow. Trigger: any multi-file change, refactor, new feature.
 
 ## External canonical sources
-- [.invariance framework](https://github.com/.../README.md): Architecture invariance framework. The handbook's `languages/<lang>/architect.md` pages deep-link here.
+- [.invariants starter kit](https://github.com/boorich/.invariants-starter-kit): `.invariants` framework. The handbook's `languages/<lang>/architect.md` pages deep-link here.
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md): Infrastructure & DevOps canonical source. The handbook's `workflows/infrastructure-and-devops.md` deep-links here.
 ```
 
@@ -106,7 +106,7 @@ CI guarantees `llms.txt` does not drift from the handbook content:
 
 - Every skill in [`skills/`](../skills/) must appear in `llms.txt`.
 - Every `llms.txt` skill entry must resolve to an existing `SKILL.md`.
-- All external deep links (into `.invariance`, `infrastructure-general`, Forest, etc.) are link-checked in CI and the build fails on any broken target.
+- All external deep links (into `.invariants`, `infrastructure-general`, Forest, etc.) are link-checked in CI and the build fails on any broken target.
 
 When you add a new skill, section, or pointer page: update `llms.txt` in the same PR. The handbook treats the index and the content as a single commit, not two.
 

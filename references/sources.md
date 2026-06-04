@@ -18,12 +18,12 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 
 ## Sources
 
-### `.invariance` framework
+### `.invariants` framework
 
-- **Source.** Martin Maurer's `.invariance` repo. See [`../invariants/invariance-framework.md`](../invariants/invariance-framework.md) for the deep-link map.
+- **Source.** [github.com/boorich/.invariants-starter-kit](https://github.com/boorich/.invariants-starter-kit) (convention + optional reference workspace). Landing page: [boorich.github.io/.invariants-starter-kit/](https://boorich.github.io/.invariants-starter-kit/). Deep-link map: [`../invariants/invariants-framework.md`](../invariants/invariants-framework.md).
 - **Maintainer.** [@boorich](https://github.com/boorich) (Martin Maurer).
-- **Covers.** Architectural invariants — what they are, how they are named, how they are tested, how they are versioned, how violations are reported. Multi-repo convention.
-- **Used by.** [`../invariants/invariance-framework.md`](../invariants/invariance-framework.md) (pointer page); every [`../languages/<lang>/architect.md`](../languages/) page deep-links into per-language invariant sections; ADR templates referenced from [`../workflows/pr-authoring.md`](../workflows/) require an "Invariants impacted" field sourced from `.invariance`.
+- **Covers.** Architectural invariants — dotfile format, severity cascade, conformance agent, optional vecs code index and GitHub triage. Multi-repo convention.
+- **Used by.** [`../invariants/invariants-framework.md`](../invariants/invariants-framework.md) (pointer page); every [`../languages/<lang>/architect.md`](../languages/) page deep-links into per-language invariant sections; ADR templates referenced from [`../workflows/pr-authoring.md`](../workflows/) require an "Invariants impacted" field sourced from `.invariants`.
 - **Coordination.** [@boorich](https://github.com/boorich) is CODEOWNER for the pointer page. Anchor changes upstream → re-anchor here in the same PR (or close behind).
 
 ### `ChainSafe/infrastructure-general`
@@ -62,7 +62,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 
 - **Source.** [docs.canton.network](https://docs.canton.network) — the official Canton Network documentation: the Daml language, the app-development modules, deep dives, tooling, and the full Daml standard-library reference. Machine-readable index at [`docs.canton.network/llms.txt`](https://docs.canton.network/llms.txt) (every page is also served as raw markdown by appending `.md`). Upstream docs repo: [canton-network/cf-docs](https://github.com/canton-network/cf-docs). Documentation licensed CC-BY-4.0.
 - **Maintainer.** External — the Canton Foundation. Internal coordination via the Daml CODEOWNERS — [@boorich](https://github.com/boorich), [@salindne](https://github.com/salindne), [@sqhell](https://github.com/sqhell) — per [`.github/CODEOWNERS`](../.github/CODEOWNERS).
-- **Covers.** The authoritative Daml language and Canton platform reference: authorization model, contract templates, choices, keys, interfaces, the standard library, testing with Daml Script, Smart Contract Upgrades (SCU) and upgrade compatibility, working with time, security best practices, CI/CD integration, and Canton-specific topology (domain / synchronizer / sequencer / mediator). The handbook's Daml pages defer here rather than re-deriving language semantics — the same way the architect pages defer to `.invariance`.
+- **Covers.** The authoritative Daml language and Canton platform reference: authorization model, contract templates, choices, keys, interfaces, the standard library, testing with Daml Script, Smart Contract Upgrades (SCU) and upgrade compatibility, working with time, security best practices, CI/CD integration, and Canton-specific topology (domain / synchronizer / sequencer / mediator). The handbook's Daml pages defer here rather than re-deriving language semantics — the same way the architect pages defer to `.invariants`.
 - **Used by.** [`../languages/daml/architect.md`](../languages/daml/architect.md) (authorization / upgrade / privacy semantics), [`../languages/daml/developer.md`](../languages/daml/developer.md) (dev environment, tooling, standard library, testing), [`../languages/daml/idioms.md`](../languages/daml/idioms.md), [`../languages/daml/gotchas.md`](../languages/daml/gotchas.md), [`../languages/daml/reviewer.md`](../languages/daml/reviewer.md) (authorization, upgrade compatibility, security checks).
 - **Coordination.** External upstream, treated as canonical for Daml language semantics. When Canton restructures the docs, re-anchor the deep links in the same pass — the weekly link-check run catches rot. The internal deferral is reviewed by the Daml CODEOWNERS.
 
@@ -78,7 +78,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 
 - **Source.** [ziglang.org](https://ziglang.org) — the official Zig documentation: the [Language Reference](https://ziglang.org/documentation/master/), the [Standard Library reference](https://ziglang.org/documentation/master/std/), and the [Learn](https://ziglang.org/learn/) section (in-depth overview, the [build-system guide](https://ziglang.org/learn/build-system/), code samples, and the Style Guide). Documentation under the Zig project's MIT license. Zig is pre-1.0: the `master` docs track the unreleased compiler, and each release carries its own versioned reference.
 - **Maintainer.** External — the Zig Software Foundation. Internal coordination point: the Zig CODEOWNER ([@wemeetagain](https://github.com/wemeetagain) / [@matthewkeil](https://github.com/matthewkeil) / [@kalambet](https://github.com/kalambet)).
-- **Covers.** The authoritative Zig language and standard-library reference: syntax, build modes and Illegal Behavior, the allocator model, error unions and `errdefer`, optionals, comptime and generics, the build system (`build.zig` / `build.zig.zon`), C interop, and the naming Style Guide. The handbook's Zig pages defer here for language semantics rather than re-deriving them — the same way the architect pages defer to `.invariance` and the Daml pages defer to the Canton docs.
+- **Covers.** The authoritative Zig language and standard-library reference: syntax, build modes and Illegal Behavior, the allocator model, error unions and `errdefer`, optionals, comptime and generics, the build system (`build.zig` / `build.zig.zon`), C interop, and the naming Style Guide. The handbook's Zig pages defer here for language semantics rather than re-deriving them — the same way the architect pages defer to `.invariants` and the Daml pages defer to the Canton docs.
 - **Used by.** [`../languages/zig/architect.md`](../languages/zig/architect.md), [`../languages/zig/developer.md`](../languages/zig/developer.md), [`../languages/zig/reviewer.md`](../languages/zig/reviewer.md), [`../languages/zig/idioms.md`](../languages/zig/idioms.md), [`../languages/zig/gotchas.md`](../languages/zig/gotchas.md). ChainSafe's canonical Zig codebase is [lodestar-z](https://github.com/ChainSafe/lodestar-z) (consensus libraries for Lodestar).
 - **Coordination.** External upstream, treated as canonical for Zig language semantics. Because Zig is pre-1.0, the language and std reshape across releases — re-anchor deep links and version-pinned guidance when bumping the project's Zig version; the weekly link-check run catches rot.
 
@@ -110,5 +110,5 @@ Surfacing known candidates rather than fabricating coverage:
 - [`../NOTICE`](../NOTICE) — third-party attribution required under Apache 2.0 §4(d). Sources with upstream licenses or attribution requirements are also recorded there.
 - [`./attribution.md`](./attribution.md) — the curatorial credit policy; how original authors are surfaced across the three-layer attribution model.
 - [`./CONTRIBUTORS.md`](./CONTRIBUTORS.md) — the contributor index. Maintainers named here also appear there.
-- [`../invariants/invariance-framework.md`](../invariants/invariance-framework.md) — the architecture/system-design deferral that grounded this catalog.
+- [`../invariants/invariants-framework.md`](../invariants/invariants-framework.md) — the architecture/system-design deferral that grounded this catalog.
 - [`../workflows/infrastructure-and-devops.md`](../workflows/infrastructure-and-devops.md) — the infrastructure deferral that grounded this catalog.

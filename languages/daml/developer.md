@@ -6,7 +6,7 @@ Idiomatic Daml development at ChainSafe — primarily Canton applications (Super
 
 ## Upstream canonical reference — use it, don't re-derive it
 
-Daml language and Canton platform semantics are documented authoritatively at [docs.canton.network](https://docs.canton.network). The handbook defers here rather than restating the language — the same posture the architect pages take toward `.invariance`. Reach for these before reconstructing semantics from memory:
+Daml language and Canton platform semantics are documented authoritatively at [docs.canton.network](https://docs.canton.network). The handbook defers here rather than restating the language — the same posture the architect pages take toward `.invariants`. Reach for these before reconstructing semantics from memory:
 
 | Need | Canton docs page |
 |---|---|

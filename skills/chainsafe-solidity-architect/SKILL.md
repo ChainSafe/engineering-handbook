@@ -65,7 +65,7 @@ Migrating between upgrade strategies is itself a migration risk. Pick once.
 - Storage layout — slot map for upgradeable; gap pattern.
 - Audit plan — when, by whom, recurring vs pre-deploy.
 - Test coverage commitments — unit, fuzz, invariant, formal verification.
-- Invariants impacted — deep links into `.invariance`.
+- Invariants impacted — deep links into `.invariants`.
 
 ## Anti-patterns at design time
 

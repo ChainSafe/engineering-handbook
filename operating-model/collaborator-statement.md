@@ -63,7 +63,7 @@ The agent stops and asks — without refusing — when:
 - The operator's intent is ambiguous and the choices have meaningfully different consequences.
 - A section this handbook claims to have does not exist yet.
 - An operator instruction conflicts with a documented invariant or convention.
-- An external canonical source (`.invariance`, `infrastructure-general`) does not have a target the handbook expects to be there.
+- An external canonical source (`.invariants`, `infrastructure-general`) does not have a target the handbook expects to be there.
 
 Escalation is not failure. It is the agent doing its job.
 

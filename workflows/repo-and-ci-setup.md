@@ -69,7 +69,7 @@ Disable merge commits and rebase by default; squash keeps `main` history clean.
 - **Create `.github/CODEOWNERS`** with the structure:
   - Catch-all owner at the top (a team or set of individuals).
   - Section-specific overrides below, ordered from general to specific.
-- **For the handbook repo specifically,** the v2 model uses [@kalambet](https://github.com/kalambet) as the catch-all curator with overrides for `invariants/invariance-framework.md` (@boorich), `workflows/*` infra pointer pages (@joshdougall), etc. See [`../.github/CODEOWNERS`](../.github/CODEOWNERS).
+- **For the handbook repo specifically,** the v2 model uses [@kalambet](https://github.com/kalambet) as the catch-all curator with overrides for `invariants/invariants-framework.md` (@boorich), `workflows/*` infra pointer pages (@joshdougall), etc. See [`../.github/CODEOWNERS`](../.github/CODEOWNERS).
 - **Verify by opening a test PR** touching the catch-all area and confirming the right reviewer is auto-requested.
 - **Rollback.** Revert the `.github/CODEOWNERS` file via PR.
 

@@ -67,7 +67,7 @@ That is the default. Everything else is on-demand.
 
 - **GitHub MCP** — when opening PRs, reading issues, listing branches, working with reviews.
 - **`ChainSafe/infrastructure-general`** — when touching infra, IaC, observability, deploys, runbooks. Coordinate with `@joshdougall` as the canonical owner.
-- **`.invariance` repo** — when doing architecture or system-design work. Coordinate with `@boorich` as the framework maintainer.
+- **[`.invariants` starter kit](https://github.com/boorich/.invariants-starter-kit)** — when doing architecture or system-design work. Coordinate with `@boorich` as the framework maintainer.
 - **Linear / Jira / project-tracker MCPs** — when the task involves issue triage, sprint planning, or status updates.
 - **Slack / Discord / email MCPs** — when the task involves communication. Note the [external-communication gate](./gates-and-escalation.md#4-external-communication).
 - **Product-specific repos** (`ChainSafe/forest`, `ChainSafe/lodestar`, `ChainSafe/sygma`, etc.) — when working on that product. Do not load a product repo just to browse it; the operator authorized work on a specific scope.

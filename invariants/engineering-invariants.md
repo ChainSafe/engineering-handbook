@@ -74,12 +74,12 @@ This page is the testable subset of the [General Engineering Principles](../PRIN
 
 - **Not a license to bypass review.** Invariants and review are layered defenses, not alternatives. Both apply.
 - **Not absolute.** Overrides exist. They are logged in the PR with the override reason. Frequent override of the same invariant is a sign the invariant needs revision, not that the override is fine.
-- **Not exhaustive.** Domain-specific invariants live elsewhere — the `.invariance` framework ([`./invariance-framework.md`](./invariance-framework.md)) is the canonical source for architectural invariants; language-specific invariants live in [`../languages/<lang>/`](../languages/) reviewer pages.
+- **Not exhaustive.** Domain-specific invariants live elsewhere — the `.invariants` framework ([`./invariants-framework.md`](./invariants-framework.md)) is the canonical source for architectural invariants; language-specific invariants live in [`../languages/<lang>/`](../languages/) reviewer pages.
 
 ## Related
 
 - [`agent-era-invariants.md`](./agent-era-invariants.md) — additional invariants specific to agent-assisted work (no silent edits, no fabrication, no commits of secrets, etc.).
-- [`invariance-framework.md`](./invariance-framework.md) — pointer page deep-linking into Martin Maurer's `.invariance` framework for architectural invariants.
+- [`invariants-framework.md`](./invariants-framework.md) — pointer page deep-linking into Martin Maurer's `.invariants` framework for architectural invariants.
 - [`../operating-model/collaborator-statement.md`](../operating-model/collaborator-statement.md) — the operator-first contract these invariants operate under.
 - [`../PRINCIPLES.md`](../PRINCIPLES.md) — General Engineering Principles. The aspirational layer above these invariants; cultural principles that aren't testable live there.
 - [`../VISION.md`](../VISION.md) — company-wide mission, vision, and core values that PRINCIPLES.md flows from.

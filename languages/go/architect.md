@@ -1,14 +1,14 @@
 # Go Architect
 
-Architectural guidance for Go projects at ChainSafe. The framework for architectural invariants is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)). This page covers the Go-specific shape of decisions that sit under that framework.
+Architectural guidance for Go projects at ChainSafe. The framework for architectural invariants is `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)). This page covers the Go-specific shape of decisions that sit under that framework.
 
 > **In one line:** Small public surfaces. Concrete types behind interfaces only where they earn it. Errors are values; panics are programming bugs.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-Architectural decisions in this language should be expressed in `.invariance` terms wherever they apply. Start with the upstream framework and only return here for Go-specific shaping.
+Architectural decisions in this language should be expressed in `.invariants` terms wherever they apply. Start with the upstream framework and only return here for Go-specific shaping.
 
-| If you are deciding… | Go to (`.invariance`) |
+| If you are deciding… | Go to (`.invariants`) |
 |---|---|
 | What is the system boundary? | The framework's boundary-definition section |
 | What invariants does this service hold? | Invariant naming + testability |
@@ -103,7 +103,7 @@ When opening an ADR for a Go service or significant Go module, the template shou
 - **Error contract.** What errors callers see. Which are sentinel, which are typed, which are wrapped.
 - **Resource ownership.** Connections, files, goroutines — who closes them, when.
 - **Dependency choices.** Any external (non-stdlib, non-`x/*`, non-project-approved) dependency the design assumes, with the compelling-case justification per the stdlib-first rule above.
-- **Invariants impacted.** Deep links into `.invariance` for the architectural invariants this decision touches.
+- **Invariants impacted.** Deep links into `.invariants` for the architectural invariants this decision touches.
 
 ## Anti-patterns
 
@@ -119,4 +119,4 @@ When opening an ADR for a Go service or significant Go module, the template shou
 - [`developer.md`](./developer.md) — implementation-level Go practice.
 - [`reviewer.md`](./reviewer.md) — what to look for in a Go PR.
 - [`idioms.md`](./idioms.md) and [`gotchas.md`](./gotchas.md) — shared shorter references.
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md) — the architectural framework this page defers to.
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md) — the architectural framework this page defers to.
