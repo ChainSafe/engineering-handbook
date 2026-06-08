@@ -29,8 +29,8 @@ retry_wait_time = 10
 # Check both file links and bare URLs.
 include_verbatim = true
 
-# Resolve relative links from the file's location.
-base = "."
+# Relative links resolve against each file's own location by default;
+# the old `base` key was removed upstream, so no base setting is needed.
 
 ####################
 # Excluded targets #
@@ -45,6 +45,7 @@ exclude = [
     "^mailto:",
     "^tel:",
     '^https://mcp-server\.chainsafe\.io',
+    '^chainsafe\.tech'
 ]
 
 # No excluded paths — all markdown is in scope.
