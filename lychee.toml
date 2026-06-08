@@ -45,7 +45,10 @@ exclude = [
     "^mailto:",
     "^tel:",
     '^https://mcp-server\.chainsafe\.io',
-    '^chainsafe\.tech'
+    # Any host ending in chainsafe.tech (e.g. foo.chainsafe.tech) is internal
+    # and intentionally not reachable, so skip link-checking it. Matches with or
+    # without a scheme (naked `chainsafe.tech` as well as `https://...`).
+    '(^|//)([^/]+\.)?chainsafe\.tech\b'
 ]
 
 # No excluded paths — all markdown is in scope.
