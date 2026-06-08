@@ -42,6 +42,9 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 - **Public items are documented.** New `pub` items carry `///` docs (what it does, returns, errors, panics); examples are doc-tested (Effective Rust Item 27).
 - **Dispatch is justified.** Generics / `impl Trait` on hot paths; `dyn Trait` only where heterogeneity or binary size earns the indirection.
 - **Breaking changes are intentional.** Removing or renaming a `pub` item, or adding a constructible field, is a SemVer break — flag it. API-visible dependency types are re-exported.
+- **Flexible input types.** Public functions take `&str` / `&[T]` / `impl AsRef<Path>` over `&String` / `&Vec<T>` / concrete owned types where reasonable.
+- **Conversion and getter naming** follow the Rust API Guidelines: `as_` / `to_` / `into_` by cost, `iter` / `iter_mut` / `into_iter`, no `get_` prefix.
+- **Enums over boolean parameters** where a `bool` argument erases intent at the call site.
 
 ### Concurrency primitives
 
@@ -96,3 +99,4 @@ Per [reviewer-severity tier table](../../operating-model/gates-and-escalation.md
 - [`../../invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md#7-no-bypass-of-reviewer-skill-hard-fail-findings) — HARD FAIL semantics; `unsafe` promotes here.
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — the Filecoin-specific extension.
 - [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/) — canonical practice references (see [`sources.md`](../../references/sources.md)).
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust) · [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — idiomatic-Rust corpus and API conventions.
