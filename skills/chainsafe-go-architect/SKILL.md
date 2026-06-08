@@ -32,6 +32,8 @@ When designing a Go system or module, address:
   - No package-level mutable state.
 - **Error model.** Errors are values. Sentinel errors with `errors.Is`, typed errors with `errors.As`. `fmt.Errorf("...: %w", err)` to preserve context. Never `panic` for non-fatal errors.
 - **Dependency injection.** Functional options or explicit `Settings` structs. No globals, no hidden singletons.
+- **Defensive network & disk I/O.** Every external network call, database query, or stream reader must have an explicit timeout — `context.WithTimeout` on the call, or socket/read deadlines where context isn't threaded through. A `ctx` without a deadline is not a timeout; an unbounded read is a hang waiting to happen.
+- **API & storage isolation.** Keep internal domain models separate from external transport layers. Define Data Transfer Objects (DTOs) for external APIs and database schemas, and map them explicitly to internal models at the boundary. This is for *external* edges — don't introduce DTOs between internal packages.
 
 ## ADR template for Go work
 

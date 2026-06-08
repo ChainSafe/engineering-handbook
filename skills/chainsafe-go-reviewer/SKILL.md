@@ -23,6 +23,7 @@ Reviewer skill for Go PRs. Operates under [`workflows/code-review.md`](../../wor
 ### Concurrency
 
 - `context.Context` propagation — every I/O or potentially-blocking function takes `ctx` as first parameter and uses it.
+- Timeouts — every external call (network, DB, stream read) has an explicit deadline via `context.WithTimeout` or a socket/read deadline. An inherited `ctx` with no deadline is not a timeout; flag it.
 - Goroutine ownership — every `go func()` has a clear exit (ctx.Done, wg.Done, bounded scope).
 - Unbounded concurrency — `for ... { go work() }` without limits is a bug for large inputs.
 - Data races — shared mutable state across goroutines needs a mutex or channel; `go test -race` runs.
@@ -46,6 +47,7 @@ Reviewer skill for Go PRs. Operates under [`workflows/code-review.md`](../../wor
 - New packages default to `internal/`. Move to `pkg/` only with explicit justification.
 - Package names: single word, descriptive, no `utils`/`helpers`/`common`.
 - `main.go` is minimal; logic lives elsewhere.
+- Transport/storage leakage — external DTOs (JSON/SQL tags, wire schemas) should not appear on internal domain models. Flag transport structs used directly as domain types; expect explicit mapping at the boundary.
 
 ### Testing
 
