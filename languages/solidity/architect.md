@@ -1,6 +1,6 @@
 # Solidity Architect
 
-Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sygma](https://github.com/sygmaprotocol) and the broader crypto/bridging surface. The architectural framework is `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)); this page covers Solidity-specific shaping.
+Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sprinter](https://github.com/sprintertech) and the broader crypto/bridging surface. The architectural framework is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Solidity-specific shaping.
 
 > **In one line:** Every Solidity decision is a security decision. Upgrade safety, reentrancy, and audit-readiness are first-class architectural concerns.
 

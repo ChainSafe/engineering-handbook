@@ -42,6 +42,7 @@ Reviewer skill for Rust PRs. Universal review framework at [`workflows/code-revi
 - `.await` doesn't span a critical invariant.
 - `spawn` vs `spawn_blocking` — CPU-bound work in `spawn` starves the runtime.
 - No unbounded `FuturesUnordered` / `JoinSet`.
+- External `.await` (network, DB, cross-subsystem channel read) has an explicit deadline via `tokio::time::timeout`. Bounded concurrency is not bounded duration — flag a timeout-less external await.
 
 ### API design
 
@@ -49,6 +50,7 @@ Reviewer skill for Rust PRs. Universal review framework at [`workflows/code-revi
 - `#[non_exhaustive]` on enums and structs that may grow.
 - No tokio types in public library APIs unless feature-gated.
 - Newtypes for domain values.
+- Transport/storage leakage — `#[derive(Serialize, Deserialize)]` or DB-schema attributes on domain types. Expect serde/DB DTOs at the boundary mapped explicitly to domain models; flag wire/storage concerns hung directly on domain types.
 
 ### Concurrency primitives
 
@@ -75,6 +77,7 @@ Reviewer skill for Rust PRs. Universal review framework at [`workflows/code-revi
 - No unjustified new crates.
 - License compatibility (GPL into Apache 2.0 is blocking).
 - `cargo audit` clean.
+- Lean `default = []` — heavy deps (tracing subscribers, DB drivers, codecs, dev utilities) behind optional features; test deps (`test-utils`/`mock`) not leaking into production builds. Flag features that swap rather than add behavior (Cargo unifies them workspace-wide).
 
 ## Refusal
 
