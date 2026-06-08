@@ -44,6 +44,7 @@ components = ["rustfmt", "clippy"]
 - `cargo audit` in CI.
 - `cargo deny` for license/source/version policy.
 - Workspace-level dependency declarations to keep versions consistent.
+- **Feature-gating.** Keep `default = []` lean — heavy deps (tracing subscribers, DB drivers, codecs, dev utilities) go behind optional features. Put mocks/test vectors behind `test-utils` or `mock` gates; never leak test deps into production builds. Features must be *additive* (Cargo unifies them across the workspace) — a gate may add behavior, never swap it.
 
 ## Error handling
 
@@ -82,6 +83,7 @@ pub fn fetch(key: &str) -> Result<Data> {
 - `.await` propagates cancellation — hold no critical invariant across an `.await`.
 - `spawn` for async; `spawn_blocking` for CPU-bound. Mixing them up starves the runtime.
 - `Send + Sync + 'static` bounds on spawned tasks.
+- Every external `.await` (network, DB, cross-subsystem channel read) gets an explicit deadline via `tokio::time::timeout`. Bounded concurrency caps *how many*; this caps *how long* — an `.await` with no timeout hangs forever.
 
 ## Unsafe
 
@@ -108,6 +110,7 @@ Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLIC
 - **Newtypes for domain types.** `pub struct UserId(u64)`.
 - **`From` / `TryFrom`** for conversions over inherent `to_*` methods.
 - **`Deref` only for smart pointers** — don't fake inheritance.
+- **API & storage isolation.** Keep `#[derive(Serialize, Deserialize)]` and storage-schema concerns off domain types. Define serde/wire and DB DTOs at the boundary and map them explicitly to domain models. External edges only — not between internal modules.
 
 ## Anti-patterns
 

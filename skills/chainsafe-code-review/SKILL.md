@@ -46,6 +46,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. What to veri
 - **Generic comments.** Cut comments that restate what the code does.
 - **Test theatre.** Tests asserting "function was called" rather than its effect. Read test bodies.
 - **Type laxity.** `any`, `unknown`, untyped returns, missing error handling.
+- **Undeclared operational contract.** Env vars, config, secrets, schema/migrations, ports, or a public signature changed without an Operational impact declaration — the change that becomes Infra's problem later (Engineering Invariant 8).
 
 ### When to demand re-plan vs accept vs reject
 
@@ -66,7 +67,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. What to veri
 - Run lint/type-check/test against the branch; report failures.
 - Diff against the linked plan or spec; flag deviations.
 - Apply the relevant language reviewer skill (chainsafe-<lang>-reviewer).
-- Check PR-description completeness (what/why/acceptance/AI declaration/scope flags).
+- Check PR-description completeness (what/why/acceptance/**operational impact**/AI declaration/scope flags); flag undeclared env-var / config / schema / public-signature changes.
 - Verify references are real.
 - Flag missing or thin commit messages.
 

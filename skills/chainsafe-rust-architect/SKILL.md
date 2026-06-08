@@ -37,6 +37,7 @@ ChainSafe Rust projects use Cargo workspaces (Forest is the canonical example):
 - **`#[tokio::main]` only in the binary crate.** Library crates stay runtime-agnostic where possible.
 - **Bounded concurrency:** `FuturesUnordered` with limits, `tokio::sync::Semaphore`, `buffer_unordered` on streams. Unbounded futures-spawn is a leak.
 - **`Send + Sync + 'static` bounds** — design types so they meet what `tokio::spawn` requires.
+- **Bounded Duration:** Every potentially blocking external `.await` boundary (network I/O, database interaction, channel reads across subsystems) must have a strict timeout boundary. Combine bounded concurrency (caps *how many*) with bounded duration (caps *how long*) to prevent task pool exhaustion.
 
 ### Concurrency primitives
 
@@ -50,6 +51,14 @@ ChainSafe Rust projects use Cargo workspaces (Forest is the canonical example):
 - **`#[non_exhaustive]`** on enums and structs that may grow.
 - **Builder pattern** for complex constructors.
 - **No leaking tokio types in library APIs** unless feature-gated.
+- **API & storage isolation.** Keep internal domain types separate from external transport layers. Define serde/wire and database DTOs at the boundary and map them explicitly to domain models; don't hang `#[derive(Serialize, Deserialize)]` or storage-schema concerns directly on domain types. External edges only — not between internal modules.
+
+### Feature-gating and compilation boundaries
+
+- **Lean defaults.** Keep `default = []` as minimal as possible. Heavy dependencies (tracing subscribers, database drivers, serialization codecs, dev utilities) live behind optional cargo features, not in the default build.
+- **Environment isolation.** Abstract environment-specific logic — mocks, test vectors, alternative networking layers — behind descriptive gates like `test-utils` or `mock`. Never leak testing dependencies into production builds.
+- **Conditional compilation.** Apply `#[cfg(feature = "...")]` intentionally on modules and public entry points so that turning a feature off fully removes its artifacts and upstream dependencies from the compilation graph.
+- **Features are additive.** Cargo unifies feature sets across the workspace, so a feature may only *add* behavior — never remove or swap it. A `mock` gate that replaces real behavior breaks the moment two crates in one build enable different sets; design gates to layer, not to toggle.
 
 ### Unsafe
 

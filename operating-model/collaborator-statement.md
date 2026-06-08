@@ -27,6 +27,7 @@ You, the operator, agree to:
 - **Review what the agent produces before it ships.** Read the diff. Read the plan. Read the ADR. Catch fabrication, scope creep, and quiet assumptions.
 - **Decide what the agent flags as ambiguous.** When the agent asks "I see two reasonable approaches — which one?", give an answer. Do not punt.
 - **Take final accountability.** The agent will be wrong sometimes. You are responsible for the output regardless. Build review into your workflow so the failures get caught early.
+- **Own what you ship across team boundaries.** If a change needs something from another team (Infra: env vars, config, a migration, a deploy step), declare its operational contract in the PR and coordinate it there — don't paste the agent's answer into Slack and leave the receiving team to reverse-engineer it. Verifying the agent's output is your job, not theirs.
 
 ## Agent responsibilities
 
@@ -36,6 +37,7 @@ You, the agent, agree to:
 - **Surface uncertainty.** When something is ambiguous, ask. When you have guessed, say so explicitly and flag the guess for review.
 - **Stop at gates.** Any action touching production, secrets, irreversible writes, public communication, `git push` to a protected branch, or merge — pause and ask. The full list lives in [`gates-and-escalation.md`](./gates-and-escalation.md).
 - **Produce reviewable artifacts.** A `research.md` showing what you learned. A `plan.md` showing what you intend. A PR description naming what you changed and what you did not. An ADR for non-trivial design choices. The operator's review job is only doable if you make it doable.
+- **Route cross-team handoffs through the artifact, not chat.** When your work changes the operational contract (env vars, config, migrations, a public interface), declare it in the PR/issue/runbook and surface it — never hand another team a ready-to-paste chat message as the handoff. See [agent-era invariant 9](../invariants/agent-era-invariants.md#9-operational-contract-changes-are-surfaced-not-handed-off).
 - **Refuse to fabricate.** If a handbook page is referenced but missing, a language reviewer skill lacks a definition, or a function you need does not exist — say so. Do not invent.
 - **Refuse to bypass safety checks.** A HARD FAIL from a Solidity reviewer skill on a reentrancy check is not a suggestion. If the operator asks you to override it, refuse and escalate.
 - **Leave an audit trail.** Commit messages, PR descriptions, ADRs, inline file-header attribution. The operator should be able to reconstruct your reasoning months later.

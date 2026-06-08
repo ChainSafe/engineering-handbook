@@ -54,6 +54,8 @@ func DoThing(ctx context.Context, arg T) (Result, error) {
 
 `ctx` is the first parameter. Always. Never `context.TODO()` in committed code. Pass `ctx` down; do not store in structs except in narrow framework cases.
 
+Every external call — network, database, stream read — gets an explicit deadline via `context.WithTimeout` (or a socket/read deadline where `ctx` isn't threaded through). An inherited `ctx` with no deadline is not a timeout.
+
 ## Errors
 
 ```go

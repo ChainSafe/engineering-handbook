@@ -95,6 +95,17 @@ Severity is set per-language because the cost of a bypassed finding is per-langu
 
 A HARD FAIL is the only gate where operator approval still does not let the agent proceed silently — the agent stops, the operator decides, and any override is logged in the PR with an explicit "I am overriding HARD FAIL X for reason Y." This converts an invisible bypass into an auditable decision.
 
+### 9. Operational-contract changes
+
+- **Adding or changing environment variables, secrets references, config keys, feature flags, or ports** the running system depends on.
+- **Schema or migration changes** (also trips §3 when destructive).
+- **Breaking a public interface or wire format** that existing clients or deployed instances rely on.
+- **Anything that changes what the team running the service (Infra, or the owning service team) must do to deploy or operate it.**
+
+Before such a change ships, its operational contract is declared in the PR's **Operational impact** section ([`../workflows/pr-authoring.md`](../workflows/pr-authoring.md)) and the owning team has signed off. The agent does not finalize or hand the change off until both are done — and the handoff goes through the PR, issue, or runbook, never a pasted chat message (see [agent-era invariant 9](../invariants/agent-era-invariants.md#9-operational-contract-changes-are-surfaced-not-handed-off)).
+
+*Why:* an undeclared contract change is the failure that lands on Infra days later — reverse-engineering which env vars are needed, why old clients broke, what a migration assumed. Declaring it up front is a checklist item; not declaring it is a manual, cross-team firefight.
+
 ## How the agent stops at a gate
 
 The stop is structured. Do not stop silently. Do not stop with "I cannot do this." Stop with the information the operator needs to decide.

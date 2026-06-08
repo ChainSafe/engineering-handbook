@@ -1,0 +1,8 @@
+[
+  { "query": "REPLACE — a realistic should-trigger prompt, phrased the way an engineer actually types it in chat (name a product, file, or error)", "should_trigger": true },
+  { "query": "REPLACE — another should-trigger prompt, different phrasing and length than the first", "should_trigger": true },
+  { "query": "REPLACE — an edge-case should-trigger prompt that sits near the skill's boundary", "should_trigger": true },
+  { "query": "REPLACE — a near-miss that shares keywords with the skill but should NOT trigger it", "should_trigger": false },
+  { "query": "REPLACE — another should-not-trigger near-miss (e.g. a conceptual question, or a trivial edit)", "should_trigger": false },
+  { "query": "REPLACE — a should-not-trigger prompt that a careless description would wrongly catch", "should_trigger": false }
+]

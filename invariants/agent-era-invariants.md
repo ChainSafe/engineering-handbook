@@ -86,6 +86,16 @@ These extend the [Engineering Invariants](./engineering-invariants.md) — they 
 
 **Override.** Operator can accept work without one of the artifacts (e.g., a one-line fix may not warrant an ADR), but the decision to skip is logged in the PR.
 
+## 9. Operational-contract changes are surfaced, not handed off
+
+**Rule.** When an agent's work changes the operational contract — env vars, secrets, config, schema/migrations, ports, a public interface, or backwards compatibility — the agent surfaces that explicitly and routes it into a reviewable artifact: the PR description's Operational impact section, an issue, or the relevant runbook in [`infrastructure-general`](https://github.com/ChainSafe/infrastructure-general). The agent never hands a change to another team (Infra especially) as a ready-to-paste chat message. The artifact is the handoff; a chat message may point at it but cannot be it.
+
+**Why.** A pasted agent answer looks authoritative, is often subtly wrong or incomplete — a missing env var, an unflagged breaking change — and is not reviewable, so the receiving team inherits both the error and the archaeology. Operator-first means the person shipping owns verifying the output; routing it through the artifact keeps the decision in the repo, not in chat ([Engineering Invariant 5](./engineering-invariants.md#5-decisions-live-in-the-repo-not-in-chat)), and keeps accountability with the shipper instead of the receiver.
+
+**How it's checked.** The agent puts the operational contract in the PR/plan, not a chat message. The [operational-contract gate](../operating-model/gates-and-escalation.md#9-operational-contract-changes) stops the agent before a contract-altering change is finalized or handed off. Reviewer skills flag undeclared contract changes; the [`pr-authoring`](../workflows/pr-authoring.md) Operational impact section is the declaration surface.
+
+**Override.** Operator may accept a lighter declaration for a trivial change (e.g., one new optional env var with a sane default), logged in the PR. There is no override for routing the handoff through chat instead of the artifact — a chat heads-up is fine, but the reviewable contract must exist.
+
 ## How these are enforced
 
 These invariants live at three layers:

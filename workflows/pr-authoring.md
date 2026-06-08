@@ -35,6 +35,7 @@ Required:
 - **Why it changed.** Link to the issue, ADR, or spec. If there isn't one, write the why inline.
 - **Acceptance criteria or test plan.** What "done" looks like; how the reviewer can verify.
 - **Out-of-scope notes.** Anything the reader might expect to see in the diff but didn't, with a one-line reason.
+- **Operational impact.** The change's operational contract: env vars, secrets, config keys, schema/migrations, or ports added or changed; backwards-compatibility impact; and anything the team that runs the service (Infra or the owning team) must do. "None" is a valid answer — but answer it. This is [Engineering Invariant 8](../invariants/engineering-invariants.md#8-a-change-carries-its-operational-contract); contract-altering changes also trip the [operational-contract gate](../operating-model/gates-and-escalation.md#9-operational-contract-changes).
 
 Agent-era additions:
 

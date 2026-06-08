@@ -49,6 +49,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. The operator
 - **Generic comments.** Comments that restate what the code does instead of why. Agents add these by default; cut them.
 - **Test theatre.** Tests that exercise the code without actually checking behavior — e.g., asserting that a function was called rather than asserting on its effect. Read the test bodies, not just the test names.
 - **Type laxity.** `any`, `unknown`, untyped returns, missing error handling. The agent may have taken shortcuts the operator didn't authorize.
+- **Undeclared operational contract.** A diff that adds or changes env vars, config keys, secrets, schema/migrations, ports, or a public signature without a matching **Operational impact** declaration. This is the change that becomes Infra's problem later — [Engineering Invariant 8](../invariants/engineering-invariants.md#8-a-change-carries-its-operational-contract).
 
 ### When to demand a re-plan vs. accept
 
@@ -71,7 +72,7 @@ Agents can be effective code reviewers when configured well. The shape:
 - Run lint/type-check/test against the branch; report failures.
 - Diff against the linked plan or spec; flag deviations.
 - Apply the relevant language reviewer skill (when one exists in [`../languages/<lang>/reviewer.md`](../languages/)).
-- Check for the PR-description completeness (what changed, why, acceptance criteria, AI declaration if applicable, scope drift flags).
+- Check for the PR-description completeness (what changed, why, acceptance criteria, **operational impact**, AI declaration if applicable, scope drift flags). Flag env-var / config / schema / public-signature changes that aren't declared.
 - Verify references are real (no fabricated imports, function names, or handbook links).
 - Flag missing or thin commit messages.
 

@@ -42,7 +42,7 @@ Contributions follow the curatorial model: practices already exist across the or
 
 ## About ChainSafe
 
-ChainSafe is a blockchain research and development firm building infrastructure for web3 — major contributions to Ethereum, Polkadot, Filecoin, and others, plus products in [gaming](https://gaming.chainsafe.io/), [bridging](https://www.sprinter.tech/), NFTs, and [decentralized storage](https://storage.chainsafe.io/). [chainsafe.io](https://chainsafe.io/).
+ChainSafe is a blockchain research and development firm building infrastructure for web3 — major contributions to Ethereum, Polkadot, Filecoin, and others, plus products in [gaming](https://gaming.chainsafe.io/), [bridging](https://www.sprinter.tech/), NFTs, and [decentralized storage](https://forest.chainsafe.io/). [chainsafe.io](https://chainsafe.io/).
 
 ## License
 
