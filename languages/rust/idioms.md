@@ -63,6 +63,22 @@ fn read(path: impl AsRef<Path>) -> ...   // &str / String / &Path / PathBuf all 
 
 Take the most general borrowed form. Callers pass what they already have without converting, and ownership decisions stay at the boundary. A recurring theme across the idiomatic-Rust corpus.
 
+> **Caveat — don't use this in a `dyn`-compatible trait.** A generic or `impl Trait` parameter on a *trait method* makes the trait no longer `dyn`-compatible (formerly "object safe"), so `Box<dyn MyTrait>` / `&dyn MyTrait` stop compiling. In a trait you intend to use behind `dyn`, take the concrete borrowed type in the trait method and expose the flexible form as a wrapper — an inherent `impl dyn MyTrait`, or a default method bounded `where Self: Sized` (which keeps it out of the vtable):
+>
+> ```rust
+> trait Loader {
+>     fn load(&self, path: &Path) -> io::Result<Vec<u8>>;   // concrete type → `dyn Loader` works
+> }
+>
+> impl dyn Loader {
+>     fn load_any(&self, path: impl AsRef<Path>) -> io::Result<Vec<u8>> {
+>         self.load(path.as_ref())                          // ergonomic wrapper, off the vtable
+>     }
+> }
+> ```
+>
+> Free functions and inherent methods have no such constraint — use the flexible form freely. See the dispatch section in [`architect.md`](./architect.md).
+
 ## Conversion method naming
 
 Name conversions by cost, per the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/):

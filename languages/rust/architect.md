@@ -92,7 +92,7 @@ When opening an ADR for a Rust crate, the template should cover:
 - **`unsafe` without a soundness comment.** Every `unsafe` block needs a justification.
 - **Undocumented public items.** A `pub` item with no `///` doc comment ships an unexplained contract.
 - **`dyn Trait` in a hot-path signature** chosen by default rather than measured.
-- **Overengineering.** Reaching for a trait, macro, generic, or `unsafe` before a plain function would do, or optimizing before profiling — the "four horsemen" of bad Rust. Prefer the simplest construct that works.
+- **Overengineering.** Reaching for a trait, macro, generic, or `unsafe` before a plain function would do, or optimizing before profiling — the "four horsemen" of bad Rust. Prefer the simplest construct that *still honors the idioms in this guide* — simple, not simplistic. Simplicity is never a license to erase intent: a named enum or newtype still beats a fistful of `bool`/`String` parameters ([`idioms.md`](./idioms.md)).
 
 ## Related
 
