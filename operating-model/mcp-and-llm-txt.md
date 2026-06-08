@@ -69,7 +69,7 @@ This is the agent-facing index. For humans, see the
 - [chainsafe-research-plan-implement](https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/skills/chainsafe-research-plan-implement/SKILL.md): Research → plan → annotate → implement workflow. Trigger: any multi-file change, refactor, new feature.
 
 ## External canonical sources
-- [.invariance framework](https://github.com/.../README.md): Architecture invariance framework. The handbook's `languages/<lang>/architect.md` pages deep-link here.
+- [.invariance framework](../../README.md): Architecture invariance framework. The handbook's `languages/<lang>/architect.md` pages deep-link here.
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md): Infrastructure & DevOps canonical source. The handbook's `workflows/infrastructure-and-devops.md` deep-links here.
 ```
 
