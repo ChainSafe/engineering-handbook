@@ -92,6 +92,7 @@ When opening an ADR for a Rust crate, the template should cover:
 - **`unsafe` without a soundness comment.** Every `unsafe` block needs a justification.
 - **Undocumented public items.** A `pub` item with no `///` doc comment ships an unexplained contract.
 - **`dyn Trait` in a hot-path signature** chosen by default rather than measured.
+- **Overengineering.** Reaching for a trait, macro, generic, or `unsafe` before a plain function would do, or optimizing before profiling — the "four horsemen" of bad Rust. Prefer the simplest construct that *still honors the idioms in this guide* — simple, not simplistic. Simplicity is never a license to erase intent: a named enum or newtype still beats a fistful of `bool`/`String` parameters ([`idioms.md`](./idioms.md)).
 
 ## Related
 
@@ -101,3 +102,4 @@ When opening an ADR for a Rust crate, the template should cover:
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — Filecoin/Forest-specific AI norms; informs Rust review at ChainSafe.
 - [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md) — architectural framework this page defers to.
 - [Effective Rust](https://effective-rust.com/) (Drysdale) and [The Rust Book](https://doc.rust-lang.org/book/) — the canonical practice references this section builds on; cataloged in [`sources.md`](../../references/sources.md).
+- [Idiomatic Rust](https://github.com/mre/idiomatic-rust) (peer-reviewed corpus) and the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — idiomatic-Rust principles and API conventions.

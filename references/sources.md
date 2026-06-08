@@ -90,6 +90,14 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 - **Used by.** [`../languages/rust/architect.md`](../languages/rust/architect.md), [`../languages/rust/developer.md`](../languages/rust/developer.md), [`../languages/rust/reviewer.md`](../languages/rust/reviewer.md), [`../languages/rust/idioms.md`](../languages/rust/idioms.md), [`../languages/rust/gotchas.md`](../languages/rust/gotchas.md). ChainSafe's canonical Rust codebase is [Forest](https://github.com/ChainSafe/forest) (Filecoin).
 - **Coordination.** External upstream, treated as canonical for idiomatic Rust. **Effective Rust is CC-BY-NC-ND** — the handbook references and credits specific items by number and link; it does not reproduce or adapt the text. Re-anchor item links if the upstream reorganizes; the weekly link-check catches rot.
 
+### Idiomatic Rust corpus + Rust API Guidelines
+
+- **Source.** [mre/idiomatic-rust](https://github.com/mre/idiomatic-rust) — Matthias Endler's peer-reviewed collection of articles, talks, and repos that teach concise, idiomatic Rust (released **CC0** / public domain; sortable index at [corrode.dev/idiomatic-rust](https://corrode.dev/idiomatic-rust/)). The highest-leverage standards it points to are the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) (the official idiomatic-API checklist), [Canonical's Rust Best Practices](https://canonical.github.io/rust-best-practices/), and [Elements of Rust](https://github.com/ferrous-systems/elements-of-rust).
+- **Maintainer.** External — Matthias Endler (corpus) and the Rust library team (API Guidelines). Internal coordination point: the Rust CODEOWNER ([@LesnyRumcajs](https://github.com/LesnyRumcajs) / [@hanabi1224](https://github.com/hanabi1224)).
+- **Covers.** Idiomatic, ergonomic Rust: flexible input types (`&str` / `&[T]` / `impl AsRef`), conversion and getter naming (`as_` / `to_` / `into_`, `iter` / `iter_mut` / `into_iter`, no `get_` prefix), enums over booleans to express intent, the common conversion traits (`From` / `Into` / `TryFrom` / `AsRef` / `Cow`), and simplicity over overengineering. Complements Effective Rust + The Rust Book; the handbook applies the principles rather than copying the corpus.
+- **Used by.** [`../languages/rust/architect.md`](../languages/rust/architect.md), [`../languages/rust/developer.md`](../languages/rust/developer.md), [`../languages/rust/reviewer.md`](../languages/rust/reviewer.md), [`../languages/rust/idioms.md`](../languages/rust/idioms.md), [`../languages/rust/gotchas.md`](../languages/rust/gotchas.md).
+- **Coordination.** External upstream. The corpus is CC0 (no attribution required; credited as a courtesy), and the Rust API Guidelines are the stable, authoritative reference for naming and API conventions. Re-anchor links if the upstream reorganizes; the weekly link-check catches rot.
+
 ### Effective Python (idiomatic Python)
 
 - **Source.** [Effective Python](https://effectivepython.com/) by Brett Slatkin — *125 Specific Ways to Write Better Python* (3rd ed., Pearson Addison-Wesley; covers the language through Python 3.13). The book is copyrighted and not free online; the companion code is open at [bslatkin/effectivepython](https://github.com/bslatkin/effectivepython). The handbook references items by number and title, and does not reproduce the text.
@@ -103,7 +111,7 @@ Entries are added when the handbook starts deferring to a new source. Removal is
 Surfacing known candidates rather than fabricating coverage:
 
 - **Other internal artifacts to canonicalize.** When team members surface practices that exist in product repos or docs and could become canonical sources, they get added here with the original author credited (see [`./attribution.md`](./attribution.md)).
-- **Language-specific upstream references.** Per-language reviewer pages may deep-link into language-community standards (e.g., the Rust API guidelines). Those entries are added here when a page starts deferring to one.
+- **Language-specific upstream references.** Per-language reviewer pages may deep-link into language-community standards (e.g., Go's *Effective Go*, the TypeScript handbook). Those entries are added here when a page starts deferring to one.
 
 ## Related
 
