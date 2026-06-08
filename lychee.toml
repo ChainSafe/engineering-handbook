@@ -18,6 +18,10 @@ timeout = 30
 max_retries = 3
 retry_wait_time = 10
 
+# Cap parallel requests so we don't burst GitHub (and other hosts) into
+# rate-limiting / 504 gateway timeouts.
+max_concurrency = 8
+
 # GitHub limits unauthenticated request rates; pass a token in CI to lift the
 # limit. The workflow injects this automatically when running on GH Actions.
 # Locally: `lychee --github-token $(gh auth token) ...`
@@ -48,11 +52,18 @@ exclude = [
     # Any host ending in chainsafe.tech (e.g. foo.chainsafe.tech) is internal
     # and intentionally not reachable, so skip link-checking it. Matches with or
     # without a scheme (naked `chainsafe.tech` as well as `https://...`).
-    '(^|//)([^/]+\.)?chainsafe\.tech\b'
+    '(^|//)([^/]+\.)?chainsafe\.tech\b',
+    '^https://forms\.gle',
+    '^https://github.com/ChainSafe/infrastructure-general',
+    #TODO: till merge to main
+    '^https://raw\.githubusercontent\.com\/ChainSafe\/engineering-handbook\/main'
 ]
 
 # No excluded paths — all markdown is in scope.
 exclude_path = [
+    # TODO: till we mrege to main
+    # For now, skip link-checking the llms.txt file till we merge it into the main branch.
+    "./llms.txt"
 ]
 
 ###########
@@ -62,3 +73,8 @@ exclude_path = [
 # Match the workflow's --cache flag.
 cache = true
 max_cache_age = "1d"
+
+# Don't cache transient failures — otherwise a one-off 504/429 from GitHub would
+# be remembered for max_cache_age and fail every run until it expires. These get
+# re-checked on the next run instead.
+cache_exclude_status = ["429", "500", "502", "503", "504"]
