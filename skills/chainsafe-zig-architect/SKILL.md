@@ -1,6 +1,6 @@
 ---
 name: chainsafe-zig-architect
-description: Architectural guidance for designing Zig modules and libraries at ChainSafe (lodestar-z — Zig consensus libraries for Lodestar: SSZ, Merkleization, hashing, persistent Merkle trees, consensus types). Use this skill whenever the user is starting a new Zig module, designing a build.zig layout, deciding allocator ownership or strategy, choosing a build mode (ReleaseSafe vs ReleaseFast) and safety posture, designing an error set, shaping a comptime/generic API, designing a C-ABI/FFI surface for bindings, pinning a Zig version, or writing an ADR for Zig work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Zig module", "new Zig library", "build.zig layout", "allocator strategy", "arena vs gpa", "who owns this allocation", "ReleaseSafe or ReleaseFast", "Zig error set", "comptime generic", "export to C ABI", "lodestar-z module", "SSZ type design", "ADR for Zig", "minimum_zig_version". Defers to .invariance for invariants themselves; covers what Zig changes about applying them. Do NOT use for line-level Zig coding (use chainsafe-zig-developer) or Zig PR review (use chainsafe-zig-reviewer).
+description: Architectural guidance for designing Zig modules and libraries at ChainSafe (lodestar-z — Zig consensus libraries for Lodestar: SSZ, Merkleization, hashing, persistent Merkle trees, consensus types). Use this skill whenever the user is starting a new Zig module, designing a build.zig layout, deciding allocator ownership or strategy, choosing a build mode (ReleaseSafe vs ReleaseFast) and safety posture, designing an error set, shaping a comptime/generic API, designing a C-ABI/FFI surface for bindings, pinning a Zig version, or writing an ADR for Zig work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Zig module", "new Zig library", "build.zig layout", "allocator strategy", "arena vs gpa", "who owns this allocation", "ReleaseSafe or ReleaseFast", "Zig error set", "comptime generic", "export to C ABI", "lodestar-z module", "SSZ type design", "ADR for Zig", "minimum_zig_version". Defers to .invariants for invariants themselves; covers what Zig changes about applying them. Do NOT use for line-level Zig coding (use chainsafe-zig-developer) or Zig PR review (use chainsafe-zig-reviewer).
 metadata:
   type: role-workflow
   language: zig
@@ -56,7 +56,7 @@ Zig is pre-1.0; pin `minimum_zig_version` and the CI compiler, wrap heavily-used
 
 ## ADR shape for Zig modules
 
-Allocator ownership · error set · build-mode/safety posture · comptime surface · exported C ABI + memory ownership · Zig version floor · invariants impacted (`.invariance`).
+Allocator ownership · error set · build-mode/safety posture · comptime surface · exported C ABI + memory ownership · Zig version floor · invariants impacted (`.invariants`).
 
 ## Anti-patterns at design time
 
@@ -70,6 +70,6 @@ Allocator ownership · error set · build-mode/safety posture · comptime surfac
 
 - Full reference: [`languages/zig/architect.md`](../../languages/zig/architect.md)
 - Sister roles: `chainsafe-zig-developer`, `chainsafe-zig-reviewer`
-- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
+- Framework: [`invariants/invariants-framework.md`](../../invariants/invariants-framework.md)
 - Workflow: `chainsafe-research-plan-implement`
 - Upstream: [Zig Language Reference](https://ziglang.org/documentation/master/), [Learn Zig](https://ziglang.org/learn/)

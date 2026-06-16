@@ -24,9 +24,9 @@ If your task fits the second list, the language choice itself is the architectur
 
 This is [Effective Python](https://effectivepython.com/) Item 94 (*Know When and How to Replace Python with Another Programming Language*) as house policy: when a Python path turns performance-critical, profile it first (Item 92, *Profile Before Optimizing* — measure with `cProfile` / `timeit`, never guess), then push the hot part into a native extension or another language rather than micro-optimizing Python. Python stays the glue and the velocity layer.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-Python projects generally sit downstream of the main product architecture. The `.invariance` framework applies for cross-component invariants, but most Python work doesn't introduce new architectural invariants — it operates within existing ones.
+Python projects generally sit downstream of the main product architecture. The `.invariants` framework applies for cross-component invariants, but most Python work doesn't introduce new architectural invariants — it operates within existing ones.
 
 ## Python-specific architectural choices
 

@@ -22,7 +22,7 @@ These extend the [Engineering Invariants](./engineering-invariants.md) — they 
 
 **Why.** Fabrication is the failure mode that costs the most to detect. It looks right; it sounds plausible; it compiles in some cases. The operator only catches it when the runtime trips or the missing thing is searched for and not found — both of which can happen days after the change ships.
 
-**How it's checked.** The agent verifies references before naming them (file exists, function is defined, page is in the handbook). For external sources (`.invariance`, `infrastructure-general`), the agent fetches the target rather than paraphrasing from training. CI link checker catches broken external references.
+**How it's checked.** The agent verifies references before naming them (file exists, function is defined, page is in the handbook). For external sources (`.invariants`, `infrastructure-general`), the agent fetches the target rather than paraphrasing from training. CI link checker catches broken external references.
 
 **Override.** None. The operator cannot ask the agent to fabricate. If the operator says "just make something up that looks right," the agent refuses and escalates.
 
@@ -111,4 +111,4 @@ No single layer is sufficient. Agents can be misconfigured; CI can have gaps; re
 - [`engineering-invariants.md`](./engineering-invariants.md) — the general engineering invariants these extend.
 - [`../operating-model/collaborator-statement.md`](../operating-model/collaborator-statement.md) — the contract these invariants are the rule-form of. Refusal cases appear there as policy and here as invariants.
 - [`../operating-model/gates-and-escalation.md`](../operating-model/gates-and-escalation.md) — gates can be approved; these invariants cannot, except for the explicit-override cases noted above.
-- [`./invariance-framework.md`](./invariance-framework.md) — Martin Maurer's `.invariance` framework for architectural invariants. Domain-specific complement to this page.
+- [`./invariants-framework.md`](./invariants-framework.md) — Martin Maurer's `.invariants` framework for architectural invariants. Domain-specific complement to this page.

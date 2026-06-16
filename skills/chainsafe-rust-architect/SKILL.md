@@ -1,6 +1,6 @@
 ---
 name: chainsafe-rust-architect
-description: Architectural guidance for designing Rust crates and systems at ChainSafe (Forest, Mina-rs, ChainBridge Substrate, PINT, other Rust projects). Use this skill whenever the user is starting a new Rust crate, designing a Rust workspace, choosing an async runtime, picking an error model, deciding `unsafe` usage, structuring a Cargo workspace, deciding `pub` vs `pub(crate)`, picking concurrency primitives, or writing an ADR for Rust work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Rust crate", "new Rust workspace", "Forest module design", "thiserror or anyhow", "async runtime choice", "Tokio vs async-std", "Arc<Mutex<T>> or channel", "public API surface", "is unsafe justified here", "ADR for Rust", "non_exhaustive enum", "workspace layout". Defers to .invariance for invariants themselves; covers what Rust changes about applying them. Do NOT use for line-level Rust coding (use chainsafe-rust-developer) or Rust PR review (use chainsafe-rust-reviewer).
+description: Architectural guidance for designing Rust crates and systems at ChainSafe (Forest, Mina-rs, ChainBridge Substrate, PINT, other Rust projects). Use this skill whenever the user is starting a new Rust crate, designing a Rust workspace, choosing an async runtime, picking an error model, deciding `unsafe` usage, structuring a Cargo workspace, deciding `pub` vs `pub(crate)`, picking concurrency primitives, or writing an ADR for Rust work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Rust crate", "new Rust workspace", "Forest module design", "thiserror or anyhow", "async runtime choice", "Tokio vs async-std", "Arc<Mutex<T>> or channel", "public API surface", "is unsafe justified here", "ADR for Rust", "non_exhaustive enum", "workspace layout". Defers to .invariants for invariants themselves; covers what Rust changes about applying them. Do NOT use for line-level Rust coding (use chainsafe-rust-developer) or Rust PR review (use chainsafe-rust-reviewer).
 metadata:
   type: role-workflow
   language: rust
@@ -73,7 +73,7 @@ ChainSafe Rust projects use Cargo workspaces (Forest is the canonical example):
 - Error type — `thiserror` or `anyhow`. Justify.
 - Async commitments — which runtime, where required, how the API is shaped.
 - Unsafe — if any, the soundness argument and safety invariants.
-- Invariants impacted — deep links into `.invariance`.
+- Invariants impacted — deep links into `.invariants`.
 
 ## Anti-patterns at design time
 
@@ -91,6 +91,6 @@ Forest carries [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI
 
 - Full reference: [`languages/rust/architect.md`](../../languages/rust/architect.md)
 - Sister roles: `chainsafe-rust-developer`, `chainsafe-rust-reviewer`
-- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
+- Framework: [`invariants/invariants-framework.md`](../../invariants/invariants-framework.md)
 - Workflow: `chainsafe-research-plan-implement`
 - Upstream: [Effective Rust](https://effective-rust.com/) · [The Rust Book](https://doc.rust-lang.org/book/)

@@ -1,12 +1,12 @@
 # Rust Architect
 
-Architectural guidance for Rust projects at ChainSafe — notably [Forest](https://github.com/ChainSafe/forest) (Filecoin), [Mina-rs](https://github.com/ChainSafe/mina-rs), [ChainBridge Substrate](https://github.com/ChainSafe/chainbridge-substrate), and others. The architectural framework lives in `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Rust-specific shaping.
+Architectural guidance for Rust projects at ChainSafe — notably [Forest](https://github.com/ChainSafe/forest) (Filecoin), [Mina-rs](https://github.com/ChainSafe/mina-rs), [ChainBridge Substrate](https://github.com/ChainSafe/chainbridge-substrate), and others. The architectural framework lives in `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)); this page covers Rust-specific shaping.
 
 > **In one line:** Errors are typed. Ownership is explicit. Async runtime is a library choice, not a default. Use the type system instead of comments.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-| Decision | `.invariance` section |
+| Decision | `.invariants` section |
 |---|---|
 | Service boundaries and contracts | Component contracts |
 | Invariant naming and testability | Invariant lifecycle |
@@ -81,7 +81,7 @@ When opening an ADR for a Rust crate, the template should cover:
 - **Error type.** Typed (`thiserror`) or pass-through (`anyhow`). Justify.
 - **Async commitments.** Which runtime, where the runtime is required, how the crate's API is shaped around async.
 - **Unsafe code.** If any `unsafe { }` is involved, justify the soundness argument and the safety invariants the caller must uphold.
-- **Invariants impacted.** Deep links into `.invariance`.
+- **Invariants impacted.** Deep links into `.invariants`.
 
 ## Anti-patterns
 
@@ -100,6 +100,6 @@ When opening an ADR for a Rust crate, the template should cover:
 - [`reviewer.md`](./reviewer.md) — what to look for in a Rust PR.
 - [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - Forest's [`AI_POLICY.md`](https://github.com/ChainSafe/forest/blob/main/AI_POLICY.md) — Filecoin/Forest-specific AI norms; informs Rust review at ChainSafe.
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md) — architectural framework this page defers to.
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md) — architectural framework this page defers to.
 - [Effective Rust](https://effective-rust.com/) (Drysdale) and [The Rust Book](https://doc.rust-lang.org/book/) — the canonical practice references this section builds on; cataloged in [`sources.md`](../../references/sources.md).
 - [Idiomatic Rust](https://github.com/mre/idiomatic-rust) (peer-reviewed corpus) and the [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — idiomatic-Rust principles and API conventions.

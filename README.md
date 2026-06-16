@@ -13,7 +13,7 @@ The premise: engineering practices are a competitive asset, AI agents are now fi
 The structure is:
 
 - **`operating-model/`** — the operator/agent contract. How a human and an AI collaborator share responsibility for an output. Read this first.
-- **`invariants/`** — the non-negotiables. Engineering invariants, the `.invariance` framework (deep-linked, not duplicated), and agent-era invariants.
+- **`invariants/`** — the non-negotiables. Engineering invariants, the `.invariants` framework (deep-linked, not duplicated), and agent-era invariants.
 - **`workflows/`** — PR authoring, code review, repo & CI setup, testing & QA, infrastructure & DevOps (deep-linked into `ChainSafe/infrastructure-general`), incident response, release & deploy.
 - **`languages/`** — opinionated guidance per language ecosystem (Go, Rust, TypeScript, Solidity, Daml, Python, Zig) split into three roles: architect, developer, reviewer.
 - **`references/`** — attribution, source pointers, contributors.

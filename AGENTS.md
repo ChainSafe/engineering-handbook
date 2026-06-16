@@ -11,9 +11,9 @@ You are an AI agent (Claude Code, Cursor, Continue, or other) operating against 
 ## Repo map
 
 - `operating-model/` — operator/agent contract, gates, escalation, model and tool selection, MCP and `llms.txt`, memory conventions. Load relevant pages before any non-trivial work.
-- `invariants/` — the non-negotiables. Engineering invariants, deep links into Martin Maurer's `.invariance` framework, agent-era invariants (no silent edits, no fabricated APIs, no committed secrets).
+- `invariants/` — the non-negotiables. Engineering invariants, deep links into Martin Maurer's `.invariants` framework, agent-era invariants (no silent edits, no fabricated APIs, no committed secrets).
 - `workflows/` — PR authoring (delegates to the `chainsafe-research-plan-implement` skill), code review (operator-reviewing-agent and agent-reviewing-PR modes), repo & CI setup, testing & QA, infrastructure & DevOps (deep links into `ChainSafe/infrastructure-general`), incident response, release & deploy.
-- `languages/<lang>/` — for each of Go, Rust, TypeScript, Solidity, Daml, Python, Zig: `architect.md`, `developer.md`, `reviewer.md`, plus shared `idioms.md` and `gotchas.md`. Architect pages deep-link into `.invariance`.
+- `languages/<lang>/` — for each of Go, Rust, TypeScript, Solidity, Daml, Python, Zig: `architect.md`, `developer.md`, `reviewer.md`, plus shared `idioms.md` and `gotchas.md`. Architect pages deep-link into `.invariants`.
 - `references/` — attribution, source pointers, contributors.
 - `skills/` — packaged Anthropic Skills authored via `skill-creator`. Discoverable via `chainsafe.io/llms.txt` and via direct paths in this repo.
 - `VISION.md` — ChainSafe mission, vision, and core values (company-wide). Read for org-wide context; not load-bearing for most agent tasks.
@@ -27,7 +27,7 @@ When picking up a task, load in this order:
 2. `operating-model/collaborator-statement.md` (contract).
 3. `operating-model/gates-and-escalation.md` (when to stop).
 4. The most specific page for the task: a language role page, a workflow page, or a packaged skill in `skills/`.
-5. Any external canonical source the chosen page deep-links into (`.invariance`, `infrastructure-general`) — fetch those targets, do not paraphrase from memory.
+5. Any external canonical source the chosen page deep-links into (`.invariants`, `infrastructure-general`) — fetch those targets, do not paraphrase from memory.
 
 Do not load everything by default. Pull the minimum needed for the task. Skills in `skills/` are scoped on purpose; prefer them when one matches.
 

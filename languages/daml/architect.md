@@ -1,12 +1,12 @@
 # Daml Architect
 
-Architectural guidance for Daml work at ChainSafe — primarily Canton applications including Super Validator and Featured App work. The architectural framework is `.invariance` ([pointer page](../../invariants/invariance-framework.md)); this page covers Daml-specific shaping.
+Architectural guidance for Daml work at ChainSafe — primarily Canton applications including Super Validator and Featured App work. The architectural framework is `.invariants` ([pointer page](../../invariants/invariants-framework.md)); this page covers Daml-specific shaping.
 
 > **In one line:** Templates encode the contract. Signatories authorize. Choices are atomic. Upgrades are versioned packages, not patches. Every authorization decision is a security decision.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-| Decision | `.invariance` section |
+| Decision | `.invariants` section |
 |---|---|
 | Ledger-state invariants | Ledger invariants |
 | Authorization invariants | Authorization model |
@@ -15,7 +15,7 @@ Architectural guidance for Daml work at ChainSafe — primarily Canton applicati
 
 ## Defer to the Canton docs for
 
-`.invariance` above governs architectural *invariants*. Language and platform *semantics* — how Daml and Canton actually behave — are documented authoritatively at [docs.canton.network](https://docs.canton.network). Defer to it rather than re-deriving the language; it is a registered [canonical source](../../references/sources.md#canton-network-docs-daml-language--canton-platform).
+`.invariants` above governs architectural *invariants*. Language and platform *semantics* — how Daml and Canton actually behave — are documented authoritatively at [docs.canton.network](https://docs.canton.network). Defer to it rather than re-deriving the language; it is a registered [canonical source](../../references/sources.md#canton-network-docs-daml-language--canton-platform).
 
 | Topic | Canton docs |
 |---|---|
@@ -86,7 +86,7 @@ Every Daml ADR covers:
 - **Upgrade path.** Migration choices designed in. Version-numbered packages.
 - **Atomicity boundaries.** Which workflows are single-choice atomic; which are multi-choice with explicit intermediate states.
 - **Privacy commitments.** Which parties see what.
-- **Invariants impacted.** Deep links into `.invariance`.
+- **Invariants impacted.** Deep links into `.invariants`.
 
 ## Canton-specific considerations
 
@@ -113,6 +113,6 @@ See [`../../workflows/infrastructure-and-devops.md`](../../workflows/infrastruct
 - [`developer.md`](./developer.md) — tooling, AI-assisted authoring (`daml-autopilot`), testing, and CI.
 - [`reviewer.md`](./reviewer.md) **(HARD FAIL tier)** — what to look for in a Daml PR.
 - [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md).
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md).
 - [`../../workflows/infrastructure-and-devops.md`](../../workflows/infrastructure-and-devops.md) — Canton infra context.
 - Upstream: [Canton Network Docs](https://docs.canton.network) — authoritative Daml language and Canton platform reference ([canonical source](../../references/sources.md#canton-network-docs-daml-language--canton-platform)).

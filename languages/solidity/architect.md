@@ -1,12 +1,12 @@
 # Solidity Architect
 
-Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sprinter](https://github.com/sprintertech) and the broader crypto/bridging surface. The architectural framework is `.invariance` (see the [pointer page](../../invariants/invariance-framework.md)); this page covers Solidity-specific shaping.
+Architectural guidance for Solidity (and EVM-adjacent) work at ChainSafe — [Sprinter](https://github.com/sprintertech) and the broader crypto/bridging surface. The architectural framework is `.invariants` (see the [pointer page](../../invariants/invariants-framework.md)); this page covers Solidity-specific shaping.
 
 > **In one line:** Every Solidity decision is a security decision. Upgrade safety, reentrancy, and audit-readiness are first-class architectural concerns.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
-| Decision | `.invariance` section |
+| Decision | `.invariants` section |
 |---|---|
 | Cross-contract contracts and invariants | Component contracts |
 | Upgrade lifecycle invariants | Lifecycle / migration invariants |
@@ -68,7 +68,7 @@ For cross-chain code:
 - **Failure mode for the destination chain** — what happens if delivery fails or is censored?
 - **Slashing / signer-set rotation** — how do signer changes propagate?
 
-Each becomes an `.invariance` entry; reviewer skills check them per-PR.
+Each becomes an `.invariants` entry; reviewer skills check them per-PR.
 
 ## ADR shape for Solidity contracts
 
@@ -80,7 +80,7 @@ Every non-trivial Solidity ADR covers:
 - **Storage layout.** For upgradeable contracts, storage layout is part of the contract; ADR documents the layout and the gap pattern.
 - **Audit plan.** When the contract is audited (pre-deploy, post-deploy, recurring), by whom.
 - **Test coverage commitments.** Unit, fuzz, invariant tests, formal verification if applicable.
-- **Invariants impacted.** Deep links into `.invariance`.
+- **Invariants impacted.** Deep links into `.invariants`.
 
 ## Anti-patterns
 
@@ -96,4 +96,4 @@ Every non-trivial Solidity ADR covers:
 
 - [`developer.md`](./developer.md), [`reviewer.md`](./reviewer.md) (HARD FAIL tier), [`idioms.md`](./idioms.md), [`gotchas.md`](./gotchas.md).
 - [`../../workflows/testing-and-qa.md`](../../workflows/testing-and-qa.md) — security-sensitive path discipline.
-- [`../../invariants/invariance-framework.md`](../../invariants/invariance-framework.md).
+- [`../../invariants/invariants-framework.md`](../../invariants/invariants-framework.md).

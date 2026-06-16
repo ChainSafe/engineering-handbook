@@ -17,8 +17,8 @@
 /README.md                                      @kalambet
 /.github/CODEOWNERS                             @kalambet
 
-# invariants — `.invariance` pointer page is owned by its upstream maintainer.
-/invariants/invariance-framework.md             @boorich @kalambet
+# invariants — `.invariants` pointer page is owned by its upstream maintainer.
+/invariants/invariants-framework.md             @boorich @kalambet
 
 # workflows — pointer pages into ChainSafe/infrastructure-general are
 # owned by the Head of Infra alongside the curator.

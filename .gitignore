@@ -17,6 +17,9 @@ dictionary.dic
 .env.production.local
 .idea
 
+# Local PR notes (not for repo)
+PR-COMMENT.md
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

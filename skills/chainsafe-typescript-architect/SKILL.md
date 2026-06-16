@@ -1,6 +1,6 @@
 ---
 name: chainsafe-typescript-architect
-description: Architectural guidance for designing TypeScript projects at ChainSafe (Lodestar, web3.js 4.x, ssz, bls, filsnap, other TS projects). Use this skill whenever the user is starting a new TypeScript project, designing a TS package, structuring a Yarn 3 monorepo workspace, picking ESM vs CJS, deciding on type strictness baseline, designing public APIs with branded types, choosing testing frameworks, or writing an ADR for TS work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a TS package", "new TS project", "Lodestar architecture", "monorepo setup", "Yarn workspaces", "ESM or CJS", "branded types", "public API design", "ADR for TypeScript", "tsconfig strict baseline", "type-level tests". Defers to .invariance for invariants themselves. Do NOT use for line-level TS coding (use chainsafe-typescript-developer) or TS PR review (use chainsafe-typescript-reviewer).
+description: Architectural guidance for designing TypeScript projects at ChainSafe (Lodestar, web3.js 4.x, ssz, bls, filsnap, other TS projects). Use this skill whenever the user is starting a new TypeScript project, designing a TS package, structuring a Yarn 3 monorepo workspace, picking ESM vs CJS, deciding on type strictness baseline, designing public APIs with branded types, choosing testing frameworks, or writing an ADR for TS work. EVEN IF the user does not explicitly say "architecture" — triggers on "design a TS package", "new TS project", "Lodestar architecture", "monorepo setup", "Yarn workspaces", "ESM or CJS", "branded types", "public API design", "ADR for TypeScript", "tsconfig strict baseline", "type-level tests". Defers to .invariants for invariants themselves. Do NOT use for line-level TS coding (use chainsafe-typescript-developer) or TS PR review (use chainsafe-typescript-reviewer).
 metadata:
   type: role-workflow
   language: typescript
@@ -72,7 +72,7 @@ Domain identifiers must not be interchangeable. Branded types enforce at the typ
 - Async commitments — where cancellation propagates; where parallelism is exploited.
 - Error contract — thrown types vs returned types.
 - Build target — Node version, browser support, ESM/CJS, bundler.
-- Invariants impacted — deep links into `.invariance`.
+- Invariants impacted — deep links into `.invariants`.
 
 ## Anti-patterns at design time
 
@@ -87,5 +87,5 @@ Domain identifiers must not be interchangeable. Branded types enforce at the typ
 
 - Full reference: [`languages/typescript/architect.md`](../../languages/typescript/architect.md)
 - Sister roles: `chainsafe-typescript-developer`, `chainsafe-typescript-reviewer`
-- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
+- Framework: [`invariants/invariants-framework.md`](../../invariants/invariants-framework.md)
 - Workflow: `chainsafe-research-plan-implement`

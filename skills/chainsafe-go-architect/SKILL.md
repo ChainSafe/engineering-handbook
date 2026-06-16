@@ -1,6 +1,6 @@
 ---
 name: chainsafe-go-architect
-description: Architectural guidance for designing Go services and systems at ChainSafe (Gossamer and Go projects). Use whenever the user starts a new Go service, designs a Go module, writes an ADR for Go work, picks concurrency patterns, decides on a public API surface, structures a Go workspace, or makes any Go-specific architectural decision. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Go service", "new Go module", "Go project layout", "concurrency model in Go", "public API for this Go package", "ADR for Go", "internal vs pkg", "channels or mutexes", "interface design in Go", "context propagation", "goroutine ownership". Defers to `.invariance` for invariants. Do NOT use for line-level Go coding (use chainsafe-go-developer) or Go PR review (use chainsafe-go-reviewer).
+description: Architectural guidance for designing Go services and systems at ChainSafe (Gossamer and Go projects). Use whenever the user starts a new Go service, designs a Go module, writes an ADR for Go work, picks concurrency patterns, decides on a public API surface, structures a Go workspace, or makes any Go-specific architectural decision. EVEN IF the user does not explicitly say "architecture" — triggers on "design a Go service", "new Go module", "Go project layout", "concurrency model in Go", "public API for this Go package", "ADR for Go", "internal vs pkg", "channels or mutexes", "interface design in Go", "context propagation", "goroutine ownership". Defers to `.invariants` for invariants. Do NOT use for line-level Go coding (use chainsafe-go-developer) or Go PR review (use chainsafe-go-reviewer).
 metadata:
   type: role-workflow
   language: go
@@ -15,7 +15,7 @@ Use this when designing Go systems at ChainSafe — Gossamer-shaped work or any 
 
 ## Operating context
 
-You are the architect role for Go work. The architectural framework (invariant naming, lifecycle, testability) is `.invariance`; consult [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md) and the upstream `.invariance` repo before proposing a design. This skill covers what is Go-specific *under* that framework.
+You are the architect role for Go work. The architectural framework (invariant naming, lifecycle, testability) is `.invariants`; consult [`invariants/invariants-framework.md`](../../invariants/invariants-framework.md) and [boorich/.invariants-starter-kit](https://github.com/boorich/.invariants-starter-kit) before proposing a design. This skill covers what is Go-specific *under* that framework.
 
 The full reference is [`languages/go/architect.md`](../../languages/go/architect.md). Load that file for the complete guidance.
 
@@ -43,9 +43,9 @@ Every non-trivial Go ADR should cover:
 - Concurrency commitments: goroutine ownership, context propagation, cancellation.
 - Error contract: which errors callers see, sentinel vs typed vs wrapped.
 - Resource ownership: connections, files, goroutines — who closes them, when.
-- Invariants impacted: deep links into `.invariance`.
+- Invariants impacted: deep links into `.invariants`.
 
-## Defer to `.invariance` for
+## Defer to `.invariants` for
 
 - The invariant definitions and lifecycle.
 - Cross-service contracts.
@@ -66,4 +66,4 @@ This skill covers Go-specific *shape*; the framework is upstream.
 - Full reference: [`languages/go/architect.md`](../../languages/go/architect.md)
 - Sister roles: `chainsafe-go-developer` (implementation), `chainsafe-go-reviewer` (PR review)
 - Workflow: `chainsafe-research-plan-implement` for the design-to-implementation flow
-- Framework: [`invariants/invariance-framework.md`](../../invariants/invariance-framework.md)
+- Framework: [`invariants/invariants-framework.md`](../../invariants/invariants-framework.md)
