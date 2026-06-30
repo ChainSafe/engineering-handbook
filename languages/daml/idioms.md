@@ -116,7 +116,7 @@ setup = do
 - `Daml.Script` is the canonical test framework.
 - `submit` runs as a specific party — authorization is checked.
 - `submitMustFail` for negative tests.
-- Full API: [Testing Daml Contracts](https://docs.canton.network/appdev/modules/m3-testing). Run in CI via ChainSafe's [`canton-ci`](https://github.com/ChainSafe/canton-ci) `daml-test` / `daml-script` actions — see [`developer.md`](./developer.md#ci).
+- Guide: [Testing Daml Contracts](https://docs.canton.network/appdev/modules/m3-testing) (a tutorial, not an API reference). Run in CI via ChainSafe's [`canton-ci`](https://github.com/ChainSafe/canton-ci) `daml-test` / `daml-script` actions — see [`developer.md`](./developer.md#ci).
 
 ## Time and dates
 

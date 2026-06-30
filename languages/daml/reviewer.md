@@ -69,7 +69,7 @@ A merged Daml PR for production work should be audit-ready:
 - [ ] Coverage threshold met (project-specific).
 - [ ] If Canton-deployed: deployment script and domain governance coordination.
 
-Authoritative references for the above: [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization), [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility), [Upgrade Limitations](https://docs.canton.network/appdev/modules/m6-limitations), [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security).
+Authoritative references for the above: [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization), [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility), [Upgrade Limitations](https://docs.canton.network/appdev/modules/m6-limitations), [Testing Upgrades](https://docs.canton.network/appdev/modules/m6-testing-upgrades), [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security).
 
 ## When the reviewer skill refuses to review
 

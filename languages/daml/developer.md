@@ -11,14 +11,14 @@ Daml language and Canton platform semantics are documented authoritatively at [d
 | Need | Canton docs page |
 |---|---|
 | Set up the dev environment (`dpm`, templates) | [Development Environment Setup](https://docs.canton.network/appdev/modules/m3-dev-environment) |
-| Language syntax, types, pattern matching, type classes | [Language Fundamentals](https://docs.canton.network/appdev/modules/m3-language-fundamentals) · [Functional Programming 101](https://docs.canton.network/appdev/modules/m3-functional-programming) |
+| Language syntax, types, pattern matching, type classes | [Language Fundamentals](https://docs.canton.network/appdev/modules/m3-language-fundamentals) |
 | Standard library (Prelude, `DA.*`) | [The Daml Standard Library](https://docs.canton.network/appdev/modules/m3-standard-library) |
 | Templates, choices, keys, interfaces | [Contract Templates](https://docs.canton.network/appdev/modules/m3-contract-templates) · [Choices](https://docs.canton.network/appdev/modules/m3-choices) · [Contract Keys](https://docs.canton.network/appdev/modules/m3-contract-keys) · [Interfaces](https://docs.canton.network/appdev/modules/m3-interfaces) |
 | Authorization model (signatory / observer / controller) | [Authorization Model](https://docs.canton.network/appdev/modules/m3-authorization) |
 | Multi-party composition | [Composition and Design Patterns](https://docs.canton.network/appdev/modules/m3-design-patterns) |
 | Time semantics | [Working with Time](https://docs.canton.network/appdev/modules/m3-working-with-time) |
 | Testing | [Testing Daml Contracts](https://docs.canton.network/appdev/modules/m3-testing) · [Testing Strategies](https://docs.canton.network/appdev/modules/m5-testing-strategies) |
-| Upgrades (SCU) | [Smart Contract Upgrades Overview](https://docs.canton.network/appdev/modules/m6-overview) · [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) · [Writing Your First Upgrade](https://docs.canton.network/appdev/modules/m6-writing-first-upgrade) |
+| Upgrades (SCU) | [Smart Contract Upgrades Overview](https://docs.canton.network/appdev/modules/m6-overview) · [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) · [Writing Your First Upgrade](https://docs.canton.network/appdev/modules/m6-writing-first-upgrade) · [Testing Upgrades](https://docs.canton.network/appdev/modules/m6-testing-upgrades) |
 | Production hardening | [Security Best Practices](https://docs.canton.network/appdev/modules/m7-security) |
 | Exact language / Daml-LF reference | [Daml Language Reference](https://docs.canton.network/appdev/reference/daml-language-reference) · [Daml-LF Reference](https://docs.canton.network/appdev/reference/daml-lf-reference) |
 
@@ -129,7 +129,7 @@ Baseline (extending [`../../workflows/repo-and-ci-setup.md`](../../workflows/rep
 
 ## Upgrades
 
-Daml contracts are immutable; changing a template means a new package version, not a patch. Before changing any deployed template surface, read [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) and [Writing Your First Upgrade](https://docs.canton.network/appdev/modules/m6-writing-first-upgrade); the [SCU deep dive](https://docs.canton.network/appdev/deep-dives/smart-contract-upgrade) covers the mechanics. Upgrade safety is a **HARD FAIL** review tier — see [`reviewer.md`](./reviewer.md).
+Daml contracts are immutable; changing a template means a new package version, not a patch. Before changing any deployed template surface, read [Upgrade Compatibility](https://docs.canton.network/appdev/modules/m6-upgrade-compatibility) and [Writing Your First Upgrade](https://docs.canton.network/appdev/modules/m6-writing-first-upgrade); the [SCU deep dive](https://docs.canton.network/appdev/deep-dives/smart-contract-upgrade) covers the mechanics. Gate the change in CI with [Testing Upgrades](https://docs.canton.network/appdev/modules/m6-testing-upgrades) (`dpm upgrade-check`, both-DAR sandbox tests, and Daml Script tests that exercise v1 contracts under v2). Upgrade safety is a **HARD FAIL** review tier — see [`reviewer.md`](./reviewer.md).
 
 ## Anti-patterns
 
