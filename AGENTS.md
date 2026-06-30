@@ -15,7 +15,7 @@ You are an AI agent (Claude Code, Cursor, Continue, or other) operating against 
 - `workflows/` — PR authoring (delegates to the `chainsafe-research-plan-implement` skill), code review (operator-reviewing-agent and agent-reviewing-PR modes), repo & CI setup, testing & QA, infrastructure & DevOps (deep links into `ChainSafe/infrastructure-general`), incident response, release & deploy.
 - `languages/<lang>/` — for each of Go, Rust, TypeScript, Solidity, Daml, Python, Zig: `architect.md`, `developer.md`, `reviewer.md`, plus shared `idioms.md` and `gotchas.md`. Architect pages deep-link into `.invariants`.
 - `references/` — attribution, source pointers, contributors.
-- `skills/` — packaged Anthropic Skills authored via `skill-creator`. Discoverable via `chainsafe.io/llms.txt` and via direct paths in this repo.
+- `skills/` — packaged Anthropic Skills authored via `skill-creator`. Discoverable via `handbook.chainsafe.io/llms.txt` and via direct paths in this repo.
 - `VISION.md` — ChainSafe mission, vision, and core values (company-wide). Read for org-wide context; not load-bearing for most agent tasks.
 - `PRINCIPLES.md` — General Engineering Principles. Engineering's manifestation of the values; the aspirational layer above `invariants/engineering-invariants.md`. Read when the question is "why are we building software this way?" rather than "what's the rule?".
 

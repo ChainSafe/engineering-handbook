@@ -2,15 +2,15 @@
 
 How an agent discovers and loads this handbook from outside it — what an engineer's Claude Code session, Cursor instance, or other AI runtime should do to pull authoritative ChainSafe engineering context on demand.
 
-> **In one line:** Two channels. Static deep links via `chainsafe.io/llms.txt` for URL consumers. GitHub MCP for tool-style browsing. Load on demand, never bulk.
+> **In one line:** Two channels. Static deep links via `handbook.chainsafe.io/llms.txt` for URL consumers. GitHub MCP for tool-style browsing. Load on demand, never bulk.
 
 ## The two channels
 
-### `chainsafe.io/llms.txt` (static deep links)
+### `handbook.chainsafe.io/llms.txt` (static deep links)
 
-A single agent-facing index file served at the root of `chainsafe.io`. Conforming to the [`llms.txt`](https://llmstxt.org/) proposed standard. It lists every handbook section, every packaged skill, and every external canonical source as a deep link with a one-line description.
+A single agent-facing index file served at `handbook.chainsafe.io/llms.txt`. Conforming to the [`llms.txt`](https://llmstxt.org/) proposed standard. It lists every handbook section, every packaged skill, and every external canonical source as a deep link with a one-line description.
 
-An agent that does not have access to MCP tooling — or that prefers static URLs — fetches `chainsafe.io/llms.txt`, picks the entries relevant to its task, and pulls those raw markdown URLs directly. Each linked page is self-contained enough to be consumed in isolation.
+An agent that does not have access to MCP tooling — or that prefers static URLs — fetches `handbook.chainsafe.io/llms.txt`, picks the entries relevant to its task, and pulls those raw markdown URLs directly. Each linked page is self-contained enough to be consumed in isolation.
 
 ### GitHub MCP (tool-style browsing)
 
@@ -73,7 +73,7 @@ This is the agent-facing index. For humans, see the
 - [ChainSafe/infrastructure-general](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md): Infrastructure & DevOps canonical source. The handbook's `workflows/infrastructure-and-devops.md` deep-links here.
 ```
 
-The actual `llms.txt` lives at the repo root: [`llms.txt`](../llms.txt). It is published to `chainsafe.io/llms.txt` — `chainsafe.io` is configured to serve the file from `https://raw.githubusercontent.com/ChainSafe/engineering-handbook/main/llms.txt` or an equivalent route. The repo-root file is the source of truth; the chainsafe.io URL is the public surface.
+The actual `llms.txt` lives at the repo root: [`llms.txt`](../llms.txt). It is published to `handbook.chainsafe.io/llms.txt` via Cloudflare Pages: the Pages project is connected to this repo with Git integration and rebuilds on every push to `main` (and spins up a preview deployment for every PR), with `handbook.chainsafe.io` as the production custom domain. The repo-root file is the source of truth; the `handbook.chainsafe.io` URL is the public surface.
 
 ## How an agent should use this
 

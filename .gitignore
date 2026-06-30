@@ -20,6 +20,11 @@ dictionary.dic
 # Local PR notes (not for repo)
 PR-COMMENT.md
 
+# Cloudflare Pages publish dir: llms.txt is generated at build time by
+# scripts/build-pages.sh, never committed here — the root llms.txt is the
+# single source of truth.
+public/llms.txt
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -4,7 +4,7 @@ How we build software at ChainSafe — written for the humans doing the work and
 
 ## What this is
 
-A public, opinionated handbook of how ChainSafe builds software. Curated by the CTO, authored across the org, with original contributors credited. Two access modes are supported by design: humans browse it on GitHub, and AI agents consume it via MCP or the deep links in `chainsafe.io/llms.txt`.
+A public, opinionated handbook of how ChainSafe builds software. Curated by the CTO, authored across the org, with original contributors credited. Two access modes are supported by design: humans browse it on GitHub, and AI agents consume it via MCP or the deep links in `handbook.chainsafe.io/llms.txt`.
 
 The premise: engineering practices are a competitive asset, AI agents are now first-class users of those practices, and the handbook should be written for both. We don't ship vague "best practices" filler — every page is meant to change behavior, agent or operator.
 

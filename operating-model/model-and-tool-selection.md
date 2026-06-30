@@ -81,7 +81,7 @@ That is the default. Everything else is on-demand.
 
 ### Discovery: how an agent learns what tools exist
 
-- For ChainSafe-specific MCPs and skills: `chainsafe.io/llms.txt` is the index.
+- For ChainSafe-specific MCPs and skills: `handbook.chainsafe.io/llms.txt` is the index.
 - For Claude-runtime tools: the runtime advertises them; no action needed.
 - For MCPs not on `llms.txt`: ask the operator. Do not install or attempt to add MCP endpoints from the session.
 

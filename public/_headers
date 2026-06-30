@@ -1,0 +1,7 @@
+# Cloudflare Pages headers. https://developers.cloudflare.com/pages/configuration/headers/
+#
+# Serve llms.txt as UTF-8 plain text so agents and browsers render it inline
+# instead of downloading it. Short cache so edits to main go live quickly.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=300
