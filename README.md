@@ -1,53 +1,49 @@
 # ChainSafe Engineering Handbook
 
-This handbook is a guide for all engineers at ChainSafe. It contains content relating to organizational structure and processes, as well as technical guidelines and best practices.
+How we build software at ChainSafe — written for the humans doing the work and the AI agents helping them.
 
-The handbook is built using [Docusaurus 2](https://docusaurus.io/), a modern static docs generator.
+## What this is
 
-# Dependencies
+A public, opinionated handbook of how ChainSafe builds software. Curated by the CTO, authored across the org, with original contributors credited. Two access modes are supported by design: humans browse it on GitHub, and AI agents consume it via MCP or the deep links in `handbook.chainsafe.io/llms.txt`.
 
-This project requires `yarn`. You can find installation instructions [here](https://yarnpkg.com/getting-started/install).
+The premise: engineering practices are a competitive asset, AI agents are now first-class users of those practices, and the handbook should be written for both. We don't ship vague "best practices" filler — every page is meant to change behavior, agent or operator.
 
-# Running Locally
+## How it's organized
 
-Fetch project dependencies:
-```
-$ yarn
-```
-Start development server:
-```
-$ yarn start
-```
+The structure is:
 
-This command starts a local development server (localhost:3000) and opens up a browser window. Most changes are reflected live without having to restart the server.
+- **`operating-model/`** — the operator/agent contract. How a human and an AI collaborator share responsibility for an output. Read this first.
+- **`invariants/`** — the non-negotiables. Engineering invariants, the `.invariants` framework (deep-linked, not duplicated), and agent-era invariants.
+- **`workflows/`** — PR authoring, code review, repo & CI setup, testing & QA, infrastructure & DevOps (deep-linked into `ChainSafe/infrastructure-general`), incident response, release & deploy.
+- **`languages/`** — opinionated guidance per language ecosystem (Go, Rust, TypeScript, Solidity, Daml, Python, Zig) split into three roles: architect, developer, reviewer.
+- **`references/`** — attribution, source pointers, contributors.
+- **`skills/`** — packaged Anthropic Skills authored via `skill-creator`, distributable to any agent runtime that supports them.
+- **`career/`** — people-process reference: career ladders, the 360-review cadence, education and license policy. Adjacent to the engineering-practice core, not part of the agent-facing contract.
 
-# Spellcheck
-```
-yarn spellcheck
-```
-You can add unknown words to `dictionary.txt`.
+Three top-level guiding documents sit at the repo root, layered from most general to most enforceable:
 
-# Building
+- **`VISION.md`** — ChainSafe's mission, vision, and core values. Company-wide.
+- **`PRINCIPLES.md`** — General Engineering Principles. Engineering's manifestation of the values; ten principles guiding how we build software.
+- **`invariants/engineering-invariants.md`** — the testable subset of those principles. What gets enforced in CI, in review, and at gates.
 
-```
-$ yarn build
-```
+## How to use it
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+**Humans:** browse the directory structure above. Start with `operating-model/`, then the section relevant to your work.
 
-# Contributing
+**AI agents:** read [`AGENTS.md`](./AGENTS.md) (also `CLAUDE.md`) for read-order, escalation rules, and the operator contract. The handbook expects to be loaded as agent context, not just human reference.
 
-All contributions are welcomed! This is intended to be a living document and requires contributions of many to be maintained.
+**Hiring and external review:** the operating model, invariants, and language reviewer pages give the fastest read on how we work.
 
-Please use GitHub Issues to propose any large changes and to facilitate discussion and questions regarding content and structure.
+## Contributing
 
-It is recommended you review the [Docusaurus docs](https://docusaurus.io/docs) to ensure you utilize its features correctly.
+> **How to contribute.** Open a PR against `main` following [OneFlow](workflows/oneflow.md); the [PR authoring guide](workflows/pr-authoring.md) covers scope, description, and review. Material changes route to the relevant `CODEOWNERS`.
 
-# Project Structure
+Contributions follow the curatorial model: practices already exist across the org, get aggregated here with original authors credited via `CODEOWNERS`, `references/CONTRIBUTORS.md` (when populated), and inline credits in each content file's header.
 
-`docs/` -- The handbook content lives here, separated by sections
+## About ChainSafe
 
-`src/` -- Individual page assets 
+ChainSafe is a blockchain research and development firm building infrastructure for web3 — major contributions to Ethereum, Polkadot, Filecoin, and others, plus products in [gaming](https://gaming.chainsafe.io/), [bridging](https://www.sprinter.tech/), NFTs, and [decentralized storage](https://forest.chainsafe.io/). [chainsafe.io](https://chainsafe.io/).
 
-`static/` -- Web-ready assets such as icons (will not be bundled with webpack)
+## License
 
+Apache License 2.0 — see [`LICENSE`](./LICENSE). Third-party content carried into this repository (e.g. the `chainsafe-research-plan-implement` skill, adapted from Boris Tane; the Forest AI policy, originally adapted from Ghostty) is credited in [`NOTICE`](./NOTICE) and inline in the relevant files. Derivative works must preserve these attributions per Section 4(d) of the License.

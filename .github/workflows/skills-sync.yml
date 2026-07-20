@@ -1,0 +1,22 @@
+name: Skills ↔ llms.txt sync
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - 'llms.txt'
+      - 'scripts/check-skills-sync.sh'
+      - '.github/workflows/skills-sync.yml'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run skills-sync check
+        run: bash scripts/check-skills-sync.sh

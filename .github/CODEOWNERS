@@ -1,4 +1,36 @@
-* @morrigan @mpetrunic @kalambet @AlexeyKrasnoperov @joshdougall
+# CODEOWNERS — ChainSafe Engineering Handbook
+#
+# Default owner is the curator (@kalambet). Section-specific overrides route
+# changes to the right reviewer. Section overrides are added as sections gain
+# dedicated owners, with original authors credited.
+#
+# PRs target `main` following OneFlow. See AGENTS.md.
 
-/docs/2_development/2_tech-stack/Typescript/readme.md @wemeetagain @beroburny
+# Default: curator
+*                                               @kalambet
 
+# Project artifacts (curator-level)
+/VISION.md                                      @kalambet
+/PRINCIPLES.md                                  @kalambet
+/AGENTS.md                                      @kalambet
+/CLAUDE.md                                      @kalambet
+/README.md                                      @kalambet
+/.github/CODEOWNERS                             @kalambet
+
+# invariants — `.invariants` pointer page is owned by its upstream maintainer.
+/invariants/invariants-framework.md             @boorich @kalambet
+
+# workflows — pointer pages into ChainSafe/infrastructure-general are
+# owned by the Head of Infra alongside the curator.
+/workflows/infrastructure-and-devops.md         @joshdougall @kalambet
+/workflows/incident-response.md                 @joshdougall @kalambet
+/workflows/release-and-deploy.md                @joshdougall @kalambet
+
+# languages — section reviewers per language.
+/languages/typescript/                          @wemeetagain @matthewkeil
+/languages/zig/                                 @wemeetagain @matthewkeil @kalambet
+/languages/solidity/                            @wemeetagain @matthewkeil @kalambet
+/languages/go/                                  @timwu20 @dhyaniarun1993 @kalambet
+/languages/rust/                                @LesnyRumcajs @hanabi1224
+/languages/daml/                                @boorich @salindne @sqhell
+/languages/python/                              @kalambet

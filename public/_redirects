@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects. https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# Bare domain -> the human-facing README on GitHub. The handbook is browsed on
+# GitHub; handbook.chainsafe.io exists to serve llms.txt and to point people at the repo.
+# 301 is fine — the README's canonical location is stable. Switch to 302 if you
+# expect to move it.
+/    https://github.com/ChainSafe/engineering-handbook/blob/main/README.md    301

@@ -17,7 +17,21 @@ dictionary.dic
 .env.production.local
 .idea
 
+# Local PR notes (not for repo)
+PR-COMMENT.md
+
+# Cloudflare Pages publish dir: llms.txt is generated at build time by
+# scripts/build-pages.sh, never committed here — the root llms.txt is the
+# single source of truth.
+public/llms.txt
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vscode/settings.json
+
+# Skill description-tuning scratch outputs — never commit a run's workspace
+# (report.html, results.json, log.txt). Curated *.eval-set.json inputs under
+# workflows/skill-description-tuning/ are committed and intentionally NOT ignored.
+*-eval-workspace/
+*.eval-workspace/

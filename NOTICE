@@ -1,0 +1,24 @@
+ChainSafe Engineering Handbook
+Copyright 2026 ChainSafe Systems
+
+This product includes work derived from and credited to original authors. The
+curatorial model of this repository requires that contributors retain inline
+attribution in each file's header, in `references/CONTRIBUTORS.md`, and via
+`CODEOWNERS`. Derivative works must preserve these attributions per Section
+4(d) of the Apache License, Version 2.0.
+
+Third-party content explicitly carried into this repository:
+
+* `skills/chainsafe-research-plan-implement/SKILL.md`
+  Adapted by Peter Kalambet from "How I Use Claude Code" by Boris Tane
+  (https://boristane.com/blog/how-i-use-claude-code/). Original attribution
+  preserved at the bottom of the SKILL.md file.
+
+* Forest AI policy (deep-linked from `workflows/testing-and-qa.md` and
+  related pages)
+  Originally adapted from the Ghostty project's AI policy. Ghostty attribution
+  preserved in the upstream `ChainSafe/forest` repository and carried through
+  any reference here.
+
+When new third-party material is incorporated, this NOTICE file is updated
+alongside the inline attribution in the relevant content file.
