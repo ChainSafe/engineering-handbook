@@ -55,9 +55,6 @@ exclude = [
     '(^|//)([^/]+\.)?chainsafe\.tech\b',
     '^https://forms\.gle',
     '^https://github.com/ChainSafe/infrastructure-general',
-    # TODO: disabling link checker for the main repo till merge to main
-    '^https://raw\.githubusercontent\.com\/ChainSafe\/engineering-handbook\/main',
-    '^https://github\.com\/ChainSafe\/engineering-handbook\/blob\/main'
 ]
 
 # No excluded paths — all markdown is in scope.
