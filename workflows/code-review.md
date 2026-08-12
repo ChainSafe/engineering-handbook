@@ -23,6 +23,18 @@ What to look for, on either mode:
 - **Comments.** Explain *why*, not *what*. Exceptions: regex, hard-to-understand algorithms — *what* is desirable there.
 - **Every line.** Look at every human-written line you've been assigned. Skim is not review.
 - **Context.** Sometimes pulling the branch and reading it in place beats scrolling the GitHub diff.
+- **Size.** Can you review this in one focused pass? A PR should close one bite-sized issue ([`work-decomposition.md`](./work-decomposition.md)). If it doesn't, that is a finding — see below.
+
+### Reviewing an oversized PR
+
+Size is the first thing to check, because it determines whether the rest of the review is real. A PR you cannot hold in your head produces either a rubber stamp or a defensive block, and both are failures.
+
+- **Send it back before reviewing it.** "This closes three issues; please split into three PRs" is a complete and legitimate first review. It costs the author less than a review you couldn't do properly.
+- **Unless it carries a recorded approval.** An `Oversized PR approved by @operator: <reason>` line in the description means the call was already made. Review it on the merits — and if the reason doesn't hold up, say so.
+- **Check the exemptions are clean.** Renames, deletions, generated code, and lockfile bumps may be large, but only if that's *all* they are. A logic change hiding inside a 4,000-line regeneration is the thing this rule exists to catch.
+- **Never approve a large PR you skimmed.** If you don't have the time, say you don't have the time. Blind approval is worse than a slow review.
+
+This is [gate §10](../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes); the author's side of it is in [`pr-authoring.md`](./pr-authoring.md#when-a-pr-has-to-be-bigger).
 
 ## Speed of review
 
@@ -45,6 +57,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. The operator
 - **The plan matches the diff.** If the PR links a `plan.md`, the diff should be that plan and nothing more. Drift between plan and code is the most common quiet failure.
 - **Fabrication.** Imports that don't exist, functions called with wrong signatures, references to handbook pages that aren't there. Agents fabricate plausibly; verify the references.
 - **Silent scope creep.** Files in the diff that weren't in the original plan. The PR description should name each one with a reason. Missing reason → ask.
+- **Collapsed decomposition.** The plan named several issues; the agent shipped them as one PR. This is the most common way an agent produces an unreviewable diff while staying technically in scope — every file was authorized, but the slicing wasn't. Send it back to the plan.
 - **Over-eager refactor.** Agents like to "improve while passing through." Each unrelated improvement is its own PR.
 - **Generic comments.** Comments that restate what the code does instead of why. Agents add these by default; cut them.
 - **Test theatre.** Tests that exercise the code without actually checking behavior — e.g., asserting that a function was called rather than asserting on its effect. Read the test bodies, not just the test names.
@@ -53,7 +66,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. The operator
 
 ### When to demand a re-plan vs. accept
 
-- **Re-plan.** If the diff drifted materially from the linked plan; if the agent made design choices the operator hadn't approved; if the diff includes unrelated changes; if fabrication is present. Don't patch — go back to the plan.
+- **Re-plan.** If the diff drifted materially from the linked plan; if the agent made design choices the operator hadn't approved; if the diff includes unrelated changes; if fabrication is present; if the diff collapsed several planned issues into one. Don't patch — go back to the plan.
 - **Accept with notes.** Minor issues that don't change the shape of the change. The author updates and you approve.
 - **Reject entirely.** The change is in the wrong direction. Close the PR; reopen with a fresh plan once the direction is right.
 
@@ -69,6 +82,8 @@ Agents can be effective code reviewers when configured well. The shape:
 
 ### Checklist
 
+- Check size and scope first: does the PR close exactly one issue, and can it be reviewed in one pass? Flag before spending review effort on the contents.
+- Confirm an oversized PR carries a recorded operator approval; flag its absence as a [gate §10](../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes) finding.
 - Run lint/type-check/test against the branch; report failures.
 - Diff against the linked plan or spec; flag deviations.
 - Apply the relevant language reviewer skill (when one exists in [`../languages/<lang>/reviewer.md`](../languages/)).
@@ -109,6 +124,7 @@ In each case the agent surfaces the reason and asks the operator to either expan
 ## Related
 
 - [`pr-authoring.md`](./pr-authoring.md) — the author's counterpart to this page.
+- [`work-decomposition.md`](./work-decomposition.md) — epic / milestone / bite-sized issue breakdown; what a reviewable PR is cut from.
 - [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — §1 (scope), §2 (no fabrication), §7 (HARD FAIL), §8 (audit trail) all show up in review.
 - [`../operating-model/gates-and-escalation.md`](../operating-model/gates-and-escalation.md#8-reviewer-skill-hard-fail) — HARD FAIL handling.
 - [`../languages/`](../languages/) — language-specific reviewer skills extend this with language-aware checks.

@@ -21,14 +21,26 @@ For any substantive code change, the canonical workflow is the `chainsafe-resear
 
 When the PR author is an agent, the skill is loaded and followed. When human, the same shape applies — research artifact when context is non-obvious, plan when work touches more than one file, accept annotation, then commit code.
 
+Work large enough to need a plan is decomposed into epic → milestones → bite-sized issues before implementation starts (see [`workflows/work-decomposition.md`](../../workflows/work-decomposition.md)). A PR can only be as small as the issue behind it.
+
 ## Small, focused, self-contained
 
+- **One issue, one PR.** The PR closes exactly one bite-sized issue and links it. Closing two means it should have been two PRs.
 - **One PR, one self-contained change.** Reviewable in ~10 minutes.
 - **Separate refactors from features/fixes.** A refactor is its own PR (exception: tiny refactor genuinely entangled with the feature, <~50 lines).
-- **Renames, deletions, generated-code PRs can be large** — they trade scope-width for shallow review depth.
+- **Renames, deletions, generated-code PRs can be large** — they trade scope-width for shallow review depth. Scope-width only: a large rename is fine, a rename *plus* a logic change is two PRs.
 - **Stack PRs** for sequential work rather than one big PR.
 
 The right question: *is this change related to the PR's stated goal, or can it live on its own?*
+
+The standard is reviewability, not a line count — can one reviewer hold the whole change in their head in one sitting?
+
+### When a PR has to be bigger
+
+- **Stop before opening it.** An oversized PR that is already open has already spent the reviewer's attention.
+- **Propose the split first.** Name the issue-sized PRs the work could become.
+- **If it truly cannot split, get explicit operator approval and record it** in the PR description: `Oversized PR approved by @operator: <reason>.` Verbal approval still gets written into the PR.
+- **Agents never self-approve.** This is [gate §10](../../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes). A diff that outgrows its approved plan slice stops and asks — even when every file touched was in scope.
 
 ## PR description required fields
 
@@ -67,6 +79,8 @@ The right question: *is this change related to the PR's stated goal, or can it l
 ## Anti-patterns
 
 - The mega-PR. "It's all related" — usually it isn't.
+- The unapproved mega-PR. Big *and* nobody agreed it had to be.
+- The retroactive issue. Filing issues once the branch is already thousands of lines deep.
 - The drive-by refactor.
 - The silent re-scope.
 - The agent ghost-author (no AI declaration).
@@ -75,6 +89,7 @@ The right question: *is this change related to the PR's stated goal, or can it l
 ## Related
 
 - Full reference: [`workflows/pr-authoring.md`](../../workflows/pr-authoring.md)
+- Decomposition: [`workflows/work-decomposition.md`](../../workflows/work-decomposition.md) — epic / milestone / bite-sized issue breakdown
 - The workflow itself: `chainsafe-research-plan-implement`
 - Counterpart skill: `chainsafe-code-review`
 - Invariants: [`invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md) (especially §1, §8)
