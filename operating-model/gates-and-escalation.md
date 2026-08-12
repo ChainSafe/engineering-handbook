@@ -106,6 +106,19 @@ Before such a change ships, its operational contract is declared in the PR's **O
 
 *Why:* an undeclared contract change is the failure that lands on Infra days later — reverse-engineering which env vars are needed, why old clients broke, what a migration assumed. Declaring it up front is a checklist item; not declaring it is a manual, cross-team firefight.
 
+### 10. Oversized or multi-concern changes
+
+- **Opening a PR that cannot be reviewed in a single focused pass** — the ~10-minute standard in [`../workflows/pr-authoring.md`](../workflows/pr-authoring.md#small-focused-self-contained). If the agent would have to tell the reviewer to "set aside some time," the gate is tripped.
+- **A change that closes more than one issue**, or spans more than one milestone, in a single PR.
+- **A change that bundles concerns** — refactor plus feature, migration plus behavior change, formatting sweep plus fix.
+- **A diff that has outgrown the slice the operator approved in `plan.md`**, even when every file in it is in scope.
+
+Not gated by size alone, but still declared and isolated in their own PRs: renames, deletions, generated code, lockfile and dependency bumps, and vendored updates. These trade scope-width for shallow review depth — a large rename is fine; a rename *plus* a logic change is not.
+
+To clear the gate, the agent stops before opening the PR and either (a) proposes a split into issue-sized PRs, or (b) states why the change cannot be split. The operator's approval is explicit and recorded in the PR description — a line like `Oversized PR approved by @operator: generated protobuf bindings, mechanical, reviewed by regenerating locally.` A silent large PR is the failure mode; an approved and justified one is not.
+
+*Why:* an unreviewable diff produces one of two outcomes, both bad — the reviewer approves blindly, or blocks on everything out of self-defense. Size is the one property of a change that determines whether review happens at all, and an agent can generate an unreviewable diff faster than any human can. Making the operator say "yes, this one is big, and here is why" converts a silent erosion of the review gate into a logged decision. The precondition for staying under this gate is decomposition ([`../workflows/work-decomposition.md`](../workflows/work-decomposition.md)); by the time the diff exists, it is usually too late.
+
 ## How the agent stops at a gate
 
 The stop is structured. Do not stop silently. Do not stop with "I cannot do this." Stop with the information the operator needs to decide.
@@ -137,6 +150,7 @@ The agent escalates — stops and asks beyond the operator — when one of the f
 | Situation | Escalate to |
 |---|---|
 | Ambiguous intent, choices have different consequences | Operator |
+| Change has outgrown the approved plan slice or its issue | Operator — re-cut the decomposition, or approve the oversized PR explicitly |
 | Operator asks for something on the refusal list | Section CODEOWNER, then curator |
 | Conflict between two CODEOWNERs / two authorities | Both, surface the conflict, wait |
 | Operator unavailable mid-task, gate ahead | No one — leave artifacts, exit, wait |
@@ -156,3 +170,5 @@ The gate list is a floor, not a ceiling. Agents are expected to apply judgment a
 - [`collaborator-statement.md`](./collaborator-statement.md) — the principle these gates implement, and the refusal list (which sits *above* gates: gates can be approved, refusals cannot).
 - [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — the refusal cases restated as invariants.
 - [`../languages/`](../languages/) — language-specific reviewer pages name which HARD FAIL checks apply per language.
+- [`../workflows/work-decomposition.md`](../workflows/work-decomposition.md) — epic / milestone / issue breakdown; the planning discipline that keeps changes under §10.
+- [`../workflows/pr-authoring.md`](../workflows/pr-authoring.md) — where the §10 size standard and the oversized-PR declaration live in practice.

@@ -1,6 +1,6 @@
 ---
 name: chainsafe-research-plan-implement
-description: Research-first coding workflow that gates ALL non-trivial code changes behind a human-approved written plan. Use this skill whenever the user asks for any substantive code change — implementing a feature, refactoring, fixing a multi-file bug, adding an endpoint, integrating a service, migrating between systems, wiring something up, or changing how an existing system works — EVEN IF they do not explicitly ask for "research" or a "plan." The skill enforces three artifacts (research.md, plan.md, annotated plan) that survive context compaction and gate implementation behind explicit operator approval. Triggers on phrases like "implement", "refactor", "fix this bug", "add a feature", "change how X works", "integrate", "migrate from X to Y", "rewrite", "restructure", "wire up", "build out", "extend", "modify the X system", "I want to add", "let's change". Do NOT use for one-line typo fixes, pure formatting, lint-only changes, or other trivial single-file edits where research would be overkill.
+description: Research-first coding workflow that gates ALL non-trivial code changes behind a human-approved written plan. Use this skill whenever the user asks for any substantive code change — implementing a feature, refactoring, fixing a multi-file bug, adding an endpoint, integrating a service, migrating between systems, wiring something up, or changing how an existing system works — EVEN IF they do not explicitly ask for "research" or a "plan." The skill enforces three artifacts (research.md, plan.md, annotated plan) that survive context compaction and gate implementation behind explicit operator approval. Triggers on phrases like "implement", "refactor", "fix this bug", "add a feature", "change how X works", "integrate", "migrate from X to Y", "rewrite", "restructure", "wire up", "build out", "extend", "modify the X system", "I want to add", "let's change". Also covers breaking planned work down into tracked units — "break this into issues", "decompose this", "create the epic", "what milestones do we need", "how should we split this up", "is this issue too big". Do NOT use for one-line typo fixes, pure formatting, lint-only changes, or other trivial single-file edits where research would be overkill.
 metadata:
   type: workflow
   origin: ~/.config/agents/research-plan-implement.md
@@ -20,7 +20,7 @@ Separate thinking from typing. Research prevents ignorant changes. The plan prev
 ## Workflow pipeline
 
 ```
-Research → Plan → Annotate (repeat 1–6×) → Implement
+Research → Plan → Annotate (repeat 1–6×) → Decompose → Implement
 ```
 
 All phases run in a **single long session**. Do not split across separate sessions. Context built during research and planning carries through to implementation. The plan document survives compaction and serves as the persistent source of truth.
@@ -92,6 +92,37 @@ This is where the human adds the most value. The human opens `plan.md` in their 
 
 ---
 
+## Phase 3b — Decomposition
+
+The phased todo list is not just a progress tracker — it is the work breakdown. Before implementation begins, map it onto three levels and get the mapping approved along with the rest of the plan.
+
+| In `plan.md` | Tracked as |
+|---|---|
+| The plan as a whole | One **epic** — the outcome, linking `research.md` and `plan.md` |
+| Each phase | A **milestone** — a demonstrable slice; `main` is releasable at its end |
+| Each individual task | An **issue** — bite-sized, closed by exactly one PR |
+
+**An issue is bite-sized when all of these hold:**
+
+- One PR closes it.
+- One reviewer can review that PR in a single focused pass. There is no line-count threshold — the bar is reviewability.
+- It has written acceptance criteria, decided now, not at review time.
+- It carries no open design decision. Implementation of a bite-sized issue is mechanical.
+- It names the files or areas it expects to touch.
+- Someone can pick it up without reading the whole epic.
+
+If a task fails any of these, split it in the plan before implementing. Usual seams: interface before implementation, migration before cutover, one call site per issue, tests-for-existing-behavior before the behavior change.
+
+**Propose, do not create.** Write the breakdown into `plan.md`. Do not create epics, milestones, or issues in GitHub / Linear / Jira until the operator approves — creating tracker items on a human's behalf is a gate, not a default.
+
+> "Map the todo list onto an epic, milestones, and bite-sized issues. Each issue must be closeable by one reviewable PR and carry acceptance criteria. Write it into the plan — don't create anything in GitHub yet."
+
+Small work does not need all three levels. A single-issue fix is a single issue. The rule is that work large enough to need a plan is large enough to need decomposition.
+
+Full reference: [`workflows/work-decomposition.md`](../../workflows/work-decomposition.md).
+
+---
+
 ## Phase 4 — Implementation
 
 When the human approves the plan, execute everything in one continuous run:
@@ -110,6 +141,10 @@ When the human approves the plan, execute everything in one continuous run:
 | "Continuously run typecheck" | Catch problems early |
 
 Implementation should be **boring**. All creative decisions were made in the annotation cycles.
+
+**Ship it issue by issue.** One issue, one PR, each PR linking its issue. Running implementation continuously does not mean accumulating everything into one branch — the decomposition from Phase 3b is what makes the output reviewable, and collapsing it at the last moment throws that away.
+
+If a diff outgrows the issue it belongs to — even when every file touched is in scope — **stop**. Do not open an oversized PR and apologize in the description. Surface it, propose a split, and let the operator decide. An oversized PR ships only with an explicit approval recorded in its description (`Oversized PR approved by @operator: <reason>`). This is [gate §10](../../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes); the agent never self-approves it.
 
 ---
 
@@ -141,6 +176,8 @@ Once implementation is running, the human's role shifts from architect to superv
 6. **The plan is the source of truth.** Mark tasks complete in the plan. Point back to it when context is needed.
 7. **Keep implementation mechanical.** All decisions are pre-made. Execute the plan faithfully.
 8. **Run typechecks continuously.** Don't accumulate errors — catch them as they happen.
+9. **Decompose before implementing.** Epic → milestones → bite-sized issues, approved as part of the plan. A PR can only be as small as the issue behind it.
+10. **Never self-approve an oversized PR.** If the change won't fit one reviewable PR, stop and ask. The operator decides; the approval is recorded in the PR description.
 
 ---
 
