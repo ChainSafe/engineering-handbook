@@ -44,6 +44,7 @@ The full policy lives at `operating-model/gates-and-escalation.md`. In summary:
 ## Working with skills
 
 - The `skill-creator` skill is the canonical authoring tool for any skill in this repo. Do not hand-roll `SKILL.md` files.
+- **A `SKILL.md` `description` must be 1024 characters or fewer.** This is a hard platform limit, not a style preference — an over-length description makes the skill fail to load, so it goes silently missing rather than loudly broken. Treat 1024 as a constraint on every skill you generate or edit, including when you add trigger phrases to an existing description: budget the additions, don't append to an already-long field. Verify with `bash scripts/check-skill-descriptions.sh`; CI enforces it.
 - When triggered into work that matches a packaged skill, prefer the skill over an ad-hoc plan.
 - For PR-shaped engineering work, prefer `chainsafe-research-plan-implement` (in `skills/`) — research → plan → annotate → implement, with a human-approved plan gating any code change.
 
