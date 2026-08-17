@@ -14,6 +14,8 @@ These extend the [Engineering Invariants](./engineering-invariants.md) — they 
 
 **How it's checked.** Agent surfaces all file paths in the planned diff before acting (the `chainsafe-research-plan-implement` skill makes this part of the plan). Review-time: PR descriptions name what was in scope; diffs that touch out-of-scope files without an explicit "added scope because Y" line in the PR description are a SOFT WARNING from the reviewer skill.
 
+**Scope is necessary but not sufficient.** A diff can stay entirely inside the named scope and still be unreviewable, by collapsing several planned issues into one PR. Review tractability therefore also depends on decomposition ([`../workflows/work-decomposition.md`](../workflows/work-decomposition.md)) and on the size gate ([gate §10](../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes)), which requires explicit operator approval for a change that cannot be reviewed in one pass.
+
 **Override.** Operator may extend scope mid-task by saying so. The extension is recorded in the PR description.
 
 ## 2. No fabricated APIs, functions, files, or references

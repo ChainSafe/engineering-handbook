@@ -102,9 +102,20 @@ A consistent label taxonomy makes triage and reporting tractable. ChainSafe base
 - **Status:** `triage`, `accepted`, `in-progress`, `blocked`, `wontfix`.
 - **Type:** `bug`, `feature`, `chore`, `docs`, `security`, `refactor`.
 - **Priority:** `p0` (critical), `p1` (high), `p2` (medium), `p3` (low).
+- **Structure:** `epic` — marks the issue that holds an outcome and its milestones (see [`work-decomposition.md`](./work-decomposition.md)).
 - **Special:** `good-first-issue`, `help-wanted`, `breaking-change`.
 
 Apply via the `labels` API or a labels-config tool (e.g., `github-label-sync`) so the set is reproducible across repos.
+
+### Work tracking
+
+The label set above supports the three-level breakdown in [`work-decomposition.md`](./work-decomposition.md) — epic, milestone, bite-sized issue. Per repo:
+
+- **Enable milestones** (`Issues → Milestones`) and use them as the middle level: one milestone per demonstrable slice, burning down to zero.
+- **The `epic` label** marks the umbrella issue, which links `plan.md` and lists its milestones as a task list.
+- **Ordinary issues** carry the standard labels, belong to a milestone, and are closed by exactly one PR via `Closes: #N`.
+
+Projects tracking work in Linear or Jira map the same three levels onto their own primitives; see [§10](#10-notifications-and-integrations).
 
 ## 9. CLA bot
 
@@ -116,7 +127,7 @@ Internal-only repos can skip this step.
 
 - **Slack notifications.** Wire the relevant team channel for PR opens, reviews, and merges. Volume: opt for "all events" on small repos, "review requested + merged" on large ones.
 - **Scheduled reminders.** A weekly bot ping for stale PRs (>3 business days without review).
-- **Linear / Jira integration.** If the project tracks work outside GitHub, wire the integration so PRs link issues and vice versa.
+- **Linear / Jira integration.** If the project tracks work outside GitHub, wire the integration so PRs link issues and vice versa. The three-level breakdown still applies — map epic / milestone / issue onto whatever the tracker calls them (Linear: project / cycle-or-milestone / issue), and keep one PR per issue.
 
 ## What this page does NOT cover
 
@@ -145,6 +156,7 @@ If any of those don't happen, fix the misconfiguration before considering the re
 
 ## Related
 
+- [`work-decomposition.md`](./work-decomposition.md) — the epic / milestone / issue model the labels and milestones here support.
 - [`pr-authoring.md`](./pr-authoring.md) — how PRs against this repo get authored.
 - [`code-review.md`](./code-review.md) — how PRs get reviewed.
 - [`testing-and-qa.md`](./testing-and-qa.md) — the testing baseline CI enforces.

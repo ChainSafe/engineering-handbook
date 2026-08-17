@@ -1,4 +1,4 @@
-name: Skills ↔ llms.txt sync
+name: Skills checks
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
       - 'skills/**'
       - 'llms.txt'
       - 'scripts/check-skills-sync.sh'
+      - 'scripts/check-skill-descriptions.sh'
       - '.github/workflows/skills-sync.yml'
   push:
     branches:
@@ -20,3 +21,6 @@ jobs:
 
       - name: Run skills-sync check
         run: bash scripts/check-skills-sync.sh
+
+      - name: Run skill-description length check
+        run: bash scripts/check-skill-descriptions.sh

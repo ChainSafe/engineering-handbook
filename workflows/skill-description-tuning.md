@@ -12,6 +12,7 @@ The handbook's policy for this loop, in four points:
 - **Local-only.** The loop calls `claude -p` (real Anthropic API spend) and takes ~30–45 minutes per skill. It runs on the operator's machine, on demand. CI does not invoke it. PRs touching a SKILL.md description are not gated by it.
 - **Opus by default.** When you do run the loop, default to the most capable tier (`--model claude-opus-4-6` or current Opus generation). The per-skill quality gain is worth the extra cost on an opt-in run. Sonnet/Haiku overrides are available for cheaper iteration.
 - **Non-deterministic, so re-run if outputs look off.** The optimizer is an LLM; the same input can produce different best-descriptions across runs. A single run is a draft, not an oracle.
+- **1024 characters is a hard ceiling.** Whatever the loop produces, the `description` that lands in `SKILL.md` must be ≤ 1024 characters. Over that, the skill fails to load — it goes silently missing, not loudly broken. This one *is* a CI gate ([`scripts/check-skill-descriptions.sh`](../scripts/check-skill-descriptions.sh)), unlike the loop itself.
 
 The rest of this page is the *how*.
 
@@ -125,7 +126,7 @@ The non-deterministic note: re-running the loop on the same eval set gives sligh
 
 ### Step 4: Apply the result
 
-Take `best_description` from the report (or from the JSON output the script also writes), and update the skill's SKILL.md frontmatter:
+Take `best_description` from the report (or from the JSON output the script also writes), and update the skill's SKILL.md frontmatter. **Check its length first — the ceiling is 1024 characters.** The optimizer does not know about the limit and will happily produce a longer field; trim trigger phrases (the most compressible part) until it fits, then re-check with `bash scripts/check-skill-descriptions.sh`.
 
 ```yaml
 ---
@@ -155,6 +156,7 @@ A SKILL.md description change is just another PR.
 - **Mis-labeled near-misses.** A *should-not-trigger* query that's actually a legitimate use of the skill confuses the loop into making the description narrower than it should be. Review labels carefully.
 - **Running on Haiku for production-grade output.** Haiku's `best_description` is often weaker than the original. Use it only for experimentation; default is Opus for a reason.
 - **Skipping the test-score check.** The loop selects `best_description` by held-out test score; spot-check that the test score is materially better than the original's test score. If it's not, the optimization didn't help — keep the original.
+- **Landing a description over 1024 characters.** The optimizer optimizes for triggering accuracy, not length, and adding trigger phrases by hand to an already-long description is the other common way to blow the limit. Either way the skill stops loading. Run `bash scripts/check-skill-descriptions.sh` before you open the PR.
 
 ## Anti-patterns
 
@@ -166,6 +168,7 @@ A SKILL.md description change is just another PR.
 ## Related
 
 - [`scripts/tune-skill-description.sh`](../scripts/tune-skill-description.sh) — the on-ramp wrapper this runbook drives.
+- [`scripts/check-skill-descriptions.sh`](../scripts/check-skill-descriptions.sh) — the 1024-character CI gate. Run it locally before opening the PR.
 - [`skill-description-tuning/`](./skill-description-tuning/) — committed eval-set template + worked examples (and the inputs-vs-scratch distinction).
 - [`pr-authoring.md`](./pr-authoring.md) — how the resulting description change gets shipped.
 - Upstream: [`anthropic-skills:skill-creator`](https://github.com/anthropics/skills) — the canonical playbook the runbook implements.

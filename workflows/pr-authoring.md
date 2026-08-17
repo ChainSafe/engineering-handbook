@@ -14,16 +14,32 @@ For any non-trivial code change, the canonical workflow is the [`chainsafe-resea
 
 This page does not re-derive the workflow. When the PR author is an agent, the skill is loaded and followed. When the PR author is a human, the same shape applies — write a research artifact when context is non-obvious, write a plan when the work touches more than one file, accept annotation as you go, and only then commit code.
 
+The plan's phased todo list is also where PR size gets decided. Work large enough to need a plan is decomposed into epic → milestones → bite-sized issues *before* implementation starts; see [`work-decomposition.md`](./work-decomposition.md). A PR can only be as small as the issue behind it.
+
 ## Small, focused, self-contained
 
 These practices draw on Google's engineering review best practices and ChainSafe's established conventions:
 
+- **One issue, one PR.** The PR closes exactly one bite-sized issue and links it. If it closes two, it should have been two PRs — or the decomposition was wrong and belongs back in `plan.md`.
 - **One PR, one self-contained change.** The PR addresses one thing plus its tests. It can be reviewed in a single ~10-minute pass.
 - **Separate refactors from features and fixes.** A refactor is its own PR. The exception is a small refactor (<~50 lines) genuinely entangled with the feature.
-- **Renames, deletions, and generated-code PRs may be large** because they trade scope-width for shallow review depth.
+- **Renames, deletions, and generated-code PRs may be large** because they trade scope-width for shallow review depth. That exemption covers scope-width only — a large rename is fine; a rename *plus* a logic change is two PRs.
 - **Stack PRs when work is sequential.** When a feature naturally splits into ordered pieces, ship them as a stack of small PRs rather than one big PR.
 
 The right question: *is this change related to the PR's stated goal, or can it live on its own?* If the latter, separate PR.
+
+The standard is deliberately reviewability, not a line count. Line thresholds are easy to satisfy and easy to game; the honest test is whether one reviewer can hold the whole change in their head in one sitting. If you'd have to ask the reviewer to block out time for it, it is too big.
+
+### When a PR has to be bigger
+
+Sometimes a change genuinely will not split. That is allowed — but it is the operator's call, not the author's, and never the agent's.
+
+- **Stop before opening the PR.** An oversized PR that is already open has already spent the reviewer's attention.
+- **Propose the split first.** Name the issue-sized PRs the work could become. Most "unsplittable" changes are splittable once the seams are written down.
+- **If it truly cannot split, get explicit approval and record it.** A line in the PR description: `Oversized PR approved by @operator: <reason>.` Approval given verbally in chat still gets written into the PR — the [decision lives in the repo](../invariants/engineering-invariants.md#5-decisions-live-in-the-repo-not-in-chat), not in Slack.
+- **Agents do not self-approve.** This is [gate §10](../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes). An agent whose diff outgrows the approved plan slice stops, surfaces it, and waits — even when every file it touched was in scope.
+
+Reviewers hold this line too; an oversized PR without a recorded approval is a valid reason to send it back unreviewed (see [`code-review.md`](./code-review.md)).
 
 ## What goes in the PR description
 
@@ -76,6 +92,8 @@ The threshold: if a reviewer's first comment is going to be "can we hop on a cal
 ## Anti-patterns
 
 - **The mega-PR.** "It's all related" — usually it isn't.
+- **The unapproved mega-PR.** Worse: big *and* nobody agreed it had to be. Gate §10 exists so this is a conversation before the PR, not an apology after it.
+- **The retroactive issue.** Filing the issues once the branch is already thousands of lines deep. Decomposition is a planning artifact, not paperwork.
 - **The drive-by refactor.** Renaming variables across the codebase in the same PR as a bugfix. Split it.
 - **The silent re-scope.** Adding files to the diff without naming them in the PR description.
 - **The agent ghost-author.** A PR drafted by an agent without an AI-generated declaration. The convention exists to make review better, not as a confession.
@@ -84,6 +102,7 @@ The threshold: if a reviewer's first comment is going to be "can we hop on a cal
 ## Related
 
 - [`code-review.md`](./code-review.md) — the reviewer's counterpart to this page.
+- [`work-decomposition.md`](./work-decomposition.md) — epic / milestone / bite-sized issue breakdown; where a small PR's size is actually decided.
 - [`oneflow.md`](./oneflow.md) — ChainSafe's branching and release model; defines branch naming, the trunk-based flow, and the tag patterns that drive deployments.
 - [`../skills/chainsafe-research-plan-implement/SKILL.md`](../skills/chainsafe-research-plan-implement/SKILL.md) — the workflow this page assumes for non-trivial PRs.
 - [`../invariants/agent-era-invariants.md`](../invariants/agent-era-invariants.md) — scope discipline (§1), no-fabrication (§2), audit-trail (§8).

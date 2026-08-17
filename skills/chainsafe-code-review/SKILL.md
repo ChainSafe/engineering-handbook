@@ -28,6 +28,18 @@ Universal review framework at ChainSafe. Two reviewer modes; language-specific s
 - **Comments.** Explain *why*, not *what*.
 - **Every line.** Look at every assigned line.
 - **Context.** Sometimes pull the branch.
+- **Size.** Can you review this in one focused pass? A PR should close one bite-sized issue.
+
+## Reviewing an oversized PR
+
+Check size first — it determines whether the rest of the review is real.
+
+- **Send it back before reviewing it.** "This closes three issues; please split" is a complete first review.
+- **Unless it carries a recorded approval** (`Oversized PR approved by @operator: <reason>`). Then review on the merits — and say so if the reason doesn't hold up.
+- **Check the exemptions are clean.** Renames, deletions, generated code, lockfile bumps may be large only if that's *all* they are. A logic change hiding in a 4,000-line regeneration is what this catches.
+- **Never approve a large PR you skimmed.** Say you don't have time instead. Blind approval is worse than a slow review.
+
+[Gate §10](../../operating-model/gates-and-escalation.md#10-oversized-or-multi-concern-changes); author's side in [`workflows/pr-authoring.md`](../../workflows/pr-authoring.md#when-a-pr-has-to-be-bigger).
 
 ## Speed of review
 
@@ -42,6 +54,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. What to veri
 - **The plan matches the diff.** Drift between linked `plan.md` and the diff is the most common quiet failure.
 - **Fabrication.** Imports that don't exist, wrong-signature function calls, broken handbook page references. Verify.
 - **Silent scope creep.** Files in the diff not in the original plan — PR description should name each with a reason.
+- **Collapsed decomposition.** The plan named several issues; the agent shipped one PR. Every file authorized, but the slicing wasn't — the most common way an agent produces an unreviewable diff while staying in scope. Send it back to the plan.
 - **Over-eager refactor.** Each unrelated improvement is its own PR.
 - **Generic comments.** Cut comments that restate what the code does.
 - **Test theatre.** Tests asserting "function was called" rather than its effect. Read test bodies.
@@ -50,7 +63,7 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. What to veri
 
 ### When to demand re-plan vs accept vs reject
 
-- **Re-plan:** diff drifted from plan; agent made unapproved design choices; unrelated changes included; fabrication present. Go back to the plan; don't patch.
+- **Re-plan:** diff drifted from plan; agent made unapproved design choices; unrelated changes included; fabrication present; several planned issues collapsed into one PR. Go back to the plan; don't patch.
 - **Accept with notes:** minor issues that don't change the shape.
 - **Reject entirely:** wrong direction. Close PR; reopen with fresh plan.
 
@@ -64,6 +77,8 @@ Most ChainSafe PRs in the v2 era have an agent in the author chair. What to veri
 
 ### Checklist
 
+- Check size and scope first: one issue, one reviewable pass? Flag before spending effort on the contents.
+- Confirm an oversized PR carries a recorded operator approval; flag its absence as a gate §10 finding.
 - Run lint/type-check/test against the branch; report failures.
 - Diff against the linked plan or spec; flag deviations.
 - Apply the relevant language reviewer skill (chainsafe-<lang>-reviewer).
@@ -102,6 +117,7 @@ Escalate rather than reviewing if:
 ## Related
 
 - Full reference: [`workflows/code-review.md`](../../workflows/code-review.md)
+- Decomposition: [`workflows/work-decomposition.md`](../../workflows/work-decomposition.md) — what a reviewable PR is cut from
 - Language reviewer skills: `chainsafe-go-reviewer`, `chainsafe-rust-reviewer`, `chainsafe-typescript-reviewer`, `chainsafe-solidity-reviewer`
 - Counterpart skill: `chainsafe-pr-author`
 - Invariants: [`invariants/agent-era-invariants.md`](../../invariants/agent-era-invariants.md)
