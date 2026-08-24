@@ -55,6 +55,10 @@ exclude = [
     '(^|//)([^/]+\.)?chainsafe\.tech\b',
     '^https://forms\.gle',
     '^https://github.com/ChainSafe/infrastructure-general',
+    # infra-kubernetes and DNS-Management are private too, so an unauthenticated
+    # (or repo-scoped GITHUB_TOKEN) probe gets a 404. Same reason as the line above.
+    '^https://github.com/ChainSafe/infra-kubernetes',
+    '^https://github.com/ChainSafe/DNS-Management',
 ]
 
 # No excluded paths — all markdown is in scope.

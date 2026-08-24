@@ -4,8 +4,6 @@ For all infrastructure, IaC, deployment topology, observability, on-call, and De
 
 > **In one line:** This page is a navigation surface, not a tutorial. Deep links by intent into the canonical repo; no "see also" gestures.
 
-> **Status note.** File-level deep-link targets on this page are confirmed against the current state of `infrastructure-general/docs/`. Heading anchors *within* those files are pending [@joshdougall](https://github.com/joshdougall)'s confirmation. Where the upstream lacks an anchor we need for clean linking, the convention is to add the anchor upstream rather than work around it here.
-
 ## Why we defer here
 
 `infrastructure-general` is the authoritative artifact for ChainSafe infrastructure. It already ships its own [`AGENTS.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/AGENTS.md) and [`CLAUDE.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/CLAUDE.md), confirming the agent-native posture. The handbook treats it as canonical for any question whose answer involves how production systems are built, run, observed, or recovered.
@@ -25,14 +23,20 @@ Maintained by [@joshdougall](https://github.com/joshdougall) (Head of Infra). Co
 | How do we triage infra backlog? | [`docs/backlog-triage.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/backlog-triage.md) |
 | What's our monitoring footprint? | [`docs/observability/monitoring-inventory.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/monitoring-inventory.md) |
 | How do we profile production services? | [`docs/observability/profiling.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/profiling.md) |
+| How is our monitoring stack put together? | [`docs/observability/monitoring-overview.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/monitoring-overview.md) |
+| How is alerting and on-call actually wired? | [`docs/observability/alerting-and-oncall.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/alerting-and-oncall.md) |
+| How are metrics collected and stored? | [`docs/observability/metrics.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/metrics.md) |
+| How is logging wired? | [`docs/observability/logging.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/logging.md) |
+| How is tracing wired? | [`docs/observability/tracing.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/observability/tracing.md) |
 
 ### By configuration domain
 
 | Need to change… | Go to (upstream) |
 |---|---|
-| Ansible roles / config management | [`ansible/`](https://github.com/ChainSafe/infrastructure-general/tree/main/ansible) — 9 execution directories (Ethereum, Filecoin, Forest, Gossamer, IPFS, OP, Polkadot, zkVerify, general) |
-| Terraform / cloud provisioning | [`terraform/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terraform) — Auth0, data-analytics, Forest, Gossamer, Grafana Cloud, infra-dev, infra-prod, k8s, Sygma |
-| Docker images we build | [`images/`](https://github.com/ChainSafe/infrastructure-general/tree/main/images) — filecoin-bootnode-monitor, grafana-alloy, nebula, polkadot-crunch, snapshot-service |
+| Ansible roles / config management | [`ansible/`](https://github.com/ChainSafe/infrastructure-general/tree/main/ansible) — one self-contained execution directory per project, each with its own `ansible.cfg`, inventory, `group_vars/`, and `Makefile`. Being collapsed onto the consolidated `ansible/general/` pattern with YAML inventory ([#1238](https://github.com/ChainSafe/infrastructure-general/issues/1238)); superseded directories move to `ansible/_OLD/`. Read the tree, not a list here — it changes monthly. |
+| Terraform / cloud provisioning | [`terragrunt/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terragrunt) — **the live home for all Terraform.** `_modules/` holds the actual `.tf`; `stacks/` holds leaf `terragrunt.hcl` only, grouped `aws/<account>/` and `saas/<provider>/`. Per-account S3 state bootstrapped from `_bootstrap/tf-state/`. Consolidation epic [#1400](https://github.com/ChainSafe/infrastructure-general/issues/1400) is closed. |
+| Legacy Terraform (do not add to) | [`terraform/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terraform) — **legacy, being decommissioned** ([#1416](https://github.com/ChainSafe/infrastructure-general/issues/1416)). New stacks go in `terragrunt/`. |
+| Docker images we build | [`images/`](https://github.com/ChainSafe/infrastructure-general/tree/main/images) — `filecoin-boonode-monitor` (spelling is upstream's), `grafana-alloy`, `nebula`, `polkadot-crunch`, `snapshot-service` |
 | Internal tooling and scripts | [`tools/`](https://github.com/ChainSafe/infrastructure-general/tree/main/tools) |
 
 ### By product

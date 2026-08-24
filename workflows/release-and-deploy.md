@@ -57,14 +57,16 @@ Deploy procedures are product-specific and live in `infrastructure-general`:
 
 | Product / area | Procedure location |
 |---|---|
-| Canton (k8s) | [`docs/projects/canton/canton-k8s-deployment.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/canton/canton-k8s-deployment.md), [`canton-deploy-new-app.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/canton/canton-deploy-new-app.md) |
+| Canton (k8s) — procedure | [`docs/projects/canton/canton-k8s-deployment.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/canton/canton-k8s-deployment.md), [`canton-deploy-new-app.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/canton/canton-deploy-new-app.md) |
+| Canton (k8s) — manifests | [`ChainSafe/infra-kubernetes`](https://github.com/ChainSafe/infra-kubernetes) — Canton **production** deploys land here (ArgoCD + Helm). The procedure docs above describe the change; this repo is where it ships from. |
 | Forest staging environment | [`docs/projects/filecoin/forest-staging-environment.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/filecoin/forest-staging-environment.md) |
 | Lodestar production operations | [`docs/projects/ethereum/lodestar-production-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/ethereum/lodestar-production-operations.md) |
 | Lodestar public services | [`docs/projects/ethereum/lodestar-public-services.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/ethereum/lodestar-public-services.md) |
 | SSV operator onboarding | [`docs/projects/ssv/onboarding-validator.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/ssv/onboarding-validator.md), [`operator-registration.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/ssv/operator-registration.md) |
 | Faucet operations | [`docs/projects/filecoin/faucet-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/filecoin/faucet-operations.md) |
 | Snapshot service | [`docs/projects/filecoin/snapshot-service.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/filecoin/snapshot-service.md) |
-| IaC / Terraform changes | [`terraform/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terraform) — each subdirectory has its own README |
+| IaC / Terraform changes | [`terragrunt/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terragrunt) — the live home for all Terraform. Legacy [`terraform/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terraform) is being decommissioned ([#1416](https://github.com/ChainSafe/infrastructure-general/issues/1416)); do not add stacks there. |
+| DNS changes (all ChainSafe domains) | [`ChainSafe/DNS-Management`](https://github.com/ChainSafe/DNS-Management) — Cloudflare DNS as Terraform. Slated to fold into `infrastructure-general/terragrunt/` per that tree's README. |
 | Ansible-driven deploys | [`ansible/`](https://github.com/ChainSafe/infrastructure-general/tree/main/ansible) |
 
 If a procedure isn't listed: it may not exist yet. Surface to [@joshdougall](https://github.com/joshdougall) before improvising.
