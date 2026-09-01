@@ -66,7 +66,7 @@ Deploy procedures are product-specific and live in `infrastructure-general`:
 | Faucet operations | [`docs/projects/filecoin/faucet-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/filecoin/faucet-operations.md) |
 | Snapshot service | [`docs/projects/filecoin/snapshot-service.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/projects/filecoin/snapshot-service.md) |
 | IaC / Terraform changes | [`terragrunt/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terragrunt) — the live home for all Terraform. Legacy [`terraform/`](https://github.com/ChainSafe/infrastructure-general/tree/main/terraform) is being decommissioned ([#1416](https://github.com/ChainSafe/infrastructure-general/issues/1416)); do not add stacks there. |
-| DNS changes (all ChainSafe domains) | [`ChainSafe/DNS-Management`](https://github.com/ChainSafe/DNS-Management) — Cloudflare DNS as Terraform. Slated to fold into `infrastructure-general/terragrunt/` per that tree's README. |
+| DNS changes (all ChainSafe domains) | [`ChainSafe/DNS-Management`](https://github.com/ChainSafe/DNS-Management) — Cloudflare DNS as Terraform, 7 zones. Org-wide rather than Infra-owned: Infra maintains it, engineering across the org uses it. Explicitly **out of scope** for the infra repo consolidation ([#1110](https://github.com/ChainSafe/infrastructure-general/issues/1110)); it does not fold into `terragrunt/`. |
 | Ansible-driven deploys | [`ansible/`](https://github.com/ChainSafe/infrastructure-general/tree/main/ansible) |
 
 If a procedure isn't listed: it may not exist yet. Surface to [@joshdougall](https://github.com/joshdougall) before improvising.
