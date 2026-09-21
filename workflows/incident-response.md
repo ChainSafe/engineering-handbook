@@ -59,10 +59,16 @@ If you were paged, match the alert name here and land on its section, not the to
 | Alert fired | Runbook section |
 |---|---|
 | `BeaconNodeMemoryLeakDetected` | [`lodestar-alerts.md#beaconnodememoryleakdetected`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#beaconnodememoryleakdetected) |
+| `DirkAccountUnlockFailed` | [`dirk-alerts.md#dirkaccountunlockfailed`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirkaccountunlockfailed) |
+| `DirkClientPermissionsMissing` | [`dirk-alerts.md#dirkclientpermissionsmissing`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirkclientpermissionsmissing) |
+| `DirkDeniedRatioHigh` | [`dirk-alerts.md#dirkdeniedratiohigh`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirkdeniedratiohigh) |
+| `DirkQuorumLost` | [`dirk-alerts.md#dirkquorumlost`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirkquorumlost) |
+| `DirkSignerDegraded` | [`dirk-alerts.md#dirksignerdegraded`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirksignerdegraded) |
+| `DirkSignerErrors` | [`dirk-alerts.md#dirksignererrors`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirksignererrors) |
 | `FilecoinForestSyncingFail` | [`filecoin-alerts.md#filecoinforestsyncingfail`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinforestsyncingfail) |
 | `FilecoinLotusSyncingFail` | [`filecoin-alerts.md#filecoinlotussyncingfail`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinlotussyncingfail) |
 | `FilecoinPeerConnected` | [`filecoin-alerts.md#filecoinpeerconnected`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinpeerconnected) |
-| `FilecoinSnapshotAgeOld` | [`filecoin-alerts.md#filecoinsnapshotageold`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinsnapshotageold) |
+| `FilecoinSnapshotAgeWarning`, `FilecoinSnapshotAgeOld` | [`filecoin-alerts.md#filecoinsnapshotagewarning--filecoinsnapshotageold`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinsnapshotagewarning--filecoinsnapshotageold) |
 | `ForestTipsetsValidatedPerMinute` | [`filecoin-alerts.md#foresttipsetsvalidatedperminute`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#foresttipsetsvalidatedperminute) |
 | `HostDiskWillFillIn24Hours` | [`infrastructure-alerts.md#hostdiskwillfillin24hours`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#hostdiskwillfillin24hours) |
 | `HostOomKillDetected` | [`infrastructure-alerts.md#hostoomkilldetected`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#hostoomkilldetected) |
@@ -82,11 +88,20 @@ If you were paged, match the alert name here and land on its section, not the to
 | `LowExitMessagesLeft` | [`lodestar-alerts.md#lowexitmessagesleft`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#lowexitmessagesleft) |
 | `missed_attestations_in_mass` | [`lodestar-alerts.md#missed_attestations_in_mass`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#missed_attestations_in_mass) |
 | `NoExitMessagesLeft` | [`lodestar-alerts.md#noexitmessagesleft`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#noexitmessagesleft) |
-| `SnapshotServiceDown` | [`filecoin-alerts.md#snapshotservicedown`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#snapshotservicedown) |
 | `StuckBeaconNode` | [`lodestar-alerts.md#stuckbeaconnode`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#stuckbeaconnode) |
 | `StuckOPNode` | [`optimism-alerts.md#stuckopnode`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/optimism-alerts.md#stuckopnode) |
 | `SystemMemoryLeakDetected` | [`infrastructure-alerts.md#systemmemoryleakdetected`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#systemmemoryleakdetected) |
 | `ValidatorMissedBlock` | [`lodestar-alerts.md#validatormissedblock`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#validatormissedblock) |
+| `VouchAccountsUnknownAfterActivation` | [`vouch-alerts.md#vouchaccountsunknownafteractivation`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchaccountsunknownafteractivation) |
+| `VouchAccountViewDiverged` | [`vouch-alerts.md#vouchaccountviewdiverged`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchaccountviewdiverged) |
+| `VouchAttestationsLate` | [`vouch-alerts.md#vouchattestationslate`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchattestationslate) |
+| `VouchBeaconNodeFailing` | [`vouch-alerts.md#vouchbeaconnodefailing`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchbeaconnodefailing) |
+| `VouchNoAttestationsSigned` | [`vouch-alerts.md#vouchnoattestationssigned`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchnoattestationssigned) |
+| `VouchNoEpochsProcessed` | [`vouch-alerts.md#vouchnoepochsprocessed`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchnoepochsprocessed) |
+| `VouchNotReady` | [`vouch-alerts.md#vouchnotready`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchnotready) |
+| `VouchProposalMissed` | [`vouch-alerts.md#vouchproposalmissed`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchproposalmissed) |
+| `VouchValidatorExiting` | [`vouch-alerts.md#vouchvalidatorexiting`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchvalidatorexiting) |
+| `VouchValidatorSlashed` | [`vouch-alerts.md#vouchvalidatorslashed`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md#vouchvalidatorslashed) |
 
 ### By chain / product
 
@@ -96,17 +111,22 @@ If you were paged, match the alert name here and land on its section, not the to
 | Ethereum / Lodestar alerts | [`lodestar-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md) |
 | Filecoin alerts | [`filecoin-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md) |
 | Forest upgrade procedures | [`forest-upgrade-procedures.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/forest-upgrade-procedures.md) — [silence alerts first](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/forest-upgrade-procedures.md#step-1-silence-alerts), [production rollout](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/forest-upgrade-procedures.md#step-3-production-rollout), [health verification](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/forest-upgrade-procedures.md#step-4-health-verification) |
-| Polkadot alerts | [`polkadot-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/polkadot-alerts.md) |
 | Optimism alerts | [`optimism-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/optimism-alerts.md) |
 | Lido validator operations | [`lido-validator-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lido-validator-operations.md) |
 | Rocketpool node operations | [`rocketpool-node-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/rocketpool-node-operations.md) |
 | IPFS gateway operations | [`ipfs-gateway-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/ipfs-gateway-operations.md) |
 | Canton unclaimed rewards | [`canton-unclaimed-rewards.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/canton-unclaimed-rewards.md) |
+| Canton DAR proxy identity | [`canton-dar-proxy-identity.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/canton-dar-proxy-identity.md) |
+| Lido Dirk/Vouch signing operations | [`lido-dirk-vouch-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lido-dirk-vouch-operations.md) |
+| Lido NOM phone escalation | [`lido-nom-phone-escalation.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lido-nom-phone-escalation.md) |
+| Dirk signer alerts | [`dirk-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md) |
+| Vouch validator-client alerts | [`vouch-alerts.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/vouch-alerts.md) |
+| Nethermind full-pruning disk fill | [`nethermind-fullpruning-disk-fill.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/nethermind-fullpruning-disk-fill.md) |
 | RDS bastion (infra-dev): deploy, tunnel, teardown | [`rds-bastion.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/rds-bastion.md) — [deploy](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/rds-bastion.md#deploy), [DB tunnel](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/rds-bastion.md#db-tunnel), [teardown](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/rds-bastion.md#teardown) |
 | Besu RocksDB blob-GC disk fill (Lido EL fleet) | [`besu-blob-gc-disk-fill.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md) — [recognising it](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#recognising-it), [remediation](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#remediation), [do not do these](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#do-not-do-these) |
 | Celestia validator operations | [`celestia-validator-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md) — [sync status](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md#check-node-sync-status), [commission](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md#check-unclaimed-commission) |
 
-All thirteen runbooks upstream are mapped above. If your scenario isn't listed, the runbook does not exist yet: surface the gap to [@joshdougall](https://github.com/joshdougall) and the on-call, and do not improvise from this page.
+All eighteen runbooks upstream are mapped above. If your scenario isn't listed, the runbook does not exist yet: surface the gap to [@joshdougall](https://github.com/joshdougall) and the on-call, and do not improvise from this page.
 
 ## Agent role during an incident
 
