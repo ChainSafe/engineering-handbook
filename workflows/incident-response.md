@@ -17,7 +17,7 @@ Page the on-call (and yourself) when any of these are true:
 - A monitoring alert fires that the [`infrastructure-alerts`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md) runbook classifies as page-worthy.
 - Funds, assets, or signing keys are at risk.
 - A security event is suspected (suspicious access, leaked credential, exploited vulnerability).
-- The chain you're operating against is in a degraded state and the runbook for that chain (Polkadot, Ethereum, Filecoin, etc.) calls for it.
+- The chain you're operating against is in a degraded state and the runbook for that chain (Ethereum, Filecoin, Celestia, etc.) calls for it.
 
 Do not page for transient blips that auto-recover within the runbook's threshold. The runbooks define those thresholds; defer to them.
 
@@ -66,7 +66,7 @@ If you were paged, match the alert name here and land on its section, not the to
 | `DirkSignerDegraded` | [`dirk-alerts.md#dirksignerdegraded`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirksignerdegraded) |
 | `DirkSignerErrors` | [`dirk-alerts.md#dirksignererrors`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/dirk-alerts.md#dirksignererrors) |
 | `FilecoinForestSyncingFail` | [`filecoin-alerts.md#filecoinforestsyncingfail`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinforestsyncingfail) |
-| `FilecoinLotusSyncingFail` | [`filecoin-alerts.md#filecoinlotussyncingfail`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinlotussyncingfail) |
+| `FilecoinlotusSyncingFail` | [`filecoin-alerts.md#filecoinlotussyncingfail`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinlotussyncingfail) |
 | `FilecoinPeerConnected` | [`filecoin-alerts.md#filecoinpeerconnected`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinpeerconnected) |
 | `FilecoinSnapshotAgeWarning`, `FilecoinSnapshotAgeOld` | [`filecoin-alerts.md#filecoinsnapshotagewarning--filecoinsnapshotageold`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#filecoinsnapshotagewarning--filecoinsnapshotageold) |
 | `ForestTipsetsValidatedPerMinute` | [`filecoin-alerts.md#foresttipsetsvalidatedperminute`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/filecoin-alerts.md#foresttipsetsvalidatedperminute) |
@@ -77,7 +77,7 @@ If you were paged, match the alert name here and land on its section, not the to
 | `HostOutOfInodes` | [`infrastructure-alerts.md#hostoutofinodes`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#hostoutofinodes) |
 | `HostOutOfMemory` | [`infrastructure-alerts.md#hostoutofmemory`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#hostoutofmemory) |
 | `HostRequiresReboot` | [`infrastructure-alerts.md#hostrequiresreboot`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#hostrequiresreboot) |
-| `individual_validator_losing_balance` | [`lodestar-alerts.md#individual_validator_losing_balance`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#individual_validator_losing_balance) |
+| `IndividualValidatorLosingBalance` | [`lodestar-alerts.md#individual_validator_losing_balance`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#individual_validator_losing_balance) |
 | `InstanceDown` | [`infrastructure-alerts.md#instancedown`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/infrastructure-alerts.md#instancedown) |
 | `IpfsGatewayDown` | [`ipfs-gateway-operations.md#ipfsgatewaydown`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/ipfs-gateway-operations.md#ipfsgatewaydown) |
 | `IpfsGatewayHighErrorRate` | [`ipfs-gateway-operations.md#ipfsgatewayhigherrorrate`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/ipfs-gateway-operations.md#ipfsgatewayhigherrorrate) |
@@ -86,7 +86,7 @@ If you were paged, match the alert name here and land on its section, not the to
 | `IpfsKuboNodeDown` | [`ipfs-gateway-operations.md#ipfskubonodedown`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/ipfs-gateway-operations.md#ipfskubonodedown) |
 | `IpfsKuboPeerCountLow` | [`ipfs-gateway-operations.md#ipfskubopeercountlow`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/ipfs-gateway-operations.md#ipfskubopeercountlow) |
 | `LowExitMessagesLeft` | [`lodestar-alerts.md#lowexitmessagesleft`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#lowexitmessagesleft) |
-| `missed_attestations_in_mass` | [`lodestar-alerts.md#missed_attestations_in_mass`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#missed_attestations_in_mass) |
+| `MissedAttestationsInMass` | [`lodestar-alerts.md#missed_attestations_in_mass`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#missed_attestations_in_mass) |
 | `NoExitMessagesLeft` | [`lodestar-alerts.md#noexitmessagesleft`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#noexitmessagesleft) |
 | `StuckBeaconNode` | [`lodestar-alerts.md#stuckbeaconnode`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/lodestar-alerts.md#stuckbeaconnode) |
 | `StuckOPNode` | [`optimism-alerts.md#stuckopnode`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/optimism-alerts.md#stuckopnode) |
@@ -126,7 +126,7 @@ If you were paged, match the alert name here and land on its section, not the to
 | Besu RocksDB blob-GC disk fill (Lido EL fleet) | [`besu-blob-gc-disk-fill.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md) — [recognising it](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#recognising-it), [remediation](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#remediation), [do not do these](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/besu-blob-gc-disk-fill.md#do-not-do-these) |
 | Celestia validator operations | [`celestia-validator-operations.md`](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md) — [sync status](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md#check-node-sync-status), [commission](https://github.com/ChainSafe/infrastructure-general/blob/main/docs/runbooks/celestia-validator-operations.md#check-unclaimed-commission) |
 
-All eighteen runbooks upstream are mapped above. If your scenario isn't listed, the runbook does not exist yet: surface the gap to [@joshdougall](https://github.com/joshdougall) and the on-call, and do not improvise from this page.
+All eighteen runbooks upstream are mapped above, so the **scenario** table is complete. The **by alert name** index above it is not: alerts exist that have no row here, including the Aztec, SSV, Celestia and several Filecoin rules. So a missing alert row does not mean the runbook is missing. Check the runbook for that chain or product first, then surface the gap to [@joshdougall](https://github.com/joshdougall) and the on-call, and do not improvise from this page.
 
 ## Agent role during an incident
 
