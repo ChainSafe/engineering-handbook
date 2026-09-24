@@ -21,6 +21,10 @@ These principles provide a solid base for every engineer at ChainSafe — human 
 
 - **Standards lead to better code.** Use a systematic approach to ensure that code is of high quality. This involves using established practices and tools to create software that is easy to read, test, maintain, and extend. Standards should be encouraged, or enforced where necessary, through established processes such as code reviews. These standards should always be documented, and automated wherever possible.
 
+- **Autonomy follows risk.** Agents have wide latitude inside the gates, and that latitude is widest where mistakes are cheap and reversible. As consequence and blast radius grow, so does the verification and approval required before an action runs. What does not scale is accountability: an engineer owns an agent-assisted change at every point on that curve. Judge an action by what it touches and what undoing it would cost, not by how difficult it was to produce.
+
+- **Reason broadly, execute narrowly.** Agents should generally have more access to observe, analyse and propose than they have to mutate. Wide read access is what prevents the expensive failure modes, the change that ignores an existing caching layer or reimplements logic that already exists three directories away, so narrowing it makes the work worse rather than safer. Write access is where the cost of being wrong actually lands, so it stays deliberately smaller than the reasoning that informs it.
+
 - **Plan for quality.** Quality should be a consideration at every development phase and a shared responsibility. Before building software components or systems a definition of quality must be established. Throughout development, this definition should be periodically re-evaluated and continuously targeted.
 
 - **Every piece of software is a building block.** Teams are responsible for creating software in a modular fashion that is designed to be easily understood, maintained, and integrated with other modules in the system. By doing so, we can enable others to build on top of our work, creating new functionality and extending the system in new and interesting ways.
@@ -47,6 +51,7 @@ Principles that are predominantly testable are restated as invariants. Examples:
 - *Plan for quality* → invariant: every non-trivial change ships with a definition of quality that was set *before* implementation.
 - *Document everything* → invariant: every non-trivial change ships with an ADR or PR description an operator can audit.
 - *Transparency by default* → invariant: decisions live in the repo, not in chat.
+- *Autonomy follows risk* → the gate list: any action touching production, secrets, irreversible writes, external communication or cost stops for explicit operator approval before it runs.
 
 Principles that are predominantly cultural stay here, in this document, and don't appear in the invariants page:
 
